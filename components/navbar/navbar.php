@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md">
         <div class="container">
             <a href="" class="navbar-brand fs-4">
-                <img src="../Images/logo.png" alt="Tennis court logo" width="80px" length="80px">
-                <span>Ampara District <span>Tennis</span> Club</span>
+                <img src="Images/logo.png" alt="Tennis court logo" width="80px" length="80px">
+                <span>Tennis</span> Club Ampara
             </a>
 
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#myNavBar">
