@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+/* .home {
+    height: 100vh;
+} */
+
+.img-1 {
+    background-image: url('../Images/home page carousal/IMG-20240127-WA0007.jpg');
+}
+
+.img-2 {
+    background-image: url('../Images/home page carousal/IMG-20240127-WA0005.jpg');
+}
+
+.img-3 {
+    background-image: url('../Images/home page carousal/IMG-20240127-WA0006.jpg');
+}
+.img-4 {
+    background-image: url('../Images/home page carousal/IMG-20240127-WA0004.jpg');
+}
+
+.img-5 {
+    background-image: url('../Images/home page carousal/IMG-20240127-WA0008.jpg');
+}
+
+.img-6 {
+    background-image: url('../Images/home page carousal/IMG-20240127-WA0009.jpg');
+}
+.img-7 {
+    background-image: url('../Images/home page carousal/IMG-20240127-WA0010.jpg');
+}
+
+.img-8 {
+    background-image: url('../Images/home page carousal/IMG-20240127-WA0011.jpg');
+}
+
+.img {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 90%;
+    z-index: 1;
+
+}
+
+.home {
+    position: relative;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+}
