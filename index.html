@@ -19,10 +19,9 @@
 <body>
 
     <div class="home">
-        <!-- Navbar start -->
         <div class="nav-group">
 
-            <nav class="navbar navbar-expand-md">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a href="" class="navbar-brand fs-4">
                         <img src="Images/logo.png" alt="Tennis court logo" width="70px" length="70px">
@@ -30,23 +29,35 @@
                         </span>
                     </a>
 
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#myNavBar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="myNavBar">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item ">
-                                <a href="#" class="nav-link active">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">About us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Contact</a>
-                            </li>
-                        </ul>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="myNavBar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item ">
+                                    <a href="#" class="nav-link active">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">About us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Contact</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex mt-1 search " role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </nav>

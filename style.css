@@ -88,3 +88,9 @@ body {
 .carousel-indicators {
     margin-bottom: 75px;
 }
+
+/* @media only screen and (min-width: 992px){
+    .search{
+        display: none !important; 
+    }
+} */
