@@ -76,13 +76,10 @@ body {
 
 }
 
-@media only screen and (max-width: 768px) {
+.responsive-brand-item {
+    color: blue;
+}
 
-    .responsive-brand-item {
-        color: blue;
-    }
-
-    .tennis {
-        color: greenyellow;
-    }
+.tennis {
+    color: greenyellow;
 }
