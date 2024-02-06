@@ -1,18 +1,12 @@
 * {
     box-sizing: border-box;
-
 }
 
 body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-
 }
-
-/* .home {
-    height: 100vh;
-} */
 
 .img-1 {
     background-image: url('Images/home page carousal/IMG-20240127-WA0007.jpg');
@@ -82,16 +76,11 @@ body {
 
 }
 
-
-
 @media only screen and (max-width: 768px) {
-    .responsive-brand {
-        display: block !important;
-        color: blue;
-    }
+    
 
     .responsive-brand-item {
-        text-align: center;
+        color: blue;
     }
 
     .tennis {
