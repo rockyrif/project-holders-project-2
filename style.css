@@ -84,3 +84,7 @@ body {
 .tennis {
     color: #91CC00;
 }
+
+.carousel-indicators {
+    margin-bottom: 55px;
+}
