@@ -9,26 +9,26 @@ body {
 }
 
 .img-1 {
-    background-image: url('Images/home page carousal/IMG-20240127-WA0007.jpg');
+    background-image: url('Images/home page carousal/1.gif');
 }
 
 .img-2 {
-    background-image: url('Images/home page carousal/IMG-20240127-WA0005.jpg');
+    background-image: url('Images/home page carousal/2.gif');
 }
 
 .img-3 {
-    background-image: url('Images/home page carousal/IMG-20240127-WA0006.jpg');
+    background-image: url('Images/home page carousal/3.gif');
 }
 
 .img-4 {
-    background-image: url('Images/home page carousal/IMG-20240127-WA0004.jpg');
+    background-image: url('Images/home page carousal/4.gif');
 }
 
 .img-5 {
-    background-image: url('Images/home page carousal/IMG-20240127-WA0008.jpg');
+    background-image: url('Images/home page carousal/5.gif');
 }
 
-.img-6 {
+/* .img-6 {
     background-image: url('Images/home page carousal/IMG-20240127-WA0009.jpg');
 }
 
@@ -38,7 +38,7 @@ body {
 
 .img-8 {
     background-image: url('Images/home page carousal/IMG-20240127-WA0011.jpg');
-}
+} */
 
 .img {
     height: 100vh;
@@ -58,7 +58,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 2;
-    background-color: rgba(255, 255, 255, 1);
+    /* background-color: rgba(255, 255, 255, 1); */
 
 }
 
@@ -72,12 +72,13 @@ body {
     height: max-content;
     border-radius: 10px;
     padding: 60px;
+    z-index: 50;
 
 
 }
 
 .responsive-brand-item {
-    color: blue;
+    color: #000066;
     font-family: "PF Din Stencil W01 Bold";
 }
 
@@ -94,3 +95,33 @@ body {
         display: none !important; 
     }
 } */
+
+.carousel-item {
+    transition: 1.5s;
+}
+
+.curousel-object {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    /* transform: translate(0%, -50%); */
+}
+
+.curousel-object img {
+    height: 300px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 480px) {
+    .brand-br {
+        display: block;
+    }
+}
+
+.navbar-toggler{
+    background-color: #000066;
+}
