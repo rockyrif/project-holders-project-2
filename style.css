@@ -64,15 +64,19 @@ body {
 }
 
 .carousel-content {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.388);
-    height: max-content;
+    max-height: 80vh;
     border-radius: 10px;
     padding: 40px;
     z-index: 50;
     text-align: justify;
+
+    overflow: auto;
+    position: relative;
+
 
 
 }
@@ -82,16 +86,19 @@ body {
     font-family: "PF Din Stencil W01 Bold";
 }
 
-.nav-link{
+.nav-link {
     font-family: "PF Din Stencil W01 Bold";
 }
-.nav-link-home{
+
+.nav-link-home {
     color: #000066;
 }
-.nav-link-about{
+
+.nav-link-about {
     color: #91CC00;
 }
-.nav-link-contact{
+
+.nav-link-contact {
     color: #000066;
 }
 
@@ -103,9 +110,9 @@ body {
     margin-bottom: 75px;
 }
 
-@media only screen and (min-width: 992px){
-    .search{
-        display: none !important; 
+@media only screen and (min-width: 992px) {
+    .search {
+        display: none !important;
     }
 }
 
@@ -143,6 +150,7 @@ body {
 
 .carousal-para-heading {
     text-align: center;
+
 }
 
 .carousal-para {
@@ -158,4 +166,16 @@ body {
     position: absolute;
     right: 5%;
     left: 5%;
+
+}
+
+.carousal-para-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+   
+
+
+
 }
