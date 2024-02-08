@@ -10,6 +10,7 @@ body {
 
 .img-1 {
     background-image: url('Images/home page carousal/1.gif');
+
 }
 
 .img-2 {
@@ -62,17 +63,16 @@ body {
 
 }
 
-.carousel-caption {
+.carousel-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    bottom: 50%;
-    transform: translate(0%, 50%);
+    background-color: rgba(0, 0, 102, 0.388);
     height: max-content;
     border-radius: 10px;
-    padding: 60px;
+    padding: 40px;
     z-index: 50;
+    text-align: justify;
 
 
 }
@@ -98,6 +98,8 @@ body {
 
 .carousel-item {
     transition: 1.5s;
+
+
 }
 
 .curousel-object {
@@ -122,6 +124,23 @@ body {
     }
 }
 
-.navbar-toggler{
+.navbar-toggler {
     background-color: #91CC00;
+}
+
+.carousal-para-heading {
+    text-align: center;
+}
+
+.carousal-para {
+    font-family: 'Protest Riot', sans-serif;
+}
+
+.flex-align {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20%;
+    left: 20%;
 }
