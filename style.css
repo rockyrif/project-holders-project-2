@@ -68,7 +68,7 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.388);
-    max-height: 80vh;
+    max-height: 75vh;
     border-radius: 10px;
     padding: 40px;
     z-index: 50;
@@ -79,6 +79,10 @@ body {
 
 
 
+}
+
+.carousel-content-4 {
+    max-height: 70vh !important;
 }
 
 .responsive-brand-item {
@@ -173,8 +177,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-   
+
+
 
 
 
