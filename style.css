@@ -59,7 +59,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 2;
-    /* background-color: rgba(255, 255, 255, 1); */
+    background-color: transparent;
 
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 .carousel-content-4 {
-    max-height: 60vh !important;
+    max-height: 65vh !important;
 }
 
 .responsive-brand-item {
@@ -111,7 +111,8 @@ body {
 }
 
 .carousel-indicators {
-    margin-bottom: 75px;
+    position: static;
+    margin: 30px;
 }
 
 @media only screen and (min-width: 992px) {
@@ -163,7 +164,7 @@ body {
     font-size: large;
 }
 
-.content-align {
+.content-flex-center {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -182,4 +183,19 @@ body {
 
 
 
+}
+
+.carousal-content-and-indicator {
+    height: fit-content;
+    margin-top: 100px;
+}
+
+.change-navbg-onScroll-in {
+    background-color: white;
+    transition: all 1s ease-in;
+}
+
+.change-navbg-onScroll-out {
+    background-color: transparent;
+    transition: all 1s ease-in-out;
 }
