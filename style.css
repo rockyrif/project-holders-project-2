@@ -8,6 +8,83 @@ body {
     overflow-x: hidden;
 }
 
+/* home start */
+.home {
+    position: relative;
+}
+/* home end */
+
+/* nav bar start */
+.nav-group {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: transparent;
+
+}
+
+.responsive-brand-item {
+    color: #000066;
+    font-family: "PF Din Stencil W01 Bold";
+}
+
+.nav-link {
+    font-family: "PF Din Stencil W01 Bold";
+}
+
+.nav-link-home {
+    color: #000066;
+}
+
+.nav-link-about {
+    color: #91CC00;
+}
+
+.nav-link-contact {
+    color: #000066;
+}
+
+.tennis {
+    color: #91CC00;
+}
+
+@media only screen and (min-width: 992px) {
+    .search {
+        display: none !important;
+    }
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 480px) {
+    .brand-br {
+        display: block;
+    }
+}
+
+.navbar-toggler {
+    background-color: #91CC00;
+}
+
+.change-navbg-onScroll-in {
+    background-color: white;
+    transition: all 1s ease-in;
+}
+
+.change-navbg-onScroll-out {
+    background-color: transparent;
+    transition: all 1s ease-in-out;
+}
+
+.navbar-nav{
+    align-items: center;
+}
+/* nav bar end */
+
+/* home carousal start  */
 .img-1 {
     background-image: url('Images/home page carousal/1.gif');
 
@@ -51,18 +128,6 @@ body {
 
 }
 
-.home {
-    position: relative;
-}
-
-.nav-group {
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    background-color: transparent;
-
-}
-
 .carousel-content {
     /* display: flex; */
     flex-direction: column;
@@ -73,41 +138,12 @@ body {
     padding: 40px;
     z-index: 50;
     text-align: center;
-
     overflow: auto;
     position: relative;
-
-
-
 }
 
 .carousel-content-4 {
     max-height: 65vh !important;
-}
-
-.responsive-brand-item {
-    color: #000066;
-    font-family: "PF Din Stencil W01 Bold";
-}
-
-.nav-link {
-    font-family: "PF Din Stencil W01 Bold";
-}
-
-.nav-link-home {
-    color: #000066;
-}
-
-.nav-link-about {
-    color: #91CC00;
-}
-
-.nav-link-contact {
-    color: #000066;
-}
-
-.tennis {
-    color: #91CC00;
 }
 
 .carousel-indicators {
@@ -115,16 +151,8 @@ body {
     margin: 30px;
 }
 
-@media only screen and (min-width: 992px) {
-    .search {
-        display: none !important;
-    }
-}
-
 .carousel-item {
     transition: 1.5s;
-
-
 }
 
 .curousel-object {
@@ -136,21 +164,6 @@ body {
 
 .curousel-object img {
     height: 300px;
-}
-
-.navbar-brand {
-    display: flex;
-    align-items: center;
-}
-
-@media only screen and (max-width: 480px) {
-    .brand-br {
-        display: block;
-    }
-}
-
-.navbar-toggler {
-    background-color: #91CC00;
 }
 
 .carousal-para-heading {
@@ -178,11 +191,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-
-
-
-
 }
 
 .carousal-content-and-indicator {
@@ -190,12 +198,11 @@ body {
     margin-top: 80px;
 }
 
-.change-navbg-onScroll-in {
-    background-color: white;
-    transition: all 1s ease-in;
+/* home carousal end  */
+
+/* home page section two */
+
+.section-two{
+    height: 100vh;
 }
 
-.change-navbg-onScroll-out {
-    background-color: transparent;
-    transition: all 1s ease-in-out;
-}
