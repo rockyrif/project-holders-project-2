@@ -232,11 +232,11 @@ body {
 /* home page section two */
 
 .section-two {
-    height: 100vh;
+    height: fit-content;
     width: 100vw;
     background-color: #ddd;
     padding: 20px;
-    overflow: auto;
+    
 
 
 
