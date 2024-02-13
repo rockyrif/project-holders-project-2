@@ -4,14 +4,15 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     overflow-x: hidden;
-    overflow-y: ;
+
 }
 
 /* home start */
 .home {
     position: relative;
+    top: 0%;
 }
 
 /* home end */
@@ -19,6 +20,7 @@ body {
 /* nav bar start */
 .nav-group {
     position: fixed;
+    top: 0%;
     width: 100%;
     z-index: 2;
     background-color: transparent;
@@ -233,10 +235,12 @@ body {
 
 .section-two {
     height: fit-content;
+
     width: 100vw;
     background-color: #ddd;
     padding: 20px;
-    
+
+
 
 
 
@@ -258,15 +262,22 @@ body {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
-    display: inline-block;
+
+}
+
+.image-container {
+    position: relative;
 }
 
 .gallery {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     grid-auto-rows: 200px;
     grid-auto-flow: dense;
+
 }
 
 .gallery>div {
@@ -284,4 +295,10 @@ body {
 
 .gallery .tall {
     grid-row: span 2;
+}
+
+.gallery-button {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
 }
