@@ -67,16 +67,20 @@ body {
         padding: 10px;
     }
 
+    .carousel-content {
+        width: 65%;
+    }
+
 }
 
 @media only screen and (max-width: 992px) {
 
 
     .navbar-nav-outer {
-
         display: none;
-
     }
+
+
 
 
 
@@ -227,11 +231,13 @@ body {
 .carousal-content-and-indicator {
     height: fit-content;
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* home carousal end  */
-
-/* home page section two */
 
 /* home page section two */
 
@@ -269,6 +275,7 @@ body {
 
 .image-container {
     position: relative;
+
 }
 
 .gallery {
@@ -289,6 +296,7 @@ body {
 }
 
 .gallery>div>img {
+
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -302,5 +310,22 @@ body {
 .gallery-button {
     position: absolute;
     bottom: 10px;
+    z-index: 20;
+
+}
+
+.gallery-info {
+    text-align: center;
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 70%);
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 0;
+    top: 0;
+    padding: 10px;
+
+
+
 
 }
