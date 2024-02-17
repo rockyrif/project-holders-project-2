@@ -173,3 +173,7 @@ body {
 .gallery .tall {
     grid-row: span 2;
 }
+
+.gallary-info{
+    text-align: justify;
+}
