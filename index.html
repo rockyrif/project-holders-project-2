@@ -73,7 +73,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="myNavBar"
+                    <div class="offcanvas offcanvas-end offcan" tabindex="-1" id="myNavBar"
                         aria-labelledby="offcanvasNavbarLabel">
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
@@ -82,14 +82,25 @@
                         </div>
                         <div class="offcanvas-body">
 
-                            <form class="d-flex mt-1 search " role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                                    id="search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                            
 
 
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <div
+                                    style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link nav-link-signup"><button type="button"
+                                                class="btn btn-success">SIGN UP</button></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link nav-link-login">lOG IN</a>
+                                    </li>
+                                </div>
+                                <form class="d-flex mt-1 search " role="search" style="width: 100%;">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                                        id="search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
                                 <li class="nav-item ">
                                     <a href="#" class="nav-link nav-link-home active">HOME</a>
                                 </li>
@@ -99,13 +110,43 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link nav-link-contact">CONTACT</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link nav-link-login">lOG IN</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        REGISTER
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Application form</a></li>
+                                    </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link nav-link-signup"><button type="button"
-                                            class="btn btn-success">SIGN UP</button></a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        COURTS
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">About courts we have</a></li>
+                                        <li><a class="dropdown-item" href="#">Image Gallery</a></li>
+                                    </ul>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        TOURNAMENTS
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Enter Tournament</a></li>
+                                        <li><a class="dropdown-item" href="#">Tournament Calendar</a></li>
+                                        <li><a class="dropdown-item dropdown" href="#">Jus De Fruit Tournaments</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">About courts we have</a></li>
+                                                <li><a class="dropdown-item" href="#">Image Gallery</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
                             </ul>
 
                             <!-- visitor counter start -->

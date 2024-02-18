@@ -5,8 +5,15 @@
 body {
     width: 100vw;
     height: fit-content;
-    overflow-x: hidden;
 
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.offcanvas-body::-webkit-scrollbar {
+    display: none;
 }
 
 /* home start */
@@ -112,7 +119,7 @@ body {
 }
 
 .navbar-nav {
-    align-items: center;
+    align-items: start;
 }
 
 /* nav bar end */
