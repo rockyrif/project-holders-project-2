@@ -41,7 +41,7 @@ body::-webkit-scrollbar {
 }
 
 
-.nav-link, .outer-button {
+.nav-link, .outer-button, .offcanvas-button {
     font-family: "PF Din Stencil W01 Bold";
 }
 
