@@ -41,7 +41,9 @@ body::-webkit-scrollbar {
 }
 
 
-.nav-link, .outer-button, .offcanvas-button {
+.nav-link,
+.outer-button,
+.offcanvas-button {
     font-family: "PF Din Stencil W01 Bold";
 }
 
@@ -127,24 +129,24 @@ body::-webkit-scrollbar {
 
 /* home carousal start  */
 .img-1 {
-    background-image: url('Images/home page carousal/1.gif');
+    background-image: url('Images/home-page-carousal/1.gif');
 
 }
 
 .img-2 {
-    background-image: url('Images/home page carousal/2.gif');
+    background-image: url('Images/home-page-carousal/2.gif');
 }
 
 .img-3 {
-    background-image: url('Images/home page carousal/3.gif');
+    background-image: url('Images/home-page-carousal/3.gif');
 }
 
 .img-4 {
-    background-image: url('Images/home page carousal/4.gif');
+    background-image: url('Images/home-page-carousal/4.gif');
 }
 
 .img-5 {
-    background-image: url('Images/home page carousal/5.gif');
+    background-image: url('Images/home-page-carousal/5.gif');
 }
 
 /* .img-6 {
