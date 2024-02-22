@@ -161,6 +161,9 @@ body::-webkit-scrollbar {
     background-image: url('Images/home page carousal/IMG-20240127-WA0011.jpg');
 } */
 
+
+
+
 .img {
     height: 100vh;
     background-size: cover;
@@ -223,7 +226,7 @@ body::-webkit-scrollbar {
 }
 
 .content-flex-center {
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     position: absolute;
@@ -245,6 +248,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 /* home carousal end  */
