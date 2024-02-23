@@ -280,11 +280,23 @@ body::-webkit-scrollbar {
 
 }
 
+.gallary-heading{
+    font-family: "PF Din Stencil W01 Bold";
+}
+
 .gallary .image-container img {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
 
+}
+
+.gallery>div>img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .image-container {
@@ -309,13 +321,7 @@ body::-webkit-scrollbar {
     align-items: end;
 }
 
-.gallery>div>img {
 
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-}
 
 .gallery .tall {
     grid-row: span 2;
@@ -341,6 +347,50 @@ body::-webkit-scrollbar {
 
 
 }
+
+/* find a coatch sectio start */
+.find-a-coache{
+    width: 100%;
+    height: fit-content;
+}
+
+.find-a-coache-tittle{
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000066;
+    font-family: "PF Din Stencil W01 Bold";
+
+}
+
+.splide{
+    /* border: 2px solid black; */
+}
+
+.splide__slide{
+    width: 300px !important;
+}
+
+.splide-slide-contant{
+    height: 300px;
+    width: 300px;
+    /* border: 1px solid red; */
+    
+}
+.splide-slide-contant-1-img{
+    height: 100%;
+    background-image: url('Images/coatch-img/person.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.splide__pagination{
+    display: none !important;
+}
+/* find a coatch sectio end */
 
 /* home-section-site-map--start */
 

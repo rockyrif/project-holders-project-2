@@ -3,7 +3,7 @@ function changeNaveBg() {
     var scrollValue = window.scrollY;
     console.log(scrollValue);
 
-    if (scrollValue < 100) {
+    if (scrollValue < 50) {
         navbar.classList.remove('change-navbg-onScroll-in');
         navbar.classList.add('change-navbg-onScroll-out');
     } else {
