@@ -32,6 +32,10 @@
 
     <!-- splide slider start -->
     <script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js
+    "></script>
+
+    <script src="
     https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
     "></script>
     <link href="
@@ -711,25 +715,32 @@
                 </div>
             </div>
             <script>
+
                 var splide = new Splide('.splide', {
-                    
+
                     gap: '2rem',
                     breakpoints: {
                         640: {
-                            
+
                             gap: '.7rem',
-                            
+
                         },
                         480: {
-                            
+
                             gap: '.7rem',
-                           
+
                         },
                     },
+
+                    type: 'loop',
+                    focus: 'center',
                 });
 
                 splide.mount();
+                
             </script>
+           
+
         </div>
         <!-- find-a-coache-section-end -->
 

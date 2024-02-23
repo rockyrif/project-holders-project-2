@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -385,6 +386,7 @@ body::-webkit-scrollbar {
     background-image: url('Images/coatch-img/person.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     
 }
 .splide__pagination{
