@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -281,7 +280,7 @@ body::-webkit-scrollbar {
 
 }
 
-.gallary-heading{
+.gallary-heading {
     font-family: "PF Din Stencil W01 Bold";
 }
 
@@ -350,12 +349,12 @@ body::-webkit-scrollbar {
 }
 
 /* find a coatch sectio start */
-.find-a-coache{
+.find-a-coache {
     width: 100%;
     height: fit-content;
 }
 
-.find-a-coache-tittle{
+.find-a-coache-tittle {
     text-align: center;
     width: 100%;
     height: 45px;
@@ -367,31 +366,61 @@ body::-webkit-scrollbar {
 
 }
 
-.splide{
+.splide {
     /* border: 2px solid black; */
+    width: 100vw;
 }
 
-.splide__slide{
+.splide__slide {
     width: 300px !important;
 }
 
-.splide-slide-contant{
+.splide-slide-contant {
     height: 300px;
     width: 300px;
     /* border: 1px solid red; */
-    
+
 }
-.splide-slide-contant-1-img{
+
+.splide-slide-contant-1-img {
     height: 100%;
-    background-image: url('Images/coatch-img/person.jpg');
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
+
 }
-.splide__pagination{
+
+.splide-slide-img-1{
+    background-image: url('Images/coatch-img/1.png');
+}
+
+.splide-slide-img-2{
+    background-image: url('Images/coatch-img/2.png');
+}
+
+.splide-slide-img-3{
+    background-image: url('Images/coatch-img/3.png');
+}
+
+.splide-slide-contant-1-name {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 70%);
+    width: 100%;
+    color: #ddd;
+    text-align: center;
+    padding: 20px;
+}
+
+.splide__pagination {
     display: none !important;
 }
+
+
+
 /* find a coatch sectio end */
 
 /* home-section-site-map--start */

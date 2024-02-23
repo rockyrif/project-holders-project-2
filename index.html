@@ -665,81 +665,76 @@
                     <ul class="splide__list">
                         <li class="splide__slide">
                             <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img"></div>
-                                <div class="splide-slide-contant-1-name">car</div>
+                                <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
+                                <div class="splide-slide-contant-1-name">K Muditha lakmal Fernando</div>
                                 <div class="splide-slide-contant-1-description"></div>
                                 <div class="splide-slide-contant-1-button"></div>
                             </div>
                         </li>
                         <li class="splide__slide">
                             <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img"></div>
-                                <div class="splide-slide-contant-1-name"></div>
+                                <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
+                                <div class="splide-slide-contant-1-name">G b prageeth sandika sampath</div>
                                 <div class="splide-slide-contant-1-description"></div>
                                 <div class="splide-slide-contant-1-button"></div>
                             </div>
                         </li>
                         <li class="splide__slide">
                             <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img"></div>
-                                <div class="splide-slide-contant-1-name"></div>
+                                <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
+                                <div class="splide-slide-contant-1-name">H. Namal  jayasinghe</div>
                                 <div class="splide-slide-contant-1-description"></div>
                                 <div class="splide-slide-contant-1-button"></div>
                             </div>
                         </li>
-                        <li class="splide__slide">
+                        <!-- <li class="splide__slide">
                             <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img"></div>
+                                <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
                                 <div class="splide-slide-contant-1-name"></div>
                                 <div class="splide-slide-contant-1-description"></div>
                                 <div class="splide-slide-contant-1-button"></div>
                             </div>
-                        </li>
-                        <li class="splide__slide">
+                        </li> -->
+                        <!-- <li class="splide__slide">
                             <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img"></div>
+                                <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
                                 <div class="splide-slide-contant-1-name"></div>
                                 <div class="splide-slide-contant-1-description"></div>
                                 <div class="splide-slide-contant-1-button"></div>
                             </div>
-                        </li>
-                        <li class="splide__slide">
+                        </li> -->
+                        <!-- <li class="splide__slide">
                             <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img"></div>
+                                <div class="splide-slide-contant-1-img img-4"></div>
                                 <div class="splide-slide-contant-1-name"></div>
                                 <div class="splide-slide-contant-1-description"></div>
                                 <div class="splide-slide-contant-1-button"></div>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
             <script>
 
-                var splide = new Splide('.splide', {
 
-                    gap: '2rem',
-                    breakpoints: {
-                        640: {
 
-                            gap: '.7rem',
-
-                        },
-                        480: {
-
-                            gap: '.7rem',
-
-                        },
-                    },
-
+                const splide = new Splide('.splide', {
                     type: 'loop',
+                    drag: 'free',
                     focus: 'center',
+                    
+                    autoScroll: {
+                        speed: 1,
+                    },
                 });
 
-                splide.mount();
+                splide.mount(window.splide.Extensions);
                 
+
+
+
             </script>
-           
+
 
         </div>
         <!-- find-a-coache-section-end -->
