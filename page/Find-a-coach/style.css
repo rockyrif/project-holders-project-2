@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+    background-color: #ddd;
+
+
+}
+
+/* home start */
+.home {
+    position: relative;
+    top: 0%;
+    height: fit-content;
+}
+
+/* home end */
+
+/* nav bar start */
+.nav-group {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 2;
+    background-color: transparent;
+
+}
+
+.responsive-brand-item {
+    color: #000066;
+    font-family: "PF Din Stencil W01 Bold";
+}
+
+
+.nav-link {
+    font-family: "PF Din Stencil W01 Bold";
+}
+
+.nav-link-home {
+    color: #000066;
+}
+
+.nav-link-about {
+    color: #91CC00;
+}
+
+.nav-link-contact {
+    color: #000066;
+}
+
+.tennis {
+    color: #91CC00;
+}
+
+@media only screen and (min-width: 992px) {
+
+
+    .navbar-nav-outer {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .nav-item-outer {
+        padding: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 992px) {
+
+
+    .navbar-nav-outer {
+
+        display: none;
+
+    }
+
+
+
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 480px) {
+    .brand-br {
+        display: block;
+    }
+}
+
+.navbar-toggler {
+    background-color: #198754;
+}
+
+.change-navbg-onScroll-in {
+    background-color: white;
+    transition: all 1s ease-in;
+}
+
+.change-navbg-onScroll-out {
+    background-color: transparent;
+    transition: all 1s ease-in-out;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+/* nav bar end */
+
+
+/* home page section two */
+
+.find-a-coach-page {
+    height:100vh;
+    width: 100vw;
+    
+    padding: 0px;
+    padding-top: 93px;
+    position: relative;
+  
+
+
+}
+
+.find-a-coach-page-tittle {
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000066;
+    font-family: "PF Din Stencil W01 Bold";
+
+}
+
+.find-a-coache {
+    width: 100%;
+    height: fit-content;
+}
+
+.find-a-coache-tittle {
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000066;
+    font-family: "PF Din Stencil W01 Bold";
+
+}
+
+.splide {
+    /* border: 2px solid black; */
+    width: 100vw;
+}
+
+.splide__slide {
+    width: 300px !important;
+}
+
+.splide-slide-contant {
+    height: 300px;
+    width: 300px;
+    /* border: 1px solid red; */
+
+}
+
+.splide-slide-contant-1-img {
+    height: 100%;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.splide-slide-img-1{
+    background-image: url('../../Images/coatch-img/1.png');
+}
+
+.splide-slide-img-2{
+    background-image: url('../../Images/coatch-img/2.png');
+}
+
+.splide-slide-img-3{
+    background-image: url('../../Images/coatch-img/3.png');
+}
+
+.splide-slide-contant-1-name {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 70%);
+    width: 100%;
+    color: #ddd;
+    text-align: center;
+    padding: 20px;
+}
+
+.splide__pagination {
+    display: none !important;
+}

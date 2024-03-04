@@ -66,8 +66,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_stmt_close($stmt);
         }
 
+         // Prepare a select statement to check if email is already registered
+         $sql1 = "SELECT username FROM user_login WHERE username = ?";
+        
+         if($stmt = mysqli_prepare($link, $sql1)){
+             // Bind variables to the prepared statement as parameters
+             mysqli_stmt_bind_param($stmt, "s", $param_username);
+             
+             // Set parameters
+             $param_username = $username;
+             
+             // Attempt to execute the prepared statement
+             if(mysqli_stmt_execute($stmt)){
+                 // Store result
+                 mysqli_stmt_store_result($stmt);
+                 
+                 if(mysqli_stmt_num_rows($stmt) > 0){
+                    $username_err = "This username is already registered.";
+                     echo $username_err;
+                 } 
+             } else{
+                 echo "Oops! Something went wrong. Please try again later.";
+             }
+ 
+             // Close statement
+             mysqli_stmt_close($stmt);
+         }
+
+       
+
         // If no email conflict, proceed with inserting into database
-        if(empty($email_err)){
+        if(empty($email_err) && empty($username_err)){
             // Prepare an insert statement
             $sql = "INSERT INTO user_login (username, password, email ) VALUES (?, ?, ?)";
              
@@ -84,8 +113,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
+                    echo "please sign in";
                     // Redirect to login page
-                    header("location: ../index.html");
+                    header("location: index.html");
+
                 } else{
                     echo "Oops! Something went wrong. Please try again later.";
                 }
