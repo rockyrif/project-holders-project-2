@@ -348,8 +348,8 @@ body::-webkit-scrollbar {
 /* find a coatch sectio start */
 
 .find-a-coach-page {
-    height:fit-content;
-    width: 100vw;  
+    height: fit-content;
+    width: 100vw;
     padding: 0px;
     padding-top: 10px;
     position: relative;
@@ -402,14 +402,14 @@ body::-webkit-scrollbar {
 
 .splide-slide-contant-1-img {
     height: 100%;
-    
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
 }
 
-.splide-slide-img-1{
+.splide-slide-img-1 {
     background-image: url('Images/latest-news/1.jpg');
 }
 

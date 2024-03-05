@@ -1,3 +1,6 @@
+<?php
+     session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,13 +77,17 @@
                         <div class="nav-item-outer">
                             <a href="#" class="nav-link nav-link-contact">CONTACT</a>
                         </div>
-                        <div class="nav-item-outer">
-                            <a href="login-and-signup-page/index.html" class="nav-link nav-link-login">lOG IN</a>
-                        </div>
-                        <div class="nav-item-outer">
-                            <button type="button" class="btn btn-success outer-button"
-                                onclick="window.location.href='login-and-signup-page/index.html'">SIGN UP</button>
-                        </div>
+
+                        <?php if(!isset($_SESSION['username'])): ?>
+                            <div class="nav-item-outer">
+                                <a href="page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN IN</a>
+                            </div>
+                            <div class="nav-item-outer">
+                                <button type="button" class="btn btn-success outer-button"
+                                    onclick="window.location.href='page/login-and-signup-page/index.html'">SIGN UP</button>
+                            </div>
+                        <?php endif;?>
+
                     </div>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#myNavBar">
@@ -95,16 +102,18 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-
+                            
+                        <?php if(!isset($_SESSION['username'])): ?>
                             <div
                                 style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
-                                <a href="login-and-signup-page/index.html" class="nav-link nav-link-login">lOG IN</a>
+                                <a href="page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN IN</a>
                                 <button type="button" class="btn btn-success offcanvas-button"
-                                    onclick="window.location.href='login-and-signup-page/index.html'">SIGN UP</button>
+                                    onclick="window.location.href='page/login-and-signup-page/index.html'">SIGN UP</button>
 
                             </div>
-
+                        <?php endif;?>
+                            
                             <form class="d-flex mt-1 search " role="search" style="width: 100%;">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                                     id="search">
@@ -124,15 +133,21 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link nav-link-contact">CONTACT</a>
                                 </li>
+
+                                <?php if(isset($_SESSION["username"])): ?>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        REGISTER
+                                        MEMBERSHIP
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Application form</a></li>
+                                        <li><a class="dropdown-item" href="#">Become a member</a></li>
+                                        <li><a class="dropdown-item" href="#">Payment</a></li>
                                     </ul>
+                                   
                                 </li>
+                                <?php endif; ?>
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
@@ -236,19 +251,26 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">ADTC Committee</a></li>
-                                        <li><a class="dropdown-item" href="#">ADTC News</a></li>
+                                        <li><a class="dropdown-item" href="#adtcnews">ADTC News</a></li>
                                         <li><a class="dropdown-item dropdown" href="#">Image Gallery</a></li>
 
                                     </ul>
                                 </li>
 
+                                <?php if(isset($_SESSION['username'])): ?>
+                                <li class="nav-item ">
+                                    <button type="button" class="btn btn-danger offcanvas-button"
+                                    onclick="window.location.href='page/login-and-signup-page/log-out.php'">LOG OUT</button>
+                                </li>
+                                <?php endif;?>
+
 
                             </ul>
 
                             <!-- visitor counter start -->
-                            <div style="display: flex; justify-content: center;">
-                            <a href='https://bachelorthesiswritingservice.com/' style="display: none;">Writing Service for Your Bachelor Thesis</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=a55f9ff641bd68d5a742075a803dc85472f44e9c'></script>
-                            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1141919/t/0"></script>
+                            <div style="display:flex; justify-content:center;">
+                            <a href='http://www.freevisitorcounters.com'>at www.freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=f588b368c8bb41d1c64b8cde849cedf3c6070209'></script>
+                            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1155377/t/0"></script>
                             </div>
                             <!-- visitor counter end -->
 
@@ -653,7 +675,7 @@
         <!-- home-section-two-gallery-end -->
 
         <!-- Latest-news-page-start -->
-        <div class="find-a-coach-page">
+        <div class="find-a-coach-page" id="adtcnews">
 
             <div class="find-a-coach-page-tittle">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Latest ADTC News</P>

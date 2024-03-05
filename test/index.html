@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<!-- divinectorweb.com -->
-<html lang="en">
-
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta content="IE=edge" http-equiv="X-UA-Compatible">
-	<title>CSS Cards with Overlay Hover Animation/title></title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
+    <title>Scroll to ID with Offset</title>
+    <style>
+        /* Styling for demonstration purposes */
+        #content {
+            height: 2000px; /* Some content to create scrolling */
+        }
+        #target {
+            margin-top: 200px;
+			margin-bottom: 200%; /* Adding margin for demonstration */
+        }
+    </style>
 </head>
-
 <body>
-	 <div class="container">
-		<div class="element">box1</div>
-		<div class="element">box2</div>
-		<div class="element">box3</div>
-	 </div>
+    <div id="content"> <!-- Content to enable scrolling -->
+        <p><a href="#target" onclick="scrollToId('target')">Scroll to Target</a></p>
+    </div>
+    <div id="target">
+        Target Element
+    </div>
 
+    <script>
+        function scrollToId(id) {
+            var element = document.getElementById(id);
+            if (element) {
+                var offset = 93; // Adjust this value as needed
+                var topPos = element.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: topPos,
+                    behavior: 'smooth' // Optional: adds smooth scrolling
+                });
+            }
+        }
+    </script>
 </body>
-
 </html>

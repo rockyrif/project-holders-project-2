@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+
+ if(isset($_SESSION['username'])) {
+    header("location: ../../index.php");
+ }
+    
+
 // Include config file
 require_once "config.php";
 
@@ -57,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: ../../index.html");
+                            header("location: ../../index.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";

@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
-                    echo "please sign in";
+                    
                     // Redirect to login page
                     header("location: index.html");
 
