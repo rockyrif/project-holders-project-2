@@ -1,5 +1,5 @@
 <?php
-     session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +78,7 @@
                             <a href="#" class="nav-link nav-link-contact">CONTACT</a>
                         </div>
 
-                        <?php if(!isset($_SESSION['username'])): ?>
+                        <?php if (!isset($_SESSION['username'])): ?>
                             <div class="nav-item-outer">
                                 <a href="page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN IN</a>
                             </div>
@@ -86,7 +86,7 @@
                                 <button type="button" class="btn btn-success outer-button"
                                     onclick="window.location.href='page/login-and-signup-page/index.html'">SIGN UP</button>
                             </div>
-                        <?php endif;?>
+                        <?php endif; ?>
 
                     </div>
 
@@ -102,18 +102,20 @@
                                 aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            
-                        <?php if(!isset($_SESSION['username'])): ?>
-                            <div
-                                style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
-                                <a href="page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN IN</a>
-                                <button type="button" class="btn btn-success offcanvas-button"
-                                    onclick="window.location.href='page/login-and-signup-page/index.html'">SIGN UP</button>
+                            <?php if (!isset($_SESSION['username'])): ?>
+                                <div
+                                    style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
-                            </div>
-                        <?php endif;?>
-                            
+                                    <a href="page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN
+                                        IN</a>
+                                    <button type="button" class="btn btn-success offcanvas-button"
+                                        onclick="window.location.href='page/login-and-signup-page/index.html'">SIGN
+                                        UP</button>
+
+                                </div>
+                            <?php endif; ?>
+
                             <form class="d-flex mt-1 search " role="search" style="width: 100%;">
                                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                                     id="search">
@@ -134,18 +136,18 @@
                                     <a href="#" class="nav-link nav-link-contact">CONTACT</a>
                                 </li>
 
-                                <?php if(isset($_SESSION["username"])): ?>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        MEMBERSHIP
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Become a member</a></li>
-                                        <li><a class="dropdown-item" href="#">Payment</a></li>
-                                    </ul>
-                                   
-                                </li>
+                                <?php if (isset($_SESSION["username"])): ?>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            MEMBERSHIP
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Become a member</a></li>
+                                            <li><a class="dropdown-item" href="#">Payment</a></li>
+                                        </ul>
+
+                                    </li>
                                 <?php endif; ?>
 
                                 <li class="nav-item dropdown">
@@ -251,26 +253,31 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">ADTC Committee</a></li>
-                                        <li><a class="dropdown-item" href="#adtcnews">ADTC News</a></li>
+                                        <li><a class="dropdown-item" href="#" id="clickme">ADTC News</a><script src="index.js"></script></li>
+                                            
                                         <li><a class="dropdown-item dropdown" href="#">Image Gallery</a></li>
 
                                     </ul>
                                 </li>
 
-                                <?php if(isset($_SESSION['username'])): ?>
-                                <li class="nav-item ">
-                                    <button type="button" class="btn btn-danger offcanvas-button"
-                                    onclick="window.location.href='page/login-and-signup-page/log-out.php'">LOG OUT</button>
-                                </li>
-                                <?php endif;?>
+                                <?php if (isset($_SESSION['username'])): ?>
+                                    <li class="nav-item ">
+                                        <button type="button" class="btn btn-danger offcanvas-button"
+                                            onclick="window.location.href='page/login-and-signup-page/log-out.php'">LOG
+                                            OUT</button>
+                                    </li>
+                                <?php endif; ?>
 
 
                             </ul>
 
                             <!-- visitor counter start -->
                             <div style="display:flex; justify-content:center;">
-                            <a href='http://www.freevisitorcounters.com'>at www.freevisitorcounters.com</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=f588b368c8bb41d1c64b8cde849cedf3c6070209'></script>
-                            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1155377/t/0"></script>
+                                <a href='http://www.freevisitorcounters.com'>at www.freevisitorcounters.com</a>
+                                <script type='text/javascript'
+                                    src='https://www.freevisitorcounters.com/auth.php?id=f588b368c8bb41d1c64b8cde849cedf3c6070209'></script>
+                                <script type="text/javascript"
+                                    src="https://www.freevisitorcounters.com/en/home/counter/1155377/t/0"></script>
                             </div>
                             <!-- visitor counter end -->
 

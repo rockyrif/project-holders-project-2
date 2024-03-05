@@ -15,23 +15,13 @@ function changeNaveBg() {
 
 window.addEventListener('scroll', changeNaveBg);
 
-// id navigathion
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Get the target element
-    var targetElement = document.getElementById('adtcnews');
-    
-    // Add event listener to the anchor tag
-    document.querySelector('a').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default behavior of anchor tag
-
-        // Calculate the offset to scroll to
-        var offset = targetElement.offsetTop - window.innerHeight + 93;
-
-        // Scroll to the target element with the offset
-        window.scrollTo({
-            top: offset,
-            behavior: 'smooth' // Optional: Use smooth scrolling
-        });
+// id navigathion to custom position
+document.getElementById("clickme").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default action of the anchor tag
+    var targetElement = document.getElementById("adtcnews");
+    var targetPosition = targetElement.offsetTop - 90; // Custom position 93px down from the top
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth' // Optional: Smooth scrolling
     });
 });
