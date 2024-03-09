@@ -115,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(mysqli_stmt_execute($stmt)){
                     
                     // Redirect to login page
-                    header("location: index.html");
+                    header("location: index.html?signup=1");
 
                 } else{
                     echo "Oops! Something went wrong. Please try again later.";

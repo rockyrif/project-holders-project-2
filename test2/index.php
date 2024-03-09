@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADTC Home</title>
 
-   
+    
 
     <!-- style sheet start -->
     <link rel="stylesheet" href="style.css">
@@ -30,21 +30,9 @@ session_start();
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
-    <!-- splide slider start -->
-    <script src="
-    https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js
-    "></script>
-
-    <script src="
-    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
-    "></script>
-    <link href="
-    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-    " rel="stylesheet">
-    <!-- splide slider end -->
-
-
-    
+    <!-- local script start -->
+    <script src="index.js"></script>
+    <!-- local script end -->
 
 
 </head>
@@ -54,9 +42,8 @@ session_start();
     <div class="home">
         <!-- Navbar start -->
         <?php
-            include 'components/navbar/navbar.php'; 
+            include '../components/navbar/navbar.php';
         ?>
-        
         <!-- Navbar end -->
 
         <!-- carousel start -->
@@ -336,7 +323,7 @@ session_start();
                     <img alt="Achievement-by-ADTC" src="Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp"
                         class="image-button-container">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">View</button>
+                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.html'">View</button>
                     <p class="gallery-info">10 years old clinching the second position</p>
                 </div>
             </div>

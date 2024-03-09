@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
+        rel="stylesheet">
+
+    <!-- Goolge fonts start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <!-- Goolge fonts end -->
+
+    <!-- AOS  strat-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS  end-->
+
+   
+
+</head>
+
+<body>
+
+    <div class="home">
+
+        <!-- Navbar start -->
+        <?php
+            include '../../components/navbar/navbar.php'; 
+        ?>
+        <!-- Navbar end -->
+
+        <!-- About-us-page-start -->
+        <div class="about-us">
+
+            <div class="gallary-tittle">
+                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">About Us</P>
+            </div>
+
+            <div class="gallary-info">
+                <p data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club (ADTC) emerged on the sporting landscape in 2023 under the visionary leadership of Deputy Inspector General of Police, Mr. H.A.N.K. Damayantha Wijaya Sri. Founded with the purpose of promoting tennis within the community, the club quickly evolved into a dynamic hub for tennis enthusiasts in the region. The ADTC is committed to preventing drug addiction among young individuals by redirecting their focus and energy towards playing tennis. The Ampara District Tennis Club endeavors to promote harmony within society by organizing inclusive tennis events that unite diverse community members. By emphasizing values such as teamwork, respect, and fair play, the club aims to create a positive environment where individuals from varied backgrounds come together through their mutual passion for tennis. Implementing outreach programs, tennis clinics, and community events will additionally strengthen social bonds, fostering understanding and cooperation among residents of the Ampara district.<br><br>
+
+                Despite initial resource limitations, the ADTC demonstrated resilience and commitment, achieving remarkable strides in a short period. With a focus on inclusivity, skill development, and community engagement, the Ampara District Tennis Club has become a pivotal force, uniting individuals passionate about tennis and contributing to the overall sporting vibrancy of the community..    </p>
+            </div>
+
+            <!-- <div class="gallery">
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//2.webp">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//3.webp">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//4.webp">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//5.webp">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//6.webp">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//7.webp">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//8.webp">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//9.webp">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//10.webp">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//11.webp">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//12.webp">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//13.webp">
+                </div> -->
+                <!-- <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/14.webp">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/15.webp">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/16.webp">
+                </div>
+                <div class="grid-item">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/17.jpg">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/18.jpg">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/19.jpg">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/20.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/21.jpg">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/22.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/23.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/24.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/25.jpg">
+                </div> -->
+            </div>
+
+        </div>
+        <!-- About-us-page-end -->
+
+
+
+
+    </div>
+
+    <!-- AOS script start -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- AOS script end-->
+
+</body>
+
+</html>
