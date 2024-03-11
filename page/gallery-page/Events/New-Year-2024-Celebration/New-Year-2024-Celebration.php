@@ -29,15 +29,19 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
+
+
+
+
 </head>
 
 <body>
 
     <div class="home">
 
-        <!-- Navbar start -->
+      <!-- Navbar start -->
         <?php
-            include '../../../../components/navbar/navbar.php'; 
+        include '../../../../components/navbar/navbar.php'; 
         ?>
         <!-- Navbar end -->
 
@@ -45,105 +49,102 @@
         <div class="section-two">
 
             <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Achievement by ADTC</P>
+                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">New Year 2024 Celebration</P>
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">Owidu, a second-year student at Ampara Kawantissa School,
-                    reached a noteworthy achievement by clinching the second position in a competition held on
-                    09/10/2023 in Negombo, Sri Lanka, for participants under 10 years old. Owidu etched his name in
-                    history of Ampara by securing the first trophy for Ampara District from the Ampara District Tennis
-                    Club.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club may celebrate the new year for several reasons, such as fostering camaraderie among its members, reflecting on accomplishments from the past year, setting goals for the upcoming year, promoting the sport of tennis within the community, and providing an opportunity for members to socialize and enjoy each other's company in a festive atmosphere. Additionally, the celebration could serve as a way to thank members for their support and dedication to the club throughout the year.</p>
             </div>
 
             <div class="gallery">
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/1.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//2.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/2.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//3.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/3.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//4.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/4.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//5.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/5.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//6.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/6.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//7.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/7.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//8.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/8.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//9.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/9.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//10.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/10.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//11.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/11.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//12.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/12.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//13.webp">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/13.jpg">
                 </div>
-                <!-- <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/14.webp">
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/14.jpg">
+                </div>
+                <!-- <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/15.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/15.webp">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/16.webp">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/16.jpg">
                 </div>
                 <div class="grid-item">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/17.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/17.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/18.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/18.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/19.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/19.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/20.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/20.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/21.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/21.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/22.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/22.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/23.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/23.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/24.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/24.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/25.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/25.jpg">
                 </div> -->
             </div>
 

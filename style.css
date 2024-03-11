@@ -25,107 +25,7 @@ body::-webkit-scrollbar {
 
 /* home end */
 
-/* nav bar start */
-/* .nav-group {
-    position: fixed;
-    top: 0%;
-    width: 100%;
-    z-index: 2;
-    background-color: transparent;
 
-}
-
-.responsive-brand-item {
-    color: #000066;
-    font-family: "PF Din Stencil W01 Bold";
-}
-
-
-.nav-link,
-.outer-button,
-.offcanvas-button {
-    font-family: "PF Din Stencil W01 Bold";
-}
-
-.nav-link-home {
-    color: #000066;
-}
-
-.nav-link-about {
-    color: #91CC00;
-}
-
-.nav-link-contact {
-    color: #000066;
-}
-
-.tennis {
-    color: #91CC00;
-}
-
-@media only screen and (min-width: 992px) {
-
-
-    .navbar-nav-outer {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        margin-left: auto;
-    }
-
-    .nav-item-outer {
-        padding: 10px;
-    }
-
-    .carousel-content {
-        width: 65%;
-    }
-
-}
-
-@media only screen and (max-width: 992px) {
-
-
-    .navbar-nav-outer {
-        display: none;
-    }
-
-
-
-
-
-}
-
-.navbar-brand {
-    display: flex;
-    align-items: center;
-}
-
-@media only screen and (max-width: 480px) {
-    .brand-br {
-        display: block;
-    }
-}
-
-.navbar-toggler {
-    background-color: #198754;
-}
-
-.change-navbg-onScroll-in {
-    background-color: white;
-    transition: all 1s ease-in;
-}
-
-.change-navbg-onScroll-out {
-    background-color: transparent;
-    transition: all 1s ease-in-out;
-}
-
-.navbar-nav {
-    align-items: center;
-} */
-
-/* nav bar end */
 
 /* home carousal start  */
 .img-1 {
@@ -165,7 +65,7 @@ body::-webkit-scrollbar {
 
 
 .img {
-    height: 100vh;
+    height: 96vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -256,16 +156,11 @@ body::-webkit-scrollbar {
 /* home page section two */
 
 .section-two {
+    
     height: fit-content;
-
     width: 100vw;
     background-color: #ddd;
     padding: 20px;
-
-
-
-
-
 }
 
 .gallary-tittle {

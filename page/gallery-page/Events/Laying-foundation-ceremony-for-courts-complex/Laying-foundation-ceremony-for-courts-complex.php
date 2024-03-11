@@ -29,6 +29,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
+
+
+
+
+
 </head>
 
 <body>
@@ -37,7 +42,7 @@
 
         <!-- Navbar start -->
         <?php
-            include '../../../../components/navbar/navbar.php'; 
+        include '../../../../components/navbar/navbar.php'; 
         ?>
         <!-- Navbar end -->
 
@@ -45,105 +50,103 @@
         <div class="section-two">
 
             <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Achievement by ADTC</P>
+                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Laying foundation ceremony for courts
+                    complex</P>
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">Owidu, a second-year student at Ampara Kawantissa School,
-                    reached a noteworthy achievement by clinching the second position in a competition held on
-                    09/10/2023 in Negombo, Sri Lanka, for participants under 10 years old. Owidu etched his name in
-                    history of Ampara by securing the first trophy for Ampara District from the Ampara District Tennis
-                    Club.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">Currently, over 1200 children across 18 schools in the Ampara district are actively engaged in tennis practice. The Ampara District Tennis Club aims to double this participation, reaching 2500 students in 40 schools by the year 2024. To host international tennis tournaments in the Ampara district, it is essential to have three (3) Tennis Courts within the same complex. Therefore, The groundwork for establishing a tennis sports complex in Ampara district was initiated on January 29, 2024, with the foundation stone laid by the Governor of the Eastern Province, Sendhil Thondaman, and the Member of Parliament for Ampara District, W. D. Weerasinghe presiding over the ceremony.</p>
             </div>
 
             <div class="gallery">
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/1.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//2.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/2.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//3.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/3.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//4.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/4.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//5.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/5.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//6.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/6.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//7.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/7.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//8.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/8.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//9.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/9.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//10.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/10.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//11.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/11.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//12.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/12.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//13.webp">
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/13.jpg">
                 </div>
-                <!-- <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/14.webp">
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/14.jpg">
+                </div>
+                <!-- <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/15.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/15.webp">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/16.webp">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/16.jpg">
                 </div>
                 <div class="grid-item">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/17.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/17.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/18.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/18.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/19.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/19.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/20.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/20.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/21.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/21.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/22.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/22.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/23.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/23.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/24.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/24.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/25.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/25.jpg">
                 </div> -->
             </div>
 

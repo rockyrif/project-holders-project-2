@@ -9,11 +9,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADTC Home</title>
 
-   
-
-    <!-- style sheet start -->
-    <link rel="stylesheet" href="style.css">
-    <!-- style sheet end -->
+    <!-- bootstarp start -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- bootstrap end -->
+    
+    <link rel="stylesheet" href="style.css?v=2">
 
     <!-- online fonts start -->
     <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
@@ -43,8 +45,8 @@ session_start();
     " rel="stylesheet">
     <!-- splide slider end -->
 
+ 
 
-    
 
 
 </head>
@@ -54,9 +56,9 @@ session_start();
     <div class="home">
         <!-- Navbar start -->
         <?php
-            include 'components/navbar/navbar.php'; 
+        include 'components/navbar/navbar.php';
         ?>
-        
+
         <!-- Navbar end -->
 
         <!-- carousel start -->
@@ -319,6 +321,87 @@ session_start();
         </div>
         <!-- carousel end -->
 
+        <!-- Latest-news-page-start -->
+        <div class="find-a-coach-page" id="adtcnews">
+
+            <div class="find-a-coach-page-tittle">
+                <P class="fs-4">Latest ADTC News</P>
+            </div>
+
+            <div class="find-a-coache">
+                <div class="splide" role="group" aria-label="find-a-coache">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
+                                    <div class="splide-slide-contant-1-name">Ampara tennis ranking tournament</div>
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li>
+                            <!-- <li class="splide__slide">
+                    <div class="splide-slide-contant">
+                        <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
+                        <div class="splide-slide-contant-1-name">G.B.Prageeth Sandika Sampath</div>
+                        <div class="splide-slide-contant-1-description"></div>
+                        <div class="splide-slide-contant-1-button"></div>
+                    </div>
+                </li>
+                <li class="splide__slide">
+                    <div class="splide-slide-contant">
+                        <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
+                        <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div>
+                        <div class="splide-slide-contant-1-description"></div>
+                        <div class="splide-slide-contant-1-button"></div>
+                    </div>
+                </li> -->
+                            <!-- <li class="splide__slide">
+                <div class="splide-slide-contant">
+                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
+                    <div class="splide-slide-contant-1-name"></div>
+                    <div class="splide-slide-contant-1-description"></div>
+                    <div class="splide-slide-contant-1-button"></div>
+                </div>
+            </li> -->
+                            <!-- <li class="splide__slide">
+                <div class="splide-slide-contant">
+                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
+                    <div class="splide-slide-contant-1-name"></div>
+                    <div class="splide-slide-contant-1-description"></div>
+                    <div class="splide-slide-contant-1-button"></div>
+                </div>
+            </li> -->
+                            <!-- <li class="splide__slide">
+                <div class="splide-slide-contant">
+                    <div class="splide-slide-contant-1-img img-4"></div>
+                    <div class="splide-slide-contant-1-name"></div>
+                    <div class="splide-slide-contant-1-description"></div>
+                    <div class="splide-slide-contant-1-button"></div>
+                </div>
+            </li> -->
+                        </ul>
+                    </div>
+                </div>
+
+
+                <script>
+                    const splide = new Splide('.splide', {
+                        type: 'loop',
+                        drag: 'free',
+                        focus: 'center',
+
+                        autoScroll: {
+                            speed: 1,
+                        },
+                    });
+                    splide.mount(window.splide.Extensions);
+                </script>
+            </div>
+
+        </div>
+        <!-- Latest-news-page-end -->
+
         <!-- home-section-two-gallery-start -->
         <div class="section-two">
 
@@ -326,7 +409,7 @@ session_start();
                 <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">Gallery</P>
             </div>
 
-            <div class="gallary-heading">
+            <div class="gallary-heading" id="achievement-by-ADTC">
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Achievement by ADTC</p>
             </div>
 
@@ -352,28 +435,28 @@ session_start();
                     <img alt="Laying-foundation-ceremony-for-courts-complex"
                         src="Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/1.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Events/Laying-foundation-ceremony-for-courts-complex/Laying-foundation-ceremony-for-courts-complex.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/Events/Laying-foundation-ceremony-for-courts-complex/Laying-foundation-ceremony-for-courts-complex.php'">View</button>
                     <p class="gallery-info">Laying-foundation ceremony for courts complex</p>
                 </div>
                 <div class="image-container">
                     <img alt="Opening-ceremony-of-polwaththa-School-Court"
                         src="Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/1.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Events/Opening-ceremony-of-polwaththa-School-Court/Opening-ceremony-of-polwaththa-School-Court.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/Events/Opening-ceremony-of-polwaththa-School-Court/Opening-ceremony-of-polwaththa-School-Court.php'">View</button>
                     <p class="gallery-info">Opening ceremony of polwaththa School Court</p>
                 </div>
                 <div class="image-container">
                     <img alt="Opening-ceremony-of-Senerath-Somarathna-court"
                         src="Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/1.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Events/Opening-ceremony-of-Senerath-Somarathna-court/Opening-ceremony-of-Senerath-Somarathna-court.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/Events/Opening-ceremony-of-Senerath-Somarathna-court/Opening-ceremony-of-Senerath-Somarathna-court.php'">View</button>
                     <p class="gallery-info">Opening ceremony of Senerath Somarathna court</p>
                 </div>
                 <div class="image-container">
                     <img alt="New-Year-2024-Celebration"
                         src="Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/2.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Events/New-Year-2024-Celebration/New-Year-2024-Celebration.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/Events/New-Year-2024-Celebration/New-Year-2024-Celebration.php'">View</button>
                     <p class="gallery-info">New Year 2024 Celebration</p>
                 </div>
             </div>
@@ -390,7 +473,7 @@ session_start();
                     <img alt="School-Tennis-Training-programs"
                         src="Images/gallary/School-Tennis-Training-programs/School-Tennis-Training-programs/3.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php'">View</button>
                     <p class="gallery-info">School Tennis</p>
                 </div>
 
@@ -406,27 +489,27 @@ session_start();
                 <div class="image-container">
                     <img alt="Beach-tennis" src="Images/gallary/Tournaments/Beach-tennis/1.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php'">View</button>
                     <p class="gallery-info">Beach tennis</p>
                 </div>
                 <div class="image-container">
                     <img alt="Concordance-Year-End-Tournaments"
                         src="Images/gallary/Tournaments/Concordance-Year-End-Tournaments/7.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php'">View</button>
                     <p class="gallery-info">Concordance Year End Tournaments</p>
                 </div>
                 <div class="image-container">
                     <img alt="Inter-School-Tournaments" src="Images/gallary/Tournaments/Inter-School-Tournaments/1.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php'">View</button>
                     <p class="gallery-info">Inter School Tournaments</p>
                 </div>
                 <div class="image-container">
                     <img alt="Jus-De-Fruit-Tournaments"
                         src="Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/15.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php'">View</button>
                     <p class="gallery-info">Jus De Fruit Tournaments</p>
                 </div>
 
@@ -442,7 +525,7 @@ session_start();
                 <div class="image-container">
                     <img alt="courts" src="Images/gallary/courts/courts/5.jpg">
                     <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/courts/courts.html'">View</button>
+                        onclick="window.location.href='page/gallery-page/courts/courts.php'">View</button>
                     <p class="gallery-info">Courts</p>
                 </div>
             </div>
@@ -452,86 +535,7 @@ session_start();
         </div>
         <!-- home-section-two-gallery-end -->
 
-        <!-- Latest-news-page-start -->
-        <div class="find-a-coach-page" id="adtcnews">
 
-            <div class="find-a-coach-page-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Latest ADTC News</P>
-            </div>
-
-            <div class="find-a-coache">
-                <div class="splide" role="group" aria-label="find-a-coache">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
-                                    <div class="splide-slide-contant-1-name">Ampara tennis ranking tournament</div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <!-- <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
-                                    <div class="splide-slide-contant-1-name">G.B.Prageeth Sandika Sampath</div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
-                                    <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li> -->
-                            <!-- <li class="splide__slide">
-                            <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
-                                <div class="splide-slide-contant-1-name"></div>
-                                <div class="splide-slide-contant-1-description"></div>
-                                <div class="splide-slide-contant-1-button"></div>
-                            </div>
-                        </li> -->
-                            <!-- <li class="splide__slide">
-                            <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
-                                <div class="splide-slide-contant-1-name"></div>
-                                <div class="splide-slide-contant-1-description"></div>
-                                <div class="splide-slide-contant-1-button"></div>
-                            </div>
-                        </li> -->
-                            <!-- <li class="splide__slide">
-                            <div class="splide-slide-contant">
-                                <div class="splide-slide-contant-1-img img-4"></div>
-                                <div class="splide-slide-contant-1-name"></div>
-                                <div class="splide-slide-contant-1-description"></div>
-                                <div class="splide-slide-contant-1-button"></div>
-                            </div>
-                        </li> -->
-                        </ul>
-                    </div>
-                </div>
-
-
-                <script>
-                    const splide = new Splide('.splide', {
-                        type: 'loop',
-                        drag: 'free',
-                        focus: 'center',
-
-                        autoScroll: {
-                            speed: 1,
-                        },
-                    });
-                    splide.mount(window.splide.Extensions);
-                </script>
-            </div>
-
-        </div>
-        <!-- Latest-news-page-end -->
 
         <!-- home-section-site-map-start -->
         <div class="site-map">

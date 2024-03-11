@@ -37,7 +37,7 @@
 
         <!-- Navbar start -->
         <?php
-            include '../../../../components/navbar/navbar.php'; 
+        include '../../../../components/navbar/navbar.php'; 
         ?>
         <!-- Navbar end -->
 
@@ -45,105 +45,101 @@
         <div class="section-two">
 
             <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Achievement by ADTC</P>
+                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Concordance Year End Tournaments</P>
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">Owidu, a second-year student at Ampara Kawantissa School,
-                    reached a noteworthy achievement by clinching the second position in a competition held on
-                    09/10/2023 in Negombo, Sri Lanka, for participants under 10 years old. Owidu etched his name in
-                    history of Ampara by securing the first trophy for Ampara District from the Ampara District Tennis
-                    Club.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">The purpose of the year-end tennis final tournaments organized by the Ampara District Tennis Club is to celebrate the culmination of a year filled with dedication, skill-building, and camaraderie among our tennis community. These tournaments serve as a platform to showcase the talents and progress of our players, fostering healthy competition and sportsmanship. Additionally, they provide an opportunity for players, supporters, and the community to come together, reinforcing the club's commitment to promoting the love of tennis and strengthening the social fabric within the Ampara District.</p>
             </div>
 
             <div class="gallery">
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/1.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//2.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/2.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//3.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/3.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//4.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/4.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//5.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/5.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//6.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/6.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//7.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/7.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//8.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/8.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//9.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/9.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//10.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/10.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//11.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/11.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//12.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/12.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//13.webp">
+                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/13.jpg">
                 </div>
-                <!-- <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/14.webp">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/15.webp">
+                 <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/14.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/16.webp">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/15.jpg">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/16.jpg">
                 </div>
                 <div class="grid-item">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/17.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/17.jpg">
+                </div>
+                <!--<div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/18.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/18.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/19.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/19.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/20.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/21.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/20.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/22.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/21.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/22.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/23.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/23.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/24.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/24.jpg">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/25.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/25.jpg">
                 </div> -->
             </div>
 

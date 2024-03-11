@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+   
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
@@ -29,15 +29,18 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
+
+
+
 </head>
 
 <body>
 
     <div class="home">
 
-        <!-- Navbar start -->
+       <!-- Navbar start -->
         <?php
-            include '../../../../components/navbar/navbar.php'; 
+        include '../../../../components/navbar/navbar.php'; 
         ?>
         <!-- Navbar end -->
 
@@ -45,105 +48,101 @@
         <div class="section-two">
 
             <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Achievement by ADTC</P>
+                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Opening ceremony of polwaththa School Court</P>
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">Owidu, a second-year student at Ampara Kawantissa School,
-                    reached a noteworthy achievement by clinching the second position in a competition held on
-                    09/10/2023 in Negombo, Sri Lanka, for participants under 10 years old. Owidu etched his name in
-                    history of Ampara by securing the first trophy for Ampara District from the Ampara District Tennis
-                    Club.</p>
+                <p data-aos="fade-up" data-aos-duration="2000"></p>
             </div>
 
             <div class="gallery">
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp">
+                        src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/1.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//2.webp">
+                        src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/2.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//3.webp">
+                        src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/3.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//4.webp">
+                        src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/4.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//5.webp">
+                        src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/5.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//6.webp">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//7.webp">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//8.webp">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//9.webp">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//10.webp">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//11.webp">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//12.webp">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//13.webp">
+                        src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/6.jpg">
                 </div>
                 <!-- <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/14.webp">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/7.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/8.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/Opening ceremony of polwaththa School Court/9.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/Opening ceremony of polwaththa School Court/10.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/15.webp">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/Opening ceremony of polwaththa School Court/11.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/16.webp">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/Opening ceremony of polwaththa School Court/12.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000"
+                        src="../../../../Images/gallary/Events/Opening ceremony of polwaththa School Court/13.jpg">
+                </div> -->
+                <!-- <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/14.jpg">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/15.jpg">
+                </div>
+                <div class="image-container tall">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/16.jpg">
                 </div>
                 <div class="grid-item">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/17.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/17.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/18.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/18.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/19.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/19.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/20.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/20.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/21.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/21.jpg">
                 </div>
                 <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/22.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/22.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/23.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/23.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/24.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/24.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/25.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/25.jpg">
                 </div> -->
             </div>
 

@@ -6,26 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- bootstarp start -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- bootstrap end -->
-
-    <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
-    <!-- online fonts end -->
-
-    <!-- Goolge fonts start -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
-    <!-- Goolge fonts end -->
-
-    <!-- AOS  start-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- AOS  end-->
+    
 
  
 
@@ -126,11 +107,6 @@
         }
     </style>
 
-       
-       <script>
-       
-        
-    </script>
 
 </head>
 
@@ -189,10 +165,10 @@
                         <?php if (!isset($_SESSION['username'])): ?>
                             <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
-                                <a href="page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN
+                                <a href="/project-holders-project-2/page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN
                                     IN</a>
                                 <button type="button" class="btn btn-success offcanvas-button"
-                                    onclick="window.location.href='page/login-and-signup-page/index.html'">SIGN
+                                    onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.html'">SIGN
                                     UP</button>
 
                             </div>
@@ -211,7 +187,7 @@
                                 <a href="#" class="nav-link nav-link-home active">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a href="page/AboutUs-page/About-us.html" class="nav-link nav-link-about">ABOUT
+                                <a href="page/AboutUs-page/About-us.php" class="nav-link nav-link-about">ABOUT
                                     US</a>
                             </li>
                             <li class="nav-item">
@@ -238,9 +214,9 @@
                                     COURTS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">About
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/courts/courts.php">About
                                             courts we have</a></li>
-                                    <li><a class="dropdown-item" href="#">Image
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/courts/courts.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
@@ -253,13 +229,13 @@
                                     <li><a class="dropdown-item" href="#">Enter Tournament</a></li>
                                     <li><a class="dropdown-item" href="#">Tournament Calendar</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.html">Jus
+                                            href="page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
                                             De Fruit Tournaments</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.html">ADTC
+                                            href="page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php">ADTC
                                             Year End Finals</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.html">Inter
+                                            href="page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter
                                             School Tournaments</a></li>
 
                                 </ul>
@@ -281,7 +257,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Register</a></li>
-                                    <li><a class="dropdown-item" href="page/Find-a-coach/Find-a-coach-page.php">Find a
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/Find-a-coach/Find-a-coach-page.php">Find a
                                             Coach</a></li>
                                 </ul>
                             </li>
@@ -292,10 +268,10 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.html">About
+                                            href="page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">About
                                             School Programs</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.html">Image
+                                            href="page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
@@ -306,11 +282,11 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.html">About
+                                            href="page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">About
                                             Beach Tennis</a></li>
                                     <li><a class="dropdown-item" href="#">Tournaments / Activities</a></li>
                                     <li><a class="dropdown-item dropdown"
-                                            href="page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.html">Image
+                                            href="page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
@@ -321,10 +297,10 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.html">ADTC
+                                            href="/project-holders-project-2/index.php#achievement-by-ADTC" id="achievement-by-ADTC-btn">ADTC
                                             Achievements</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.html">Image
+                                            href="page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
@@ -334,9 +310,9 @@
                                     FEDERATION
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">ADTC Committee</a></li>
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC Committee</a></li>
                                     <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews'
-                                            id="clickme">ADTC News</a>
+                                            id="adtcnews-btn">ADTC News</a>
                                         <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
                                     </li>
 
