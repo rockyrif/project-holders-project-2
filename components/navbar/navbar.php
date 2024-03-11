@@ -187,7 +187,7 @@
                                 <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a href="page/AboutUs-page/About-us.php" class="nav-link nav-link-about">ABOUT
+                                <a href="/project-holders-project-2/page/AboutUs-page/About-us.php" class="nav-link nav-link-about">ABOUT
                                     US</a>
                             </li>
                             <li class="nav-item">
@@ -201,7 +201,7 @@
                                         MEMBERSHIP
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Become a member</a></li>
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/members/members.php">Become a member</a></li>
                                         <li><a class="dropdown-item" href="#">Payment</a></li>
                                     </ul>
 
@@ -229,13 +229,13 @@
                                     <li><a class="dropdown-item" href="#">Enter Tournament</a></li>
                                     <li><a class="dropdown-item" href="#">Tournament Calendar</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
+                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
                                             De Fruit Tournaments</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php">ADTC
+                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php">ADTC
                                             Year End Finals</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter
+                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter
                                             School Tournaments</a></li>
 
                                 </ul>
@@ -268,10 +268,10 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">About
+                                            href="/project-holders-project-2/page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">About
                                             School Programs</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">Image
+                                            href="/project-holders-project-2/page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
@@ -282,11 +282,11 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">About
+                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">About
                                             Beach Tennis</a></li>
                                     <li><a class="dropdown-item" href="#">Tournaments / Activities</a></li>
                                     <li><a class="dropdown-item dropdown"
-                                            href="page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Image
+                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
@@ -300,7 +300,7 @@
                                             href="/project-holders-project-2/index.php#achievement-by-ADTC" id="achievement-by-ADTC-btn">ADTC
                                             Achievements</a></li>
                                     <li><a class="dropdown-item"
-                                            href="page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php">Image
+                                            href="/project-holders-project-2/page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
@@ -324,7 +324,7 @@
                             <?php if (isset($_SESSION['username'])): ?>
                                 <li class="nav-item ">
                                     <button type="button" class="btn btn-danger offcanvas-button"
-                                        onclick="window.location.href='page/login-and-signup-page/log-out.php'">LOG
+                                        onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/log-out.php'">LOG
                                         OUT</button>
                                 </li>
                             <?php endif; ?>

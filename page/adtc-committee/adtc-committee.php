@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +61,7 @@
                     <img alt="Achievement-by-ADTC" src="../../Images/adtc-committee/1.jpg"
                         class="image-button-container">
 
-                    <p class="gallery-info">Damayantha Wijaya Sri<br>
+                    <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri<br>
                         Deputy Inspector General of Police<br>
                     </p>
                 </div>

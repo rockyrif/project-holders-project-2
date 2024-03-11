@@ -14,7 +14,7 @@ session_start();
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
-    
+
     <link rel="stylesheet" href="style.css?v=2">
 
     <!-- online fonts start -->
@@ -45,7 +45,7 @@ session_start();
     " rel="stylesheet">
     <!-- splide slider end -->
 
- 
+
 
 
 
@@ -335,27 +335,27 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
-                                    <div class="splide-slide-contant-1-name">Ampara tennis ranking tournament</div>
+                                    <!-- <div class="splide-slide-contant-1-name">Ampara tennis ranking tournament</div> -->
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
+                                    <!-- <div class="splide-slide-contant-1-name">G.B.Prageeth Sandika Sampath</div> -->
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
                             </li>
                             <!-- <li class="splide__slide">
-                    <div class="splide-slide-contant">
-                        <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
-                        <div class="splide-slide-contant-1-name">G.B.Prageeth Sandika Sampath</div>
-                        <div class="splide-slide-contant-1-description"></div>
-                        <div class="splide-slide-contant-1-button"></div>
-                    </div>
-                </li>
-                <li class="splide__slide">
-                    <div class="splide-slide-contant">
-                        <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
-                        <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div>
-                        <div class="splide-slide-contant-1-description"></div>
-                        <div class="splide-slide-contant-1-button"></div>
-                    </div>
-                </li> -->
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
+                                    <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div>
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li> -->
                             <!-- <li class="splide__slide">
                 <div class="splide-slide-contant">
                     <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
