@@ -184,7 +184,7 @@
                         <ul class="navbar-nav justify-content-end flex-grow-1">
 
                             <li class="nav-item ">
-                                <a href="#" class="nav-link nav-link-home active">HOME</a>
+                                <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">HOME</a>
                             </li>
                             <li class="nav-item">
                                 <a href="page/AboutUs-page/About-us.php" class="nav-link nav-link-about">ABOUT
