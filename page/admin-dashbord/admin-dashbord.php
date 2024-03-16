@@ -7,17 +7,17 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADTC Home</title>
+    <title>About us</title>
+    
+    
 
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
-
-    <!-- style sheet start -->
+    
     <link rel="stylesheet" href="style.css">
-    <!-- style sheet end -->
 
     <!-- online fonts start -->
     <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
@@ -34,22 +34,43 @@ session_start();
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
-    <!-- local script start -->
-    <script src="index.js"></script>
-    <!-- local script end -->
-
+   
 
 </head>
 
 <body>
 
-    <?php
-        include '../components/navbar/navbar.php';
-    ?>
-        
-        
+    <div class="home">
 
-       
+        <!-- Navbar start -->
+        <?php
+            include '../../components/navbar/navbar.php'; 
+        ?>
+        <!-- Navbar end -->
+
+        <!-- About-us-page-start -->
+        <div class="admin-dashbord">
+
+            <div class="admin-dashbord-tittle">
+                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">ADMIN-DASHBORD</P>
+            </div>
+
+            
+
+        </div>
+        <!-- About-us-page-end -->
+
+
+
+
+    </div>
+
+    <!-- AOS script start -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- AOS script end-->
 
 </body>
 

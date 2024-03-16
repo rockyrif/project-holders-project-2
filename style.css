@@ -312,9 +312,9 @@ body::-webkit-scrollbar {
     background-image: url('Images/latest-news/3.jpg');
 }
 
-/* .splide-slide-img-3{
-    background-image: url('../../Images/coatch-img/3.png');
-} */
+.splide-slide-img-3{
+    background-image: url('Images/latest-news/4.jpg');
+}
 
 .splide-slide-contant-1-name {
     position: absolute;

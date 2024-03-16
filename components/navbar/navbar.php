@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    
-
- 
-
     <style>
         .nav-group {
             position: fixed;
@@ -165,7 +161,8 @@
                         <?php if (!isset($_SESSION['username'])): ?>
                             <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
-                                <a href="/project-holders-project-2/page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN
+                                <a href="/project-holders-project-2/page/login-and-signup-page/index.html"
+                                    class="nav-link nav-link-login">SIGN
                                     IN</a>
                                 <button type="button" class="btn btn-success offcanvas-button"
                                     onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.html'">SIGN
@@ -183,11 +180,20 @@
 
                         <ul class="navbar-nav justify-content-end flex-grow-1">
 
+                            <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin"): ?>
+                                <li class="nav-item ">
+                                    <a href="/project-holders-project-2/page/admin-dashbord/admin-dashbord.php"
+                                        class="nav-link nav-link-home active">ADMIN DASHBORD</a>
+                                </li>
+                            <?php endif; ?>
+
                             <li class="nav-item ">
-                                <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">HOME</a>
+                                <a href="/project-holders-project-2/index.php"
+                                    class="nav-link nav-link-home active">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/project-holders-project-2/page/AboutUs-page/About-us.php" class="nav-link nav-link-about">ABOUT
+                                <a href="/project-holders-project-2/page/AboutUs-page/About-us.php"
+                                    class="nav-link nav-link-about">ABOUT
                                     US</a>
                             </li>
                             <li class="nav-item">
@@ -201,7 +207,9 @@
                                         MEMBERSHIP
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/members/members.php">Become a member</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/project-holders-project-2/page/members/members.php">Become a
+                                                member</a></li>
                                         <li><a class="dropdown-item" href="#">Payment</a></li>
                                     </ul>
 
@@ -214,9 +222,11 @@
                                     COURTS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/courts/courts.php">About
+                                    <li><a class="dropdown-item"
+                                            href="/project-holders-project-2/page/gallery-page/courts/courts.php">About
                                             courts we have</a></li>
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/courts/courts.php">Image
+                                    <li><a class="dropdown-item"
+                                            href="/project-holders-project-2/page/gallery-page/courts/courts.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
@@ -257,7 +267,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Register</a></li>
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/Find-a-coach/Find-a-coach-page.php">Find a
+                                    <li><a class="dropdown-item"
+                                            href="/project-holders-project-2/page/Find-a-coach/Find-a-coach-page.php">Find
+                                            a
                                             Coach</a></li>
                                 </ul>
                             </li>
@@ -297,7 +309,8 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/index.php#achievement-by-ADTC" id="achievement-by-ADTC-btn">ADTC
+                                            href="/project-holders-project-2/index.php#achievement-by-ADTC"
+                                            id="achievement-by-ADTC-btn">ADTC
                                             Achievements</a></li>
                                     <li><a class="dropdown-item"
                                             href="/project-holders-project-2/page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php">Image
@@ -310,13 +323,19 @@
                                     FEDERATION
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC Committee</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC
+                                            Committee</a></li>
                                     <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews'
                                             id="adtcnews-btn">ADTC News</a>
                                         <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
                                     </li>
 
-                                    <li><a class="dropdown-item dropdown" href="#">Image Gallery</a></li>
+                                    <li><a class="dropdown-item dropdown"
+                                            href="/project-holders-project-2/index.php#gallery" id="gallery-btn">Image
+                                            Gallery</a>
+                                            <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
+                                    </li>
 
                                 </ul>
                             </li>
@@ -349,7 +368,7 @@
     </div>
 
 
- 
+
     <!-- Navbar end -->
 </body>
 

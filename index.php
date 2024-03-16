@@ -348,14 +348,14 @@ session_start();
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
                             </li>
-                            <!-- <li class="splide__slide">
+                            <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
-                                    <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div>
+                                    <!-- <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div> -->
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
-                            </li> -->
+                            </li>
                             <!-- <li class="splide__slide">
                 <div class="splide-slide-contant">
                     <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
@@ -405,7 +405,7 @@ session_start();
         <!-- home-section-two-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
+            <div class="gallary-tittle" id="gallery">
                 <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">Gallery</P>
             </div>
 

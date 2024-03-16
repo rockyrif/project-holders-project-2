@@ -61,15 +61,16 @@ session_start();
                 Despite initial resource limitations, the ADTC demonstrated resilience and commitment, achieving remarkable strides in a short period. With a focus on inclusivity, skill development, and community engagement, the Ampara District Tennis Club has become a pivotal force, uniting individuals passionate about tennis and contributing to the overall sporting vibrancy of the community..    </p>
             </div>
 
-            <!-- <div class="gallery">
+            <div class="gallery">
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp">
+                        src="../../Images/gallary/courts/courts/7.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//2.webp">
-                </div>
+                        src="../../Images/gallary/courts/courts/2.jpg">
+                </div> 
+                <!--
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//3.webp">

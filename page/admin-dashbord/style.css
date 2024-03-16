@@ -25,7 +25,7 @@ body {
 
 /* home page section two */
 
-.about-us {
+.admin-dashbord {
     height:100vh;
     width: 100vw;
     
@@ -37,7 +37,7 @@ body {
 
 }
 
-.gallary-tittle {
+.admin-dashbord-tittle {
     text-align: center;
     width: 100%;
     height: 45px;
@@ -81,6 +81,6 @@ body {
     grid-row: span 2;
 }
 
-.gallary-info{
+.admin-dashbord-info{
     text-align: justify;
 }

@@ -2,7 +2,7 @@
 // Database credentials
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'MNAM14059320alocalhost');
+define('DB_PASSWORD', '');
 define('DB_NAME', 'amp_dtc');
  
 /* Attempt to connect to MySQL database */
