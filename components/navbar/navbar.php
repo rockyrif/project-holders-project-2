@@ -181,9 +181,17 @@
                         <ul class="navbar-nav justify-content-end flex-grow-1">
 
                             <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin"): ?>
-                                <li class="nav-item ">
-                                    <a href="/project-holders-project-2/page/admin-dashbord/admin-dashbord.php"
-                                        class="nav-link nav-link-home active">ADMIN DASHBORD</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        ADMIN DASHBORD
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item"
+                                                href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit members</a></li>
+                                        
+                                    </ul>
+
                                 </li>
                             <?php endif; ?>
 

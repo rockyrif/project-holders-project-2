@@ -28,13 +28,13 @@ body {
 .admin-dashbord {
     height:100vh;
     width: 100vw;
-    
     padding: 20px;
     padding-top: 93px;
     position: relative;
-  
+}
 
-
+.container{
+    overflow-x: auto;
 }
 
 .admin-dashbord-tittle {
