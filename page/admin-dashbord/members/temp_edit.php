@@ -12,13 +12,12 @@ if (isset ($_POST["submit"])) {
   $member_type = $_POST['member_type'];
   $gender = $_POST['gender'];
 
-  
-  $sql = "UPDATE `members` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`phone`='$phone',`date_of_birth`='$dob',`address`='$address',`member_type`='$member_type',`gender`='$gender' WHERE member_id = $id";
+  $sql = "UPDATE `members` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`gender`='$gender' WHERE id = $id";
 
   $result = mysqli_query($conn, $sql);
 
   if ($result) {
-    header("Location: admin-dashbord.php?msg=Data updated successfully");
+    header("Location: index.php?msg=Data updated successfully");
   } else {
     echo "Failed: " . mysqli_error($conn);
   }
@@ -76,66 +75,33 @@ if (isset ($_POST["submit"])) {
         <div class="row mb-3">
           <div class="col">
             <label class="form-label">First Name:</label>
-            <input type="text" class="form-control" name="first_name" placeholder="Albert"
-              value="<?php echo $row['first_name'] ?>">
+            <input type="text" class="form-control" name="first_name" value="<?php echo $row['first_name'] ?>">
           </div>
 
           <div class="col">
             <label class="form-label">Last Name:</label>
-            <input type="text" class="form-control" name="last_name" placeholder="Einstein"
-              value="<?php echo $row['last_name'] ?>">
+            <input type="text" class="form-control" name="last_name" value="<?php echo $row['last_name'] ?>">
           </div>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Email:</label>
-          <input type="email" class="form-control" name="email" placeholder="name@example.com"
-            value="<?php echo $row['email'] ?>">
+          <input type="email" class="form-control" name="email" value="<?php echo $row['email'] ?>">
         </div>
-
-        <div class="mb-3">
-          <label class="form-label">Phone:</label>
-          <input type="text" class="form-control" name="phone" placeholder="0789642231"
-            value="<?php echo $row['phone'] ?>">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Date of birth:</label>
-          <input type="text" class="form-control" name="dob" placeholder="1999-06-22"
-            value="<?php echo $row['date_of_birth'] ?>">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Address:</label>
-          <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4"
-            value="<?php echo $row['address'] ?>">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label" for="member_type">Member type</label>
-          <select class="form-select" name="member_type" id="age">
-            <option <?php echo ($row["member_type"] == 'adult') ? "selected" : ""; ?>>Adult</option>
-            <option <?php echo ($row["member_type"] == 'child') ? "selected" : ""; ?>>Child</option>
-          </select>
-        </div>
-
 
         <div class="form-group mb-3">
           <label>Gender:</label>
           &nbsp;
           <input type="radio" class="form-check-input" name="gender" id="male" value="male" <?php echo ($row["gender"] == 'male') ? "checked" : ""; ?>>
-          <label for="gender" class="form-input-label">Male</label>
+          <label for="male" class="form-input-label">Male</label>
           &nbsp;
           <input type="radio" class="form-check-input" name="gender" id="female" value="female" <?php echo ($row["gender"] == 'female') ? "checked" : ""; ?>>
-          <label for="gender" class="form-input-label">Female</label>
-          &nbsp;
-          <input type="radio" class="form-check-input" name="gender" id="transgender" value="trans" <?php echo ($row["gender"] == 'trans') ? "checked" : ""; ?>>
-          <label for="gender" class="form-input-label">Transgender</label>
+          <label for="female" class="form-input-label">Female</label>
         </div>
 
         <div>
-          <button type="submit" class="btn btn-success" name="submit">Save</button>
-          <a href="admin-dashbord.php" class="btn btn-danger">Cancel</a>
+          <button type="submit" class="btn btn-success" name="submit">Update</button>
+          <a href="index.php" class="btn btn-danger">Cancel</a>
         </div>
       </form>
     </div>
