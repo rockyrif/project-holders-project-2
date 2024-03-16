@@ -4,11 +4,15 @@ $id = $_GET["id"];
 
 if (isset($_POST["submit"])) {
   $first_name = $_POST['first_name'];
-  $last_name = $_POST['last_name'];
-  $email = $_POST['email'];
-  $gender = $_POST['gender'];
+   $last_name = $_POST['last_name'];
+   $email = $_POST['email'];
+   $phone = $_POST['phone'];
+   $dob = $_POST['dob'];
+   $address = $_POST['address'];
+   $member_type = $_POST['member_type'];
+   $gender = $_POST['gender'];
 
-  $sql = "UPDATE `crud` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`gender`='$gender' WHERE id = $id";
+  $sql = "UPDATE `members` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`gender`='$gender' WHERE id = $id";
 
   $result = mysqli_query($conn, $sql);
 

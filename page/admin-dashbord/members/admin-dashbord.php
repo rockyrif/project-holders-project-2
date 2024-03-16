@@ -111,11 +111,13 @@ session_start();
                         <td><?php echo $row["date_of_birth"] ?></td>
                         <td><?php echo $row["address"] ?></td>
                         <td><?php echo $row["member_type"] ?></td>
-                        <td><?php echo $row["registration_date"] ?></td>
                         <td><?php echo $row["gender"] ?></td>
+                        <td><?php echo $row["registration_date"] ?></td>
+                        
 
                         <td>
-                        <a href="edit.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
+                        <a href="edit.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 "></i></a>
+                        <br><br>
                         <a href="delete.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a>
                         </td>
 

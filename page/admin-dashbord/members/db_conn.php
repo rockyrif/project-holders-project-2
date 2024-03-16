@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "MNAM14059320alocalhost";
 $dbname = "amp_dtc";
 
 // Create connection

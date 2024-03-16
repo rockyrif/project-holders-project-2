@@ -1,21 +1,25 @@
 <?php
-   session_start();
+session_start();
 ?>
 <?php
 include "db_conn.php";
 
-if (isset($_POST["submit"])) {
+if (isset ($_POST["submit"])) {
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
    $email = $_POST['email'];
+   $phone = $_POST['phone'];
+   $dob = $_POST['dob'];
+   $address = $_POST['address'];
+   $member_type = $_POST['member_type'];
    $gender = $_POST['gender'];
 
-   $sql = "INSERT INTO `members`(`member_id`, `first_name`, `last_name`, `email`, `phone`, `date_of_birth`, `address`, `member_type`, `gender`, `registration_date`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]')";
+   $sql = "INSERT INTO `members`(`member_id`, `first_name`, `last_name`, `email`, `phone`, `date_of_birth`, `address`, `member_type`, `gender`) VALUES ('','$first_name','$last_name','$email','$phone','$dob','$address','$member_type','$gender')";
 
    $result = mysqli_query($conn, $sql);
 
    if ($result) {
-      header("Location: index.php?msg=New record created successfully");
+      header("Location: admin-dashbord.php?msg=New record created successfully");
    } else {
       echo "Failed: " . mysqli_error($conn);
    }
@@ -35,23 +39,26 @@ if (isset($_POST["submit"])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <!-- Bootstrap -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
    <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
    <!-- online fonts start -->
    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
-    <!-- online fonts end -->
+      rel="stylesheet">
+   <!-- online fonts end -->
 
    <title>ADTC add</title>
 </head>
 
 <body style="background-color:">
-      <?php
-        include '../../../components/navbar/navbar.php';
-      ?>
+   <?php
+   include '../../../components/navbar/navbar.php';
+   ?>
 
    <div class="container" style="margin-top:93px;">
       <div class="text-center mb-4">
@@ -80,7 +87,7 @@ if (isset($_POST["submit"])) {
 
             <div class="mb-3">
                <label class="form-label">Phone:</label>
-               <input type="number" class="form-control" name="phone" placeholder="0789642231">
+               <input type="text" class="form-control" name="phone" placeholder="0789642231">
             </div>
 
             <div class="mb-3">
@@ -92,26 +99,27 @@ if (isset($_POST["submit"])) {
                <label class="form-label">Address:</label>
                <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4">
             </div>
-            
-            <div class="mb-3">
-               <label class="form-label">Age:</label>
-               <select class="form-select" aria-label="Default select example" name="member_type"> 
-                  <option selected value="adult">Adult</option>
-                  <option value="child">Child</option>
-               </select>
-            </div>
 
+               <div class="mb-3">
+                  <label class="form-label" for="member_type">Member type</label>
+                  <select class="form-select" name="member_type" id="age">
+                     <option selected>Adult</option>
+                     <option>Child</option>
+                  </select>
+               </div>
+              
+            
             <div class="form-group mb-3">
-               <label>Gender1:</label>
+               <label>Gender:</label>
                &nbsp;
-               <input type="radio" class="form-check-input" name="male" id="male" value="male">
-               <label for="male" class="form-input-label">Male</label>
+               <input type="radio" class="form-check-input" name="gender" id="male" value="male">
+               <label for="gender" class="form-input-label">Male</label>
                &nbsp;
                <input type="radio" class="form-check-input" name="gender" id="female" value="female">
-               <label for="female" class="form-input-label">Female</label>
+               <label for="gender" class="form-input-label">Female</label>
                &nbsp;
-               <input type="radio" class="form-check-input" name="gender" id="transgender" value="transgender">
-               <label for="female" class="form-input-label">transgender</label>
+               <input type="radio" class="form-check-input" name="gender" id="transgender" value="trans">
+               <label for="gender" class="form-input-label">Transgender</label>
             </div>
 
             <div>
@@ -123,7 +131,9 @@ if (isset($_POST["submit"])) {
    </div>
 
    <!-- Bootstrap -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
 
 </body>
 
