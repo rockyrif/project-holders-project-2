@@ -45,6 +45,11 @@ session_start();
     " rel="stylesheet">
     <!-- splide slider end -->
 
+    <!-- Font Awesome start-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome end-->
 
 
 
@@ -334,7 +339,7 @@ session_start();
                         <ul class="splide__list">
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
+                                    <a href="page/latest-news/latest-news.php"><div class="splide-slide-contant-1-img splide-slide-img-1"></div></a>
                                     <!-- <div class="splide-slide-contant-1-name">Ampara tennis ranking tournament</div> -->
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
@@ -640,6 +645,58 @@ session_start();
             </div>
         </div>
         <!-- home-section-site-map-end -->
+
+        <!-- Footer-start -->
+        <div class="footer p-3">
+            <div class="follow-us p-4">
+                <h5>Follow us</h5>
+                <div class="line"></div>
+                
+                <div class="links">
+                    <a href=""><img src="Images/follow-us/1.png" alt="tiktok" width="25" ></a>
+                    <a href="https://web.facebook.com/profile.php?id=100092522933660"><img src="Images/follow-us/2.png" alt="facebook" width="25"></a>
+                </div>
+            </div>
+            <div class="useful-links p-4">
+                <h5>Useful Links</h5>
+                <div class="line"></div>
+                <a href="">Contact us</a>
+                <div class="line1"></div>
+                <a href="">Latest News</a>
+                <div class="line1"></div>
+                <a href="">SLTA</a>
+                <div class="line1"></div>
+            </div>
+            <div class="submit-request p-4">
+                <h5>Submit your request</h5>
+                <div class="line"></div>
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp"
+                            placeholder="Name">
+
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp"
+                            placeholder="Mobile No">
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Comments</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Footer-end -->
+
+
     </div>
 
     <!-- AOS script start -->

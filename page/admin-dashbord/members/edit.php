@@ -133,8 +133,8 @@ if (isset ($_POST["submit"])) {
           <label for="gender" class="form-input-label">Transgender</label>
         </div>
 
-        <div>
-          <button type="submit" class="btn btn-success" name="submit">Save</button>
+        <div class=" mb-3">
+          <button type="submit" class="btn btn-success" name="submit">Update</button>
           <a href="admin-dashbord.php" class="btn btn-danger">Cancel</a>
         </div>
       </form>
