@@ -218,7 +218,7 @@ session_start();
                     </div>
                 </div>
 
-                <div class="carousel-item img  img-4" data-bs-interval="5000">
+                <div class="carousel-item img  img-4" data-bs-interval="5000" id="founder">
                     <div class="curousel-object">
                         <img alt="Tennis-bat-2" src="Images/home-page-carousal/Tennis-bat.gif">
                     </div>
