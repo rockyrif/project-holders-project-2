@@ -361,6 +361,30 @@ session_start();
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
                             </li>
+							 <li class="splide__slide">
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
+                                    <!-- <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div> -->
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li>
+							 <li class="splide__slide">
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-5"></div>
+                                    <!-- <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div> -->
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li>
+							 <li class="splide__slide">
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-6"></div>
+                                    <!-- <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div> -->
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li>
                             <!-- <li class="splide__slide">
                 <div class="splide-slide-contant">
                     <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
@@ -653,18 +677,23 @@ session_start();
                 <div class="line"></div>
                 
                 <div class="links">
-                    <a href=""><img src="Images/follow-us/1.png" alt="tiktok" width="25" ></a>
+                    <a href="https://www.tiktok.com/@adtc_ampara"><img src="Images/follow-us/1.png" alt="tiktok" width="25" ></a>
                     <a href="https://web.facebook.com/profile.php?id=100092522933660"><img src="Images/follow-us/2.png" alt="facebook" width="25"></a>
+					<a href="https://www.youtube.com/@amparatennisclub/featured"><img src="Images/follow-us/3.png" alt="youtube" width="25"></a>
                 </div>
             </div>
             <div class="useful-links p-4">
                 <h5>Useful Links</h5>
                 <div class="line"></div>
-                <a href="">Contact us</a>
+                <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php">Contact us</a>
                 <div class="line1"></div>
                 <a href="">Latest News</a>
                 <div class="line1"></div>
-                <a href="">SLTA</a>
+                <a href="https://www.sltennis.lk/home.html">SLTA</a>
+                <div class="line1"></div>
+				<a href="https://www.sltennis.lk/home.html">Site Map</a>
+                <div class="line1"></div>
+				<a href="/project-holders-project-2/downloads/ADTC_Member_Application.pdf">Download Membership Application</a>
                 <div class="line1"></div>
             </div>
             <div class="submit-request p-4">

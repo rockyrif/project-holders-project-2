@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2024 at 04:37 PM
+-- Generation Time: Mar 16, 2024 at 07:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -45,8 +45,7 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`member_id`, `first_name`, `last_name`, `email`, `phone`, `date_of_birth`, `address`, `member_type`, `gender`, `registration_date`) VALUES
-(3, 'mnam', 'rifky', 'mnam@gmail.com', '0776040064', '1999-06-20', '320b sailan road kalmunai', 'adult', 'male', '2024-03-16 10:51:03'),
-(16, '', '', '', '', '0000-00-00', '', 'child', 'trans', '2024-03-16 14:18:55');
+(18, 'Mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '1999-03-24', '320b sailan road kalmunai kudy 3', 'adult', 'male', '2024-03-16 18:28:32');
 
 -- --------------------------------------------------------
 
@@ -98,7 +97,7 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user_login`

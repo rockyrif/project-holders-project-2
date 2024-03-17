@@ -315,6 +315,15 @@ body::-webkit-scrollbar {
 .splide-slide-img-3{
     background-image: url('Images/latest-news/4.jpg');
 }
+.splide-slide-img-4{
+    background-image: url('Images/latest-news/5.jpg');
+}
+.splide-slide-img-5{
+    background-image: url('Images/latest-news/6.png');
+}
+.splide-slide-img-6{
+    background-image: url('Images/latest-news/7.jpg');
+}
 
 .splide-slide-contant-1-name {
     position: absolute;
