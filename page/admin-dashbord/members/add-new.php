@@ -122,9 +122,9 @@ if (isset ($_POST["submit"])) {
                <label for="gender" class="form-input-label">Transgender</label>
             </div>
 
-            <div>
+            <div class="mb-3">
                <button type="submit" class="btn btn-success" name="submit">Save</button>
-               <a href="admin-dashbord.php" class="btn btn-danger">Cancel</a>
+               <a href="admin-dashbord.php" class="btn btn-danger ">Cancel</a>
             </div>
          </form>
       </div>
