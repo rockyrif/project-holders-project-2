@@ -11,7 +11,7 @@
             position: fixed;
             top: 0%;
             width: 100%;
-            z-index: 100;
+            z-index: 3;
             background-color: transparent;
 
         }
