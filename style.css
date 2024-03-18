@@ -151,6 +151,20 @@ body::-webkit-scrollbar {
     width: 100%;
 }
 
+.name{
+    background-color: white;
+    display: inline;
+    font-family: "PF Din Stencil W01 Bold";
+    color: #000066;
+}
+
+.ocupation{
+    background-color: white;
+    display: inline;
+    font-family: "PF Din Stencil W01 Bold";
+    color: #91CC00;
+}
+
 /* home carousal end  */
 
 /* home page section two */

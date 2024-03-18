@@ -51,13 +51,13 @@ session_start();
         <!-- About-us-page-start -->
         <div class="contact-us">
             <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="500">Contact Us</P>
+                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Contact Us</P>
             </div>
 
             
 	
            
-			<div class="submit-request">
+			<div class="submit-request" data-aos="fade-up" data-aos-duration="2000">
                 <h5>Please fill up the following information:</h5>
                 <div class="line"></div>
                 <form>

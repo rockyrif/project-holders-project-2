@@ -247,10 +247,10 @@ session_start();
                                             make
                                             our
                                             tennis club a beacon of camaraderie and athletic achievement in Ampara
-                                            District.<br>
+                                            District.
 
-                                            Mr. H.A.N.K. Damayantha Wijaya Sri, Founder & Deputy Inspector
-                                            General of Police
+                                            <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div> <div class="ocupation"> Founder & Deputy Inspector
+                                                General of Police</div>
                                         </p>
                                     </div>
                                 </div>

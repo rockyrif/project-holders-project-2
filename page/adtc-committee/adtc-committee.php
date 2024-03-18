@@ -55,7 +55,7 @@ session_start();
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Founder</p>
             </div>
 
-            <a href="../founder-msg/founder-msg.php">
+            
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 
                     <div class="image-container">
@@ -64,12 +64,13 @@ session_start();
                             class="image-button-container">
 
                         <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri<br>
-                            Deputy Inspector General of Police<br>
+                        <button type="button" class="btn btn-success gallery-button mt-1"
+                        onclick="window.location.href='../founder-msg/founder-msg.php'">Founder's Message</button>
                         </p>
                     </div>
                 
             </div>
-            </a>
+            
             <br>
 
             <!-- <div class="gallary-heading">

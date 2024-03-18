@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
+    <title>Founder's Message</title>
 
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -82,7 +82,7 @@ session_start();
                                                 tennis club a beacon of camaraderie and athletic achievement in Ampara
                                                 District.
 
-                                                <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri,</div> <div class="ocupation"> Founder & Deputy Inspector
+                                                <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div> <div class="ocupation"> Founder & Deputy Inspector
                                                 General of Police</div>
                                             </p>
                                         </div>
