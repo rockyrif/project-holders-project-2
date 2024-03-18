@@ -262,7 +262,8 @@ body::-webkit-scrollbar {
     padding: 0px;
     padding-top: 10px;
     position: relative;
-    padding-bottom: 50px;
+    padding-bottom: 55px;
+    overflow-x: hidden;
 }
 
 .find-a-coach-page-tittle {
@@ -343,7 +344,7 @@ body::-webkit-scrollbar {
 
 .splide-slide-contant-1-name {
     position: absolute;
-    bottom: -15%;
+    bottom: -15.5%;
     left: 50%;
     transform: translateX(-50%);
     
@@ -355,6 +356,7 @@ body::-webkit-scrollbar {
 
 .splide__track{
     overflow: visible !important;
+    
 }
 
 .splide__pagination {
