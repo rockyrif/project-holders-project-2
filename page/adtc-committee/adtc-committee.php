@@ -55,7 +55,7 @@ session_start();
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Founder</p>
             </div>
 
-            <a href="../../index.php#founder">
+            <a href="../founder-msg/founder-msg.php">
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 
                     <div class="image-container">

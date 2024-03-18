@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+    background-color: #ddd ;
+    
+
+
+}
+
+/* home start */
+.home {
+    position: relative;
+    top: 0%;
+    height: fit-content;
+}
+
+/* home end */
+
+
+
+
+/* home page section two */
+
+.founder-msg {
+    height:100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* home carousal start  */
+.img-1 {
+    background-image: url('../../Images/home-page-carousal/3.gif');
+
+}
+
+.img {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 90%;
+    z-index: 1;
+
+}
+
+.carousel-content {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.388);
+    max-height: 75vh;
+    border-radius: 10px;
+    padding: 40px;
+    z-index: 50;
+    text-align: center;
+    overflow: auto;
+    position: relative;
+}
+
+.carousel-content-4 {
+    max-height: 65vh !important;
+}
+
+.carousel-indicators {
+    position: static;
+    margin: 30px;
+}
+
+.carousel-item {
+    transition: 1.5s;
+}
+
+.curousel-object {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    /* transform: translate(0%, -50%); */
+}
+
+.curousel-object img {
+    height: 300px;
+}
+
+.carousal-para-heading {
+    text-align: center;
+    font-family: "PF Din Stencil W01 Bold";
+    color: #91CC00;
+
+}
+
+.carousal-para {
+    font-family: 'Inconsolata', monospace;
+    color: rgba(233, 232, 232, 0.992);
+    font-size: large;
+}
+
+.content-flex-center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 5%;
+    left: 5%;
+
+}
+
+.carousal-para-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousal-content-and-indicator {
+    height: fit-content;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.name{
+    background-color: white;
+    display: inline;
+    font-family: "PF Din Stencil W01 Bold";
+    color: #000066;
+}
+
+.ocupation{
+    background-color: white;
+    display: inline;
+    font-family: "PF Din Stencil W01 Bold";
+    color: #91CC00;
+}
+
+/* home carousal end  */
+
+
+

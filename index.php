@@ -342,7 +342,7 @@ session_start();
                                     <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
                                     <button type="button"
                                         class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                        onclick="window.location.href='page/latest-news/latest-news.php'">Read more</button>
 
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>

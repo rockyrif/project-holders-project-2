@@ -6,7 +6,7 @@ body {
     width: 100vw;
     height: fit-content;
     overflow-x: hidden;
-    background-color: #ddd ;
+    background-color: #ddd;
 
 
 }
@@ -26,13 +26,13 @@ body {
 /* home page section two */
 
 .about-us {
-    height:100vh;
+    height: 100vh;
     width: 100vw;
-    
+
     padding: 20px;
     padding-top: 93px;
     position: relative;
-  
+
 
 
 }
@@ -81,6 +81,6 @@ body {
     grid-row: span 2;
 }
 
-.gallary-info{
+.gallary-info {
     text-align: justify;
 }
