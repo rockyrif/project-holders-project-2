@@ -7,14 +7,14 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
-    
+    <title>Find a coach</title>
+
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
-    
+
     <link rel="stylesheet" href="style.css">
 
     <!-- online fonts start -->
@@ -32,18 +32,6 @@ session_start();
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
-    <!-- splide slider start -->
-    <script src="
-    https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js
-    "></script>
-
-    <script src="
-    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
-    "></script>
-    <link href="
-    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-    " rel="stylesheet">
-    <!-- splide slider end -->
 
 
 
@@ -56,99 +44,39 @@ session_start();
 
         <!-- Navbar start -->
         <?php
-            include '../../components/navbar/navbar.php'; 
+        include '../../components/navbar/navbar.php';
         ?>
         <!-- Navbar end -->
 
-        <!-- Find-a-coach-page-start -->
-        <div class="find-a-coach-page">
+        <!-- find-a-coach-page-start -->
+        <div class="find-a-coach">
 
-            <div class="find-a-coach-page-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Find a coach</P>
+            <div class="gallary-tittle">
+                <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">Find a coach</P>
             </div>
 
-            <div class="find-a-coache">
-                <div class="splide" role="group" aria-label="find-a-coache">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
-                                    <div class="splide-slide-contant-1-name">K.Muditha Lakmal Fernando</div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
-                                    <div class="splide-slide-contant-1-name">G.B.Prageeth Sandika Sampath</div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
-                                    <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <!-- <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
-                                    <div class="splide-slide-contant-1-name"></div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li> -->
-                            <!-- <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
-                                    <div class="splide-slide-contant-1-name"></div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li> -->
-                            <!-- <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img img-4"></div>
-                                    <div class="splide-slide-contant-1-name"></div>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li> -->
-                        </ul>
-                    </div>
+            <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
+                <div class="image-container">
+                    <img alt="Beach-tennis" src="../../Images/coach-img/1.png">
+                    <p class="gallery-info">K.Muditha Lakmal Fernando</p>
                 </div>
-                <script>
-    
-    
-    
-                    const splide = new Splide('.splide', {
-                        type: 'loop',
-                        drag: 'free',
-                        focus: 'center',
-    
-                        autoScroll: {
-                            speed: 1,
-                        },
-                    });
-    
-                    splide.mount(window.splide.Extensions);
-    
-    
-    
-    
-                </script>
-    
-    
+                <div class="image-container">
+                    <img alt="Beach-tennis" src="../../Images/coach-img/2.png">
+                    <p class="gallery-info">G.B.Prageeth Sandika Sampath</p>
+                </div>
+                <div class="image-container">
+                    <img alt="Beach-tennis" src="../../Images/coach-img/3.png">
+                    <p class="gallery-info">H.Namal Jayasinghe</p>
+                </div>
+
+
             </div>
 
-            
+
+
+
         </div>
-        <!-- Find-a-coach-page-end -->
+        <!-- find-a-coach-page-end -->
 
 
 

@@ -17,7 +17,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-/* home start */
+/* home start*/
 .home {
     position: relative;
     top: 0%;
@@ -151,6 +151,20 @@ body::-webkit-scrollbar {
     width: 100%;
 }
 
+.name{
+    background-color: white;
+    display: inline;
+    font-family: "PF Din Stencil W01 Bold";
+    color: #000066;
+}
+
+.ocupation{
+    background-color: white;
+    display: inline;
+    font-family: "PF Din Stencil W01 Bold";
+    color: #91CC00;
+}
+
 /* home carousal end  */
 
 /* home page section two */
@@ -248,6 +262,8 @@ body::-webkit-scrollbar {
     padding: 0px;
     padding-top: 10px;
     position: relative;
+    padding-bottom: 55px;
+    overflow-x: hidden;
 }
 
 .find-a-coach-page-tittle {
@@ -265,6 +281,7 @@ body::-webkit-scrollbar {
 .find-a-coache {
     width: 100%;
     height: fit-content;
+    
 }
 
 .find-a-coache-tittle {
@@ -315,17 +332,31 @@ body::-webkit-scrollbar {
 .splide-slide-img-3{
     background-image: url('Images/latest-news/4.jpg');
 }
+.splide-slide-img-4{
+    background-image: url('Images/latest-news/5.jpg');
+}
+.splide-slide-img-5{
+    background-image: url('Images/latest-news/6.png');
+}
+.splide-slide-img-6{
+    background-image: url('Images/latest-news/7.jpg');
+}
 
 .splide-slide-contant-1-name {
     position: absolute;
-    bottom: 0;
+    bottom: -15.5%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 70%);
-    width: 100%;
+    
+    
     color: #ddd;
     text-align: center;
-    padding: 20px;
+    
+}
+
+.splide__track{
+    overflow: visible !important;
+    
 }
 
 .splide__pagination {
@@ -334,56 +365,7 @@ body::-webkit-scrollbar {
 
 /* find a coatch sectio end */
 
-/* home-section-site-map--start */
 
-.site-map {
-    width: 100%;
-    height: fit-content;
-    background-color: #838383;
-    padding: 50px;
-}
-
-/* .site-map-grid-item {
-    border: 2px solid red;
-} */
-
-@media only screen and (max-width: 992px) {
-
-    .site-map {
-
-        height: fit-content;
-
-    }
-
-}
-
-@media only screen and (min-width: 992px) {
-
-    .site-map-grid-container {
-        height: fit-content;
-        display: grid;
-
-        grid-template-columns: auto auto auto;
-
-        grid-auto-flow: row;
-    }
-}
-
-.site-map-grid-item a {
-    text-decoration: none;
-    color: white;
-    font-size: 19px;
-}
-
-.site-map-grid-item li {
-    list-style-type: none;
-}
-
-.site-map h3 {
-    color: #91CC00;
-    font-family: "PF Din Stencil W01 Bold";
-    text-align: center;
-}
 
 /* footer start */
 .footer{

@@ -218,7 +218,7 @@ session_start();
                     </div>
                 </div>
 
-                <div class="carousel-item img  img-4" data-bs-interval="5000">
+                <div class="carousel-item img  img-4" data-bs-interval="5000" id="founder">
                     <div class="curousel-object">
                         <img alt="Tennis-bat-2" src="Images/home-page-carousal/Tennis-bat.gif">
                     </div>
@@ -247,10 +247,10 @@ session_start();
                                             make
                                             our
                                             tennis club a beacon of camaraderie and athletic achievement in Ampara
-                                            District.<br>
+                                            District.
 
-                                            Mr. H.A.N.K. Damayantha Wijaya Sri, Founder & Deputy Inspector
-                                            General of Police
+                                            <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div> <div class="ocupation"> Founder & Deputy Inspector
+                                                General of Police</div>
                                         </p>
                                     </div>
                                 </div>
@@ -339,8 +339,11 @@ session_start();
                         <ul class="splide__list">
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
-                                    <a href="page/latest-news/latest-news.php"><div class="splide-slide-contant-1-img splide-slide-img-1"></div></a>
-                                    <!-- <div class="splide-slide-contant-1-name">Ampara tennis ranking tournament</div> -->
+                                    <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
+                                    <button type="button"
+                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
+                                        onclick="window.location.href='page/latest-news/latest-news.php'">Read more</button>
+
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
@@ -348,7 +351,9 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
-                                    <!-- <div class="splide-slide-contant-1-name">G.B.Prageeth Sandika Sampath</div> -->
+                                    <button type="button"
+                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
@@ -356,7 +361,39 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
-                                    <!-- <div class="splide-slide-contant-1-name">H.Namal Jayasinghe</div> -->
+                                    <button type="button"
+                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
+                                    <button type="button"
+                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-5"></div>
+                                    <button type="button"
+                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                    <div class="splide-slide-contant-1-description"></div>
+                                    <div class="splide-slide-contant-1-button"></div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="splide-slide-contant">
+                                    <div class="splide-slide-contant-1-img splide-slide-img-6"></div>
+                                    <button type="button"
+                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
@@ -541,130 +578,34 @@ session_start();
         <!-- home-section-two-gallery-end -->
 
 
-
-        <!-- home-section-site-map-start -->
-        <div class="site-map">
-            <div class="container">
-                <h3>Site Map</h3>
-                <div class="site-map-grid-container">
-                    <div class="site-map-grid-item">
-                        <p><a href="">1. Home</a></p>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">2. About us</a></p>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">3. Register</a></p>
-                        <ul>
-                            <li><a href="">Application form</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">4. Log in</a></p>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">5. Courts</a></p>
-                        <ul>
-                            <li><a href="">About courts we have</a></li>
-                            <li><a href="">Image Gallery</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">6. Tournaments</a></p>
-                        <ul>
-                            <li><a href="">Enter Tournament</a></li>
-                            <li><a href="">Tournament Calendar</a></li>
-                            <li><a href="">Jus De Fruit Tournaments</a>
-                                <ul>
-                                    <li><a href="">About Jus De Fruit</a></li>
-                                    <li><a href="">Image Gallery</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="">ADTC Year End Finals</a>
-                                <ul>
-                                    <li><a href="">About ADTC Year End Finals</a></li>
-                                    <li><a href="">Image Gallery</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a href="">Inter School Tournaments</a>
-                                <ul>
-                                    <li><a href="">About Inter School Tournaments</a></li>
-                                    <li><a href="">Image Gallery</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">7. Ranking</a></p>
-                        <ul>
-                            <li><a href="">Player Profile</a></li>
-                            <li><a href="">ADTC Ranking</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">8. Coaches</a></p>
-                        <ul>
-                            <li><a href="">Register</a></li>
-                            <li><a href="">Find a Coach</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">9. School Training programs</a></p>
-                        <ul>
-                            <li><a href="">About School Programs</a></li>
-                            <li><a href="">Image Gallery</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">10. Beach Tennis</a></p>
-                        <ul>
-                            <li><a href="">About Beach Tennis</a></li>
-                            <li><a href="">Tournaments / Activities</a></li>
-                            <li><a href="">Image Gallery</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">11. Achievements</a></p>
-                        <ul>
-                            <li><a href="">ADTC Achievements</a></li>
-                            <li><a href="">Image Gallery</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">12. Federation</a></p>
-                        <ul>
-                            <li><a href="">ADTC Committee</a></li>
-                            <li><a href="">ADTC News</a></li>
-                            <li><a href="">Image Gallery</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- home-section-site-map-end -->
-
         <!-- Footer-start -->
         <div class="footer p-3">
             <div class="follow-us p-4">
                 <h5>Follow us</h5>
                 <div class="line"></div>
-                
+
                 <div class="links">
-                    <a href=""><img src="Images/follow-us/1.png" alt="tiktok" width="25" ></a>
-                    <a href="https://web.facebook.com/profile.php?id=100092522933660"><img src="Images/follow-us/2.png" alt="facebook" width="25"></a>
+                    <a href="https://www.tiktok.com/@adtc_ampara"><img src="Images/follow-us/1.png" alt="tiktok"
+                            width="25"></a>
+                    <a href="https://web.facebook.com/profile.php?id=100092522933660"><img src="Images/follow-us/2.png"
+                            alt="facebook" width="25"></a>
+                    <a href="https://www.youtube.com/@amparatennisclub/featured"><img src="Images/follow-us/3.png"
+                            alt="youtube" width="25"></a>
                 </div>
             </div>
             <div class="useful-links p-4">
                 <h5>Useful Links</h5>
                 <div class="line"></div>
-                <a href="">Contact us</a>
+                <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php">Contact us</a>
                 <div class="line1"></div>
                 <a href="">Latest News</a>
                 <div class="line1"></div>
-                <a href="">SLTA</a>
+                <a href="https://www.sltennis.lk/home.html">SLTA</a>
+                <div class="line1"></div>
+                <a href="page/site-map/site-map.php">Site Map</a>
+                <div class="line1"></div>
+                <a href="/project-holders-project-2/downloads/ADTC_Member_Application.pdf">Download Membership
+                    Application</a>
                 <div class="line1"></div>
             </div>
             <div class="submit-request p-4">

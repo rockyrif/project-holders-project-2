@@ -55,18 +55,22 @@ session_start();
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Founder</p>
             </div>
 
+            
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
-                <div class="image-container">
+                
+                    <div class="image-container">
 
-                    <img alt="Achievement-by-ADTC" src="../../Images/adtc-committee/1.jpg"
-                        class="image-button-container">
+                        <img alt="Achievement-by-ADTC" src="../../Images/adtc-committee/1.jpg"
+                            class="image-button-container">
 
-                    <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri<br>
-                        Deputy Inspector General of Police<br>
-                    </p>
-                </div>
+                        <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri<br>
+                        <button type="button" class="btn btn-success gallery-button mt-1"
+                        onclick="window.location.href='../founder-msg/founder-msg.php'">Founder's Message</button>
+                        </p>
+                    </div>
+                
             </div>
-
+            
             <br>
 
             <!-- <div class="gallary-heading">
@@ -88,7 +92,7 @@ session_start();
                         <p class="gallery-info">Daminda Ubayarathna</p>
                     </div>
                 </div>
-                
+
             </div>
 
             <br>
@@ -99,9 +103,8 @@ session_start();
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
-                    <img alt="Pulasthi Dammika"
-                        src="../../Images/adtc-committee/4.jpg">
-                    
+                    <img alt="Pulasthi Dammika" src="../../Images/adtc-committee/4.jpg">
+
                     <p class="gallery-info">Pulasthi Dammika</p>
                 </div>
 
@@ -154,12 +157,12 @@ session_start();
                     <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
                     <p class="gallery-info">name here</p>
                 </div>
-            
+
             </div>
 
-            
 
-        
+
+
         </div>
         <!-- adtc-committee-page-end -->
 

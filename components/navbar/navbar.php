@@ -122,14 +122,16 @@
 
                 <div class="navbar-nav-outer ">
                     <div class="nav-item-outer ">
-                        <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">HOME</a>
+                        <a href="/project-holders-project-2/index.php" 
+						class="nav-link nav-link-home active">HOME</a>
                     </div>
                     <div class="nav-item-outer">
                         <a href="/project-holders-project-2/page/AboutUs-page/About-us.php"
                             class="nav-link nav-link-about">ABOUT US</a>
                     </div>
                     <div class="nav-item-outer">
-                        <a href="#" class="nav-link nav-link-contact">CONTACT</a>
+                        <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php" 
+						class="nav-link nav-link-contact">CONTACT</a>
                     </div>
 
                     <?php if (!isset($_SESSION['username'])): ?>
