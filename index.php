@@ -10,7 +10,7 @@ session_start();
 
 
     <title>ADTC Home</title>
-
+<p>main</p>
 
 
     <!-- bootstarp start -->
