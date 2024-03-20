@@ -13,10 +13,6 @@ session_start();
 
     <p>mam</p>
 
-<p>mam</p>
-
-
-<p>main</p>
 
 
 
