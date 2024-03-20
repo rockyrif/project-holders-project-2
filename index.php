@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <title>ADTC Home 10</title>
+    <title>ADTC Home</title>
 
 
 
