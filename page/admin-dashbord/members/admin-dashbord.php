@@ -209,7 +209,7 @@ session_start();
                             $result = mysqli_query($conn, $sql);
 
                             // Check if query executed successfully
-                            if ($result) {
+                            if ($result && mysqli_num_rows($result) > 0) {
                                 // Display table header
                         
 
@@ -258,15 +258,22 @@ session_start();
                                         <td><a href="delete.php?id=<?php echo $row["member_id"]; ?>" class="link-dark"><i
                                                     class="fa-solid fa-trash fs-5"></i></a></td>
                                     </tr>
-                                    <?php
-                                }
 
-                                // Close table body and table
-                                ?>
-                            </tbody>
+                                <?php }
+                            } else { ?>
+
+                                    <tr>
+                                        <td colspan="14">
+                                        <?php echo 'No record found' ?>
+                                        </td>
+                                    </tr>
+                                <?php
+                            }
+                            ?>
+                        </tbody>
 
 
-                        <?php }
+                        <?php
                     } else { ?>
 
                         <tbody>
