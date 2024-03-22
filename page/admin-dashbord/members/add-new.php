@@ -12,9 +12,11 @@ if (isset ($_POST["submit"])) {
    $dob = $_POST['dob'];
    $address = $_POST['address'];
    $member_type = $_POST['member_type'];
+   $occupation = $_POST['occupation'];
+   $school = $_POST['school'];
    $gender = $_POST['gender'];
 
-   $sql = "INSERT INTO `members`(`member_id`, `first_name`, `last_name`, `email`, `phone`, `date_of_birth`, `address`, `member_type`, `gender`) VALUES ('','$first_name','$last_name','$email','$phone','$dob','$address','$member_type','$gender')";
+   $sql = "INSERT INTO `members`(`member_id`, `first_name`, `last_name`, `email`, `phone`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`) VALUES ('','$first_name','$last_name','$email','$phone','$dob','$address','$member_type','$occupation','$school','$gender')";
 
    $result = mysqli_query($conn, $sql);
 
@@ -92,7 +94,7 @@ if (isset ($_POST["submit"])) {
 
             <div class="mb-3">
                <label class="form-label">Date of birth:</label>
-               <input type="text" class="form-control" name="dob" placeholder="1999-06-22">
+               <input type="date" class="form-control" name="dob" placeholder="1999-06-22">
             </div>
 
             <div class="mb-3">
@@ -100,15 +102,44 @@ if (isset ($_POST["submit"])) {
                <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4">
             </div>
 
-               <div class="mb-3">
-                  <label class="form-label" for="member_type">Member type</label>
-                  <select class="form-select" name="member_type" id="age">
-                     <option selected>Adult</option>
-                     <option>Child</option>
-                  </select>
-               </div>
-              
-            
+            <div class="mb-3">
+               <label class="form-label" for="member_type">Member type</label>
+               <select class="form-select" name="member_type" id="member_type">
+                  <option value="adult" selected>Adult</option>
+                  <option value="child">Child</option>
+               </select>
+            </div>
+
+            <div id="occupationInput" class="mb-3">
+               <label class="form-label" for="occupation">Occupation</label>
+               <input type="text" class="form-control" name="occupation" id="occupation">
+            </div>
+
+            <div id="schoolInput" class="mb-3" style="display: none;">
+               <label class="form-label" for="school">School</label>
+               <input type="text" class="form-control" name="school" id="school">
+            </div>
+
+            <!-- script to change dynamic form based on member type -->
+            <script>
+               const memberTypeSelect = document.getElementById('member_type');
+               const occupationInput = document.getElementById('occupationInput');
+               const schoolInput = document.getElementById('schoolInput');
+
+               memberTypeSelect.addEventListener('change', function () {
+                  if (memberTypeSelect.value === 'adult') {
+                     occupationInput.style.display = 'block';
+                     schoolInput.style.display = 'none';
+                  } else if (memberTypeSelect.value === 'child') {
+                     occupationInput.style.display = 'none';
+                     schoolInput.style.display = 'block';
+                  }
+               });
+            </script>
+            <!-- script to change dynamic form based on member type -->
+
+
+
             <div class="form-group mb-3">
                <label>Gender:</label>
                &nbsp;

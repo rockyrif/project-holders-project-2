@@ -338,8 +338,9 @@
                                             Committee</a></li>
                                     <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews'
                                             id="adtcnews-btn">ADTC News</a>
-                                        <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
+                    
                                     </li>
+                                    <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
 
                                     <li><a class="dropdown-item dropdown"
                                             href="/project-holders-project-2/index.php#gallery" id="gallery-btn">Image
