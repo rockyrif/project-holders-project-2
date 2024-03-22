@@ -80,7 +80,7 @@ session_start();
             }
             ?>
 
-            <!-- filtering start -->
+            <!-- filtering ui start -->
             <div class="row mb-2 mt-1">
                 <div class="col-md-12">
                     <div class="row">
@@ -115,7 +115,7 @@ session_start();
 
                                     <div class="col-md-2 mb-2">
                                         <select name="month" id="" class="form-select">
-                                            <option value="">Month</option>
+                                            <option value="">Reg Month</option>
                                             <option value="01" <?= isset ($_GET['month']) == true ? ($_GET['month'] == '01' ? 'selected' : '') : '' ?>>January</option>
                                             <option value="02" <?= isset ($_GET['month']) == true ? ($_GET['month'] == '02' ? 'selected' : '') : '' ?>>February</option>
                                             <option value="03" <?= isset ($_GET['month']) == true ? ($_GET['month'] == '03' ? 'selected' : '') : '' ?>>March</option>
@@ -143,7 +143,7 @@ session_start();
                     </div>
                 </div>
             </div>
-            <!-- filtering end -->
+            <!-- filtering ui end -->
 
 
 
@@ -169,6 +169,7 @@ session_start();
                         </tr>
                     </thead>
 
+                    <!-- php filtering start -->
                     <?php
                     if (isset ($_GET['member-id']) || isset ($_GET['name']) || isset ($_GET['member-type']) || isset ($_GET['month'])) {
                         ?>
@@ -197,12 +198,14 @@ session_start();
                                 $conditions[] = "MONTH(registration_date) = '{$_GET['month']}'";
                             }
 
+                           
+
                             // Construct the SQL query
                             $sql = "SELECT * FROM members";
 
                             // Add WHERE clause if conditions are provided
                             if (!empty ($conditions)) {
-                                $sql .= " WHERE " . implode(" AND ", $conditions);
+                                $sql = $sql . " WHERE " . implode(" AND ", $conditions);
                             }
 
                             // Execute the SQL query
@@ -264,7 +267,7 @@ session_start();
 
                                     <tr>
                                         <td colspan="14">
-                                        <?php echo 'No record found' ?>
+                                        <?php echo 'No records found' ?>
                                         </td>
                                     </tr>
                                 <?php
@@ -272,10 +275,12 @@ session_start();
                             ?>
                         </tbody>
 
-
+                       <!-- php filtering end -->
                         <?php
+                    
                     } else { ?>
 
+                        <!-- php database start -->
                         <tbody>
                             <?php
                             include "db_conn.php";
@@ -338,6 +343,7 @@ session_start();
                             }
                             ?>
                         </tbody>
+                        <!-- php database end -->
                     <?php } ?>
                 </table>
             </div>
