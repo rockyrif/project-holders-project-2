@@ -1,5 +1,6 @@
-@media print{
-    .admin-dashbord{
+@media print {
+
+    .admin-dashbord {
         max-width: none !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -7,56 +8,61 @@
     }
 
     .filter-section {
-        display: none  !important;
+        display: none !important;
     }
 
-   
-    .navbar-nav-outer{
+
+    .navbar-nav-outer {
         display: none !important;
     }
 
     .admin-dashbord-tittle {
         width: 100%;
-       
+
     }
 
-    .admin-dashbord-tittle p{
-        
+    .admin-dashbord-tittle p {
+
         text-align: center;
-       
-    }
-   
 
-    .container-2{
+    }
+
+
+    .container-2 {
         overflow-x: visible !important;
-        width: 100% !important;
+
     }
 
-    .col-remove{
+    .col-remove {
         display: none !important;
     }
-    .container{
+
+    .container {
         max-width: none !important;
         padding: 0 !important;
-       
+
     }
+
     .table {
         border-collapse: collapse !important;
         width: 100%;
     }
-    th, td {
+
+    th,
+    td {
         border: 1px solid black !important;
         padding: 8px !important;
     }
-   
-    .navbar-toggler{
+
+    .navbar-toggler {
         display: none !important;
-    } 
+    }
+
     .nav-group {
         position: static !important;
-        
+
 
     }
 
-   
+
 }
