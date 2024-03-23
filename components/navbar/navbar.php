@@ -340,19 +340,20 @@
                                             id="adtcnews-btn">ADTC News</a>
 
                                     </li>
-                                    <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
+                                    
 
                                     <li><a class="dropdown-item dropdown"
                                             href="/project-holders-project-2/index.php#gallery" id="gallery-btn">Image
                                             Gallery</a>
-                                        <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
+                                        
                                     </li>
 
                                 </ul>
+                                <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
                             </li>
 
                             <?php if (isset ($_SESSION['username'])): ?>
-                                <li class="nav-item ">
+                                <li class="nav-item mt-2">
                                     <button type="button" class="btn btn-danger offcanvas-button"
                                         onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/log-out.php'">LOG
                                         OUT</button>

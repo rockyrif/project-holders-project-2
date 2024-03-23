@@ -90,24 +90,24 @@ if (isset ($_POST["submit"])) {
 
             <div class="mb-3">
                <label class="form-label">Phone:</label>
-               <input type="text" class="form-control" name="phone1" placeholder="0789642231"><br>
-               <input type="text" class="form-control" name="phone2" placeholder="0789642231">
+               <input type="text" class="form-control" name="phone1" placeholder="0789642231" required><br>
+               <input type="text" class="form-control" name="phone2" placeholder="0789642231 (optional)">
             </div>
 
             <div class="mb-3">
                <label class="form-label">Date of birth:</label>
-               <input type="date" class="form-control" name="dob" placeholder="1999-06-22">
+               <input type="date" class="form-control" name="dob" placeholder="1999-06-22" required>
             </div>
 
             <div class="mb-3">
                <label class="form-label">Address:</label>
-               <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4">
+               <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4" required>
             </div>
 
             <div class="mb-3">
                <label class="form-label" for="member_type">Member type</label>
-               <select class="form-select" name="member_type" id="member_type">
-                  <option value="adult" selected>Adult</option>
+               <select class="form-select" name="member_type" id="member_type" required>
+                  <option value="adult">Adult</option>
                   <option value="child">Child</option>
                </select>
             </div>
@@ -145,10 +145,10 @@ if (isset ($_POST["submit"])) {
             <div class="form-group mb-3">
                <label>Gender:</label>
                &nbsp;
-               <input type="radio" class="form-check-input" name="gender" id="male" value="male">
+               <input type="radio" class="form-check-input" name="gender" id="male" value="male" required>
                <label for="gender" class="form-input-label">Male</label>
                &nbsp;
-               <input type="radio" class="form-check-input" name="gender" id="female" value="female">
+               <input type="radio" class="form-check-input" name="gender" id="female" value="female" required>
                <label for="gender" class="form-input-label">Female</label>
                &nbsp;
       

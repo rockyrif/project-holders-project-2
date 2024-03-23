@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+ <?php if (isset ($_SESSION["username"]) && $_SESSION["privilage"] === "admin"){ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -393,3 +394,6 @@ session_start();
 </body>
 
 </html>
+<?php }else{
+    header("Location: ../../../index.php");
+} ?>
