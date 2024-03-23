@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>navbar</title>
 
     <style>
         .nav-group {
@@ -122,19 +122,18 @@
 
                 <div class="navbar-nav-outer ">
                     <div class="nav-item-outer ">
-                        <a href="/project-holders-project-2/index.php" 
-						class="nav-link nav-link-home active">HOME</a>
+                        <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">HOME</a>
                     </div>
                     <div class="nav-item-outer">
                         <a href="/project-holders-project-2/page/AboutUs-page/About-us.php"
                             class="nav-link nav-link-about">ABOUT US</a>
                     </div>
                     <div class="nav-item-outer">
-                        <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php" 
-						class="nav-link nav-link-contact">CONTACT</a>
+                        <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php"
+                            class="nav-link nav-link-contact">CONTACT</a>
                     </div>
 
-                    <?php if (!isset($_SESSION['username'])): ?>
+                    <?php if (!isset ($_SESSION['username'])): ?>
                         <div class="nav-item-outer">
                             <a href="/project-holders-project-2/page/login-and-signup-page/index.html"
                                 class="nav-link nav-link-login">SIGN IN</a>
@@ -160,7 +159,7 @@
                     </div>
                     <div class="offcanvas-body">
 
-                        <?php if (!isset($_SESSION['username'])): ?>
+                        <?php if (!isset ($_SESSION['username'])): ?>
                             <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
                                 <a href="/project-holders-project-2/page/login-and-signup-page/index.html"
@@ -182,7 +181,7 @@
 
                         <ul class="navbar-nav justify-content-end flex-grow-1">
 
-                            <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin"): ?>
+                            <?php if (isset ($_SESSION["username"]) && $_SESSION["privilage"] === "admin"): ?>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
@@ -190,8 +189,9 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item"
-                                                href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit members</a></li>
-                                        
+                                                href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit
+                                                members</a></li>
+
                                     </ul>
 
                                 </li>
@@ -210,7 +210,7 @@
                                 <a href="#" class="nav-link nav-link-contact">CONTACT</a>
                             </li>
 
-                            <?php if (isset($_SESSION["username"])): ?>
+                            <?php if (isset ($_SESSION["username"])): ?>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
@@ -338,20 +338,20 @@
                                             Committee</a></li>
                                     <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews'
                                             id="adtcnews-btn">ADTC News</a>
-                    
+
                                     </li>
                                     <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
 
                                     <li><a class="dropdown-item dropdown"
                                             href="/project-holders-project-2/index.php#gallery" id="gallery-btn">Image
                                             Gallery</a>
-                                            <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
+                                        <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
                                     </li>
 
                                 </ul>
                             </li>
 
-                            <?php if (isset($_SESSION['username'])): ?>
+                            <?php if (isset ($_SESSION['username'])): ?>
                                 <li class="nav-item ">
                                     <button type="button" class="btn btn-danger offcanvas-button"
                                         onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/log-out.php'">LOG

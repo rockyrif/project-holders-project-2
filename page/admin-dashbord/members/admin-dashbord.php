@@ -7,11 +7,12 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
+    <title>Edit members</title>
 
 
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="print.css">
 
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -58,9 +59,20 @@ session_start();
         <!-- admin-dashbord-start -->
         <div class="admin-dashbord container">
 
-            <div class="admin-dashbord-tittle">
-                <P class="" data-aos="fade-up" data-aos-duration="2000">ADMIN-DASHBORD</P>
+            <div class="admin-dashbord-tittle mb-4" style="position: relative;">
+                <P class="" style=" margin-bottom: 0 !important;">MEMBERS</P>
+                <div class="time" style=" position: absolute; right: 0%;">
+                    <?php
+                    // Set the default timezone
+                    date_default_timezone_set('Asia/Colombo');
 
+                    // Get the current date and time
+                    $currentDateTime = date('Y-m-d H:i:s');
+
+                    // Display the current date and time
+                    echo  $currentDateTime;
+                    ?>
+                </div>
             </div>
 
             <!-- AOS script start -->
@@ -81,17 +93,17 @@ session_start();
             ?>
 
             <!-- filtering ui start -->
-            <div class="row mb-2 mt-1">
+            <div class="row mb-2 mt-1 filter-section">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-2 mb-2">
+                        <div class="col-md-4 mb-2">
                             <a href="add-new.php" class="btn btn-dark">Add New</a>
                         </div>
 
-                        <div class="col-md-10">
+                        <div class="col-md-8">
                             <form action="admin-dashbord.php" method="GET">
                                 <div class="row">
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-2 mb-3">
                                         <input type="text" name="member-id"
                                             value="<?= isset ($_GET['member-id']) ? $_GET['member-id'] : ''; ?>"
                                             class="form-control" placeholder="Member id">
@@ -103,7 +115,7 @@ session_start();
                                             class="form-control" placeholder="Name">
                                     </div>
 
-                                    <div class="col-md-3 mb-2">
+                                    <div class="col-md-2 mb-2">
                                         <select name="member-type" id="" class="form-select">
                                             <option value="">Member type</option>
                                             <option value="adult" <?= isset ($_GET['member-type']) == true ? ($_GET['member-type'] == 'adult' ? 'selected' : '') : '' ?>>Adult</option>
@@ -131,10 +143,14 @@ session_start();
                                         </select>
                                     </div>
 
-                                    <div class="col-md-2 mb-2">
+                                    <div class="col-md-4 mb-2">
                                         <button class="btn btn-dark" type="submit">Filter</button>
                                         <a href="admin-dashbord.php" type="reset" class="btn btn-dark">Reset</a>
+                                        <button class="btn btn-dark print-btn" onclick="window.print();">Print</button>
                                     </div>
+
+
+
                                 </div>
                             </form>
                         </div>
@@ -156,7 +172,8 @@ session_start();
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
+                            <th scope="col">Phone1</th>
+                            <th scope="col">Phone2</th>
                             <th scope="col">DOB</th>
                             <th scope="col">Address</th>
                             <th scope="col">Member Type</th>
@@ -164,8 +181,8 @@ session_start();
                             <th scope="col">School</th>
                             <th scope="col">Gender</th>
                             <th scope="col">Reg Date</th>
-                            <th scope="col">Edit</th>
-                            <th scope="col">Delete</th>
+                            <th scope="col" class="col-remove">Edit</th>
+                            <th scope="col" class="col-remove">Delete</th>
                         </tr>
                     </thead>
 
@@ -176,7 +193,7 @@ session_start();
                         <tbody>
                             <?php
                             // Include database connection
-                            include "db_conn.php";
+                        
 
                             // Initialize an empty array to store conditions
                             $conditions = array();
@@ -198,7 +215,7 @@ session_start();
                                 $conditions[] = "MONTH(registration_date) = '{$_GET['month']}'";
                             }
 
-                           
+                            include "db_conn.php";
 
                             // Construct the SQL query
                             $sql = "SELECT * FROM members";
@@ -210,6 +227,8 @@ session_start();
 
                             // Execute the SQL query
                             $result = mysqli_query($conn, $sql);
+
+                            mysqli_close($conn);
 
                             // Check if query executed successfully
                             if ($result && mysqli_num_rows($result) > 0) {
@@ -233,7 +252,10 @@ session_start();
                                             <?php echo $row["email"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["phone"]; ?>
+                                            <?php echo $row["phone1"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row["phone2"]; ?>
                                         </td>
                                         <td>
                                             <?php echo $row["date_of_birth"]; ?>
@@ -256,28 +278,28 @@ session_start();
                                         <td>
                                             <?php echo $row["registration_date"]; ?>
                                         </td>
-                                        <td><a href="edit.php?id=<?php echo $row["member_id"]; ?>" class="link-dark"><i
-                                                    class="fa-solid fa-pen-to-square fs-5"></i></a></td>
-                                        <td><a href="delete.php?id=<?php echo $row["member_id"]; ?>" class="link-dark"><i
-                                                    class="fa-solid fa-trash fs-5"></i></a></td>
+                                        <td class="col-remove"><a href="edit.php?id=<?php echo $row["member_id"]; ?>"
+                                                class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
+                                        <td class="col-remove"><a href="delete.php?id=<?php echo $row["member_id"]; ?>"
+                                                class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a></td>
                                     </tr>
 
                                 <?php }
                             } else { ?>
 
-                                    <tr>
-                                        <td colspan="14">
+                                <tr>
+                                    <td colspan="15">
                                         <?php echo 'No records found' ?>
-                                        </td>
-                                    </tr>
+                                    </td>
+                                </tr>
                                 <?php
                             }
                             ?>
                         </tbody>
 
-                       <!-- php filtering end -->
+                        <!-- php filtering end -->
                         <?php
-                    
+
                     } else { ?>
 
                         <!-- php database start -->
@@ -286,6 +308,7 @@ session_start();
                             include "db_conn.php";
                             $sql = "SELECT * FROM `members`";
                             $result = mysqli_query($conn, $sql);
+                            mysqli_close($conn);
                             while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                 <tr>
@@ -303,7 +326,10 @@ session_start();
                                         <?php echo $row["email"] ?>
                                     </td>
                                     <td>
-                                        <?php echo $row["phone"] ?>
+                                        <?php echo $row["phone1"] ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row["phone2"] ?>
                                     </td>
                                     <td>
                                         <?php echo $row["date_of_birth"] ?>

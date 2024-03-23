@@ -6,7 +6,7 @@ body {
     width: 100vw;
     height: fit-content;
     overflow-x: hidden;
-    background-color: #ddd ;
+    background-color: #ddd;
 
 
 }
@@ -26,21 +26,24 @@ body {
 /* home page section two */
 
 .admin-dashbord {
-    height:100vh;
+    height: 100vh;
     width: 100vw;
     padding: 20px;
     padding-top: 93px;
     position: relative;
 }
 
-.container-2{
-    overflow-x: auto;
+.container-2 {
+    height: 80vh;
+    overflow-x: scroll;
 }
+
+
 
 .admin-dashbord-tittle {
     text-align: center;
     width: 100%;
-    height: 45px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,6 +52,18 @@ body {
 
 }
 
-.admin-dashbord-info{
+.admin-dashbord-info {
     text-align: justify;
+}
+
+@media only screen and (max-width:1200px){
+    .print-btn{
+        margin-top:5px !important;
+    }
+}
+
+@media only screen and (max-width:767px){
+    .print-btn{
+        margin-top:0px !important;
+    }
 }

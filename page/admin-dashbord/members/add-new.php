@@ -8,7 +8,8 @@ if (isset ($_POST["submit"])) {
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
    $email = $_POST['email'];
-   $phone = $_POST['phone'];
+   $phone1 = $_POST['phone1'];
+   $phone2 = $_POST['phone2'];
    $dob = $_POST['dob'];
    $address = $_POST['address'];
    $member_type = $_POST['member_type'];
@@ -16,7 +17,7 @@ if (isset ($_POST["submit"])) {
    $school = $_POST['school'];
    $gender = $_POST['gender'];
 
-   $sql = "INSERT INTO `members`(`member_id`, `first_name`, `last_name`, `email`, `phone`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`) VALUES ('','$first_name','$last_name','$email','$phone','$dob','$address','$member_type','$occupation','$school','$gender')";
+   $sql = "INSERT INTO `members`(`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`) VALUES ('','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender')";
 
    $result = mysqli_query($conn, $sql);
 
@@ -73,12 +74,12 @@ if (isset ($_POST["submit"])) {
             <div class="row mb-3">
                <div class="col">
                   <label class="form-label">First Name:</label>
-                  <input type="text" class="form-control" name="first_name" placeholder="Albert">
+                  <input type="text" class="form-control" name="first_name" placeholder="Albert" required>
                </div>
 
                <div class="col">
                   <label class="form-label">Last Name:</label>
-                  <input type="text" class="form-control" name="last_name" placeholder="Einstein">
+                  <input type="text" class="form-control" name="last_name" placeholder="Einstein" required>
                </div>
             </div>
 
@@ -89,7 +90,8 @@ if (isset ($_POST["submit"])) {
 
             <div class="mb-3">
                <label class="form-label">Phone:</label>
-               <input type="text" class="form-control" name="phone" placeholder="0789642231">
+               <input type="text" class="form-control" name="phone1" placeholder="0789642231"><br>
+               <input type="text" class="form-control" name="phone2" placeholder="0789642231">
             </div>
 
             <div class="mb-3">
@@ -149,8 +151,7 @@ if (isset ($_POST["submit"])) {
                <input type="radio" class="form-check-input" name="gender" id="female" value="female">
                <label for="gender" class="form-input-label">Female</label>
                &nbsp;
-               <input type="radio" class="form-check-input" name="gender" id="transgender" value="trans">
-               <label for="gender" class="form-input-label">Transgender</label>
+      
             </div>
 
             <div class="mb-3">
