@@ -5,6 +5,10 @@ session_start();
 include "db_conn.php";
 
 if (isset ($_POST["submit"])) {
+   $id_prefix_text = "ADTC"; 
+   $id_prefix_gender = ($_POST['gender']=="male")? 'M' : 'F';
+   $id_prefix_member_type = ($_POST['member_type']=="adult")? 'A' : 'C';
+   $id_prefix = $id_prefix_text."-".$id_prefix_gender.$id_prefix_member_type;
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
    $email = $_POST['email'];
@@ -17,7 +21,7 @@ if (isset ($_POST["submit"])) {
    $school = $_POST['school'];
    $gender = $_POST['gender'];
 
-   $sql = "INSERT INTO `members`(`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`) VALUES ('','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender')";
+   $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender')";
 
    $result = mysqli_query($conn, $sql);
 
