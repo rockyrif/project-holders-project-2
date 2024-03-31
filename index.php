@@ -11,6 +11,7 @@ session_start();
 
     <title>ADTC Home</title>
 
+    
 
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -582,7 +583,7 @@ session_start();
 
 
         <!-- Footer-start -->
-        <div class="footer p-3">
+        <div class="footer p-3 ">
             <div class="follow-us p-4">
                 <h5>Follow us</h5>
                 <div class="line"></div>
@@ -614,27 +615,28 @@ session_start();
             <div class="submit-request p-4">
                 <h5>Submit your request</h5>
                 <div class="line"></div>
-                <form>
+                <form action="https://script.google.com/macros/s/AKfycbwpL2emGOezsCab6cvBQqnU808WuAAt0nuZZay6AuLEXhFLwe4zmI2F2wxj7wjQz8BnfA/exec" method="POST" name="Feedback-form">
                     <div class="mb-3">
                         <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp"
-                            placeholder="Name">
+                            placeholder="Name" name="Name">
 
                     </div>
                     <div class="mb-3">
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Email">
+                            placeholder="Email" name="Email">
                     </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp"
-                            placeholder="Mobile No">
+                            placeholder="Mobile No" name="Mobile-No">
                     </div>
                     <div class="form-floating mb-3">
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                            style="height: 100px"></textarea>
+                            style="height: 100px" name="Comments"></textarea>
                         <label for="floatingTextarea2">Comments</label>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <Script src="index.js"></Script>
                 </form>
             </div>
         </div>

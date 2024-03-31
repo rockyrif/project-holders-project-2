@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2024 at 03:27 PM
+-- Generation Time: Mar 31, 2024 at 03:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -49,12 +49,15 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id_prefix`, `member_id`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `registration_date`) VALUES
-('', 18, 'Mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', NULL, '1999-03-24', '320b sailan road kalmunai kudy 3', 'child', '', '', 'male', '2024-03-16'),
+('', 18, 'Mohamed', 'uy', 'mnamrifky@gmail.com', '0776040064', NULL, '1999-03-24', '320b sailan road kalmunai kudy 3', 'child', '', '', 'male', '2024-03-16'),
 ('', 22, 'atham lebbe', 'Rifna', 'rifna@gmail.com', '0752009768', NULL, '2000-06-30', 'youth club road bathuriya nagar, meeravodai', 'child', '', '', 'female', '2024-03-17'),
 ('', 25, '', '', '', '', NULL, '0000-00-00', '', 'adult', 'web', '', '', '2024-03-21'),
 ('', 26, '', '', '', '', NULL, '2023-06-01', '', 'adult', '', '', '', '2024-03-22'),
-('', 28, 'samla', 'razack', 'samla@gmail.com', '0776040065', NULL, '2009-11-16', '320b sailan road kalmunai 4', 'child', '', 'balika', 'female', '2024-03-22'),
-('ADTCMC', 40, 'dds', 'sdsd', 'mnam32@gmail.com', 'sdsd', 'sdsd', '2024-03-21', 'sdsd', 'child', '', 'sdsd', 'male', '2024-03-24');
+('ADTC-FC', 42, 'mohamd', 'Rifky1', 'mnam32@gmail.com', 'sdsd', 'adad', '2024-03-01', '320b sailan road kalmunai kudy 31', 'child', '', 'sdsd', 'female', '2024-03-24'),
+('ADTC-MA', 43, 'mohamd', 'Rifky1', '', '', '', '2024-03-13', '320b sailan road kalmunai kudy 31', 'child', 'web', '', 'male', '2024-03-25'),
+('ADTC-MC', 44, 'dfdg', 'dgd', 'mnam32@gmail.com', 'adad', '0776040064', '2024-03-08', 'dgdgdgdg', 'child', '', 'dgdgdg', 'male', '2024-03-30'),
+('ADTC-MC', 45, 'dada', 'adad', 'mnam32@gmail.com', 'adad', 'adad', '2024-03-01', 'bxbxbxb', 'child', '', 'xbxbx', 'male', '2024-03-30'),
+('ADTC-MC', 46, 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '2024-03-30');
 
 -- --------------------------------------------------------
 
@@ -71,13 +74,6 @@ CREATE TABLE `member_fees` (
   `paid_date` date DEFAULT NULL,
   `payment_status` enum('Not yet','Paid') NOT NULL DEFAULT 'Not yet'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `member_fees`
---
-
-INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `payment_status`) VALUES
-(1, 28, 2015, 6, 200.00, '2024-03-06', 'Not yet');
 
 -- --------------------------------------------------------
 
@@ -136,7 +132,7 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `member_fees`

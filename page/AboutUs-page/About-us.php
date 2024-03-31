@@ -49,7 +49,7 @@ session_start();
         <!-- Navbar end -->
 
         <!-- About-us-page-start -->
-        <div class="about-us">
+        <div class="about-us container">
 
             <div class="gallary-tittle">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">About Us</P>

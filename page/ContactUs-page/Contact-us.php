@@ -48,7 +48,7 @@ session_start();
         ?>
         <!-- Navbar end -->
 
-        <!-- About-us-page-start -->
+        <!-- contact-us-page-start -->
         <div class="contact-us">
             <div class="gallary-tittle">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Contact Us</P>
@@ -57,30 +57,32 @@ session_start();
             
 	
            
-			<div class="submit-request" data-aos="fade-up" data-aos-duration="2000">
+			<div class="submit-request container" data-aos="fade-up" data-aos-duration="2000">
+
                 <h5>Please fill up the following information:</h5>
-                <div class="line"></div>
-                <form>
+                <div class="line mb-3"></div>
+                <form action="https://script.google.com/macros/s/AKfycbx3JOdyc87_JqmfkShCBGh5w4sAu3DKWfRIwWkmcdWjmL63bTNfbbTAbqMgIV8Gxu8F8g/exec" method="POST" name="Feedback-form">
                     <div class="mb-3">
                         <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp"
-                            placeholder="Name">
+                            placeholder="Name" name="Name">
 
                     </div>
                     <div class="mb-3">
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Email">
+                            placeholder="Email" name="Email">
                     </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp"
-                            placeholder="Mobile No">
+                            placeholder="Mobile No" name="Mobile-No">
                     </div>
                     <div class="form-floating mb-3">
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Message</label>
+                            style="height: 100px" name="Comments"></textarea>
+                        <label for="floatingTextarea2" >Message</label>
                     </div>
 
                     <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                    <Script src="index.js"></Script>
                 </form>
           
         </div>

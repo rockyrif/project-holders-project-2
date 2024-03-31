@@ -9,14 +9,15 @@ if (isset ($_POST["submit"])) {
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
   $email = $_POST['email'];
-  $phone = $_POST['phone'];
+  $phone1 = $_POST['phone1'];
+  $phone2 = $_POST['phone2'];
   $dob = $_POST['dob'];
   $address = $_POST['address'];
   $member_type = $_POST['member_type'];
   $gender = $_POST['gender'];
 
-  
-  $sql = "UPDATE `members` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`phone`='$phone',`date_of_birth`='$dob',`address`='$address',`member_type`='$member_type',`gender`='$gender' WHERE member_id = $id";
+
+  $sql = "UPDATE `members` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`phone1`='$phone2',`phone1`='$phone2',`date_of_birth`='$dob',`address`='$address',`member_type`='$member_type',`gender`='$gender' WHERE member_id = $id";
 
   $result = mysqli_query($conn, $sql);
 
@@ -98,8 +99,10 @@ if (isset ($_POST["submit"])) {
 
         <div class="mb-3">
           <label class="form-label">Phone:</label>
-          <input type="text" class="form-control" name="phone" placeholder="0789642231"
-            value="<?php echo $row['phone'] ?>">
+          <input type="text" class="form-control" name="phone2" placeholder="0789642231"
+            value="<?php echo $row['phone1'] ?>"><br>
+          <input type="text" class="form-control" name="phone1" placeholder="0789642231"
+            value="<?php echo $row['phone2'] ?>">
         </div>
 
         <div class="mb-3">

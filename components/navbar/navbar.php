@@ -133,7 +133,7 @@
                             class="nav-link nav-link-contact">CONTACT</a>
                     </div>
 
-                    <?php if (!isset ($_SESSION['username'])): ?>
+                    <?php if (!isset($_SESSION['username'])): ?>
                         <div class="nav-item-outer">
                             <a href="/project-holders-project-2/page/login-and-signup-page/index.html"
                                 class="nav-link nav-link-login">SIGN IN</a>
@@ -159,7 +159,7 @@
                     </div>
                     <div class="offcanvas-body">
 
-                        <?php if (!isset ($_SESSION['username'])): ?>
+                        <?php if (!isset($_SESSION['username'])): ?>
                             <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
                                 <a href="/project-holders-project-2/page/login-and-signup-page/index.html"
@@ -181,7 +181,7 @@
 
                         <ul class="navbar-nav justify-content-end flex-grow-1">
 
-                            <?php if (isset ($_SESSION["username"]) && $_SESSION["privilage"] === "admin"): ?>
+                            <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin"): ?>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
@@ -191,6 +191,9 @@
                                         <li><a class="dropdown-item"
                                                 href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit
                                                 members</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing" target="_blank">Edit
+                                                Feedback form</a></li>
 
                                     </ul>
 
@@ -207,10 +210,11 @@
                                     US</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link nav-link-contact">CONTACT</a>
+                                <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php"
+                                    class="nav-link nav-link-contact">CONTACT</a>
                             </li>
 
-                            <?php if (isset ($_SESSION["username"])): ?>
+                            <?php if (isset($_SESSION["username"])): ?>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
@@ -218,7 +222,7 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item"
-                                                href="/project-holders-project-2/page/members/members.php">Become a
+                                                href="/project-holders-project-2/page/become-member/add-new.php">Become a
                                                 member</a></li>
                                         <li><a class="dropdown-item" href="#">Payment</a></li>
                                     </ul>
@@ -247,7 +251,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Enter Tournament</a></li>
-                                    <li><a class="dropdown-item" href="#">Tournament Calendar</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="/project-holders-project-2/page/calender/calender.php">Tournament
+                                            Calendar</a></li>
                                     <li><a class="dropdown-item"
                                             href="/project-holders-project-2/page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
                                             De Fruit Tournaments</a></li>
@@ -340,19 +346,19 @@
                                             id="adtcnews-btn">ADTC News</a>
 
                                     </li>
-                                    
+
 
                                     <li><a class="dropdown-item dropdown"
                                             href="/project-holders-project-2/index.php#gallery" id="gallery-btn">Image
                                             Gallery</a>
-                                        
+
                                     </li>
 
                                 </ul>
                                 <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
                             </li>
 
-                            <?php if (isset ($_SESSION['username'])): ?>
+                            <?php if (isset($_SESSION['username'])): ?>
                                 <li class="nav-item mt-2">
                                     <button type="button" class="btn btn-danger offcanvas-button"
                                         onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/log-out.php'">LOG
