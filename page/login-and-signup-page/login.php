@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before querying the database
     if(empty($email_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT  username, password, privilage FROM user_login WHERE email = ?";
+        $sql = "SELECT  username, password, privilage, email  FROM user_login WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if email exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $username, $hashed_password, $privilage);
+                    mysqli_stmt_bind_result($stmt, $username, $hashed_password, $privilage, $email);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, start a new session
@@ -62,7 +62,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username; 
-                            $_SESSION["privilage"] = $privilage;                           
+                            $_SESSION["privilage"] = $privilage;
+                            $_SESSION["email"] = $email;                           
                             
                             // Redirect user to welcome page
                             header("location: ../../index.php");

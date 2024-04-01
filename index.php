@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,6 +68,7 @@ session_start();
         <?php
         include 'components/navbar/navbar.php';
         ?>
+        
 
         <!-- Navbar end -->
 

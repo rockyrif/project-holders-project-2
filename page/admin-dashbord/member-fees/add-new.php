@@ -4,11 +4,11 @@ session_start();
 <?php
 include "db_conn.php";
 
-if (isset($_POST["submit"])) {
-   $id_prefix_text = "ADTC";
-   $id_prefix_gender = ($_POST['gender'] == "male") ? 'M' : 'F';
-   $id_prefix_member_type = ($_POST['member_type'] == "adult") ? 'A' : 'C';
-   $id_prefix = $id_prefix_text . "-" . $id_prefix_gender . $id_prefix_member_type;
+if (isset ($_POST["submit"])) {
+   $id_prefix_text = "ADTC"; 
+   $id_prefix_gender = ($_POST['gender']=="male")? 'M' : 'F';
+   $id_prefix_member_type = ($_POST['member_type']=="adult")? 'A' : 'C';
+   $id_prefix = $id_prefix_text."-".$id_prefix_gender.$id_prefix_member_type;
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
    $email = $_POST['email'];
@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
    $result = mysqli_query($conn, $sql);
 
    if ($result) {
-      header("Location: add-new.php?msg=Form submitted successfully");
+      header("Location: admin-dashbord.php?msg=New record created successfully");
    } else {
       echo "Failed: " . mysqli_error($conn);
    }
@@ -64,27 +64,13 @@ if (isset($_POST["submit"])) {
 
 <body style="background-color:">
    <?php
-   include '../../components/navbar/navbar.php';
+   include '../../../components/navbar/navbar.php';
    ?>
 
-   
-
    <div class="container" style="margin-top:93px;">
-      <!-- Aleart start -->
-      <?php
-      if (isset($_GET["msg"])) {
-         $msg = $_GET["msg"];
-         echo '<div class="alert  alert-warning alert-dismissible fade show"  role="alert">
-                    ' . $msg . '
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
-      }
-      ?>
-      <!-- Aleart end -->
-
       <div class="text-center mb-4">
-         <h3>Become a new member</h3>
-         <p class="text-muted">Complete the form below to become a new member</p>
+         <h3>Add New member</h3>
+         <p class="text-muted">Complete the form below to add a new member</p>
       </div>
 
       <div class="container d-flex justify-content-center">
@@ -101,9 +87,9 @@ if (isset($_POST["submit"])) {
                </div>
             </div>
 
-            <div class="mb-3" style="display:none;">
+            <div class="mb-3">
                <label class="form-label">Email:</label>
-               <input type="email" class="form-control" name="email" placeholder="name@example.com" value="<?= (isset($_SESSION['email']))?  $_SESSION["email"] : ''; ?>">
+               <input type="email" class="form-control" name="email" placeholder="name@example.com">
             </div>
 
             <div class="mb-3">
@@ -119,8 +105,7 @@ if (isset($_POST["submit"])) {
 
             <div class="mb-3">
                <label class="form-label">Address:</label>
-               <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4"
-                  required>
+               <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4" required>
             </div>
 
             <div class="mb-3">
@@ -170,11 +155,11 @@ if (isset($_POST["submit"])) {
                <input type="radio" class="form-check-input" name="gender" id="female" value="female" required>
                <label for="gender" class="form-input-label">Female</label>
                &nbsp;
-
+      
             </div>
 
             <div class="mb-3">
-               <button type="submit" class="btn btn-success" name="submit">Apply</button>
+               <button type="submit" class="btn btn-success" name="submit">Save</button>
                <a href="admin-dashbord.php" class="btn btn-danger ">Cancel</a>
             </div>
          </form>

@@ -153,11 +153,33 @@
 
                 <div class="offcanvas offcanvas-end offcan" tabindex="-1" id="myNavBar"
                     aria-labelledby="offcanvasNavbarLabel">
+
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
+
                     <div class="offcanvas-body">
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                            <li class="nav-item ">
+                                <?php
+                                // Include database connection
+                                include "db_conn.php";
+                                $email = $_SESSION["email"];
+                                $sql = "SELECT member_id, id_prefix  FROM members WHERE email = '$email';";
+                                $result = mysqli_query($conn, $sql);
+                                $row = mysqli_fetch_assoc($result);
+
+                                ?>
+                                <a href="/project-holders-project-2/index.php"
+                                    class="nav-link nav-link-home active">MEMBER ID :
+                                    <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?>
+                                    <?= (isset($row["member_id"])) ? $row["member_id"] : 'please be a member'; ?>
+                                </a>
+                            </li>
+                        </ul>
+                    <?php endif; ?>
 
                         <?php if (!isset($_SESSION['username'])): ?>
                             <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
@@ -192,7 +214,8 @@
                                                 href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit
                                                 members</a></li>
                                         <li><a class="dropdown-item"
-                                                href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing" target="_blank">Edit
+                                                href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing"
+                                                target="_blank">Edit
                                                 Feedback form</a></li>
 
                                     </ul>
