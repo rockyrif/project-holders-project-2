@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2024 at 03:53 PM
+-- Generation Time: Apr 04, 2024 at 10:45 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `members` (
-  `id_prefix` varchar(255) NOT NULL,
   `member_id` int(11) NOT NULL,
+  `id_prefix` varchar(255) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
@@ -48,16 +48,18 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`id_prefix`, `member_id`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `registration_date`) VALUES
-('', 18, 'Mohamed', 'uy', 'mnamrifky@gmail.com', '0776040064', NULL, '1999-03-24', '320b sailan road kalmunai kudy 3', 'child', '', '', 'male', '2024-03-16'),
-('', 22, 'atham lebbe', 'Rifna', 'rifna@gmail.com', '0752009768', NULL, '2000-06-30', 'youth club road bathuriya nagar, meeravodai', 'child', '', '', 'female', '2024-03-17'),
-('', 25, '', '', '', '', NULL, '0000-00-00', '', 'adult', 'web', '', '', '2024-03-21'),
-('', 26, '', '', '', '', NULL, '2023-06-01', '', 'adult', '', '', '', '2024-03-22'),
-('ADTC-FC', 42, 'mohamd', 'Rifky1', 'mnam32@gmail.com', 'sdsd', 'adad', '2024-03-01', '320b sailan road kalmunai kudy 31', 'child', '', 'sdsd', 'female', '2024-03-24'),
-('ADTC-MA', 43, 'mohamd', 'Rifky1', '', '', '', '2024-03-13', '320b sailan road kalmunai kudy 31', 'child', 'web', '', 'male', '2024-03-25'),
-('ADTC-MC', 44, 'dfdg', 'dgd', 'mnam32@gmail.com', 'adad', '0776040064', '2024-03-08', 'dgdgdgdg', 'child', '', 'dgdgdg', 'male', '2024-03-30'),
-('ADTC-MC', 45, 'dada', 'adad', 'mnam32@gmail.com', 'adad', 'adad', '2024-03-01', 'bxbxbxb', 'child', '', 'xbxbx', 'male', '2024-03-30'),
-('ADTC-MC', 46, 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '2024-03-30');
+INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `registration_date`) VALUES
+(18, 'ADTC-MA', 'Mohamed', 'uy', 'mnamrifky@gmail.com', '0776040064', NULL, '1999-03-24', '320b sailan road kalmunai kudy 3', 'adult', '', '', 'male', '2024-03-16'),
+(22, '', 'atham lebbe', 'Rifna', 'rifna@gmail.com', '0752009768', NULL, '2000-06-30', 'youth club road bathuriya nagar, meeravodai', 'child', '', '', 'female', '2024-03-17'),
+(25, '', '', '', '', '', NULL, '0000-00-00', '', 'adult', 'web', '', '', '2024-03-21'),
+(26, '', '', '', '', '', NULL, '2023-06-01', '', 'adult', '', '', '', '2024-03-22'),
+(42, 'ADTC-FC', 'mohamd', 'Rifky1', 'mnam32@gmail.com', 'sdsd', 'adad', '2024-03-01', '320b sailan road kalmunai kudy 31', 'child', '', 'sdsd', 'female', '2024-03-24'),
+(43, 'ADTC-MA', 'mohamd', 'Rifky1', '', '', '', '2024-03-13', '320b sailan road kalmunai kudy 31', 'child', 'web', '', 'male', '2024-03-25'),
+(44, 'ADTC-MC', 'dfdg', 'dgd', 'mnam32@gmail.com', 'adad', '0776040064', '2024-03-08', 'dgdgdgdg', 'child', '', 'dgdgdg', 'male', '2024-03-30'),
+(45, 'ADTC-MC', 'dada', 'adad', 'mnam32@gmail.com', 'adad', 'adad', '2024-03-01', 'bxbxbxb', 'child', '', 'xbxbx', 'male', '2024-03-30'),
+(46, 'ADTC-MC', 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '2024-03-30'),
+(48, 'ADTC-MA', 'Thayeel', 'Mohamed', 'thayeelmohamed2001@gmail.com', '0762381718', '0758127263', '2018-02-12', 'dhdjcnsjhnvdhvhdncdjv', 'adult', 'students', '', 'male', '2024-04-01'),
+(49, 'ADTC-MC', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-04-12', 'sdsd', 'child', '', 'sdsds', 'male', '2024-04-01');
 
 -- --------------------------------------------------------
 
@@ -67,13 +69,20 @@ INSERT INTO `members` (`id_prefix`, `member_id`, `first_name`, `last_name`, `ema
 
 CREATE TABLE `member_fees` (
   `fee_id` int(11) NOT NULL,
-  `member_id` int(11) DEFAULT NULL,
+  `member_id` int(11) NOT NULL,
   `year` int(11) DEFAULT NULL,
   `month` int(11) DEFAULT NULL,
   `fee_amount` decimal(10,2) DEFAULT NULL,
   `paid_date` date DEFAULT NULL,
   `payment_status` enum('Not yet','Paid') NOT NULL DEFAULT 'Not yet'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `member_fees`
+--
+
+INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `payment_status`) VALUES
+(2, 42, NULL, NULL, NULL, NULL, 'Not yet');
 
 -- --------------------------------------------------------
 
@@ -97,7 +106,8 @@ INSERT INTO `user_login` (`user_id`, `username`, `password`, `email`, `privilage
 (1, 'admin', '$2y$10$8Py2CQCGSJq1es01wjzGOOawwkQ3bPUhZSQ5YTfaRola9vfQXsIOq', 'mnamrifky@gmail.com', 'admin'),
 (2, 'Thayeel', '$2y$10$.p8Y/P60zKXpgP43Yr9rpe9NbMjU/dzo6mz8uqf4rR9iVbsIF0PSm', 'thayeelmohamed2001@gmail.com', 'user'),
 (3, 'Dinusha', '$2y$10$nGWMrBmXn09aIl7N/cQ2xejQMG7FhaqdO/krRIRoYQPV/QFyWD9Ym', 'darshani.hewage@gmail.com', 'admin'),
-(4, 'rifky', '$2y$10$733Ax9wP5FGCpCVLyLLy9.Epe4g61iSOzOVkKGuqviKcFGzZEtIay', 'mnamrifky1@gmail.com', 'user');
+(4, 'rifky', '$2y$10$733Ax9wP5FGCpCVLyLLy9.Epe4g61iSOzOVkKGuqviKcFGzZEtIay', 'mnamrifky1@gmail.com', 'user'),
+(5, 'NIFLA', '$2y$10$lhUctlVUlNFbeR5yiz8tQOt8dc81QmzvDhkmiiWJrKfKiiXa0tDPK', 'nifla@gmail.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -132,19 +142,19 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `member_fees`
 --
 ALTER TABLE `member_fees`
-  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
