@@ -163,6 +163,15 @@
                         <?php if (isset($_SESSION['username'])): ?>
                             <ul class="navbar-nav justify-content-end flex-grow-1">
                                 <li class="nav-item ">
+                                    <a href="#" class="nav-link nav-link-home active">
+                                        WELCOME <?= $_SESSION['username'] ?>
+                                    </a>
+                                </li>
+                            </ul>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['username'])): ?>
+                            <ul class="navbar-nav justify-content-end flex-grow-1">
+                                <li class="nav-item ">
                                     <?php
                                     // Include database connection
                                     include "db_conn.php";
@@ -173,9 +182,8 @@
 
                                     ?>
                                     <a href="/project-holders-project-2/index.php"
-                                        class="nav-link nav-link-home active">MEMBER ID :
-                                        <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?>
-                                        <?= (isset($row["member_id"])) ? $row["member_id"] : 'please be a member'; ?>
+                                        class="nav-link nav-link-home active">Your ID :
+                                        <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?><?= (isset($row["member_id"])) ? $row["member_id"] : 'please be a member'; ?>
                                     </a>
                                 </li>
                             </ul>
@@ -217,10 +225,13 @@
                                                 href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing"
                                                 target="_blank">Edit
                                                 Feedback form</a></li>
-                                        <li><a class="dropdown-item"
-                                                href="https://calendar.google.com/calendar/u/0/r"
+                                        <li><a class="dropdown-item" href="https://calendar.google.com/calendar/u/0/r"
                                                 target="_blank">Edit
                                                 Calendar</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="/project-holders-project-2/page/admin-dashbord/member-fees/member_fees.php"
+                                                target="_blank">Edit
+                                                Payment</a></li>
 
                                     </ul>
 

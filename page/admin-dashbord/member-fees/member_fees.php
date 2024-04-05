@@ -614,22 +614,17 @@ session_start();
                         <table class="table table-hover text-center ">
                             <thead class="table-dark">
                                 <tr>
-                                    <th scope="col">ID Prefix</th>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">First Name</th>
-                                    <th scope="col">Last Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Phone1</th>
-                                    <th scope="col">Phone2</th>
-                                    <th scope="col">DOB</th>
-                                    <th scope="col">Address</th>
-                                    <th scope="col">Member Type</th>
-                                    <th scope="col">Occupation</th>
-                                    <th scope="col">School</th>
-                                    <th scope="col">Gender</th>
-                                    <th scope="col">Reg Date</th>
-                                    <th scope="col" class="col-remove">Edit</th>
-                                    <th scope="col" class="col-remove">Delete</th>
+                                    <th scope="col">Fee ID</th>
+                                    <th scope="col">Member ID </th>
+                                    <th scope="col">Year</th>
+                                    <th scope="col">Month</th>
+                                    <th scope="col">Fee Amount</th>
+                                    <th scope="col">Paid Date</th>
+                                    <th scope="col">Payment Proof</th>
+                                    <th scope="col">Payment Status</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                    
                                 </tr>
                             </thead>
 
@@ -638,63 +633,46 @@ session_start();
                             <tbody>
                                 <?php
                                 include "db_conn.php";
-                                $sql = "SELECT * FROM `members` ORDER BY `member_id` DESC";
+                                $sql = "SELECT * FROM `member_fees` ORDER BY `fee_id` DESC";
                                 $result = mysqli_query($conn, $sql);
                                 mysqli_close($conn);
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     ?>
                                     <tr>
                                         <td>
-                                            <?php echo $row["id_prefix"]; ?>
+                                            <?php echo $row["fee_id"]; ?>
                                         </td>
 
                                         <td>
                                             <?php echo $row["member_id"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["first_name"] ?>
+                                            <?php echo $row["year"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["last_name"] ?>
+                                            <?php echo $row["month"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["email"] ?>
+                                            <?php echo $row["fee_amount"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["phone1"] ?>
+                                            <?php echo $row["paid_date"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["phone2"] ?>
+                                            <a href="#" onclick="window.open('<?php echo $row['proof_url'] ?>', '_blank', 'width=600,height=400'); return false;">View</a>
                                         </td>
                                         <td>
-                                            <?php echo $row["date_of_birth"] ?>
+                                            <?php echo $row["payment_status"] ?>
                                         </td>
-                                        <td>
-                                            <?php echo $row["address"] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row["member_type"] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row["occupation"] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row["school"] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row["gender"] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row["registration_date"] ?>
-                                        </td>
+                                        
 
 
                                         <td class="col-remove">
-                                            <a  href="edit.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i
+                                            <a  href="edit.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i
                                                     class="fa-solid fa-pen-to-square fs-5 "></i></a>
                                         </td>
                                         <td class="col-remove">
-                                            <a  href="delete.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i
+                                            <a  href="delete.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i
                                                     class="fa-solid fa-trash fs-5"></i></a>
                                         </td>
 

@@ -8,7 +8,9 @@ if (isset ($_POST["submit"])) {
    $id_prefix_text = "ADTC"; 
    $id_prefix_gender = ($_POST['gender']=="male")? 'M' : 'F';
    $id_prefix_member_type = ($_POST['member_type']=="adult")? 'A' : 'C';
-   $id_prefix = $id_prefix_text."-".$id_prefix_gender.$id_prefix_member_type;
+   $id_prefix_current_year = date("Y");
+
+   $id_prefix = $id_prefix_text."-".$id_prefix_current_year."-".$id_prefix_gender.$id_prefix_member_type;
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
    $email = $_POST['email'];
