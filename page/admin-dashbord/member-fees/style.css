@@ -67,3 +67,15 @@ body {
         margin-top:0px !important;
     }
 }
+
+.paid {
+    background-color: green !important;
+}
+
+.not-paid {
+    background-color: red !important;
+}
+
+.payment-form-select {
+    color: white !important;
+}

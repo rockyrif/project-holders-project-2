@@ -164,7 +164,8 @@
                             <ul class="navbar-nav justify-content-end flex-grow-1">
                                 <li class="nav-item ">
                                     <a href="#" class="nav-link nav-link-home active">
-                                        WELCOME <?= $_SESSION['username'] ?>
+                                        WELCOME
+                                        <?= $_SESSION['username'] ?>
                                     </a>
                                 </li>
                             </ul>
@@ -183,8 +184,15 @@
                                     ?>
                                     <a href="/project-holders-project-2/index.php"
                                         class="nav-link nav-link-home active">Your ID :
-                                        <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?><?= (isset($row["member_id"])) ? $row["member_id"] : 'please be a member'; ?>
+                                        <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?>
+                                        <?= (isset($row["member_id"])) ? $row["member_id"] : 'please be a member'; ?>
                                     </a>
+
+                                    <?php
+                                    if ($result) {
+                                        $_SESSION["id"] = $row["member_id"];    
+                                    }
+                                    ?>
                                 </li>
                             </ul>
                         <?php endif; ?>

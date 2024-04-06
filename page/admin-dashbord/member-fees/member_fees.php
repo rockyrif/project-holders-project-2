@@ -267,11 +267,11 @@ session_start();
                 </div>
                 <!-- filtering ui end -->
 
-                
+
 
                 <div class="container-2">
                     <?php
-                    
+
                     if ((isset($_GET['member-id']) || isset($_GET['name']) || isset($_GET['member-type']) || isset($_GET['month'])) && isset($_GET['column'])) {
                         ?>
                         <table class="table table-hover text-center ">
@@ -286,9 +286,9 @@ session_start();
                                     }
                                     ?>
 
-                                    
+
                                     <th scope="col">ID</th>
-                                       
+
 
                                     <?php
                                     if (isset($_GET['column']) && in_array('`first_name`', $_GET['column'])) {
@@ -401,7 +401,7 @@ session_start();
                                 // Fetch the selected columns from the form
                                 $selectedColumns = isset($_GET['column']) ? $_GET['column'] : '';
                                 // Check if $selectedColumns is set and is an array
-                                
+                        
                                 // Construct the SELECT query based on the selected columns
                                 $selectQuery = "SELECT `member_id`,";
                                 $selectQuery .= implode(',', $selectedColumns);
@@ -434,7 +434,7 @@ session_start();
                         
                                 $sql = $selectQuery . " WHERE " . implode(" AND ", $conditions) . " ORDER BY `member_id` DESC";
 
-                               
+
 
                                 // Execute the SQL query
                                 $result = mysqli_query($conn, $sql);
@@ -457,14 +457,14 @@ session_start();
                                                 <?php
                                             }
                                             ?>
-                                          
 
-                                            
-                                                <td>
-                                                    <?php echo $row["member_id"]; ?>
-                                                </td>
-                                                
-                                            
+
+
+                                            <td>
+                                                <?php echo $row["member_id"]; ?>
+                                            </td>
+
+
 
                                             <?php
                                             if (isset($_GET['column']) && in_array('`first_name`', $_GET['column'])) {
@@ -588,10 +588,19 @@ session_start();
                                             ?>
 
                                             <td class="col-remove"><a href="edit.php?id=<?php echo $row["member_id"]; ?>"
-                                                    class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
+                                                    class="link-dark" onclick="return confirmDelete();"><i
+                                                        class="fa-solid fa-pen-to-square fs-5"></i></a></td>
 
                                             <td class="col-remove"><a href="delete.php?id=<?php echo $row["member_id"]; ?>"
                                                     class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a></td>
+
+                                            <!-- Script to confirm delete -->
+                                            <script>
+                                                function confirmDelete() {
+                                                    return confirm("Are you sure you want to delete this item?");
+                                                }
+                                            </script>
+                                            <!-- Script to confirm delete -->
                                         </tr>
 
                                     <?php }
@@ -611,6 +620,37 @@ session_start();
                         <?php
 
                     } else { ?>
+                        <?php
+
+
+                        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["member_id"]) && isset($_POST["status"])) {
+                            $memberId = $_POST["member_id"];
+                            $status = $_POST["status"];
+                            $year = $_POST["year"];
+                            $month = $_POST["month"];
+
+                            // Prepare and execute SQL statement to update payment status
+                            $sql = "UPDATE member_fees SET payment_status='$status' WHERE member_id='$memberId' AND year='$year' AND month='$month'";
+
+                            $response = array(); // Initialize response array
+                
+                            if ($conn->query($sql) === TRUE) {
+                                $response["success"] = true;
+                                $response["message"] = "Payment status updated successfully.";
+                            } else {
+                                $response["success"] = false;
+                                $response["message"] = "Error updating payment status: " . $conn->error;
+                            }
+
+                            // Output response as JSON
+                            header('Content-Type: application/json');
+                            echo json_encode($response);
+
+                            $conn->close();
+                            exit;
+                        }
+                        ?>
+
                         <table class="table table-hover text-center ">
                             <thead class="table-dark">
                                 <tr>
@@ -624,7 +664,7 @@ session_start();
                                     <th scope="col">Payment Status</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
-                                    
+
                                 </tr>
                             </thead>
 
@@ -632,7 +672,7 @@ session_start();
 
                             <tbody>
                                 <?php
-                                include "db_conn.php";
+
                                 $sql = "SELECT * FROM `member_fees` ORDER BY `fee_id` DESC";
                                 $result = mysqli_query($conn, $sql);
                                 mysqli_close($conn);
@@ -659,21 +699,30 @@ session_start();
                                             <?php echo $row["paid_date"] ?>
                                         </td>
                                         <td>
-                                            <a href="#" onclick="window.open('<?php echo $row['proof_url'] ?>', '_blank', 'width=600,height=400'); return false;">View</a>
+                                            <a href="#"
+                                                onclick="window.open('<?php echo $row['proof_url'] ?>', '_blank', 'width=600,height=400'); return false;">View</a>
                                         </td>
                                         <td>
-                                            <?php echo $row["payment_status"] ?>
+                                            <form action="" method="post">
+                                                <div style="display:flex; justify-content:center;">
+                                                    <select style="width:200px;"
+                                                        class="form-select payment-form-select <?php echo ($row["payment_status"] == 'Paid') ? "paid" : "not-paid"; ?>"
+                                                        name="payment-status"
+                                                        onchange="updatePaymentStatus(<?php echo $row['member_id']; ?>, this.value, <?php echo $row['year']; ?>, <?php echo $row['month']; ?>)">
+                                                        <option value="Not yet" <?php echo ($row["payment_status"] == 'Not yet') ? "selected" : ""; ?>>Not yet</option>
+                                                        <option value="Paid" <?php echo ($row["payment_status"] == 'Paid') ? "selected" : ""; ?>>Paid</option>
+                                                    </select>
+                                                </div>
+                                            </form>
                                         </td>
-                                        
-
 
                                         <td class="col-remove">
-                                            <a  href="edit.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i
-                                                    class="fa-solid fa-pen-to-square fs-5 "></i></a>
+                                            <a href="edit.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i
+                                                    class="fa-solid fa-pen-to-square fs-5"></i></a>
                                         </td>
                                         <td class="col-remove">
-                                            <a  href="delete.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i
-                                                    class="fa-solid fa-trash fs-5"></i></a>
+                                            <a href="delete.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"
+                                                onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a>
                                         </td>
 
                                     </tr>
@@ -683,8 +732,46 @@ session_start();
                                 ?>
                             </tbody>
                         </table>
+
+                        <script>
+                            function confirmDelete() {
+                                return confirm("Are you sure you want to delete this record?");
+                            }
+
+                            function updatePaymentStatus(memberId, status, year, month) {
+                                // Create a new XMLHttpRequest object
+                                var xhr = new XMLHttpRequest();
+
+                                // Prepare the request
+                                xhr.open("POST", "member_fees.php", true);
+                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                                // Define what happens on successful data submission
+                                xhr.onreadystatechange = function () {
+                                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                                        if (xhr.status === 200) {
+                                            // Success: Do something (if needed)
+                                            console.log("Payment status updated successfully.");
+                                            window.location.reload();
+                                        } else {
+                                            // Error: Do something (if needed)
+                                            console.error("Error updating payment status.");
+                                        }
+                                    }
+                                };
+
+                                // Send the request
+                                xhr.send("member_id=" + memberId + "&status=" + status + "&year=" + year + "&month=" + month);
+                            }
+                        </script>
+
+
+
+
                         <!-- php database end -->
                     <?php } ?>
+
+
 
                 </div>
 

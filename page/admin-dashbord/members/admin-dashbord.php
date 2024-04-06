@@ -267,11 +267,11 @@ session_start();
                 </div>
                 <!-- filtering ui end -->
 
-                
+
 
                 <div class="container-2">
                     <?php
-                    
+
                     if ((isset($_GET['member-id']) || isset($_GET['name']) || isset($_GET['member-type']) || isset($_GET['month'])) && isset($_GET['column'])) {
                         ?>
                         <table class="table table-hover text-center ">
@@ -286,9 +286,9 @@ session_start();
                                     }
                                     ?>
 
-                                    
+
                                     <th scope="col">ID</th>
-                                       
+
 
                                     <?php
                                     if (isset($_GET['column']) && in_array('`first_name`', $_GET['column'])) {
@@ -401,7 +401,7 @@ session_start();
                                 // Fetch the selected columns from the form
                                 $selectedColumns = isset($_GET['column']) ? $_GET['column'] : '';
                                 // Check if $selectedColumns is set and is an array
-                                
+                        
                                 // Construct the SELECT query based on the selected columns
                                 $selectQuery = "SELECT `member_id`,";
                                 $selectQuery .= implode(',', $selectedColumns);
@@ -434,7 +434,7 @@ session_start();
                         
                                 $sql = $selectQuery . " WHERE " . implode(" AND ", $conditions) . " ORDER BY `member_id` DESC";
 
-                               
+
 
                                 // Execute the SQL query
                                 $result = mysqli_query($conn, $sql);
@@ -457,14 +457,14 @@ session_start();
                                                 <?php
                                             }
                                             ?>
-                                          
 
-                                            
-                                                <td>
-                                                    <?php echo $row["member_id"]; ?>
-                                                </td>
-                                                
-                                            
+
+
+                                            <td>
+                                                <?php echo $row["member_id"]; ?>
+                                            </td>
+
+
 
                                             <?php
                                             if (isset($_GET['column']) && in_array('`first_name`', $_GET['column'])) {
@@ -591,7 +591,14 @@ session_start();
                                                     class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
 
                                             <td class="col-remove"><a href="delete.php?id=<?php echo $row["member_id"]; ?>"
-                                                    class="link-dark"><i class="fa-solid fa-trash fs-5"></i></a></td>
+                                                    class="link-dark" onclick="return confirmDelete();"><i
+                                                        class="fa-solid fa-trash fs-5"></i></a></td>
+
+                                            <script>
+                                                function confirmDelete() {
+                                                    return confirm("Are you sure you want to delete this record?");
+                                                }
+                                            </script>
                                         </tr>
 
                                     <?php }
@@ -690,13 +697,19 @@ session_start();
 
 
                                         <td class="col-remove">
-                                            <a  href="edit.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i
+                                            <a href="edit.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i
                                                     class="fa-solid fa-pen-to-square fs-5 "></i></a>
                                         </td>
                                         <td class="col-remove">
-                                            <a  href="delete.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i
-                                                    class="fa-solid fa-trash fs-5"></i></a>
+                                            <a href="delete.php?id=<?php echo $row["member_id"] ?>" class="link-dark"
+                                                onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a>
                                         </td>
+
+                                        <script>
+                                            function confirmDelete() {
+                                                return confirm("Are you sure you want to delete this record?");
+                                            }
+                                        </script>
 
                                     </tr>
 
