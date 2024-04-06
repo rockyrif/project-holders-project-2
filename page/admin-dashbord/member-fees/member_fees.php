@@ -8,7 +8,7 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit members</title>
+        <title>Edit member fees</title>
 
 
 
@@ -62,7 +62,7 @@ session_start();
 
                 <!-- tittle start -->
                 <div class="admin-dashbord-tittle mb-4" style="position: relative;">
-                    <P class="" style=" margin-bottom: 0 !important;">MEMBERS</P>
+                    <P class="" style=" margin-bottom: 0 !important;">MEMBER FEES</P>
                     <div class="time" style=" position: absolute; right: 0%;">
                         <?php
                         // Set the default timezone
@@ -632,8 +632,6 @@ session_start();
                             // Prepare and execute SQL statement to update payment status
                             $sql = "UPDATE member_fees SET payment_status='$status' WHERE member_id='$memberId' AND year='$year' AND month='$month'";
 
-                            $response = array(); // Initialize response array
-                
                             if ($conn->query($sql) === TRUE) {
                                 $response["success"] = true;
                                 $response["message"] = "Payment status updated successfully.";
