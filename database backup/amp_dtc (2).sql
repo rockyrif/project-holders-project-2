@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2024 at 10:45 AM
+-- Generation Time: Apr 06, 2024 at 10:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -59,7 +59,10 @@ INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `ema
 (45, 'ADTC-MC', 'dada', 'adad', 'mnam32@gmail.com', 'adad', 'adad', '2024-03-01', 'bxbxbxb', 'child', '', 'xbxbx', 'male', '2024-03-30'),
 (46, 'ADTC-MC', 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '2024-03-30'),
 (48, 'ADTC-MA', 'Thayeel', 'Mohamed', 'thayeelmohamed2001@gmail.com', '0762381718', '0758127263', '2018-02-12', 'dhdjcnsjhnvdhvhdncdjv', 'adult', 'students', '', 'male', '2024-04-01'),
-(49, 'ADTC-MC', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-04-12', 'sdsd', 'child', '', 'sdsds', 'male', '2024-04-01');
+(49, 'ADTC-MC', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-04-12', 'sdsd', 'child', '', 'sdsds', 'male', '2024-04-01'),
+(50, 'ADTC-FC', 'fathima', 'samla', 'adtc@gmail.com', '0776040064', '', '2024-04-13', 'sdsdsds', 'child', '', 'sdsd', 'female', '2024-04-05'),
+(51, 'ADTC-FC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-27', 'sdsdsds', 'child', '', 'sdsd', 'female', '2024-04-05'),
+(52, 'ADTC-MC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-13', 'sdsdsds', 'child', '', 'sdsd', 'male', '2024-04-05');
 
 -- --------------------------------------------------------
 
@@ -74,6 +77,7 @@ CREATE TABLE `member_fees` (
   `month` int(11) DEFAULT NULL,
   `fee_amount` decimal(10,2) DEFAULT NULL,
   `paid_date` date DEFAULT NULL,
+  `proof_url` varchar(255) NOT NULL,
   `payment_status` enum('Not yet','Paid') NOT NULL DEFAULT 'Not yet'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -81,8 +85,9 @@ CREATE TABLE `member_fees` (
 -- Dumping data for table `member_fees`
 --
 
-INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `payment_status`) VALUES
-(2, 42, NULL, NULL, NULL, NULL, 'Not yet');
+INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `proof_url`, `payment_status`) VALUES
+(2, 42, 2011, 11, NULL, NULL, '/project-holders-project-2/Images/logo.png', 'Paid'),
+(4, 42, 2016, 5, 250.00, '2024-04-12', '/project-holders-project-2/Images/follow-us/1.png', 'Not yet');
 
 -- --------------------------------------------------------
 
@@ -142,13 +147,13 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `member_fees`
 --
 ALTER TABLE `member_fees`
-  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_login`
