@@ -287,7 +287,7 @@ session_start();
                                     ?>
 
 
-                                    <th scope="col">ID</th>
+                                    <th scope="col">Member ID</th>
 
 
                                     <?php
@@ -622,7 +622,7 @@ session_start();
                             <thead class="table-dark">
                                 <tr>
                                     <th scope="col">ID Prefix</th>
-                                    <th scope="col">ID</th>
+                                    <th scope="col">Member ID</th>
                                     <th scope="col">First Name</th>
                                     <th scope="col">Last Name</th>
                                     <th scope="col">Email</th>

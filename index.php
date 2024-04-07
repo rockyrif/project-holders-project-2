@@ -9,10 +9,9 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <title>ADTC Home</title>
 
-    
+
 
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +67,7 @@ session_start();
         <?php
         include 'components/navbar/navbar.php';
         ?>
-        
+
 
         <!-- Navbar end -->
 
@@ -255,8 +254,9 @@ session_start();
                                             tennis club a beacon of camaraderie and athletic achievement in Ampara
                                             District.
 
-                                            <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div> <div class="ocupation"> Founder & Deputy Inspector
-                                                General of Police</div>
+                                        <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div>
+                                        <div class="ocupation"> Founder & Deputy Inspector
+                                            General of Police</div>
                                         </p>
                                     </div>
                                 </div>
@@ -348,7 +348,8 @@ session_start();
                                     <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
                                     <button type="button"
                                         class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/latest-news/latest-news.php'">Read more</button>
+                                        onclick="window.location.href='page/latest-news/latest-news.php'">Read
+                                        more</button>
 
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
@@ -359,7 +360,8 @@ session_start();
                                     <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
                                     <button type="button"
                                         class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                        more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
@@ -369,7 +371,8 @@ session_start();
                                     <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
                                     <button type="button"
                                         class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                        more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
@@ -379,7 +382,8 @@ session_start();
                                     <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
                                     <button type="button"
                                         class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                        more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
@@ -389,7 +393,8 @@ session_start();
                                     <div class="splide-slide-contant-1-img splide-slide-img-5"></div>
                                     <button type="button"
                                         class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                        more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
@@ -399,7 +404,8 @@ session_start();
                                     <div class="splide-slide-contant-1-img splide-slide-img-6"></div>
                                     <button type="button"
                                         class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read more</button>
+                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                        more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
@@ -617,7 +623,9 @@ session_start();
             <div class="submit-request p-4">
                 <h5>Submit your request</h5>
                 <div class="line"></div>
-                <form action="https://script.google.com/macros/s/AKfycbwpL2emGOezsCab6cvBQqnU808WuAAt0nuZZay6AuLEXhFLwe4zmI2F2wxj7wjQz8BnfA/exec" method="POST" name="Feedback-form">
+                <form
+                    action="https://script.google.com/macros/s/AKfycbwpL2emGOezsCab6cvBQqnU808WuAAt0nuZZay6AuLEXhFLwe4zmI2F2wxj7wjQz8BnfA/exec"
+                    method="POST" name="Feedback-form">
                     <div class="mb-3">
                         <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp"
                             placeholder="Name" name="Name">

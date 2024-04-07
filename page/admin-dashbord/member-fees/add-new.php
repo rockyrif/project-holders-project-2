@@ -4,12 +4,12 @@ session_start();
 <?php
 include "db_conn.php";
 
-if (isset ($_POST["submit"])) {
+if (isset($_POST["submit"])) {
    $id_prefix_text = "ADTC";
-    
-   $id_prefix_gender = ($_POST['gender']=="male")? 'M' : 'F';
-   $id_prefix_member_type = ($_POST['member_type']=="adult")? 'A' : 'C';
-   $id_prefix = $id_prefix_text."-".$id_prefix_gender.$id_prefix_member_type;
+
+   $id_prefix_gender = ($_POST['gender'] == "male") ? 'M' : 'F';
+   $id_prefix_member_type = ($_POST['member_type'] == "adult") ? 'A' : 'C';
+   $id_prefix = $id_prefix_text . "-" . $id_prefix_gender . $id_prefix_member_type;
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
    $email = $_POST['email'];
@@ -106,7 +106,8 @@ if (isset ($_POST["submit"])) {
 
             <div class="mb-3">
                <label class="form-label">Address:</label>
-               <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4" required>
+               <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4"
+                  required>
             </div>
 
             <div class="mb-3">
@@ -156,7 +157,7 @@ if (isset ($_POST["submit"])) {
                <input type="radio" class="form-check-input" name="gender" id="female" value="female" required>
                <label for="gender" class="form-input-label">Female</label>
                &nbsp;
-      
+
             </div>
 
             <div class="mb-3">
