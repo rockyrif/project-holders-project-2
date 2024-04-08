@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2024 at 10:20 AM
+-- Generation Time: Apr 08, 2024 at 09:12 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -86,8 +86,11 @@ CREATE TABLE `member_fees` (
 --
 
 INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `proof_url`, `payment_status`) VALUES
-(2, 42, 2011, 11, NULL, NULL, '/project-holders-project-2/Images/logo.png', 'Paid'),
-(4, 42, 2016, 5, 250.00, '2024-04-12', '/project-holders-project-2/Images/follow-us/1.png', 'Not yet');
+(20, 42, 2016, 5, 250.00, '2024-04-25', '', 'Not yet'),
+(21, 48, 2025, 25, 6.00, '2024-04-12', '', 'Paid'),
+(22, 50, 2022, 25, 6.00, '2021-04-01', '', 'Paid'),
+(23, 18, 2025, 11, 300.00, '2024-04-25', '', 'Not yet'),
+(24, 45, 2011, 9, 500.00, '2024-04-12', '', 'Not yet');
 
 -- --------------------------------------------------------
 
@@ -153,7 +156,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `member_fees`
 --
 ALTER TABLE `member_fees`
-  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `user_login`

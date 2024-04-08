@@ -308,6 +308,8 @@ session_start();
                     ?>
 
                         <?php
+                        $response = ""; // Initialize $response variable
+
                         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fee_id"]) && isset($_POST["status"])) {
                             include_once 'db_conn.php'; // Include database connection file
                             $feeId = $_POST["fee_id"];
@@ -317,18 +319,24 @@ session_start();
                             $sql = "UPDATE member_fees SET payment_status = '$status' WHERE fee_id = '$feeId'";
 
                             if ($conn->query($sql) === TRUE) {
-
-                                $response = "Payment status updated successfully.";
+                                $_SESSION['response'] = "Payment status updated successfully."; // Store success message in session
                             } else {
-                                $response["success"] = false;
-                                $response["message"] = "Error updating payment status: " . $conn->error;
+                                $_SESSION['response'] = "Error updating payment status: " . $conn->error; // Store error message in session
                             }
 
+                            header("Location: {$_SERVER['PHP_SELF']}");
+                            exit();
+                        }
 
+                        // Check if response exists in session and display it
+                        if (isset($_SESSION['response'])) {
                             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    ' . $response . '
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
+                            ' . $_SESSION['response'] . '
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>';
+
+                            // Unset the response from session to clear it after displaying
+                            unset($_SESSION['response']);
                         }
                         ?>
 
@@ -553,7 +561,7 @@ session_start();
                                 // Construct the final SQL query
                                 $sql = $selectQuery . $whereClause . " ORDER BY mf.member_id DESC";
 
-                                // echo $sql;
+                                echo $sql;
 
 
                                 // Execute the SQL query
@@ -770,12 +778,12 @@ session_start();
                                             ?>
                                                 <td>
                                                     <!-- Form to update payment status -->
-                                                    <form action="" method="post">
+                                                    <form method="post">
                                                         <!-- Hidden input field for fee_id -->
                                                         <input type="hidden" name="fee_id" value="<?php echo $row['fee_id']; ?>">
                                                         <div style="display:flex; justify-content:center;">
                                                             <!-- Dropdown to select payment status -->
-                                                            <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"] == 'Paid') ? "paid" : "not-paid"; ?>" name="status" onchange="this.form.submit()">
+                                                            <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"] == 'Paid') ? "paid" : "not-paid"; ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['fee_id']; ?>, this.value)">
                                                                 <!-- Option for payment status Not yet -->
                                                                 <option value="Not yet" <?php echo ($row["payment_status"] == 'Not yet') ? "selected" : ""; ?>>Not yet</option>
                                                                 <!-- Option for payment status Paid -->
@@ -814,6 +822,31 @@ session_start();
                             function confirmDelete() {
                                 return confirm("Are you sure you want to delete this record?");
                             }
+
+                            function updatePaymentStatus(feeId, status) {
+                                // Create a new XMLHttpRequest object
+                                var xhr = new XMLHttpRequest();
+
+                                // Prepare the request
+                                xhr.open("POST", "", true); // Use current URL for the request
+                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                                // Define what happens on successful data submission
+                                xhr.onreadystatechange = function() {
+                                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                                        if (xhr.status === 200) {
+                                            // Reload the page upon successful submission
+                                            window.location.reload();
+                                        } else {
+                                            // Log error message to console
+                                            console.error("Error updating payment status. Status code: " + xhr.status);
+                                        }
+                                    }
+                                };
+
+                                // Send the request
+                                xhr.send("fee_id=" + feeId + "&status=" + status);
+                            }
                         </script>
                         <!-- auto submit and conform delete script end -->
 
@@ -823,6 +856,8 @@ session_start();
                     } else { ?>
 
                         <?php
+                        $response = ""; // Initialize $response variable
+
                         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fee_id"]) && isset($_POST["status"])) {
                             include_once 'db_conn.php'; // Include database connection file
                             $feeId = $_POST["fee_id"];
@@ -832,18 +867,24 @@ session_start();
                             $sql = "UPDATE member_fees SET payment_status = '$status' WHERE fee_id = '$feeId'";
 
                             if ($conn->query($sql) === TRUE) {
-
-                                $response = "Payment status updated successfully.";
+                                $_SESSION['response'] = "Payment status updated successfully."; // Store success message in session
                             } else {
-                                $response["success"] = false;
-                                $response["message"] = "Error updating payment status: " . $conn->error;
+                                $_SESSION['response'] = "Error updating payment status: " . $conn->error; // Store error message in session
                             }
 
+                            header("Location: {$_SERVER['PHP_SELF']}");
+                            exit();
+                        }
 
+                        // Check if response exists in session and display it
+                        if (isset($_SESSION['response'])) {
                             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    ' . $response . '
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
+                            ' . $_SESSION['response'] . '
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>';
+
+                            // Unset the response from session to clear it after displaying
+                            unset($_SESSION['response']);
                         }
                         ?>
 
@@ -872,37 +913,49 @@ session_start();
                                 // Select data from member_fees table
                                 $sql = "SELECT * FROM `member_fees` ORDER BY `fee_id` DESC";
                                 $result = mysqli_query($conn, $sql);
-                                // Loop through query results
-                                while ($row = mysqli_fetch_assoc($result)) {
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    // Loop through query results
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                        <tr>
+                                            <!-- Displaying table data -->
+                                            <td><?php echo $row["fee_id"]; ?></td>
+                                            <td><?php echo $row["member_id"] ?></td>
+                                            <td><?php echo $row["year"] ?></td>
+                                            <td><?php echo $row["month"] ?></td>
+                                            <td><?php echo $row["fee_amount"] ?></td>
+                                            <td><?php echo $row["paid_date"] ?></td>
+                                            <td><a href="#" onclick="window.open('<?php echo $row['proof_url'] ?>', '_blank', 'width=600,height=400'); return false;">View</a></td>
+                                            <td>
+                                                <!-- Form to update payment status -->
+                                                <form method="post">
+                                                    <!-- Hidden input field for fee_id -->
+                                                    <input type="hidden" name="fee_id" value="<?php echo $row['fee_id']; ?>">
+                                                    <div style="display:flex; justify-content:center;">
+                                                        <!-- Dropdown to select payment status -->
+                                                        <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"] == 'Paid') ? "paid" : "not-paid"; ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['fee_id']; ?>, this.value)">
+                                                            <!-- Option for payment status Not yet -->
+                                                            <option value="Not yet" <?php echo ($row["payment_status"] == 'Not yet') ? "selected" : ""; ?>>Not yet</option>
+                                                            <!-- Option for payment status Paid -->
+                                                            <option value="Paid" <?php echo ($row["payment_status"] == 'Paid') ? "selected" : ""; ?>>Paid</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                            <!-- Edit and delete buttons -->
+                                            <td class="col-remove"><a href="edit.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
+                                            <td class="col-remove"><a href="delete.php?id=<?php echo $row["fee_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                <?php
+                                } else {
                                 ?>
                                     <tr>
-                                        <!-- Displaying table data -->
-                                        <td><?php echo $row["fee_id"]; ?></td>
-                                        <td><?php echo $row["member_id"] ?></td>
-                                        <td><?php echo $row["year"] ?></td>
-                                        <td><?php echo $row["month"] ?></td>
-                                        <td><?php echo $row["fee_amount"] ?></td>
-                                        <td><?php echo $row["paid_date"] ?></td>
-                                        <td><a href="#" onclick="window.open('<?php echo $row['proof_url'] ?>', '_blank', 'width=600,height=400'); return false;">View</a></td>
-                                        <td>
-                                            <!-- Form to update payment status -->
-                                            <form action="" method="post">
-                                                <!-- Hidden input field for fee_id -->
-                                                <input type="hidden" name="fee_id" value="<?php echo $row['fee_id']; ?>">
-                                                <div style="display:flex; justify-content:center;">
-                                                    <!-- Dropdown to select payment status -->
-                                                    <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"] == 'Paid') ? "paid" : "not-paid"; ?>" name="status" onchange="this.form.submit()">
-                                                        <!-- Option for payment status Not yet -->
-                                                        <option value="Not yet" <?php echo ($row["payment_status"] == 'Not yet') ? "selected" : ""; ?>>Not yet</option>
-                                                        <!-- Option for payment status Paid -->
-                                                        <option value="Paid" <?php echo ($row["payment_status"] == 'Paid') ? "selected" : ""; ?>>Paid</option>
-                                                    </select>
-                                                </div>
-                                            </form>
+                                        <td colspan="15">
+                                            <?php echo 'No records found' ?>
                                         </td>
-                                        <!-- Edit and delete buttons -->
-                                        <td class="col-remove"><a href="edit.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
-                                        <td class="col-remove"><a href="delete.php?id=<?php echo $row["fee_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
                                     </tr>
                                 <?php
                                 }
@@ -914,6 +967,32 @@ session_start();
                         <script>
                             function confirmDelete() {
                                 return confirm("Are you sure you want to delete this record?");
+                            }
+
+                            // JavaScript function to submit the form asynchronously
+                            function updatePaymentStatus(feeId, status) {
+                                // Create a new XMLHttpRequest object
+                                var xhr = new XMLHttpRequest();
+
+                                // Prepare the request
+                                xhr.open("POST", "", true); // Use current URL for the request
+                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                                // Define what happens on successful data submission
+                                xhr.onreadystatechange = function() {
+                                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                                        if (xhr.status === 200) {
+                                            // Reload the page upon successful submission
+                                            window.location.reload();
+                                        } else {
+                                            // Log error message to console
+                                            console.error("Error updating payment status. Status code: " + xhr.status);
+                                        }
+                                    }
+                                };
+
+                                // Send the request
+                                xhr.send("fee_id=" + feeId + "&status=" + status);
                             }
                         </script>
 
