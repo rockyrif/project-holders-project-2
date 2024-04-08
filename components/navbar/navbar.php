@@ -125,22 +125,18 @@
                         <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">HOME</a>
                     </div>
                     <div class="nav-item-outer">
-                        <a href="/project-holders-project-2/page/AboutUs-page/About-us.php"
-                            class="nav-link nav-link-about">ABOUT US</a>
+                        <a href="/project-holders-project-2/page/AboutUs-page/About-us.php" class="nav-link nav-link-about">ABOUT US</a>
                     </div>
                     <div class="nav-item-outer">
-                        <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php"
-                            class="nav-link nav-link-contact">CONTACT</a>
+                        <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php" class="nav-link nav-link-contact">CONTACT</a>
                     </div>
 
-                    <?php if (!isset($_SESSION['username'])): ?>
+                    <?php if (!isset($_SESSION['username'])) : ?>
                         <div class="nav-item-outer">
-                            <a href="/project-holders-project-2/page/login-and-signup-page/index.html"
-                                class="nav-link nav-link-login">SIGN IN</a>
+                            <a href="/project-holders-project-2/page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN IN</a>
                         </div>
                         <div class="nav-item-outer">
-                            <button type="button" class="btn btn-success outer-button"
-                                onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.html'">SIGN
+                            <button type="button" class="btn btn-success outer-button" onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.html'">SIGN
                                 UP</button>
                         </div>
                     <?php endif; ?>
@@ -151,8 +147,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="offcanvas offcanvas-end offcan" tabindex="-1" id="myNavBar"
-                    aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas offcanvas-end offcan" tabindex="-1" id="myNavBar" aria-labelledby="offcanvasNavbarLabel">
 
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
@@ -160,7 +155,7 @@
                     </div>
 
                     <div class="offcanvas-body">
-                        <?php if (isset($_SESSION['username'])): ?>
+                        <?php if (isset($_SESSION['username'])) : ?>
                             <ul class="navbar-nav justify-content-end flex-grow-1">
                                 <li class="nav-item ">
                                     <a href="#" class="nav-link nav-link-home active">
@@ -170,8 +165,8 @@
                                 </li>
                             </ul>
                         <?php endif; ?>
-                        
-                        <?php if (isset($_SESSION['username'])): ?>
+
+                        <?php if (isset($_SESSION['username'])) : ?>
                             <ul class="navbar-nav justify-content-end flex-grow-1">
                                 <li class="nav-item ">
                                     <?php
@@ -182,62 +177,50 @@
                                     $result = mysqli_query($conn, $sql);
                                     $row = mysqli_fetch_assoc($result);
                                     ?>
-                                    <a href="/project-holders-project-2/index.php"
-                                        class="nav-link nav-link-home active">Your ID :
-                                        <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?>
-                                        <?= (isset($row["member_id"])) ? $row["member_id"] : 'please be a member'; ?>
+                                    <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">Your ID :
+                                        <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?><?= (isset($row["member_id"])) ? $row["member_id"] : 'Please be a member'; ?>
                                     </a>
                                     <?php
                                     if ($result) {
-                                        $_SESSION["id"] = $row["member_id"];    
+                                        $_SESSION["id"] = $row["member_id"];
                                     }
                                     ?>
                                 </li>
                             </ul>
                         <?php endif; ?>
 
-                        <?php if (!isset($_SESSION['username'])): ?>
+                        <?php if (!isset($_SESSION['username'])) : ?>
                             <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
-                                <a href="/project-holders-project-2/page/login-and-signup-page/index.html"
-                                    class="nav-link nav-link-login">SIGN
+                                <a href="/project-holders-project-2/page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN
                                     IN</a>
-                                <button type="button" class="btn btn-success offcanvas-button"
-                                    onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.html'">SIGN
+                                <button type="button" class="btn btn-success offcanvas-button" onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.html'">SIGN
                                     UP</button>
 
                             </div>
                         <?php endif; ?>
 
                         <form class="d-flex mt-1 search " role="search" style="width: 100%;">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                                id="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
 
 
                         <ul class="navbar-nav justify-content-end flex-grow-1">
 
-                            <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin"): ?>
+                            <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") : ?>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         ADMIN DASHBORD
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item"
-                                                href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit
                                                 members</a></li>
-                                        <li><a class="dropdown-item"
-                                                href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing"
-                                                target="_blank">Edit
+                                        <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing" target="_blank">Edit
                                                 Feedback form</a></li>
-                                        <li><a class="dropdown-item" href="https://calendar.google.com/calendar/u/0/r"
-                                                target="_blank">Edit
+                                        <li><a class="dropdown-item" href="https://calendar.google.com/calendar/u/0/r" target="_blank">Edit
                                                 Calendar</a></li>
-                                        <li><a class="dropdown-item"
-                                                href="/project-holders-project-2/page/admin-dashbord/member-fees/member_fees.php"
-                                                target="_blank">Edit
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/member-fees/member_fees.php" target="_blank">Edit
                                                 Payment</a></li>
 
                                     </ul>
@@ -246,28 +229,23 @@
                             <?php endif; ?>
 
                             <li class="nav-item ">
-                                <a href="/project-holders-project-2/index.php"
-                                    class="nav-link nav-link-home active">HOME</a>
+                                <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/project-holders-project-2/page/AboutUs-page/About-us.php"
-                                    class="nav-link nav-link-about">ABOUT
+                                <a href="/project-holders-project-2/page/AboutUs-page/About-us.php" class="nav-link nav-link-about">ABOUT
                                     US</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php"
-                                    class="nav-link nav-link-contact">CONTACT</a>
+                                <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php" class="nav-link nav-link-contact">CONTACT</a>
                             </li>
 
-                            <?php if (isset($_SESSION["username"])): ?>
+                            <?php if (isset($_SESSION["username"])) : ?>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         MEMBERSHIP
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item"
-                                                href="/project-holders-project-2/page/become-member/add-new.php">Become a
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/become-member/add-new.php">Become a
                                                 member</a></li>
                                         <li><a class="dropdown-item" href="#">Payment</a></li>
                                     </ul>
@@ -276,44 +254,35 @@
                             <?php endif; ?>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     COURTS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/courts/courts.php">About
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/courts/courts.php">About
                                             courts we have</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/courts/courts.php">Image
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/courts/courts.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     TOURNAMENTS
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Enter Tournament</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/calender/calender.php">Tournament
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/calender/calender.php">Tournament
                                             Calendar</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
                                             De Fruit Tournaments</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php">ADTC
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php">ADTC
                                             Year End Finals</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter
                                             School Tournaments</a></li>
 
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     RANKING
                                 </a>
                                 <ul class="dropdown-menu">
@@ -322,79 +291,63 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     COACHES
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Register</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/Find-a-coach/Find-a-coach-page.php">Find
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/Find-a-coach/Find-a-coach-page.php">Find
                                             a
                                             Coach</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     SCHOOL TRAINING PROGRAMS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">About
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">About
                                             School Programs</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">Image
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     BEACH TENNIS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">About
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">About
                                             Beach Tennis</a></li>
                                     <li><a class="dropdown-item" href="#">Tournaments / Activities</a></li>
-                                    <li><a class="dropdown-item dropdown"
-                                            href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Image
+                                    <li><a class="dropdown-item dropdown" href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     ACHIEVEMENTS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/index.php#achievement-by-ADTC"
-                                            id="achievement-by-ADTC-btn">ADTC
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/index.php#achievement-by-ADTC" id="achievement-by-ADTC-btn">ADTC
                                             Achievements</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php">Image
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     FEDERATION
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item"
-                                            href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC
                                             Committee</a></li>
-                                    <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews'
-                                            id="adtcnews-btn">ADTC News</a>
+                                    <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews' id="adtcnews-btn">ADTC News</a>
 
                                     </li>
 
 
-                                    <li><a class="dropdown-item dropdown"
-                                            href="/project-holders-project-2/index.php#gallery" id="gallery-btn">Image
+                                    <li><a class="dropdown-item dropdown" href="/project-holders-project-2/index.php#gallery" id="gallery-btn">Image
                                             Gallery</a>
 
                                     </li>
@@ -403,10 +356,9 @@
                                 <script src="/project-holders-project-2/components/navbar/navbar.js"></script>
                             </li>
 
-                            <?php if (isset($_SESSION['username'])): ?>
+                            <?php if (isset($_SESSION['username'])) : ?>
                                 <li class="nav-item mt-2">
-                                    <button type="button" class="btn btn-danger offcanvas-button"
-                                        onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/log-out.php'">LOG
+                                    <button type="button" class="btn btn-danger offcanvas-button" onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/log-out.php'">LOG
                                         OUT</button>
                                 </li>
                             <?php endif; ?>
@@ -414,15 +366,7 @@
 
                         </ul>
 
-                        <!-- visitor counter start -->
-                        <div style="display:flex; justify-content:center;">
-                            <a href='http://www.freevisitorcounters.com'>at www.freevisitorcounters.com</a>
-                            <script type='text/javascript'
-                                src='https://www.freevisitorcounters.com/auth.php?id=f588b368c8bb41d1c64b8cde849cedf3c6070209'></script>
-                            <script type="text/javascript"
-                                src="https://www.freevisitorcounters.com/en/home/counter/1155377/t/0"></script>
-                        </div>
-                        <!-- visitor counter end -->
+                       
 
                     </div>
                 </div>

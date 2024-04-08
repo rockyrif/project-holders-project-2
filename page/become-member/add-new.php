@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
    $result = mysqli_query($conn, $sql);
 
    if ($result) {
-      header("Location: add-new.php?msg=Form submitted successfully");
+      header("Location: add-new.php?msg=Congrates now you are a member of Ampara distric tennis club");
    } else {
       echo "Failed: " . mysqli_error($conn);
    }
@@ -62,7 +62,7 @@ if (isset($_POST["submit"])) {
    <title>ADTC add</title>
 </head>
 
-<body style="background-color:">
+<body>
    <?php
    include '../../components/navbar/navbar.php';
    ?>

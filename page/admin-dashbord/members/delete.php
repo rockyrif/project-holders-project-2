@@ -7,5 +7,5 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
   header("Location: admin-dashbord.php?msg=Data deleted successfully");
 } else {
-  echo "Failed: " . mysqli_error($conn);
+  echo "Failed: Because there are payment records for this member try deleting all the payment record for this member. " . mysqli_error($conn);
 }

@@ -62,18 +62,20 @@ session_start();
                 <!-- tittle start -->
                 <div class="admin-dashbord-tittle mb-4" style="position: relative;">
                     <P class="" style=" margin-bottom: 0 !important;">MEMBER FEES</P>
+
+                    <!-- current time seter start -->
                     <div class="time" style=" position: absolute; right: 0%;">
                         <?php
                         // Set the default timezone
                         date_default_timezone_set('Asia/Colombo');
-
                         // Get the current date and time
                         $currentDateTime = date('Y-m-d H:i:s');
-
                         // Display the current date and time
                         echo $currentDateTime;
                         ?>
                     </div>
+                    <!-- current time seter end -->
+
                 </div>
                 <!-- Tittle end -->
 
@@ -308,7 +310,7 @@ session_start();
                     ?>
 
                         <?php
-                        $response = ""; // Initialize $response variable
+                       
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fee_id"]) && isset($_POST["status"])) {
                             include_once 'db_conn.php'; // Include database connection file
@@ -324,7 +326,7 @@ session_start();
                                 $_SESSION['response'] = "Error updating payment status: " . $conn->error; // Store error message in session
                             }
 
-                            header("Location: {$_SERVER['PHP_SELF']}");
+                            
                             exit();
                         }
 
@@ -559,7 +561,7 @@ session_start();
                                 }
 
                                 // Construct the final SQL query
-                                $sql = $selectQuery . $whereClause . " ORDER BY mf.member_id DESC";
+                                $sql = $selectQuery . $whereClause . " ORDER BY mf.fee_id DESC";
 
                                 echo $sql;
 
@@ -856,7 +858,6 @@ session_start();
                     } else { ?>
 
                         <?php
-                        $response = ""; // Initialize $response variable
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fee_id"]) && isset($_POST["status"])) {
                             include_once 'db_conn.php'; // Include database connection file
@@ -872,7 +873,7 @@ session_start();
                                 $_SESSION['response'] = "Error updating payment status: " . $conn->error; // Store error message in session
                             }
 
-                            header("Location: {$_SERVER['PHP_SELF']}");
+                           
                             exit();
                         }
 
@@ -913,6 +914,7 @@ session_start();
                                 // Select data from member_fees table
                                 $sql = "SELECT * FROM `member_fees` ORDER BY `fee_id` DESC";
                                 $result = mysqli_query($conn, $sql);
+                                $conn->close();
                                 if ($result && mysqli_num_rows($result) > 0) {
                                     // Loop through query results
                                     while ($row = mysqli_fetch_assoc($result)) {
