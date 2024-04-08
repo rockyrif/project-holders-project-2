@@ -63,7 +63,7 @@ if (isset($_POST["submit"])) {
    <title>ADTC add</title>
 </head>
 
-<body style="background-color:">
+<body style="">
    <?php
    include '../../../components/navbar/navbar.php';
    ?>
