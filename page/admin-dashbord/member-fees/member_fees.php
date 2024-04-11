@@ -86,18 +86,6 @@ session_start();
                 </script>
                 <!-- AOS script end-->
 
-                <!-- Aleart start -->
-                <?php
-                if (isset($_GET["msg"])) {
-                    $msg = $_GET["msg"];
-                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    ' . $msg . '
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
-                }
-                ?>
-                <!-- Aleart end -->
-
                 <!-- filtering ui start -->
                 <div class="row mb-2 mt-1 filter-section">
                     <div class="col-md-12">
@@ -291,9 +279,6 @@ session_start();
                                             <button class="btn btn-dark print-btn" onclick="window.print();">Print</button>
                                         </div>
                                     </div>
-
-
-
                                 </form>
                             </div>
                         </div>
@@ -301,48 +286,126 @@ session_start();
                 </div>
                 <!-- filtering ui end -->
 
+                <!-- scroll to same position when reload. start -->
+                <script>
+                    // Function to save scroll positions
+                    function saveScrollPositions() {
 
+                        var childScrollPos = document.getElementById('childScroll').scrollTop;
 
-                <div class="container-2">
-                    <?php
+                        localStorage.setItem('childScrollPos', childScrollPos);
+                    }
 
-                    if ((isset($_GET['member-id']) || isset($_GET['name']) || isset($_GET['member-type']) || isset($_GET['month'])) && isset($_GET['column'])) {
-                    ?>
+                    // Function to restore scroll positions
+                    function restoreScrollPositions() {
 
-                        <?php
-                       
+                        console.log("Restoring scroll positions...");
+                        var childScrollPos = localStorage.getItem('childScrollPos');
+                        console.log("Retrieved child scroll position:", childScrollPos);
 
-                        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fee_id"]) && isset($_POST["status"])) {
-                            include_once 'db_conn.php'; // Include database connection file
-                            $feeId = $_POST["fee_id"];
-                            $status = $_POST["status"];
-
-                            // Prepare and execute SQL statement to update payment status
-                            $sql = "UPDATE member_fees SET payment_status = '$status' WHERE fee_id = '$feeId'";
-
-                            if ($conn->query($sql) === TRUE) {
-                                $_SESSION['response'] = "Payment status updated successfully."; // Store success message in session
-                            } else {
-                                $_SESSION['response'] = "Error updating payment status: " . $conn->error; // Store error message in session
-                            }
-
-                            
-                            exit();
+                        if (childScrollPos !== null) {
+                            document.getElementById('childScroll').scrollTop = childScrollPos;
+                            console.log("Scroll position restored successfully.");
+                        } else {
+                            console.log("No scroll position found in localStorage.");
                         }
+                    }
 
-                        // Check if response exists in session and display it
-                        if (isset($_SESSION['response'])) {
-                            echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    // Call the restoreScrollPositions function when the page loads
+                    window.onload = function() {
+                        restoreScrollPositions();
+                    };
+                </script>
+                <!-- scroll to same position when reload. end -->
+
+                <!-- update payment status. start -->
+                <?php
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fee_id"]) && isset($_POST["status"])) {
+                    include_once 'db_conn.php'; // Include database connection file
+                    $feeId = $_POST["fee_id"];
+                    $status = $_POST["status"];
+
+                    // Prepare and execute SQL statement to update payment status
+                    $sql = "UPDATE member_fees SET payment_status = '$status' WHERE fee_id = '$feeId'";
+
+                    if ($conn->query($sql) === TRUE) {
+                        $_SESSION['response'] = "Payment status updated successfully."; // Store success message in session
+                    } else {
+                        $_SESSION['response'] = "Error updating payment status: " . $conn->error; // Store error message in session
+                    }
+
+                    exit();
+                }
+
+                //  update payment Aleart start
+                if (isset($_SESSION['response'])) {
+                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                             ' . $_SESSION['response'] . '
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>';
 
-                            // Unset the response from session to clear it after displaying
-                            unset($_SESSION['response']);
-                        }
-                        ?>
+
+                    unset($_SESSION['response']);
+                }
+                //  update payment Aleart end
+                ?>
+                <!-- update payment status. end -->
+
+                <!-- update delete status. start -->
+                <?php
+                if (isset($_GET["id"])) {
+
+                    $id = isset($_GET["id"]) ? $_GET["id"] : '';
+
+                    $sql = "DELETE FROM `member_fees` WHERE fee_id = ?";
+
+                    $stmt = mysqli_prepare($conn, $sql);
+
+                    mysqli_stmt_bind_param($stmt, "i", $id);
+
+                    $result = mysqli_stmt_execute($stmt);
 
 
+                    if ($result) {
+                        $_SESSION['delete_response'] = "Data deleted successfully";
+                    } else {
+
+                        $_SESSION['delete_response'] = "Failed: " . mysqli_stmt_error($stmt);
+                    }
+
+                    // Close the statement
+                    mysqli_stmt_close($stmt);
+
+                    echo "<script>
+                                // Clear the query parameters from the URL
+                                window.history.replaceState({}, document.title, window.location.pathname);
+                         </script>";
+
+                    //  Delete Aleart start
+                    if (isset($_SESSION['delete_response'])) {
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            ' . $_SESSION['delete_response'] . '
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>';
+
+                        // Unset the response from session to clear it after displaying
+                        unset($_SESSION['delete_response']);
+                    }
+                    // delete Aleart end
+
+                }
+                ?>
+                <!-- update delete status. end -->
+
+
+
+                <div class="container-2" id="childScroll" onscroll="saveScrollPositions()">
+
+                    <?php
+
+                    if ((isset($_GET['member-id']) || isset($_GET['name']) || isset($_GET['member-type']) || isset($_GET['month'])) && isset($_GET['column'])) {
+                    ?>
 
                         <table class="table table-hover text-center ">
 
@@ -565,10 +628,8 @@ session_start();
 
                                 echo $sql;
 
-
                                 // Execute the SQL query
                                 $result = mysqli_query($conn, $sql);
-
 
                                 // Check if query executed successfully
                                 if ($result && mysqli_num_rows($result) > 0) {
@@ -787,9 +848,9 @@ session_start();
                                                             <!-- Dropdown to select payment status -->
                                                             <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"] == 'Paid') ? "paid" : "not-paid"; ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['fee_id']; ?>, this.value)">
                                                                 <!-- Option for payment status Not yet -->
-                                                                <option value="Not yet" <?php echo ($row["payment_status"] == 'Not yet') ? "selected" : ""; ?>>Not yet</option>
+                                                                <option value="Not yet" class="not-paid" <?php echo ($row["payment_status"] == 'Not yet') ? "selected" : ""; ?>>Not yet</option>
                                                                 <!-- Option for payment status Paid -->
-                                                                <option value="Paid" <?php echo ($row["payment_status"] == 'Paid') ? "selected" : ""; ?>>Paid</option>
+                                                                <option value="Paid" class="paid" <?php echo ($row["payment_status"] == 'Paid') ? "selected" : ""; ?>>Paid</option>
                                                             </select>
                                                         </div>
                                                     </form>
@@ -800,8 +861,7 @@ session_start();
 
                                             <td class="col-remove"><a href="edit.php?id=<?php echo $row["fee_id"]; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
 
-                                            <td class="col-remove"><a href="delete.php?id=<?php echo $row["fee_id"]; ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
-
+                                            <td class="col-remove"><a href="member_fees.php?id=<?php echo $row["fee_id"]; ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
 
                                         </tr>
 
@@ -852,42 +912,12 @@ session_start();
                         </script>
                         <!-- auto submit and conform delete script end -->
 
-                        <!-- php filtering end -->
+
                     <?php
 
                     } else { ?>
 
-                        <?php
 
-                        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fee_id"]) && isset($_POST["status"])) {
-                            include_once 'db_conn.php'; // Include database connection file
-                            $feeId = $_POST["fee_id"];
-                            $status = $_POST["status"];
-
-                            // Prepare and execute SQL statement to update payment status
-                            $sql = "UPDATE member_fees SET payment_status = '$status' WHERE fee_id = '$feeId'";
-
-                            if ($conn->query($sql) === TRUE) {
-                                $_SESSION['response'] = "Payment status updated successfully."; // Store success message in session
-                            } else {
-                                $_SESSION['response'] = "Error updating payment status: " . $conn->error; // Store error message in session
-                            }
-
-                           
-                            exit();
-                        }
-
-                        // Check if response exists in session and display it
-                        if (isset($_SESSION['response'])) {
-                            echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            ' . $_SESSION['response'] . '
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>';
-
-                            // Unset the response from session to clear it after displaying
-                            unset($_SESSION['response']);
-                        }
-                        ?>
 
                         <!-- Displaying member fees table -->
                         <table class="table table-hover text-center">
@@ -937,16 +967,16 @@ session_start();
                                                         <!-- Dropdown to select payment status -->
                                                         <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"] == 'Paid') ? "paid" : "not-paid"; ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['fee_id']; ?>, this.value)">
                                                             <!-- Option for payment status Not yet -->
-                                                            <option value="Not yet" <?php echo ($row["payment_status"] == 'Not yet') ? "selected" : ""; ?>>Not yet</option>
+                                                            <option value="Not yet" class="not-paid" ?php echo ($row["payment_status"]=='Not yet' ) ? "selected" : "" ; ?>Not yet</option>
                                                             <!-- Option for payment status Paid -->
-                                                            <option value="Paid" <?php echo ($row["payment_status"] == 'Paid') ? "selected" : ""; ?>>Paid</option>
+                                                            <option value="Paid" class="paid" <?php echo ($row["payment_status"] == 'Paid') ? "selected" : ""; ?>>Paid</option>
                                                         </select>
                                                     </div>
                                                 </form>
                                             </td>
                                             <!-- Edit and delete buttons -->
                                             <td class="col-remove"><a href="edit.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
-                                            <td class="col-remove"><a href="delete.php?id=<?php echo $row["fee_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
+                                            <td class="col-remove"><a href="member_fees.php?id=<?php echo $row["fee_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
                                         </tr>
                                     <?php
                                     }
@@ -984,6 +1014,8 @@ session_start();
                                 xhr.onreadystatechange = function() {
                                     if (xhr.readyState === XMLHttpRequest.DONE) {
                                         if (xhr.status === 200) {
+
+
                                             // Reload the page upon successful submission
                                             window.location.reload();
                                         } else {
@@ -1003,6 +1035,9 @@ session_start();
                         <!-- php database end -->
                     <?php } ?>
                 </div>
+                <script>
+
+                </script>
 
             </div>
             <!-- admin-dashbord-end -->

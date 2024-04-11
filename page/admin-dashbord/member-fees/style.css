@@ -29,7 +29,7 @@ body {
 }
 
 .container-2 {
-  height: 80vh;
+  height: 75vh;
   overflow-x: scroll;
 }
 
@@ -68,11 +68,15 @@ body {
   background-color: red !important;
 }
 
+option .not-paid {
+  background-color: red !important;
+}
+
 .payment-form-select {
   color: white !important;
 }
 
-.table-heading{
+.table-heading {
   color: #000066;
   font-family: "PF Din Stencil W01 Bold";
 }
