@@ -38,7 +38,7 @@ if (isset($_POST["submit"])) {
    if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
       echo "Sorry, only JPG, JPEG, PNG files are allowed.";
    } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 2MB limit
-      echo "Sorry, your file is too large.";
+      echo "Sorry, your file is too large. limit to 500kb.";
    } else {
       // Upload image
       if (move_uploaded_file($_FILES["payment-proof"]["tmp_name"], $targetFile)) {
