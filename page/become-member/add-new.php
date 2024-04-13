@@ -4,11 +4,13 @@ session_start();
 <?php
 include "db_conn.php";
 
-if (isset($_POST["submit"])) {
-   $id_prefix_text = "ADTC";
-   $id_prefix_gender = ($_POST['gender'] == "male") ? 'M' : 'F';
-   $id_prefix_member_type = ($_POST['member_type'] == "adult") ? 'A' : 'C';
-   $id_prefix = $id_prefix_text . "-" . $id_prefix_gender . $id_prefix_member_type;
+if (isset ($_POST["submit"])) {
+   $id_prefix_text = "ADTC"; 
+   $id_prefix_gender = ($_POST['gender']=="male")? 'M' : 'F';
+   $id_prefix_member_type = ($_POST['member_type']=="adult")? 'A' : 'C';
+   $id_prefix_current_year = date("Y");
+
+   $id_prefix = $id_prefix_text."-".$id_prefix_current_year."-".$id_prefix_gender.$id_prefix_member_type;
    $first_name = $_POST['first_name'];
    $last_name = $_POST['last_name'];
    $email = $_POST['email'];
@@ -26,7 +28,7 @@ if (isset($_POST["submit"])) {
    $result = mysqli_query($conn, $sql);
 
    if ($result) {
-      header("Location: add-new.php?msg=Congrates now you are a member of Ampara distric tennis club");
+      header("Location: add-new.php?msg=Congrates! now you are a member of Ampara distric tennis club");
    } else {
       echo "Failed: " . mysqli_error($conn);
    }
@@ -46,17 +48,13 @@ if (isset($_POST["submit"])) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <!-- Bootstrap -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
    <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
    <!-- online fonts start -->
-   <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-      rel="stylesheet">
+   <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
    <!-- online fonts end -->
 
    <title>ADTC add</title>
@@ -67,7 +65,7 @@ if (isset($_POST["submit"])) {
    include '../../components/navbar/navbar.php';
    ?>
 
-   
+
 
    <div class="container" style="margin-top:93px;">
       <!-- Aleart start -->
@@ -103,7 +101,7 @@ if (isset($_POST["submit"])) {
 
             <div class="mb-3" style="display:none;">
                <label class="form-label">Email:</label>
-               <input type="email" class="form-control" name="email" placeholder="name@example.com" value="<?= (isset($_SESSION['email']))?  $_SESSION["email"] : ''; ?>">
+               <input type="email" class="form-control" name="email" placeholder="name@example.com" value="<?= (isset($_SESSION['email'])) ?  $_SESSION["email"] : ''; ?>">
             </div>
 
             <div class="mb-3">
@@ -119,8 +117,7 @@ if (isset($_POST["submit"])) {
 
             <div class="mb-3">
                <label class="form-label">Address:</label>
-               <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4"
-                  required>
+               <input type="text" class="form-control" name="address" placeholder="no 3 sahivu road kalmunai-4" required>
             </div>
 
             <div class="mb-3">
@@ -147,7 +144,7 @@ if (isset($_POST["submit"])) {
                const occupationInput = document.getElementById('occupationInput');
                const schoolInput = document.getElementById('schoolInput');
 
-               memberTypeSelect.addEventListener('change', function () {
+               memberTypeSelect.addEventListener('change', function() {
                   if (memberTypeSelect.value === 'adult') {
                      occupationInput.style.display = 'block';
                      schoolInput.style.display = 'none';
@@ -182,9 +179,7 @@ if (isset($_POST["submit"])) {
    </div>
 
    <!-- Bootstrap -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 </body>
 
