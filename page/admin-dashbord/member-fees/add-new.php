@@ -165,7 +165,7 @@ mysqli_close($conn);
 
             <div class="mb-3">
                <button type="submit" class="btn btn-success" name="submit">Save</button>
-               <a href="admin-dashbord.php" class="btn btn-danger ">Cancel</a>
+               <a href="member_fees.php.php" class="btn btn-danger ">Cancel</a>
             </div>
          </form>
       </div>
