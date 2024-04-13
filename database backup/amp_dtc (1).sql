@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2024 at 08:33 AM
+-- Generation Time: Apr 13, 2024 at 10:22 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -62,7 +62,7 @@ INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `ema
 (50, 'ADTC-FC', 'fathima', 'samla', 'adtc@gmail.com', '0776040064', '', '2024-04-13', 'sdsdsds', 'child', '', 'sdsd', 'female', '2024-04-05'),
 (51, 'ADTC-FC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-27', 'sdsdsds', 'child', '', 'sdsd', 'female', '2024-04-05'),
 (52, 'ADTC-MC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-13', 'sdsdsds', 'child', '', 'sdsd', 'male', '2024-04-05'),
-(56, 'ADTC-MC', 'fathima', 'nifla', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-23', 'xcx', 'child', '', 'xcxc', 'male', '2024-04-08');
+(56, 'ADTC-MC', 'fathima', 'nifla', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-23', 'xcy', 'child', '', 'xcxc', 'male', '2024-04-08');
 
 -- --------------------------------------------------------
 
@@ -86,23 +86,30 @@ CREATE TABLE `member_fees` (
 --
 
 INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `proof_url`, `payment_status`) VALUES
-(34, 42, 2025, 1, 250.00, NULL, '', 'Paid'),
-(35, 43, 2025, 11, 800.00, '2023-11-07', '', 'Not yet'),
+(34, 42, 2050, 1, 250.00, '2024-04-01', '', 'Paid'),
+(35, 43, 2051, 11, 801.00, '2023-11-07', '', 'Paid'),
 (36, 45, 2025, 11, 800.00, '2023-11-07', '', 'Paid'),
 (37, 46, 2025, 9, 500.00, '2021-04-01', '', 'Paid'),
-(42, 42, 2025, 5, 800.00, '2024-04-25', '', 'Not yet'),
-(43, 45, 2011, 1, 500.00, '2024-04-03', '', 'Not yet'),
+(42, 42, 2025, 5, 800.00, '2024-04-25', '', 'Paid'),
+(43, 45, 2011, 1, 500.00, '2024-04-03', '', 'Paid'),
 (44, 46, 2011, 1, 500.00, '2024-04-25', '', 'Paid'),
 (45, 49, 2022, 11, 300.00, '2024-04-12', '', 'Paid'),
-(46, 49, 2011, 1, 250.00, '2024-04-12', '', 'Not yet'),
+(46, 49, 2011, 1, 250.00, '2024-04-12', '', 'Paid'),
 (47, 50, 2011, 1, 500.00, '2024-04-12', '', 'Paid'),
-(48, 56, 2025, 25, 800.00, '2023-11-07', '', 'Not yet'),
-(49, 56, 2011, 11, 300.00, '2024-04-22', '', 'Not yet'),
-(50, 45, 2025, 11, 300.00, '2021-04-01', '', 'Not yet'),
-(53, 56, 2023, 1, 250.00, '2024-04-13', '../../../Images/payment-proof/2024-04-07_10-04-11-445.png', 'Not yet'),
+(48, 56, 2025, 25, 800.00, '2023-11-07', '', 'Paid'),
+(49, 56, 2011, 11, 300.00, '2024-04-22', '', 'Paid'),
+(50, 45, 2025, 11, 300.00, '2021-04-01', '', 'Paid'),
+(53, 56, 2023, 1, 250.00, '2024-04-13', '../../../Images/payment-proof/2024-04-07_10-04-11-445.png', 'Paid'),
 (54, 52, 2023, 3, 250.00, '2024-04-13', '../../../Images/payment-proof/2024-04-07_10-04-11-445.png', 'Paid'),
-(55, 56, 2023, 1, 250.00, '2024-04-13', '../../../Images/payment-proof/55.png', 'Not yet'),
-(56, 56, 2023, 1, 0.00, '2024-04-20', '../../../Images/payment-proof/56.png', 'Not yet');
+(55, 56, 2023, 1, 250.00, '2024-04-13', '../../../Images/payment-proof/55.png', 'Paid'),
+(56, 56, 2023, 1, 0.00, '2024-04-20', '../../../Images/payment-proof/56.png', 'Paid'),
+(57, 46, 2025, 2, 258.00, '2024-04-13', '../../../Images/payment-proof/57.png', 'Paid'),
+(58, 44, 0, 5, 500.00, '2024-04-14', '../../../Images/payment-proof/58.jpg', 'Paid'),
+(59, 56, 2024, 9, 250.00, '2024-04-14', '../../../Images/payment-proof/59.jpg', 'Paid'),
+(60, 56, 2050, 8, 1500.00, '2024-04-21', '../../../Images/payment-proof/60.jpg', 'Paid'),
+(61, 56, 2050, 8, 1500.00, '2024-04-21', '../../../Images/payment-proof/61.png', 'Paid'),
+(62, 52, 2052, 2, 2.00, '2024-04-21', '../../../Images/payment-proof/62.png', 'Paid'),
+(63, 26, 2026, 6, 6.00, '2024-04-06', '../../../Images/payment-proof/63.png', 'Paid');
 
 -- --------------------------------------------------------
 
@@ -169,7 +176,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `member_fees`
 --
 ALTER TABLE `member_fees`
-  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `user_login`

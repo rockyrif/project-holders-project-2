@@ -104,8 +104,8 @@ mysqli_close($conn);
             <div class="mb-3">
                <label class="form-label">Member ID:</label>
                <select class="form-select" name="member-id">
+                  <option value=""> Select </option>
                   <?php
-
                   // Select data from member_fees table
                   $sql = "SELECT `member_id` FROM `members` ORDER BY `member_id` DESC";
                   $result = mysqli_query($conn, $sql);
