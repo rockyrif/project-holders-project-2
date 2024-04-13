@@ -247,7 +247,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/become-member/add-new.php">Become a
                                                 member</a></li>
-                                        <li><a class="dropdown-item" href="#">Payment</a></li>
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/payment/add-new.php">Payment</a></li>
                                     </ul>
 
                                 </li>
