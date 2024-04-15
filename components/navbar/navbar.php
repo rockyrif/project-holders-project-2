@@ -181,7 +181,7 @@
                                         <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?><?= (isset($row["member_id"])) ? $row["member_id"] : 'Please be a member'; ?>
                                     </a>
                                     <?php
-                                    if ($result) {
+                                    if (isset($row["member_id"])) {
                                         $_SESSION["id"] = $row["member_id"];
                                     }
                                     ?>
@@ -240,17 +240,23 @@
                             </li>
 
                             <?php if (isset($_SESSION["username"])) : ?>
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         MEMBERSHIP
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/become-member/add-new.php">Become a
-                                                member</a></li>
-                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/payment/add-new.php">Payment</a></li>
+                                        <?php if (!isset($_SESSION['id'])) : ?>
+                                            <li><a class="dropdown-item" href="/project-holders-project-2/page/become-member/add-new.php">Become a
+                                                    member</a></li>
+                                        <?php endif; ?>
+                                        <?php if (isset($_SESSION['id'])) : ?>
+                                            <li><a class="dropdown-item" href="/project-holders-project-2/page/payment/add-new.php">Payment</a></li>
+                                        <?php endif; ?>
                                     </ul>
 
                                 </li>
+
                             <?php endif; ?>
 
                             <li class="nav-item dropdown">
@@ -366,7 +372,7 @@
 
                         </ul>
 
-                       
+
 
                     </div>
                 </div>

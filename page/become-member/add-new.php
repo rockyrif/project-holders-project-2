@@ -1,6 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION["id"]) && isset($_SESSION["username"])){
 ?>
+
 <?php
 include "db_conn.php";
 
@@ -184,3 +186,8 @@ if (isset ($_POST["submit"])) {
 </body>
 
 </html>
+<?php
+}else{
+   header("Location: ../../index.php");
+} 
+?>
