@@ -433,7 +433,7 @@ session_start();
                 </div>
                 <div class="image-container">
 
-                    <img alt="the-runner-up-position" src="Images/gallary/Achievement-by-ADTC/the-runner-up-position/1.jpg" class="image-button-container">
+                    <img alt="the-runner-up-position" src="Images/gallary/Achievement-by-ADTC/the-runner-up-position/4.jpg" class="image-button-container">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/the-runner-up-position/the-runner-up-position.php'">View</button>
                     <p class="gallery-info">The runner-up position</p>
                 </div>
