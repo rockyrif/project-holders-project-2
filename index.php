@@ -572,8 +572,8 @@ session_start();
                     Application</a>
                     <div class="line1"></div>  
                     <UL>
-                        <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application_Adult.pdf">For adult</a><div class="line1"></div>  </LI>
-                    <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application-Child-1.pdf">For child</a><div class="line1"></div>  </LI>
+                        <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application_Adult.pdf">For Adult</a><div class="line1"></div>  </LI>
+                    <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application-Child-1.pdf">For Child</a><div class="line1"></div>  </LI>
                       
                 </UL>
                 

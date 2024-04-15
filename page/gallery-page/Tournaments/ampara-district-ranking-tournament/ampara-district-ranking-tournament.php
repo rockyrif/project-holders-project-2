@@ -55,7 +55,7 @@ session_start();
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000"></p>
+                <p data-aos="fade-up" data-aos-duration="2000">AMPARA  RANKING TOURNAMENT was held from 29 - 31 March, 2024 at Ampara District Tennis Courts.</p>
             </div>
 
             <div class="gallery">
