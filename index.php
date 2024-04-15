@@ -22,8 +22,7 @@ session_start();
     <link rel="stylesheet" href="style.css?v=2">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -50,9 +49,7 @@ session_start();
     <!-- splide slider end -->
 
     <!-- Font Awesome start-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome end-->
 
 
@@ -88,8 +85,7 @@ session_start();
                                 <div class="carousal-para-head">
                                     <div class="carousal-para-heading">
                                         <!-- <h5>First slide label</h5> -->
-                                        <img alt="Welcome-banner" src="Images/home-page-carousal/Welcome-banner.png"
-                                            width="150" height="100">
+                                        <img alt="Welcome-banner" src="Images/home-page-carousal/Welcome-banner.png" width="150" height="100">
                                     </div>
 
                                     <div class="carousal-para">
@@ -111,16 +107,11 @@ session_start();
 
                             <!-- carousel indicator start -->
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4"
-                                    aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" aria-label="Slide 5"></button>
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="5"
                              aria-label="Slide 6"></button> -->
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="6" aria-label="Slide 7"></button>
@@ -154,16 +145,11 @@ session_start();
 
                             <!-- carousel indicator start -->
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"
-                                    aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
-                                    class="active" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4"
-                                    aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" class="active" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" aria-label="Slide 5"></button>
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="5"
                                 aria-label="Slide 6"></button> -->
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="6" aria-label="Slide 7"></button>
@@ -203,16 +189,11 @@ session_start();
 
                             <!-- carousel indicator start -->
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"
-                                    aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
-                                    class="active" aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4"
-                                    aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" class="active" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" aria-label="Slide 5"></button>
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="5"
                                 aria-label="Slide 6"></button> -->
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="6" aria-label="Slide 7"></button>
@@ -229,12 +210,10 @@ session_start();
                     </div>
                     <div class="content-flex-center">
                         <div class="carousal-content-and-indicator">
-                            <div class="carousel-content carousel-content-4" data-aos="fade-up"
-                                data-aos-duration="1000">
+                            <div class="carousel-content carousel-content-4" data-aos="fade-up" data-aos-duration="1000">
                                 <div class="carousal-para-head">
                                     <div class="carousal-para-heading">
-                                        <img alt="dig-sir" src="Images/home-page-carousal/dig-sir.jpg" height="150"
-                                            style="border-radius: 100%;">
+                                        <img alt="dig-sir" src="Images/home-page-carousal/dig-sir.jpg" height="150" style="border-radius: 100%;">
                                         <h5>Founder's Message
                                         </h5>
 
@@ -264,16 +243,11 @@ session_start();
 
                             <!-- carousel indicator start -->
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"
-                                    aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
-                                    class="active" aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4"
-                                    aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3" class="active" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" aria-label="Slide 5"></button>
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="5"
                                 aria-label="Slide 6"></button> -->
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="6" aria-label="Slide 7"></button>
@@ -308,16 +282,11 @@ session_start();
 
                             <!-- carousel indicator start -->
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0"
-                                    aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4"
-                                    class="active" aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" class="active" aria-label="Slide 5"></button>
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="5"
                                 aria-label="Slide 6"></button> -->
                                 <!-- <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="6" aria-label="Slide 7"></button>
@@ -346,9 +315,7 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
-                                    <button type="button"
-                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/latest-news/latest-news.php'">Read
+                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/latest-news/latest-news.php'">Read
                                         more</button>
 
                                     <div class="splide-slide-contant-1-description"></div>
@@ -358,9 +325,7 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
-                                    <button type="button"
-                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
                                         more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
@@ -369,9 +334,7 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
-                                    <button type="button"
-                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
                                         more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
@@ -380,9 +343,7 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
-                                    <button type="button"
-                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
                                         more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
@@ -391,9 +352,7 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-5"></div>
-                                    <button type="button"
-                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
                                         more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
@@ -402,9 +361,7 @@ session_start();
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
                                     <div class="splide-slide-contant-1-img splide-slide-img-6"></div>
-                                    <button type="button"
-                                        class="btn btn-success gallery-button splide-slide-contant-1-name"
-                                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
+                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
                                         more</button>
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
@@ -470,11 +427,15 @@ session_start();
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
 
-                    <img alt="Achievement-by-ADTC" src="Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp"
-                        class="image-button-container">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">View</button>
+                    <img alt="Achievement-by-ADTC" src="Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp" class="image-button-container">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">View</button>
                     <p class="gallery-info">10 years old clinching the second position</p>
+                </div>
+                <div class="image-container">
+
+                    <img alt="the-runner-up-position" src="Images/gallary/Achievement-by-ADTC/the-runner-up-position/1.jpg" class="image-button-container">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/the-runner-up-position/the-runner-up-position.php'">View</button>
+                    <p class="gallery-info">The runner-up position</p>
                 </div>
             </div>
 
@@ -486,32 +447,29 @@ session_start();
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
-                    <img alt="Laying-foundation-ceremony-for-courts-complex"
-                        src="Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/1.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Events/Laying-foundation-ceremony-for-courts-complex/Laying-foundation-ceremony-for-courts-complex.php'">View</button>
+                    <img alt="Laying-foundation-ceremony-for-courts-complex" src="Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/1.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Events/Laying-foundation-ceremony-for-courts-complex/Laying-foundation-ceremony-for-courts-complex.php'">View</button>
                     <p class="gallery-info">Laying-foundation ceremony for courts complex</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Opening-ceremony-of-polwaththa-School-Court"
-                        src="Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/1.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Events/Opening-ceremony-of-polwaththa-School-Court/Opening-ceremony-of-polwaththa-School-Court.php'">View</button>
+                    <img alt="Opening-ceremony-of-polwaththa-School-Court" src="Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/1.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Events/Opening-ceremony-of-polwaththa-School-Court/Opening-ceremony-of-polwaththa-School-Court.php'">View</button>
                     <p class="gallery-info">Opening ceremony of polwaththa School Court</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Opening-ceremony-of-Senerath-Somarathna-court"
-                        src="Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/1.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Events/Opening-ceremony-of-Senerath-Somarathna-court/Opening-ceremony-of-Senerath-Somarathna-court.php'">View</button>
+                    <img alt="Opening-ceremony-of-Senerath-Somarathna-court" src="Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/1.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Events/Opening-ceremony-of-Senerath-Somarathna-court/Opening-ceremony-of-Senerath-Somarathna-court.php'">View</button>
                     <p class="gallery-info">Opening ceremony of Senerath Somarathna court</p>
                 </div>
                 <div class="image-container">
-                    <img alt="New-Year-2024-Celebration"
-                        src="Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/2.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Events/New-Year-2024-Celebration/New-Year-2024-Celebration.php'">View</button>
+                    <img alt="New-Year-2024-Celebration" src="Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/2.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Events/New-Year-2024-Celebration/New-Year-2024-Celebration.php'">View</button>
                     <p class="gallery-info">New Year 2024 Celebration</p>
+                </div>
+                <div class="image-container">
+                    <img alt="New-Year-2024-Celebration" src="Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/1.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Events/opening-ceremony-of-adtc-tennis-courts-complex/opening-ceremony-of-adtc-tennis-courts-complex.php'">View</button>
+                    <p class="gallery-info">Opening Ceremony of ADTC Tennis Courts Complex</p>
                 </div>
             </div>
 
@@ -524,10 +482,8 @@ session_start();
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
-                    <img alt="School-Tennis-Training-programs"
-                        src="Images/gallary/School-Tennis-Training-programs/School-Tennis-Training-programs/3.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php'">View</button>
+                    <img alt="School-Tennis-Training-programs" src="Images/gallary/School-Tennis-Training-programs/School-Tennis-Training-programs/3.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php'">View</button>
                     <p class="gallery-info">School Tennis</p>
                 </div>
 
@@ -542,29 +498,28 @@ session_start();
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
                     <img alt="Beach-tennis" src="Images/gallary/Tournaments/Beach-tennis/1.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php'">View</button>
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php'">View</button>
                     <p class="gallery-info">Beach tennis</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Concordance-Year-End-Tournaments"
-                        src="Images/gallary/Tournaments/Concordance-Year-End-Tournaments/7.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php'">View</button>
+                    <img alt="Concordance-Year-End-Tournaments" src="Images/gallary/Tournaments/Concordance-Year-End-Tournaments/7.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php'">View</button>
                     <p class="gallery-info">Concordance Year End Tournaments</p>
                 </div>
                 <div class="image-container">
                     <img alt="Inter-School-Tournaments" src="Images/gallary/Tournaments/Inter-School-Tournaments/1.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php'">View</button>
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php'">View</button>
                     <p class="gallery-info">Inter School Tournaments</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Jus-De-Fruit-Tournaments"
-                        src="Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/15.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php'">View</button>
+                    <img alt="Jus-De-Fruit-Tournaments" src="Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/15.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php'">View</button>
                     <p class="gallery-info">Jus De Fruit Tournaments</p>
+                </div>
+                <div class="image-container">
+                    <img alt="Ampara District Ranking Tournament" src="Images/gallary/Tournaments/ampara-district-ranking-tournament/1.jpg">
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/ampara-district-ranking-tournament/ampara-district-ranking-tournament.php'">View</button>
+                    <p class="gallery-info">Ampara District Ranking Tournament</p>
                 </div>
 
             </div>
@@ -578,8 +533,7 @@ session_start();
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
                     <img alt="courts" src="Images/gallary/courts/courts/5.jpg">
-                    <button type="button" class="btn btn-success gallery-button"
-                        onclick="window.location.href='page/gallery-page/courts/courts.php'">View</button>
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/courts/courts.php'">View</button>
                     <p class="gallery-info">Courts</p>
                 </div>
             </div>
@@ -597,12 +551,9 @@ session_start();
                 <div class="line"></div>
 
                 <div class="links">
-                    <a href="https://www.tiktok.com/@adtc_ampara"><img src="Images/follow-us/1.png" alt="tiktok"
-                            width="25"></a>
-                    <a href="https://web.facebook.com/profile.php?id=100092522933660"><img src="Images/follow-us/2.png"
-                            alt="facebook" width="25"></a>
-                    <a href="https://www.youtube.com/@amparatennisclub/featured"><img src="Images/follow-us/3.png"
-                            alt="youtube" width="25"></a>
+                    <a href="https://www.tiktok.com/@adtc_ampara"><img src="Images/follow-us/1.png" alt="tiktok" width="25"></a>
+                    <a href="https://web.facebook.com/profile.php?id=100092522933660"><img src="Images/follow-us/2.png" alt="facebook" width="25"></a>
+                    <a href="https://www.youtube.com/@amparatennisclub/featured"><img src="Images/follow-us/3.png" alt="youtube" width="25"></a>
                 </div>
             </div>
             <div class="useful-links p-4">
@@ -616,32 +567,33 @@ session_start();
                 <div class="line1"></div>
                 <a href="page/site-map/site-map.php">Site Map</a>
                 <div class="line1"></div>
-                <a href="/project-holders-project-2/downloads/ADTC_Member_Application.pdf">Download Membership
+                
+                <a href="#">Membership
                     Application</a>
-                <div class="line1"></div>
+                    <div class="line1"></div>  
+                    <UL>
+                        <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application_Adult.pdf">For adult</a><div class="line1"></div>  </LI>
+                    <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application-Child-1.pdf">For child</a><div class="line1"></div>  </LI>
+                      
+                </UL>
+                
             </div>
             <div class="submit-request p-4">
                 <h5>Submit your request</h5>
                 <div class="line"></div>
-                <form
-                    action="https://script.google.com/macros/s/AKfycbwpL2emGOezsCab6cvBQqnU808WuAAt0nuZZay6AuLEXhFLwe4zmI2F2wxj7wjQz8BnfA/exec"
-                    method="POST" name="Feedback-form">
+                <form action="https://script.google.com/macros/s/AKfycbwpL2emGOezsCab6cvBQqnU808WuAAt0nuZZay6AuLEXhFLwe4zmI2F2wxj7wjQz8BnfA/exec" method="POST" name="Feedback-form">
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp"
-                            placeholder="Name" name="Name">
+                        <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Name" name="Name">
 
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Email" name="Email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="Email">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp"
-                            placeholder="Mobile No" name="Mobile-No">
+                        <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp" placeholder="Mobile No" name="Mobile-No">
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                            style="height: 100px" name="Comments"></textarea>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="Comments"></textarea>
                         <label for="floatingTextarea2">Comments</label>
                     </div>
 
