@@ -101,6 +101,16 @@
         .navbar-nav {
             align-items: center;
         }
+
+        #install-button {
+            height: 40px;
+            border: 0;
+            outline: 0;
+            background: #3c00a0;
+            color: #fff;
+            cursor: pointer;
+            width: 100%;
+        }
     </style>
 
 
@@ -153,6 +163,49 @@
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
+
+                    <div class="install-button-div" style="list-style-type: none; display:flex; justify-content:center !important;">
+                        <div style="width:100%">
+                            <button id="install-button">Install as an App</button>
+                        </div>
+                    </div>
+
+                    <script>
+                        // Initialize deferredPrompt for use later to show browser install prompt.
+                        let deferredPrompt;
+                        var div = document.querySelector('.install-button-div');
+                        var buttonInstall = document.querySelector('#install-button');
+                        div.style.display = 'none';
+
+                        window.addEventListener('beforeinstallprompt', (e) => {
+                            // Prevent the mini-infobar from appearing on mobile
+                            e.preventDefault();
+                            // Stash the event so it can be triggered later.
+                            deferredPrompt = e;
+
+
+                            // Optionally, send analytics event that PWA install promo was shown.
+                            console.log(`'beforeinstallprompt' event was fired.`);
+                            div.style.display = 'block';
+
+
+                            buttonInstall.addEventListener('click', async () => {
+                                // Hide the app provided install promotion
+                                div.style.display = 'none';
+                                // Show the install prompt
+                                deferredPrompt.prompt();
+                                // Wait for the user to respond to the prompt
+                                const {
+                                    outcome
+                                } = await deferredPrompt.userChoice;
+                                // Optionally, send analytics event with outcome of user choice
+                                console.log(`User response to the install prompt: ${outcome}`);
+                                // We've used the prompt, and can't use it again, throw it away
+                                deferredPrompt = null;
+                            });
+
+                        });
+                    </script>
 
                     <div class="offcanvas-body">
                         <?php if (isset($_SESSION['username'])) : ?>
@@ -246,7 +299,7 @@
                                         MEMBERSHIP
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <?php if (!isset($_SESSION['id'])) : ?>
+                                        <?php if (!isset($_SESSION['id']) || $_SESSION['privilage'] == "admin") : ?>
                                             <li><a class="dropdown-item" href="/project-holders-project-2/page/become-member/add-new.php">Become a
                                                     member</a></li>
                                         <?php endif; ?>

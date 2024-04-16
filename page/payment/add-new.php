@@ -182,6 +182,10 @@ mysqli_close($conn);
             </div>
 
             <div class="mb-3">
+               Limit your file size below to 500Kb <a href="https://www.img2go.com/compress-image">HERE</a>
+            </div>
+
+            <div class="mb-3">
                <button type="submit" class="btn btn-success" name="submit">Save</button>
                <a href="member_fees.php.php" class="btn btn-danger ">Cancel</a>
             </div>

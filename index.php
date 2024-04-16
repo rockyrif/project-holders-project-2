@@ -19,7 +19,11 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
 
+    <link rel="manifest" href="manifest.json">
+
     <link rel="stylesheet" href="style.css?v=2">
+
+    <link rel="icon" type="image/png" href="Images/logo.png">
 
     <!-- online fonts start -->
     <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
@@ -367,30 +371,6 @@ session_start();
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
                             </li>
-                            <!-- <li class="splide__slide">
-                <div class="splide-slide-contant">
-                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
-                    <div class="splide-slide-contant-1-name"></div>
-                    <div class="splide-slide-contant-1-description"></div>
-                    <div class="splide-slide-contant-1-button"></div>
-                </div>
-            </li> -->
-                            <!-- <li class="splide__slide">
-                <div class="splide-slide-contant">
-                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
-                    <div class="splide-slide-contant-1-name"></div>
-                    <div class="splide-slide-contant-1-description"></div>
-                    <div class="splide-slide-contant-1-button"></div>
-                </div>
-            </li> -->
-                            <!-- <li class="splide__slide">
-                <div class="splide-slide-contant">
-                    <div class="splide-slide-contant-1-img img-4"></div>
-                    <div class="splide-slide-contant-1-name"></div>
-                    <div class="splide-slide-contant-1-description"></div>
-                    <div class="splide-slide-contant-1-button"></div>
-                </div>
-            </li> -->
                         </ul>
                     </div>
                 </div>
