@@ -93,21 +93,24 @@ mysqli_close($conn);
    include '../../components/navbar/navbar.php';
    ?>
 
-   <?php
-   //  update payment Aleart start
-   if (isset($_SESSION['response'])) {
-      echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+
+
+   <div class="container" style="margin-top:93px;">
+
+      <?php
+      //  update payment Aleart start
+      if (isset($_SESSION['response'])) {
+         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                             ' . $_SESSION['response'] . '
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>';
 
 
-      unset($_SESSION['response']);
-   }
-   //  update payment Aleart end
-   ?>
-
-   <div class="container" style="margin-top:93px;">
+         unset($_SESSION['response']);
+      }
+      //  update payment Aleart end
+      ?>
+      
       <div class="text-center mb-4">
          <h3>Add New Payment</h3>
          <p class="text-muted">Complete the form below to add a new payment</p>
