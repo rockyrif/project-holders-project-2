@@ -2,7 +2,7 @@
 session_start();
 ?>
 <?php
-include "db_conn.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 $id = $_GET["id"];
 
 if (isset ($_POST["submit"])) {

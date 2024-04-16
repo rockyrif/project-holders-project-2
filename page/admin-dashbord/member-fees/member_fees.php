@@ -322,7 +322,7 @@ session_start();
                 <?php
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["fee_id"]) && isset($_POST["status"])) {
-                    include_once 'db_conn.php'; // Include database connection file
+                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php"; // Include database connection file
                     $feeId = $_POST["fee_id"];
                     $status = $_POST["status"];
 

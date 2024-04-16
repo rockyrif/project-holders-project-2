@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/Project-holders-project-2/db_conn.php";
 
 // Define variables and initialize with empty values
 $username = $email = $password = "";
@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement to check if email is already registered
         $sql = "SELECT email FROM user_login WHERE email = ?";
         
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_email);
             
@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          // Prepare a select statement to check if email is already registered
          $sql1 = "SELECT username FROM user_login WHERE username = ?";
         
-         if($stmt = mysqli_prepare($link, $sql1)){
+         if($stmt = mysqli_prepare($conn, $sql1)){
              // Bind variables to the prepared statement as parameters
              mysqli_stmt_bind_param($stmt, "s", $param_username);
              
@@ -100,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Prepare an insert statement
             $sql = "INSERT INTO user_login (username, password, email ) VALUES (?, ?, ?)";
              
-            if($stmt = mysqli_prepare($link, $sql)){
+            if($stmt = mysqli_prepare($conn, $sql)){
                 // Bind variables to the prepared statement as parameters
                 mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_email, );
                 

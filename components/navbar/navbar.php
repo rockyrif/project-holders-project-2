@@ -171,7 +171,7 @@
                                 <li class="nav-item ">
                                     <?php
                                     // Include database connection
-                                    include "db_conn.php";
+                                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
                                     $email = $_SESSION["email"];
                                     $sql = "SELECT member_id, id_prefix  FROM members WHERE email = '$email';";
                                     $result = mysqli_query($conn, $sql);

@@ -428,7 +428,7 @@ session_start();
                                 }
 
                                 // Include database connection
-                                include "db_conn.php";
+                                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
                                 // Add WHERE clause if conditions are provided
                         
@@ -644,7 +644,7 @@ session_start();
 
                             <tbody>
                                 <?php
-                                include "db_conn.php";
+                                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
                                 $sql = "SELECT * FROM `members` ORDER BY `member_id` DESC";
                                 $result = mysqli_query($conn, $sql);
                                 mysqli_close($conn);

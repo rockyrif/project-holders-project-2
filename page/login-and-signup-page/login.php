@@ -7,7 +7,7 @@ session_start();
     
 
 // Include config file
-require_once "config.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
 // Define variables and initialize with empty values
 $email = $password = "";
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement
         $sql = "SELECT  username, password, privilage, email  FROM user_login WHERE email = ?";
         
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_email);
             
@@ -87,6 +87,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Close connection
-    mysqli_close($link);
+    mysqli_close($conn);
 }
 

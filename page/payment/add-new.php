@@ -2,7 +2,7 @@
 session_start();
 ?>
 <?php
-include "db_conn.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
 if (isset($_POST["submit"])) {
 
@@ -31,15 +31,15 @@ if (isset($_POST["submit"])) {
       // Rest of your code for file upload and processing
    } else {
       // Handle file upload error
-      echo "File upload failed with error code: " . $_FILES["payment-proof"]["error"];
+      $_SESSION['response'] = "File upload failed with error code: " . $_FILES["payment-proof"]["error"];
    }
 
    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
    // Check if image file is a valid format and size
    if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
-      echo "Sorry, only JPG, JPEG, PNG files are allowed.";
+      $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
    } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 2MB limit
-      echo "Sorry, your file is too large. limit to 500kb.";
+      $_SESSION['response'] = "Sorry, your file is too large. limit to 500kb.";
    } else {
       // Upload image
       if (move_uploaded_file($_FILES["payment-proof"]["tmp_name"], $targetFile)) {
@@ -51,12 +51,12 @@ if (isset($_POST["submit"])) {
                     VALUES ('$member_id', '$year', '$month', '$fee_amount', '$payment_date', '$proof_url')";
 
          if (mysqli_query($conn, $sql)) {
-            echo "Record inserted successfully.";
+            $_SESSION['response'] = "Record inserted successfully.";
          } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
          }
       } else {
-         echo "Sorry, there was an error uploading your file.";
+         $_SESSION['response'] = "Sorry, there was an error uploading your file.";
       }
    }
 }
@@ -91,6 +91,20 @@ mysqli_close($conn);
 <body>
    <?php
    include '../../components/navbar/navbar.php';
+   ?>
+
+   <?php
+   //  update payment Aleart start
+   if (isset($_SESSION['response'])) {
+      echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            ' . $_SESSION['response'] . '
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>';
+
+
+      unset($_SESSION['response']);
+   }
+   //  update payment Aleart end
    ?>
 
    <div class="container" style="margin-top:93px;">
