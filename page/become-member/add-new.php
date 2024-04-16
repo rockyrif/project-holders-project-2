@@ -67,6 +67,7 @@ if (!isset($_SESSION["id"]) && isset($_SESSION["username"])) {
       ?>
 
       <div class="container" style="margin-top:93px;">
+      
          <!-- Aleart start -->
          <?php
          if (isset($_GET["msg"])) {

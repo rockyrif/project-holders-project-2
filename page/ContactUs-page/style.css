@@ -48,7 +48,7 @@ body {
 
 }
 .submit-request{
-    width: 100%;
+    width: 40% !important;
     height: 500px;
 	padding: 50px;
     padding-top: 10px;
@@ -65,4 +65,12 @@ body {
     height: 5px;
     background-color: #91CC00;
     border-radius: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .submit-request {
+        width: 100% !important;
+    }
+
 }
