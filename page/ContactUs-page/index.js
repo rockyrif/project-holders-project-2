@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbx3JOdyc87_JqmfkShCBGh5w4sAu3DKWfRIwWkmcdWjmL63bTNfbbTAbqMgIV8Gxu8F8g/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxaeNx3LYu7_BU_OhHq3erCo-5W47dqKq1ZxZn13aSiolhOm0NpIUcMs2EvSm_DhY4u/exec'
 
 const form = document.forms['Feedback-form']
 

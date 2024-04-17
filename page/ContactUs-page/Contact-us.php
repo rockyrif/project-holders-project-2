@@ -61,7 +61,7 @@ session_start();
 
                 <h5>Please fill up the following information:</h5>
                 <div class="line mb-3"></div>
-                <form action="https://script.google.com/macros/s/AKfycbx3JOdyc87_JqmfkShCBGh5w4sAu3DKWfRIwWkmcdWjmL63bTNfbbTAbqMgIV8Gxu8F8g/exec" method="POST" name="Feedback-form">
+                <form action="" method="POST" name="Feedback-form">
                     <div class="mb-3">
                         <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp"
                             placeholder="Name" name="Name">

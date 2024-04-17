@@ -547,21 +547,25 @@ session_start();
                 <div class="line1"></div>
                 <a href="page/site-map/site-map.php">Site Map</a>
                 <div class="line1"></div>
-                
+
                 <a href="#">Membership
                     Application</a>
-                    <div class="line1"></div>  
-                    <UL>
-                        <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application_Adult.pdf">For Adult</a><div class="line1"></div>  </LI>
-                    <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application-Child-1.pdf">For Child</a><div class="line1"></div>  </LI>
-                      
+                <div class="line1"></div>
+                <UL>
+                    <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application_Adult.pdf">For Adult</a>
+                        <div class="line1"></div>
+                    </LI>
+                    <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application-Child-1.pdf">For Child</a>
+                        <div class="line1"></div>
+                    </LI>
+
                 </UL>
-                
+
             </div>
             <div class="submit-request p-4">
                 <h5>Submit your request</h5>
                 <div class="line"></div>
-                <form action="https://script.google.com/macros/s/AKfycbwpL2emGOezsCab6cvBQqnU808WuAAt0nuZZay6AuLEXhFLwe4zmI2F2wxj7wjQz8BnfA/exec" method="POST" name="Feedback-form">
+                <form action="" method="POST" name="Feedback-form">
                     <div class="mb-3">
                         <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Name" name="Name">
 
@@ -576,9 +580,9 @@ session_start();
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="Comments"></textarea>
                         <label for="floatingTextarea2">Comments</label>
                     </div>
-
+                    <script src="index.js"></script>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <Script src="index.js"></Script>
+
                 </form>
             </div>
         </div>
