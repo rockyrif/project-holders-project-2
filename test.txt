@@ -1,1 +1,3 @@
-rifky 23
+need to change at hosting manifest.json file url
+
+db_conn.php username and password
