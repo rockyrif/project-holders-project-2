@@ -93,17 +93,8 @@ session_start();
                                     </div>
 
                                     <div class="carousal-para">
-                                        <p>Welcome to Ampara District Tennis Club (ADTC), your tennis haven in the heart
-                                            of
-                                            our
-                                            community. We are dedicated to promoting the joy of tennis, fostering
-                                            sportsmanship,
-                                            and
-                                            providing a welcoming environment for players of all levels. Join us on the
-                                            courts
-                                            as we
-                                            create lasting memories and celebrate the spirit of tennis in Ampara
-                                            District.
+                                        <p>Welcome to Ampara District Tennis Club (ADTC), the ultimate tennis destination in our community. We're committed to sharing the joy of tennis, fostering sportsmanship, and creating a friendly environment for players of all skill levels. Join us on the courts as we make enduring memories and celebrate the love of tennis in Ampara District.
+
                                         </p>
                                     </div>
                                 </div>
@@ -142,8 +133,8 @@ session_start();
                                 </div>
 
                                 <div class="carousal-para">
-                                    <p>To be the nucleus of tennis excellence and community spirit in Ampara District,
-                                        uniting players of all ages and backgrounds.</p>
+                                    <p>To create a vibrant tennis community in Ampara District, where people of all ages come together to enjoy the sport, build lasting friendships, and lead active lives.
+                                    </p>
                                 </div>
                             </div>
 
@@ -179,14 +170,7 @@ session_start();
                                 </div>
 
                                 <div class="carousal-para">
-                                    <p>Our mission is to cultivate a vibrant tennis culture by offering top-tier
-                                        facilities,
-                                        coaching, and programs that foster skill development, sportsmanship, and
-                                        camaraderie. Through our dedication to inclusivity and continuous improvement,
-                                        we
-                                        aim to ignite a lifelong love for the sport and enrich the lives of individuals
-                                        in
-                                        our community</p>
+                                    <p>Our mission is to provide quality tennis facilities, coaching, and programs that promote skill development, sportsmanship, and inclusivity. We aim to foster a welcoming environment where everyone feels valued and supported in their tennis journey, contributing to the overall well-being of our community.</p>
                                 </div>
 
                             </div>
@@ -325,18 +309,18 @@ session_start();
                                 // Loop through query results
                                 while ($row = mysqli_fetch_assoc($result)) {
                             ?>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img">
-                                        <img src="<?= $row['pic_path']; ?>" alt="Image Description">
-                                    </div>
-                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/latest-news/latest-news.php?id=<?= $row['news_id']; ?>'">Read
-                                        more</button>
+                                    <li class="splide__slide">
+                                        <div class="splide-slide-contant">
+                                            <div class="splide-slide-contant-1-img">
+                                                <img src="<?= $row['pic_path']; ?>" alt="Image Description">
+                                            </div>
+                                            <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/latest-news/latest-news.php?id=<?= $row['news_id']; ?>'">Read
+                                                more</button>
 
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
+                                            <div class="splide-slide-contant-1-description"></div>
+                                            <div class="splide-slide-contant-1-button"></div>
+                                        </div>
+                                    </li>
 
                             <?php
                                 }
