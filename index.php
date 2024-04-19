@@ -316,61 +316,33 @@ session_start();
                 <div class="splide" role="group" aria-label="find-a-coache">
                     <div class="splide__track">
                         <ul class="splide__list">
+                            <?php
+                            include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                            $sql = "SELECT * FROM news ORDER BY news_id DESC;";
+                            $result = mysqli_query($conn, $sql);
+                            mysqli_close($conn);
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                // Loop through query results
+                                while ($row = mysqli_fetch_assoc($result)) {
+                            ?>
                             <li class="splide__slide">
                                 <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-1"></div>
-                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/latest-news/latest-news.php'">Read
+                                    <div class="splide-slide-contant-1-img">
+                                        <img src="<?= $row['pic_path']; ?>" alt="Image Description">
+                                    </div>
+                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/latest-news/latest-news.php?id=<?= $row['news_id']; ?>'">Read
                                         more</button>
 
                                     <div class="splide-slide-contant-1-description"></div>
                                     <div class="splide-slide-contant-1-button"></div>
                                 </div>
                             </li>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-2"></div>
-                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
-                                        more</button>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-3"></div>
-                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
-                                        more</button>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-4"></div>
-                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
-                                        more</button>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-5"></div>
-                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
-                                        more</button>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="splide-slide-contant">
-                                    <div class="splide-slide-contant-1-img splide-slide-img-6"></div>
-                                    <button type="button" class="btn btn-success gallery-button splide-slide-contant-1-name" onclick="window.location.href='page/gallery-page/Achievement-by-ADTC/Achievement-by-ADTC/Achievement-by-ADTC.php'">Read
-                                        more</button>
-                                    <div class="splide-slide-contant-1-description"></div>
-                                    <div class="splide-slide-contant-1-button"></div>
-                                </div>
-                            </li>
+
+                            <?php
+                                }
+                            }
+                            ?>
+
                         </ul>
                     </div>
                 </div>

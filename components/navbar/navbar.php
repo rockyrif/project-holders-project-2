@@ -228,6 +228,7 @@
                                     $email = $_SESSION["email"];
                                     $sql = "SELECT member_id, id_prefix  FROM members WHERE email = '$email';";
                                     $result = mysqli_query($conn, $sql);
+                                    mysqli_close($conn);
                                     $row = mysqli_fetch_assoc($result);
                                     ?>
                                     <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">Your ID :
@@ -267,6 +268,7 @@
                                         ADMIN DASHBORD
                                     </a>
                                     <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/news/add-news.php">Add news</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit
                                                 members</a></li>
                                         <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing" target="_blank">Edit

@@ -20,8 +20,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -55,30 +54,23 @@ session_start();
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Latest News</P>
             </div>
 
+            <?php
+            $id = $_GET['id'];
+            include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+            $sql = "SELECT * FROM news WHERE news_id = '$id';";
+            $result = mysqli_query($conn, $sql);
+            mysqli_close($conn);
+            $row = mysqli_fetch_assoc($result);
+            ?>
+
             <div class="image">
                 <div class="image-container mb-4" data-aos="fade-up" data-aos-duration="2000">
-                    <img src="../../Images/latest-news/2.jpg" alt="latest-news" width="300">
+                    <img src="../../<?= $row['pic_path']; ?>" alt="latest-news" width="300">
                 </div>
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club (ADTC) emerged on the
-                    sporting landscape in 2023 under the visionary leadership of Deputy Inspector General of Police, Mr.
-                    H.A.N.K. Damayantha Wijaya Sri. Founded with the purpose of promoting tennis within the community,
-                    the club quickly evolved into a dynamic hub for tennis enthusiasts in the region. The ADTC is
-                    committed to preventing drug addiction among young individuals by redirecting their focus and energy
-                    towards playing tennis. The Ampara District Tennis Club endeavors to promote harmony within society
-                    by organizing inclusive tennis events that unite diverse community members. By emphasizing values
-                    such as teamwork, respect, and fair play, the club aims to create a positive environment where
-                    individuals from varied backgrounds come together through their mutual passion for tennis.
-                    Implementing outreach programs, tennis clinics, and community events will additionally strengthen
-                    social bonds, fostering understanding and cooperation among residents of the Ampara
-                    district.<br><br>
-
-                    Despite initial resource limitations, the ADTC demonstrated resilience and commitment, achieving
-                    remarkable strides in a short period. With a focus on inclusivity, skill development, and community
-                    engagement, the Ampara District Tennis Club has become a pivotal force, uniting individuals
-                    passionate about tennis and contributing to the overall sporting vibrancy of the community.. </p>
+                <p data-aos="fade-up" data-aos-duration="2000"><?= $row['description']; ?></p>
             </div>
 
 

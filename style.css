@@ -1,52 +1,48 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    width: 100vw;
-    height: fit-content;
-    overflow-x: hidden;
-
+  width: 100vw;
+  height: fit-content;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .offcanvas-body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* home start*/
 .home {
-    position: relative;
-    top: 0%;
+  position: relative;
+  top: 0%;
 }
 
 /* home end */
 
-
-
 /* home carousal start  */
 .img-1 {
-    background-image: url('Images/home-page-carousal/1.gif');
-
+  background-image: url("Images/home-page-carousal/1.gif");
 }
 
 .img-2 {
-    background-image: url('Images/home-page-carousal/2.gif');
+  background-image: url("Images/home-page-carousal/2.gif");
 }
 
 .img-3 {
-    background-image: url('Images/home-page-carousal/3.gif');
+  background-image: url("Images/home-page-carousal/3.gif");
 }
 
 .img-4 {
-    background-image: url('Images/home-page-carousal/4.gif');
+  background-image: url("Images/home-page-carousal/4.gif");
 }
 
 .img-5 {
-    background-image: url('Images/home-page-carousal/5.gif');
+  background-image: url("Images/home-page-carousal/5.gif");
 }
 
 /* .img-6 {
@@ -61,108 +57,102 @@ body::-webkit-scrollbar {
     background-image: url('Images/home page carousal/IMG-20240127-WA0011.jpg');
 } */
 
-
-
-
 .img {
-    height: 96vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 90%;
-    z-index: 1;
-
+  height: 96vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 90%;
+  z-index: 1;
 }
 
 .carousel-content {
-    /* display: flex; */
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.388);
-    max-height: 75vh;
-    border-radius: 10px;
-    padding: 40px;
-    z-index: 50;
-    text-align: center;
-    overflow: auto;
-    position: relative;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.388);
+  max-height: 75vh;
+  border-radius: 10px;
+  padding: 40px;
+  z-index: 50;
+  text-align: center;
+  overflow: auto;
+  position: relative;
 }
 
 .carousel-content-4 {
-    max-height: 65vh !important;
+  max-height: 65vh !important;
 }
 
 .carousel-indicators {
-    position: static;
-    margin: 30px;
+  position: static;
+  margin: 30px;
 }
 
 .carousel-item {
-    transition: 1.5s;
+  transition: 1.5s;
 }
 
 .curousel-object {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    /* transform: translate(0%, -50%); */
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  /* transform: translate(0%, -50%); */
 }
 
 .curousel-object img {
-    height: 300px;
+  height: 300px;
 }
 
 .carousal-para-heading {
-    text-align: center;
-    font-family: "PF Din Stencil W01 Bold";
-    color: #91CC00;
-
+  text-align: center;
+  font-family: "PF Din Stencil W01 Bold";
+  color: #91cc00;
 }
 
 .carousal-para {
-    font-family: 'Inconsolata', monospace;
-    color: rgba(233, 232, 232, 0.992);
-    font-size: large;
+  font-family: "Inconsolata", monospace;
+  color: rgba(233, 232, 232, 0.992);
+  font-size: large;
 }
 
 .content-flex-center {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 5%;
-    left: 5%;
-
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+  left: 5%;
 }
 
 .carousal-para-head {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .carousal-content-and-indicator {
-    height: fit-content;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  height: fit-content;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.name{
-    background-color: white;
-    display: inline;
-    font-family: "PF Din Stencil W01 Bold";
-    color: #000066;
+.name {
+  background-color: white;
+  display: inline;
+  font-family: "PF Din Stencil W01 Bold";
+  color: #000066;
 }
 
-.ocupation{
-    background-color: white;
-    display: inline;
-    font-family: "PF Din Stencil W01 Bold";
-    color: #91CC00;
+.ocupation {
+  background-color: white;
+  display: inline;
+  font-family: "PF Din Stencil W01 Bold";
+  color: #91cc00;
 }
 
 /* home carousal end  */
@@ -170,281 +160,239 @@ body::-webkit-scrollbar {
 /* home page section two */
 
 .section-two {
-    
-    height: fit-content;
-    width: 100vw;
-    background-color: #ddd;
-    padding: 20px;
+  height: fit-content;
+  width: 100vw;
+  background-color: #ddd;
+  padding: 20px;
 }
 
 .gallary-tittle {
-    text-align: center;
-    width: 100%;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000066;
-    font-family: "PF Din Stencil W01 Bold";
-
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000066;
+  font-family: "PF Din Stencil W01 Bold";
 }
 
 .gallary-heading {
-    font-family: "PF Din Stencil W01 Bold";
+  font-family: "PF Din Stencil W01 Bold";
 }
 
 .gallary .image-container img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
-.gallery>div>img {
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+.gallery > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .image-container {
-    position: relative;
-
+  position: relative;
 }
 
 .gallery {
-    display: grid;
-    grid-gap: 10px;
-    align-content: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
-    grid-auto-rows: 200px;
-    grid-auto-flow: dense;
-
+  display: grid;
+  grid-gap: 10px;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
 }
 
-.gallery>div {
-    display: flex;
-    justify-content: center;
-    align-items: end;
+.gallery > div {
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
-
-
 
 .gallery .tall {
-    grid-row: span 2;
+  grid-row: span 2;
 }
 
 .gallery-button {
-    position: absolute;
-    bottom: 10px;
-    z-index: 20;
+  position: absolute;
+  bottom: 10px;
+  z-index: 20;
 }
 
 .gallery-info {
-    text-align: center;
-    position: absolute;
-    color: white;
-    background-color: rgba(0, 0, 0, 70%);
-    height: fit-content;
-    width: 100%;
-    margin-bottom: 0;
-    top: 0;
-    padding: 10px;
+  text-align: center;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 70%);
+  height: fit-content;
+  width: 100%;
+  margin-bottom: 0;
+  top: 0;
+  padding: 10px;
 }
 
 /* find a coatch sectio start */
 
 .find-a-coach-page {
-    height: fit-content;
-    width: 100vw;
-    padding: 0px;
-    padding-top: 10px;
-    position: relative;
-    padding-bottom: 55px;
-    overflow-x: hidden;
+  height: fit-content;
+  width: 100vw;
+  padding: 0px;
+  padding-top: 10px;
+  position: relative;
+  padding-bottom: 55px;
+  overflow-x: hidden;
 }
 
 .find-a-coach-page-tittle {
-    text-align: center;
-    width: 100%;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000066;
-    font-family: "PF Din Stencil W01 Bold";
-
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000066;
+  font-family: "PF Din Stencil W01 Bold";
 }
 
 .find-a-coache {
-    width: 100%;
-    height: fit-content;
-    
+  width: 100%;
+  height: fit-content;
 }
 
 .find-a-coache-tittle {
-    text-align: center;
-    width: 100%;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000066;
-    font-family: "PF Din Stencil W01 Bold";
-
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000066;
+  font-family: "PF Din Stencil W01 Bold";
 }
 
 .splide {
-    /* border: 2px solid black; */
-    width: 100vw;
+  /* border: 2px solid black; */
+  width: 100vw;
 }
 
 .splide__slide {
-    width: 300px !important;
+  width: 300px !important;
 }
 
 .splide-slide-contant {
-    height: 300px;
-    width: 300px;
-    /* border: 1px solid red; */
-
+  height: 300px;
+  width: 300px;
+  /* border: 1px solid red; */
 }
 
 .splide-slide-contant-1-img {
-    height: 100%;
+  height: 100%;
 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-}
-
-.splide-slide-img-1 {
-    background-image: url('Images/latest-news/2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.splide-slide-img-2{
-    background-image: url('Images/latest-news/3.jpg');
-}
-
-.splide-slide-img-3{
-    background-image: url('Images/latest-news/4.jpg');
-}
-.splide-slide-img-4{
-    background-image: url('Images/latest-news/5.jpg');
-}
-.splide-slide-img-5{
-    background-image: url('Images/latest-news/6.png');
-}
-.splide-slide-img-6{
-    background-image: url('Images/latest-news/7.jpg');
+.splide-slide-contant-1-img img {
+  /* Add any additional styling for the <img> tag */
+  width: 100%; /* Optional: Make the image fill the container */
+  height: auto; /* Optional: Maintain aspect ratio */
 }
 
 .splide-slide-contant-1-name {
-    position: absolute;
-    bottom: -15.5%;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    
-    color: #ddd;
-    text-align: center;
-    
+  position: absolute;
+  bottom: -15.5%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: #ddd;
+  text-align: center;
 }
 
-.splide__track{
-    overflow: visible !important;
-    
+.splide__track {
+  overflow: visible !important;
 }
 
 .splide__pagination {
-    display: none !important;
+  display: none !important;
 }
 
 /* find a coatch sectio end */
 
-
-
 /* footer start */
-.footer{
-    
-    display: flex;
-    background-color: rgb(44, 44, 44);
-    
-    
+.footer {
+  display: flex;
+  background-color: rgb(44, 44, 44);
 }
 
 @media only screen and (max-width: 532px) {
-
-    .footer{
-    
-        display: flex;
-        flex-direction: column;
-        
-        
-    }
-
-}
-.follow-us{
-    flex-grow: 1;
+  .footer {
     display: flex;
     flex-direction: column;
-    
+  }
 }
-.line{
-    width: 50px;
-    height: 5px;
-    margin-bottom: 20px;
-    background-color: #91CC00;
-    border-radius: 10px;
+.follow-us {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.line {
+  width: 50px;
+  height: 5px;
+  margin-bottom: 20px;
+  background-color: #91cc00;
+  border-radius: 10px;
 }
 
 .footer .follow-us h5 {
-    color: #ffffff;;
-    font-family: "PF Din Stencil W01 Bold";
+  color: #ffffff;
+  font-family: "PF Din Stencil W01 Bold";
 }
 
 .footer .useful-links h5 {
-    color: #ffffff;;
-    font-family: "PF Din Stencil W01 Bold";
+  color: #ffffff;
+  font-family: "PF Din Stencil W01 Bold";
 }
 
 .footer .submit-request h5 {
-    color: #ffffff;;
-    font-family: "PF Din Stencil W01 Bold";
+  color: #ffffff;
+  font-family: "PF Din Stencil W01 Bold";
 }
 
-.useful-links{
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+.useful-links {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.line1{
-    width: 100%;
-    height: 1px;
-    margin-bottom: 10px;
-    background-color: #ffffff;
-    border-radius: 10px;
+.line1 {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
 
 .links i {
-    color: #0d6efd;
-    width: 30px;
+  color: #0d6efd;
+  width: 30px;
 }
 
-.fa-brands, .fab {
-	
-	font-size: 25px;
+.fa-brands,
+.fab {
+  font-size: 25px;
 }
 
-.submit-request{
-    flex-grow: 1;
+.submit-request {
+  flex-grow: 1;
 }
 
-.useful-links a{
-    text-decoration: none;
+.useful-links a {
+  text-decoration: none;
 }
 /* footer end */
