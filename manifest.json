@@ -22,14 +22,12 @@
       "label": "Wonder Widgets"
     },
     {
-        "src": "Images/mobile.png",
-        "sizes": "480x800",
-        "type": "image/gif",
-        "form_factor": "narrow",
-        "label": "Wonder Widgets"
-      }
-      
-   
+      "src": "Images/mobile.png",
+      "sizes": "480x800",
+      "type": "image/gif",
+      "form_factor": "narrow",
+      "label": "Wonder Widgets"
+    }
   ],
 
   "start_url": "http://localhost/project-holders-project-2/index.php",
