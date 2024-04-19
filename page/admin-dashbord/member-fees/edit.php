@@ -1,5 +1,6 @@
 <?php
 session_start();
+if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 ?>
 
 <?php
@@ -192,3 +193,6 @@ if (isset($_POST["submit"])) {
 </body>
 
 </html>
+<?php } else {
+    header("Location: ../../../index.php");
+} ?>

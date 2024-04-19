@@ -1,5 +1,6 @@
 <?php
 session_start();
+if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 ?>
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
@@ -192,3 +193,7 @@ mysqli_close($conn);
 </body>
 
 </html>
+<?php } else {
+    header("Location: ../../../index.php");
+} ?>
+
