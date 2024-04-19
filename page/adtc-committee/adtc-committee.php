@@ -77,7 +77,7 @@ session_start();
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Events</p>
             </div> -->
 
-            <div class="gallery1" data-aos="fade-up" data-aos-duration="2000">
+            <!-- <div class="gallery1" data-aos="fade-up" data-aos-duration="2000">
                 <div class="committee-container">
                     <p class="committee-tittle">President</p>
                     <div class="image-container">
@@ -108,9 +108,9 @@ session_start();
                     <p class="gallery-info">Pulasthi Dammika</p>
                 </div>
 
-            </div>
+            </div> -->
 
-            <br>
+            <!-- <br>
 
             <div class="gallary-heading">
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Executive Members</p>
@@ -158,7 +158,7 @@ session_start();
                     <p class="gallery-info">name here</p>
                 </div>
 
-            </div>
+            </div> -->
 
 
 

@@ -342,7 +342,7 @@
 
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     RANKING
                                 </a>
@@ -350,18 +350,18 @@
                                     <li><a class="dropdown-item" href="#">Player Profile</a></li>
                                     <li><a class="dropdown-item" href="#">ADTC Ranking</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    COACHES
+                                    COACHING
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Register</a></li>
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/Find-a-coach/Find-a-coach-page.php">Find
-                                            a
-                                            Coach</a></li>
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/Find-a-coach/Find-a-coach-page.php"> About Coaching
+                                        </a></li>
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/downloads/New-Training-Time-Table-March-2024.pdf">Training schedule for schools</a></li>
                                 </ul>
                             </li>
+                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     SCHOOL TRAINING PROGRAMS
@@ -402,7 +402,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC
-                                            Committee</a></li>
+                                            Founder</a></li>
                                     <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews' id="adtcnews-btn">ADTC News</a>
 
                                     </li>

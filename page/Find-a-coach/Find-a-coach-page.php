@@ -18,8 +18,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -52,22 +51,49 @@ session_start();
         <div class="find-a-coach">
 
             <div class="gallary-tittle">
-                <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">Find a coach</P>
+                <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">Coaching</P>
             </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
-                <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/coach-img/1.png">
-                    <p class="gallery-info">K.Muditha Lakmal Fernando</p>
+                <p>Professional tennis coaching available:</p>
+                <p>ADTC coaching team cater to all levels of players, from beginners (of all ages) to competition players.
+                </p>
+                <p>Equipment is supplied.
+                </p>
+                <p>Coaching is available as follows:
+                </p>
+                <ul>
+                    <li>Week Days and Week Nights
+                    </li>
+                    <li>Weekends and Weekends Nights
+                    </li>
+                    <li> Individual or Group</li>
+                </ul>
+                <div style="width:350px;">
+                    <form action="" method="POST" name="Feedback-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Name" name="Name">
+
+                        </div>
+                        <div class="mb-3" style="width:100% !important;">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="Email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp" placeholder="Mobile No" name="Mobile-No">
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="Comments"></textarea>
+                            <label for="floatingTextarea2">Message</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                        <Script src="index.js"></Script>
+                    </form>
                 </div>
-                <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/coach-img/2.png">
-                    <p class="gallery-info">G.B.Prageeth Sandika Sampath</p>
-                </div>
-                <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/coach-img/3.png">
-                    <p class="gallery-info">H.Namal Jayasinghe</p>
-                </div>
+
+
+
+
 
 
             </div>
