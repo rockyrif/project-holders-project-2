@@ -55,22 +55,30 @@ session_start();
             </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
-                <p>Professional tennis coaching available:</p>
-                <p>ADTC coaching team cater to all levels of players, from beginners (of all ages) to competition players.
-                </p>
-                <p>Equipment is supplied.
-                </p>
-                <p>Coaching is available as follows:
-                </p>
-                <ul>
-                    <li>Week Days and Week Nights
-                    </li>
-                    <li>Weekends and Weekends Nights
-                    </li>
-                    <li> Individual or Group</li>
-                </ul>
-                <div style="width:350px;">
+                <div class="coach-background">
+                    <div class="content">
+                        <p>Professional tennis coaching available:</p>
+                        <p>ADTC coaching team cater to all levels of players, from beginners (of all ages) to competition players.
+                        </p>
+                        <p>Equipment is supplied.
+                        </p>
+                        <p>Coaching is available as follows:
+                        </p>
+                        <ul>
+                            <li>Week Days and Week Nights
+                            </li>
+                            <li>Weekends and Weekends Nights
+                            </li>
+                            <li> Individual or Group</li>
+                        </ul>
+                        <p>If you are interested in joining the coaching program please contact:
+                        </p>
+                    </div>
+                </div>
+                <div style="width:350px; margin-bottom:10px;">
                     <form action="" method="POST" name="Feedback-form">
+                        <h4>Book Online</h4>
+                        <p>I want to know more about the program</p>
                         <div class="mb-3">
                             <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Name" name="Name">
 

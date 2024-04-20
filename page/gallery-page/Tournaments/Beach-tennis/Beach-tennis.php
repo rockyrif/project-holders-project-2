@@ -88,10 +88,10 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/7.jpg">
                 </div>
-                <div class="image-container">
+                <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/8.jpg">
-                </div>
+                </div> -->
                 <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/9.jpg">
