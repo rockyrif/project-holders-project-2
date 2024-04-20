@@ -361,7 +361,7 @@
                                     <li><a class="dropdown-item" href="/project-holders-project-2/downloads/New-Training-Time-Table-March-2024.pdf">Training schedule for schools</a></li>
                                 </ul>
                             </li>
-                            
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     SCHOOL TRAINING PROGRAMS

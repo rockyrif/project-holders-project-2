@@ -122,6 +122,7 @@ mysqli_close($conn);
                <select class="form-select" name="member-id">
                   <option value=""> Select </option>
                   <?php
+                  include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
                   // Select data from member_fees table
                   $sql = "SELECT `member_id` FROM `members` ORDER BY `member_id` DESC";
                   $result = mysqli_query($conn, $sql);
@@ -138,6 +139,7 @@ mysqli_close($conn);
                      ?>
                      <option value="">no records</option>
                   <?php
+                  $conn->close();
                   }
                   ?>
                </select>

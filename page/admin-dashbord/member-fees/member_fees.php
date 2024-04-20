@@ -941,10 +941,11 @@ session_start();
                             <!-- Table data -->
                             <tbody>
                                 <?php
+                                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
                                 // Select data from member_fees table
                                 $sql = "SELECT * FROM `member_fees` ORDER BY `fee_id` DESC";
                                 $result = mysqli_query($conn, $sql);
-                                $conn->close();
+                                
                                 if ($result && mysqli_num_rows($result) > 0) {
                                     // Loop through query results
                                     while ($row = mysqli_fetch_assoc($result)) {
@@ -979,6 +980,7 @@ session_start();
                                             <td class="col-remove"><a href="member_fees.php?id=<?php echo $row["fee_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
                                         </tr>
                                     <?php
+                                    
                                     }
                                     ?>
                                 <?php
