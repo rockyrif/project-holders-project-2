@@ -57,12 +57,12 @@ session_start();
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="coach-background">
                     <div class="content">
-                        <p class="fs-3">Professional tennis coaching available:</p>
+                        <p class="fs-5">Professional tennis coaching available:</p>
                         <p>ADTC coaching team cater to all levels of players, from beginners (of all ages) to competition players.
                         </p>
                         <p>Equipment is supplied.
                         </p>
-                        <p class="fs-3" style="text-decoration: underline;">Coaching is available as follows
+                        <p class="fs-5" style="text-decoration: underline;">Coaching is available as follows
                         </p>
                         <ul>
                             <li>Week Days and Week Nights
