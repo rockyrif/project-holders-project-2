@@ -21,7 +21,6 @@
             font-family: "PF Din Stencil W01 Bold";
         }
 
-
         .nav-link,
         .outer-button,
         .offcanvas-button {
