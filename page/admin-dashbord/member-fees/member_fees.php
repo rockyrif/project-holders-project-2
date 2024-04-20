@@ -358,6 +358,8 @@ session_start();
 
                     $id = isset($_GET["id"]) ? $_GET["id"] : '';
 
+                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
                     $sql = "DELETE FROM `member_fees` WHERE fee_id = ?";
 
                     $stmt = mysqli_prepare($conn, $sql);
@@ -365,6 +367,8 @@ session_start();
                     mysqli_stmt_bind_param($stmt, "i", $id);
 
                     $result = mysqli_stmt_execute($stmt);
+
+                    $conn->close();
 
 
                     if ($result) {
@@ -583,8 +587,10 @@ session_start();
                             <!-- php filtering start -->
 
                             <tbody>
-
+                            
                                 <?php
+                                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
                                 // Fetch the selected columns from the form
                                 $selectedColumns = isset($_GET['column']) ? $_GET['column'] : array(); // Ensure $selectedColumns is always an array
 
@@ -630,7 +636,7 @@ session_start();
 
                                 // Execute the SQL query
                                 $result = mysqli_query($conn, $sql);
-
+                                $conn->close();
                                 // Check if query executed successfully
                                 if ($result && mysqli_num_rows($result) > 0) {
                                     // Display table header
@@ -968,7 +974,7 @@ session_start();
                                                         <!-- Dropdown to select payment status -->
                                                         <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"] == 'Paid') ? "paid" : "not-paid"; ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['fee_id']; ?>, this.value)">
                                                             <!-- Option for payment status Not yet -->
-                                                            <option value="Not yet" class="not-paid" ?php echo ($row["payment_status"]=='Not yet' ) ? "selected" : "" ; ?>Not yet</option>
+                                                            <option value="Not yet" class="not-paid" <?php echo ($row["payment_status"]=='Not yet' ) ? "selected" : "" ; ?>>Not yet</option>
                                                             <!-- Option for payment status Paid -->
                                                             <option value="Paid" class="paid" <?php echo ($row["payment_status"] == 'Paid') ? "selected" : ""; ?>>Paid</option>
                                                         </select>

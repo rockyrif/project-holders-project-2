@@ -71,8 +71,10 @@ if (isset ($_POST["submit"])) {
     </div>
 
     <?php
+    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
     $sql = "SELECT * FROM `members` WHERE member_id = $id LIMIT 1";
     $result = mysqli_query($conn, $sql);
+    $conn->close();
     $row = mysqli_fetch_assoc($result);
     ?>
 

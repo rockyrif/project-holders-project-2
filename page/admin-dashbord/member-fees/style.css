@@ -80,3 +80,8 @@ option .not-paid {
   color: #000066;
   font-family: "PF Din Stencil W01 Bold";
 }
+
+.form-container{
+  flex-direction: column !important;
+  align-items: center;
+}
