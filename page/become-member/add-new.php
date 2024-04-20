@@ -34,7 +34,7 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
          echo "Failed: " . mysqli_error($conn);
       }
    }
-
+   $conn->close();
    ?>
 
 

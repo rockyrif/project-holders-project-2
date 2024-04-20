@@ -610,6 +610,7 @@ session_start();
                                         </td>
                                     </tr>
                                     <?php
+                                    $conn->close();
                                 }
                                 ?>
                             </tbody>
@@ -714,6 +715,7 @@ session_start();
                                     </tr>
 
                                     <?php
+                                    $conn->close();
                                 }
                                 ?>
                             </tbody>
