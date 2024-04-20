@@ -992,6 +992,7 @@ session_start();
                                         </td>
                                     </tr>
                                 <?php
+                                $conn->close();
                                 }
                                 ?>
                             </tbody>
