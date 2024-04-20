@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2024 at 08:23 AM
+-- Generation Time: Apr 20, 2024 at 02:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -115,8 +115,8 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`news_id`, `pic_path`, `description`) VALUES
-(2, 'Images/news/2.jpg', 'dsfsdf'),
-(3, 'Images/news/3.jpg', 'ssdfsdfsdfsfsdfsdfsdfsdfsdfsdfsdf');
+(4, 'Images/news/1.jpg', 'AMPARA RANKING TENNIS TOURNAMENT\r\n\r\nPrepare yourselves for the upcoming Ampara Ranking Tennis Tournament! Proudly organized by the Ampara District Tennis Club, this event promises an exhilarating showcase of talent and sportsmanship.'),
+(5, 'Images/news/2.jpg', 'TENNIS TOURNAMENT\r\n\r\nPrepare yourselves for the upcoming Tennis Tournament! Proudly organized by the Ampara District Tennis Club, this event promises an exhilarating showcase of talent and sportsmanship.');
 
 -- --------------------------------------------------------
 
@@ -196,7 +196,7 @@ ALTER TABLE `member_fees`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_login`
