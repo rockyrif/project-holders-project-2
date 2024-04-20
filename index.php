@@ -447,7 +447,7 @@ session_start();
                     <p class="gallery-info">Inter School Tournaments</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Jus-De-Fruit-Tournaments" src="Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/15.jpg">
+                    <img alt="Jus-De-Fruit-Tournaments" src="Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/2.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php'">View</button>
                     <p class="gallery-info">Jus De Fruit Tournaments</p>
                 </div>
