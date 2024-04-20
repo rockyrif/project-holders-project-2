@@ -27,14 +27,14 @@ if (isset ($_POST["submit"])) {
    $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender')";
 
    $result = mysqli_query($conn, $sql);
-
+   $conn->close();
    if ($result) {
       header("Location: admin-dashbord.php?msg=New record created successfully");
    } else {
       echo "Failed: " . mysqli_error($conn);
    }
 }
-$conn->close();
+
 ?>
 
 

@@ -51,6 +51,7 @@ if (isset($_POST["submit"])) {
                     VALUES ('$member_id', '$year', '$month', '$fee_amount', '$payment_date', '$proof_url')";
 
          if (mysqli_query($conn, $sql)) {
+            $conn->close();
             $_SESSION['response'] = "Record inserted successfully.";
          } else {
             $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -61,7 +62,6 @@ if (isset($_POST["submit"])) {
    }
 }
 // Close database connection
-mysqli_close($conn);
 ?>
 
 
@@ -125,8 +125,9 @@ mysqli_close($conn);
                   include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
                   // Select data from member_fees table
                   $sql = "SELECT `member_id` FROM `members` ORDER BY `member_id` DESC";
+                  
                   $result = mysqli_query($conn, $sql);
-
+                  $conn->close();
                   if ($result && mysqli_num_rows($result) > 0) {
                      // Loop through query results
                      while ($row = mysqli_fetch_assoc($result)) {
@@ -139,7 +140,7 @@ mysqli_close($conn);
                      ?>
                      <option value="">no records</option>
                   <?php
-                  $conn->close();
+                  
                   }
                   ?>
                </select>

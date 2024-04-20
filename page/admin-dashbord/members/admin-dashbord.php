@@ -715,7 +715,7 @@ session_start();
                                     </tr>
 
                                     <?php
-                                    $conn->close();
+                                    
                                 }
                                 ?>
                             </tbody>

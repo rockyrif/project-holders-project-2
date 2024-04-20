@@ -945,7 +945,7 @@ session_start();
                                 // Select data from member_fees table
                                 $sql = "SELECT * FROM `member_fees` ORDER BY `fee_id` DESC";
                                 $result = mysqli_query($conn, $sql);
-                                
+                                $conn->close();
                                 if ($result && mysqli_num_rows($result) > 0) {
                                     // Loop through query results
                                     while ($row = mysqli_fetch_assoc($result)) {
@@ -992,7 +992,7 @@ session_start();
                                         </td>
                                     </tr>
                                 <?php
-                                $conn->close();
+                                
                                 }
                                 ?>
                             </tbody>
