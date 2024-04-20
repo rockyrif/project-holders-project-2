@@ -34,6 +34,11 @@ session_start();
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
+    <style>
+    /* Custom styles */
+ 
+  </style>
+
    
 
 </head>
@@ -51,7 +56,7 @@ session_start();
         <!-- home-section-site-map-start -->
         <div class="site-map">
             <div class="container">
-                <h3>Site Map</h3>
+                <p class="fs-4 site-map-tittle">Site Map</p>
                 <div class="site-map-grid-container">
                     <div class="site-map-grid-item">
                         <p><a href="">1. Home</a></p>
@@ -75,8 +80,46 @@ session_start();
                             <li><a href="">Image Gallery</a></li>
                         </ul>
                     </div>
+                  
                     <div class="site-map-grid-item">
-                        <p><a href="">6. Tournaments</a></p>
+                        <p><a href="">6. Coaching</a></p>
+                        <ul>
+                            <li><a href="">About Coaching</a></li>
+                            <li><a href="">Training schedule for schools</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-map-grid-item">
+                        <p><a href="">7. School Training programs</a></p>
+                        <ul>
+                            <li><a href="">About School Programs</a></li>
+                            <li><a href="">Image Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-map-grid-item">
+                        <p><a href="">8. Beach Tennis</a></p>
+                        <ul>
+                            <li><a href="">About Beach Tennis</a></li>
+                            <li><a href="">Tournaments / Activities</a></li>
+                            <li><a href="">Image Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-map-grid-item">
+                        <p><a href="">9. Achievements</a></p>
+                        <ul>
+                            <li><a href="">ADTC Achievements</a></li>
+                            <li><a href="">Image Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-map-grid-item">
+                        <p><a href="">10. Federation</a></p>
+                        <ul>
+                            <li><a href="">ADTC Committee</a></li>
+                            <li><a href="">ADTC News</a></li>
+                            <li><a href="">Image Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-map-grid-item">
+                        <p><a href="">11. Tournaments</a></p>
                         <ul>
                             <li><a href="">Enter Tournament</a></li>
                             <li><a href="">Tournament Calendar</a></li>
@@ -101,50 +144,6 @@ session_start();
                                 </ul>
                             </li>
 
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">7. Ranking</a></p>
-                        <ul>
-                            <li><a href="">Player Profile</a></li>
-                            <li><a href="">ADTC Ranking</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">8. Coaches</a></p>
-                        <ul>
-                            <li><a href="">Register</a></li>
-                            <li><a href="">Find a Coach</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">9. School Training programs</a></p>
-                        <ul>
-                            <li><a href="">About School Programs</a></li>
-                            <li><a href="">Image Gallery</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">10. Beach Tennis</a></p>
-                        <ul>
-                            <li><a href="">About Beach Tennis</a></li>
-                            <li><a href="">Tournaments / Activities</a></li>
-                            <li><a href="">Image Gallery</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">11. Achievements</a></p>
-                        <ul>
-                            <li><a href="">ADTC Achievements</a></li>
-                            <li><a href="">Image Gallery</a></li>
-                        </ul>
-                    </div>
-                    <div class="site-map-grid-item">
-                        <p><a href="">12. Federation</a></p>
-                        <ul>
-                            <li><a href="">ADTC Committee</a></li>
-                            <li><a href="">ADTC News</a></li>
-                            <li><a href="">Image Gallery</a></li>
                         </ul>
                     </div>
                 </div>

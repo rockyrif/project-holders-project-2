@@ -28,9 +28,8 @@ body {
 .site-map {
     height:100vh;
     width: 100vw;
-    
     padding: 20px;
-    padding-top: 93px;
+    padding-top: 93px !important;
     position: relative;
   
 
@@ -82,11 +81,70 @@ body {
     list-style-type: none;
 }
 
-.site-map h3 {
+.site-map .site-map-tittle {
     color: #91CC00;
     font-family: "PF Din Stencil W01 Bold";
     text-align: center;
 }
+
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+
+  .site-map {
+    padding: 50px 0;
+  }
+
+  .site-map h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .site-map-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .site-map-grid-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 0; /* Remove default margin */
+  }
+
+  .site-map-grid-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .site-map-grid-item p {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+  }
+
+  .site-map-grid-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+  .site-map-grid-item ul li {
+    list-style-type: none;
+  }
+
+  .site-map-grid-item a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .site-map-grid-item a:hover {
+    color: #0056b3;
+  }
 
 
 
