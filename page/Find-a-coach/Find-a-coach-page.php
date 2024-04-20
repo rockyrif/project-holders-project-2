@@ -62,7 +62,7 @@ session_start();
                         </p>
                         <p>Equipment is supplied.
                         </p>
-                        <p class="fs-3">Coaching is available as follows:
+                        <p class="fs-3" style="text-decoration: underline;">Coaching is available as follows
                         </p>
                         <ul>
                             <li>Week Days and Week Nights
