@@ -95,7 +95,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/9.jpg">
                 </div>
-                <div class="image-container">
+                <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/10.jpg">
                 </div>
@@ -134,7 +134,7 @@ session_start();
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/21.jpg">
-                </div>
+                </div> -->
                 <!-- <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/22.jpg">
                 </div>

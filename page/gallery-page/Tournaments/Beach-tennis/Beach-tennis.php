@@ -92,7 +92,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/8.jpg">
                 </div>
-                <div class="image-container">
+                <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/9.jpg">
                 </div>
@@ -120,7 +120,7 @@ session_start();
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/16.jpg">
-                </div>
+                </div> -->
                   <!--<div class="grid-item">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/17.jpg">
                 </div>

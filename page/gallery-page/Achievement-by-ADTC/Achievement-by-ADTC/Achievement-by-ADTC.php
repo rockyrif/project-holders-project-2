@@ -66,17 +66,17 @@ session_start();
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//2.webp">
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/2.webp">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//3.webp">
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/3.webp">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//4.webp">
+                        src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/4.webp">
                 </div>
-                <div class="image-container tall">
+                <!-- <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//5.webp">
                 </div>
@@ -111,7 +111,7 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC//13.webp">
-                </div>
+                </div> -->
                 <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement-by-ADTC/14.webp">
                 </div>

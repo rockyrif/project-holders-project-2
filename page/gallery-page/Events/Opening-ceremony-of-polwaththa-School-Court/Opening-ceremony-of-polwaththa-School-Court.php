@@ -75,14 +75,14 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <!-- <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/5.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/6.jpg">
-                </div>
+                </div> -->
                 <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/7.jpg">
