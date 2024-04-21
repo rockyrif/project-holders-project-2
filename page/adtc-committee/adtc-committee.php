@@ -48,11 +48,11 @@ session_start();
         <div class="adtc-committee">
 
             <div class="gallary-tittle">
-                <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">ADTC Committee</P>
+                <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">ADTC Founder</P>
             </div>
 
             <div class="gallary-heading">
-                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Founder</p>
+                <p style="text-align: left;" data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club (ADTC) made its mark on the sporting scene in 2023, thanks to the visionary leadership of Deputy Inspector General of Police, Mr. H.A.N.K. Damayantha Wijaya Sri. With a mission to foster tennis excellence within the community, the club swiftly transformed into a vibrant nucleus for tennis aficionados across the region.</p>
             </div>
 
             
