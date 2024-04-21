@@ -57,7 +57,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                         VALUES ('$proof_url', '$description')";
 
                     if (mysqli_query($conn, $sql)) {
-                        $_SESSION['response'] = "Record inserted successfully.";
+                        $_SESSION['response'] = "News publised successfully.";
                     } else {
                         $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
                     }
