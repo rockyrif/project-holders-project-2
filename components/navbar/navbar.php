@@ -268,6 +268,7 @@
                                         ADMIN DASHBORD
                                     </a>
                                     <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/admin-manager/admin-manager.php">Admin manager</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/news/add-news.php">Add news</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit
                                                 members</a></li>
