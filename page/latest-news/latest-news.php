@@ -52,7 +52,7 @@ session_start();
         <!-- Navbar end -->
 
         <!-- latest-news-page-start -->
-        <div class="latest-news">
+        <div class="latest-news" data-aos="fade-up" data-aos-duration="2000">
 
             <div class="gallary-tittle">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Latest News</P>
@@ -72,22 +72,27 @@ session_start();
                     <img src="../../<?= $row['pic_path']; ?>" alt="latest-news" width="300">
                 </div>
             </div>
+            <div class="container">
+                <div class="gallary-info">
+                    <p data-aos="fade-up" data-aos-duration="2000"><?= $row['description']; ?></p>
+                </div>
 
-            <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000"><?= $row['description']; ?></p>
+                <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") { ?>
+                    <div style="display:flex; justify-content:center;" >
+                        <div >
+                            <button type="button" class="btn btn-danger" onclick="confirmDelete(<?php echo $row['news_id']; ?>)">Delete</button>
+
+                            <script>
+                                function confirmDelete(newsId) {
+                                    if (confirm("Are you sure you want to delete this item?")) {
+                                        window.location.href = "delete.php?id=" + newsId;
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
-
-            <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") { ?>
-            <div>
-                <a href="delete.php?id=<?php echo $row["news_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a>
-            </div>
-
-            <script>
-                function confirmDelete() {
-                    return confirm("Are you sure you want to delete this News?");
-                }
-            </script>
-            <?php } ?>
 
 
         </div>

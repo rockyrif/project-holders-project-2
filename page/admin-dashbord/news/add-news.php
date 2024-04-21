@@ -127,7 +127,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Picture (1:1 aspact ratio):</label>
-                        <input class="form-control" type="file" id="formFile" name="picture">
+                        <input class="form-control" type="file" id="formFile" name="picture" required>
                     </div>
 
                     <div class="mb-3">
