@@ -33,6 +33,10 @@ session_start();
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
+    <!-- Font Awesome start-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome end-->
+
 
 
 </head>
@@ -72,6 +76,18 @@ session_start();
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000"><?= $row['description']; ?></p>
             </div>
+
+            <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") { ?>
+            <div>
+                <a href="delete.php?id=<?php echo $row["news_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a>
+            </div>
+
+            <script>
+                function confirmDelete() {
+                    return confirm("Are you sure you want to delete this News?");
+                }
+            </script>
+            <?php } ?>
 
 
         </div>

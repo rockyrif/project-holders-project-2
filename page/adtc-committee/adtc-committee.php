@@ -18,8 +18,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -55,22 +54,20 @@ session_start();
                 <p style="text-align: left;" data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club (ADTC) made its mark on the sporting scene in 2023, thanks to the visionary leadership of Deputy Inspector General of Police, Mr. H.A.N.K. Damayantha Wijaya Sri. With a mission to foster tennis excellence within the community, the club swiftly transformed into a vibrant nucleus for tennis aficionados across the region.</p>
             </div>
 
-            
+
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
-                
-                    <div class="image-container">
 
-                        <img alt="Achievement-by-ADTC" src="../../Images/adtc-committee/1.jpg"
-                            class="image-button-container">
+                <div class="image-container">
 
-                        <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri<br>
-                        <button type="button" class="btn btn-success gallery-button mt-1"
-                        onclick="window.location.href='../founder-msg/founder-msg.php'">Founder's Message</button>
-                        </p>
-                    </div>
-                
+                    <img alt="Achievement-by-ADTC" src="../../Images/adtc-committee/1.jpg" class="image-button-container">
+
+                    <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri<br>
+                        <button type="button" class="btn btn-success gallery-button mt-1" onclick="window.location.href='../founder-msg/founder-msg.php'">Founder's Message</button>
+                    </p>
+                </div>
+
             </div>
-            
+
             <br>
 
             <!-- <div class="gallary-heading">
