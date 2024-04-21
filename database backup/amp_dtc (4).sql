@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2024 at 02:15 PM
+-- Generation Time: Apr 21, 2024 at 11:33 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -63,9 +63,9 @@ INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `ema
 (52, 'ADTC-MC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-13', 'sdsdsds', 'child', '', 'sdsd', 'male', '2024-04-05'),
 (56, 'ADTC-MC', 'fathima', 'nifla', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-23', 'xcy', 'child', '', 'xcxc', 'male', '2024-04-08'),
 (57, 'ADTC-MC', 'Mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-14', '320b sailan road kalmunai kudy 3', 'child', '', 'Mohamed Rifky', 'male', '2024-04-13'),
-(58, 'ADTC-2024-MA', 'Mohamed', 'Arhab', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-14', '320b sailan road kalmunai kudy 3', 'adult', 'Student at sliate ', '', 'male', '2024-04-13'),
-(59, 'ADTC-2024-MA', 'Mohamed', 'Happy', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-14', '320b sailan road kalmunai kudy 3', 'adult', 'Student at sliate ', '', 'male', '2024-04-13'),
-(61, 'ADTC-2024-MA', 'fathima', 'rifna', 'rifna@gmail.com', '0776040064', '', '2024-04-06', '320b sailan road kalmunai kudy 3', 'adult', '', '', 'male', '2024-04-15');
+(58, 'ADTC-2024-MA', 'Mohamed', 'Arhab', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-14', '320b sailan road kalmunai kudy 4', 'adult', 'Student at sliate ', '', 'male', '2024-04-13'),
+(59, 'ADTC-2024-MA', 'Mohamed', 'Happy', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-14', '320b sailan road kalmunai kudy 35', 'adult', 'Student at sliate ', '', 'male', '2024-04-13'),
+(63, 'ADTC-2024-MC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-13', 'asdasd', 'child', '', 'asdasd', 'male', '2024-04-20');
 
 -- --------------------------------------------------------
 
@@ -90,13 +90,20 @@ CREATE TABLE `member_fees` (
 
 INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `proof_url`, `payment_status`) VALUES
 (67, 52, 2024, 3, 2.00, '2024-04-20', '../../../Images/payment-proof/', 'Paid'),
-(68, 48, 2024, 3, 2.00, '2024-04-20', '../../../Images/payment-proof/', 'Paid'),
+(68, 48, 2024, 3, 2.00, '2024-04-20', '../../../Images/payment-proof/', 'Not yet'),
 (69, 50, 2025, 4, 4.00, '2024-04-20', '../../../Images/payment-proof/69.png', 'Paid'),
 (71, 46, 2056, 6, 250.00, '2024-04-14', '../../../Images/payment-proof/71.jpg', 'Paid'),
 (72, 46, 2056, 6, 250.00, '2024-04-14', '../../../Images/payment-proof/72.jpg', 'Paid'),
 (73, 48, 2089, 1, 258.00, '2024-04-14', '../../../Images/payment-proof/73.jpg', 'Not yet'),
-(74, 58, 2024, 3, 3.00, '2024-04-20', '../../../Images/payment-proof/74.jpg', 'Not yet'),
-(75, 50, 2023, 1, 4.00, '2024-04-13', '../../../Images/payment-proof/75.jpg', 'Not yet');
+(74, 58, 2024, 4, 40.00, '2024-04-20', '../../../Images/payment-proof/74.jpg', 'Not yet'),
+(75, 50, 2023, 1, 4.00, '2024-04-13', '../../../Images/payment-proof/75.jpg', 'Paid'),
+(76, 56, 2024, 1, 2500.00, '2024-04-19', '../../../Images/payment-proof/76.jpg', 'Paid'),
+(77, 56, 2024, 3, 1800.00, '2024-04-27', '../../../Images/payment-proof/77.jpg', 'Paid'),
+(80, 63, 2024, 2, 5.00, '2024-04-13', '../../../Images/payment-proof/80.jpg', 'Paid'),
+(81, 63, 2536, 3, 4.00, '2024-04-27', '../../../Images/payment-proof/81.jpg', 'Not yet'),
+(82, 63, 2025, 5, 9.00, '2024-04-27', '../../../Images/payment-proof/82.jpg', 'Not yet'),
+(83, 63, 2025, 6, 300.00, '2024-04-26', '../../../Images/payment-proof/83.jpg', 'Not yet'),
+(84, 58, 2028, 5, 7.00, '2024-04-20', '../../../Images/payment-proof/84.jpg', 'Not yet');
 
 -- --------------------------------------------------------
 
@@ -107,16 +114,19 @@ INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`,
 CREATE TABLE `news` (
   `news_id` int(20) NOT NULL,
   `pic_path` text NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `publisher` varchar(100) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`news_id`, `pic_path`, `description`) VALUES
-(4, 'Images/news/1.jpg', 'AMPARA RANKING TENNIS TOURNAMENT\r\n\r\nPrepare yourselves for the upcoming Ampara Ranking Tennis Tournament! Proudly organized by the Ampara District Tennis Club, this event promises an exhilarating showcase of talent and sportsmanship.'),
-(5, 'Images/news/2.jpg', 'TENNIS TOURNAMENT\r\n\r\nPrepare yourselves for the upcoming Tennis Tournament! Proudly organized by the Ampara District Tennis Club, this event promises an exhilarating showcase of talent and sportsmanship.');
+INSERT INTO `news` (`news_id`, `pic_path`, `description`, `publisher`, `date`) VALUES
+(4, 'Images/news/1.jpg', 'AMPARA RANKING TENNIS TOURNAMENT\r\n\r\nPrepare yourselves for the upcoming Ampara Ranking Tennis Tournament! Proudly organized by the Ampara District Tennis Club, this event promises an exhilarating showcase of talent and sportsmanship.', '', '2024-04-21'),
+(5, 'Images/news/2.jpg', 'TENNIS TOURNAMENT\r\n\r\nPrepare yourselves for the upcoming Tennis Tournament! Proudly organized by the Ampara District Tennis Club, this event promises an exhilarating showcase of talent and sportsmanship.', '', '2024-04-21'),
+(18, 'Images/news/6.jpg', '🎾 INTER-SCHOOL TENNIS TOURNAMENT<br><br>Get ready for an exciting showdown at the Inter-School Tennis Tournament, organized by the Ampara District Tennis Club (ADTC)! This prestigious event is set to bring together budding tennis talents from various schools for a thrilling display of skill and sportsmanship.', 'admin', '2024-04-21');
 
 -- --------------------------------------------------------
 
@@ -184,19 +194,19 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `member_fees`
 --
 ALTER TABLE `member_fees`
-  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user_login`
