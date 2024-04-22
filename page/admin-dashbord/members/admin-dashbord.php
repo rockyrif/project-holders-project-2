@@ -87,12 +87,14 @@ session_start();
 
                 <!-- Aleart start -->
                 <?php
-                if (isset($_GET["msg"])) {
-                    $msg = $_GET["msg"];
+                if (isset($_SESSION['response'])) {
+                    
                     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    ' . $msg . '
+                    ' . $_SESSION['response'] . '
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>';
+
+                    unset($_SESSION['response']);
                 }
                 ?>
                 <!-- Aleart end -->
