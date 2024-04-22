@@ -219,13 +219,13 @@ session_start();
                                             </label>
                                         </div>
                                         <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`proof_url`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`proof_url`', $_GET['column'])) ? 'checked' : ''; ?>>
+                                            <input class="form-check-input" type="checkbox" value="mf.`proof_url`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('mf.`proof_url`', $_GET['column'])) ? 'checked' : ''; ?>>
                                             <label class="form-check-label" for="flexCheckIndeterminate">
                                                 Payment Proof
                                             </label>
                                         </div>
                                         <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`payment_status`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`payment_status`', $_GET['column'])) ? 'checked' : ''; ?>>
+                                            <input class="form-check-input" type="checkbox" value="mf.`payment_status`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('mf.`payment_status`', $_GET['column'])) ? 'checked' : ''; ?>>
                                             <label class="form-check-label" for="flexCheckIndeterminate">
                                                 Payment Status
                                             </label>
@@ -502,7 +502,7 @@ session_start();
                                     ?>
 
                                     <?php
-                                    if (isset($_GET['column']) && in_array('`proof_url`', $_GET['column'])) {
+                                    if (isset($_GET['column']) && in_array('mf.`proof_url`', $_GET['column'])) {
                                     ?>
                                         <th scope="col">Payment Proof</th>
                                     <?php
@@ -510,7 +510,7 @@ session_start();
                                     ?>
 
                                     <?php
-                                    if (isset($_GET['column']) && in_array('`payment_status`', $_GET['column'])) {
+                                    if (isset($_GET['column']) && in_array('mf.`payment_status`', $_GET['column'])) {
                                     ?>
                                         <th scope="col">Payment Status</th>
                                     <?php
@@ -773,7 +773,7 @@ session_start();
                                             ?>
 
                                             <?php
-                                            if (isset($_GET['column']) && in_array('`proof_url`', $_GET['column'])) {
+                                            if (isset($_GET['column']) && in_array('mf.`proof_url`', $_GET['column'])) {
                                             ?>
                                                 <td>
                                                     <a href="#" onclick="window.open('<?php echo $row['proof_url'] ?>', '_blank', 'width=600,height=400'); return false;">View</a>
@@ -783,7 +783,7 @@ session_start();
                                             ?>
 
                                             <?php
-                                            if (isset($_GET['column']) && in_array('`payment_status`', $_GET['column'])) {
+                                            if (isset($_GET['column']) && in_array('mf.`payment_status`', $_GET['column'])) {
                                             ?>
                                                 <td>
                                                     <!-- Form to update payment status -->
