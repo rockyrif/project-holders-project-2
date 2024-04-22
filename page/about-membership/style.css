@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+    background-color: #ddd;
+
+
+}
+
+/* home start */
+.home {
+    position: relative;
+    top: 0%;
+    height: fit-content;
+}
+
+/* home end */
+
+
+
+
+/* home page section two */
+
+.about-us {
+    height: 100vh;
+    width: 100vw;
+
+    padding: 20px;
+    padding-top: 93px;
+    position: relative;
+
+
+
+}
+
+.gallary-tittle {
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000066;
+    font-family: "PF Din Stencil W01 Bold";
+
+}
+
+.gallary .image-container img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.gallery {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+}
+
+.gallery>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery>div>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.gallery .tall {
+    grid-row: span 2;
+}
+
+.gallary-info {
+    text-align: justify;
+    padding: 10px;
+}
