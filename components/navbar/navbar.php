@@ -268,7 +268,7 @@
                                         ADMIN DASHBORD
                                     </a>
                                     <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/admin-manager/admin-manager.php">Admin manager</a></li>
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/admin-manager/admin-manager.php">Admin manager</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/news/add-news.php">Add news</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/members/admin-dashbord.php">Edit
                                                 members</a></li>
@@ -434,6 +434,28 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Aleart start -->
+        <?php
+        if (isset($_SESSION['response'])) {
+            echo '<div id="alertContainer" class="alert alert-warning container alert-dismissible fade show" role="alert">
+            ' . $_SESSION['response'] . '
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+            unset($_SESSION['response']);
+        }
+        ?>
+        <script>
+            // Automatically remove the alert after 2 seconds
+            setTimeout(function() {
+                var alertContainer = document.getElementById('alertContainer');
+                if (alertContainer) {
+                    alertContainer.remove();
+                }
+            }, 2000);
+        </script>
+
+        <!-- Aleart end -->
     </div>
 
 

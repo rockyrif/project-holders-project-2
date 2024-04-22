@@ -14,7 +14,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       $id_prefix = $id_prefix_text . "-" . $id_prefix_current_year . "-" . $id_prefix_gender . $id_prefix_member_type;
       $first_name = $_POST['first_name'];
       $last_name = $_POST['last_name'];
-      $email = $_POST['email'];
+      $email = $_SESSION["email"];
       $phone1 = $_POST['phone1'];
       $phone2 = $_POST['phone2'];
       $dob = $_POST['dob'];
@@ -116,8 +116,9 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>';  
          }
-
+         unset($_SESSION['response']);
          ?>
+
          <!-- Aleart end -->
 
          <div class="text-center mb-4">

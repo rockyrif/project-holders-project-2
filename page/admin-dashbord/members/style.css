@@ -67,3 +67,14 @@ body {
         margin-top:0px !important;
     }
 }
+
+.rejected{
+    background-color: red !important;
+    color: white !important;
+}
+.approved{
+    background-color: greenyellow !important;
+}
+.pending{
+    background-color: yellow !important;
+}

@@ -156,17 +156,6 @@ if (isset($_POST["submit"])) {
                <input type="number" class="form-control" pattern="\d{2}" id="month" name="month" min="01" max="12" placeholder="01">
             </div>
 
-            <script>
-               document.getElementById('month').addEventListener('input', function(event) {
-                  let value = event.target.value;
-                  if (value.length === 1 && value !== '0') {
-                     event.target.value = '0' + value; // prepend '0' if the length is 1 and the value is not '0'
-                  } else if (value.length > 2) {
-                     event.target.value = value.slice(0, 2); // truncate to the first two characters if the length is greater than 2
-                  }
-               });
-            </script>
-
             <div class="mb-3">
                <label for="fee-amount" class="form-label">Fee amount:</label>
                <input type="number" class="form-control" id="fee-amount" name="fee-amount" placeholder="250">

@@ -337,70 +337,10 @@ session_start();
 
                     exit();
                 }
-
-                //  update payment Aleart start
-                if (isset($_SESSION['response'])) {
-                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            ' . $_SESSION['response'] . '
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>';
-
-
-                    unset($_SESSION['response']);
-                }
-                //  update payment Aleart end
                 ?>
                 <!-- update payment status. end -->
 
-                <!-- update delete status. start -->
-                <?php
-                if (isset($_GET["id"])) {
-
-                    $id = isset($_GET["id"]) ? $_GET["id"] : '';
-
-                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-
-                    $sql = "DELETE FROM `member_fees` WHERE fee_id = ?";
-
-                    $stmt = mysqli_prepare($conn, $sql);
-
-                    mysqli_stmt_bind_param($stmt, "i", $id);
-
-                    $result = mysqli_stmt_execute($stmt);
-
-                    $conn->close();
-
-
-                    if ($result) {
-                        $_SESSION['delete_response'] = "Data deleted successfully";
-                    } else {
-
-                        $_SESSION['delete_response'] = "Failed: " . mysqli_stmt_error($stmt);
-                    }
-
-                    // Close the statement
-                    mysqli_stmt_close($stmt);
-
-                    echo "<script>
-                                // Clear the query parameters from the URL
-                                window.history.replaceState({}, document.title, window.location.pathname);
-                         </script>";
-
-                    //  Delete Aleart start
-                    if (isset($_SESSION['delete_response'])) {
-                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            ' . $_SESSION['delete_response'] . '
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>';
-
-                        // Unset the response from session to clear it after displaying
-                        unset($_SESSION['delete_response']);
-                    }
-                    // delete Aleart end
-
-                }
-                ?>
-                <!-- update delete status. end -->
+                
 
 
 
@@ -867,7 +807,7 @@ session_start();
 
                                             <td class="col-remove"><a href="edit.php?id=<?php echo $row["fee_id"]; ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
 
-                                            <td class="col-remove"><a href="member_fees.php?id=<?php echo $row["fee_id"]; ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
+                                            <td class="col-remove"><a href="delete.php?id=<?php echo $row["fee_id"]; ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
 
                                         </tr>
 
@@ -983,7 +923,7 @@ session_start();
                                             </td>
                                             <!-- Edit and delete buttons -->
                                             <td class="col-remove"><a href="edit.php?id=<?php echo $row["fee_id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
-                                            <td class="col-remove"><a href="member_fees.php?id=<?php echo $row["fee_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
+                                            <td class="col-remove"><a href="delete.php?id=<?php echo $row["fee_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
                                         </tr>
                                     <?php
                                     

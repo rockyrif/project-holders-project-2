@@ -24,8 +24,9 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
         $stmt->close();
         
         if ($result) {
+            $_SESSION['response'] = "Data deleted successfully";
             // Redirect the user
-            header("Location: admin-dashbord.php?msg=Data deleted successfully");
+            header("Location: {$_SERVER['HTTP_REFERER']}");
             exit; // Stop further execution
         } else {
             // Provide an error message
