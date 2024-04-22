@@ -26,14 +26,12 @@ body {
 /* home page section two */
 
 .contact-us {
-    height:100vh;
+    height:fit-content;
     width: 100vw;
-    
-    padding: 20px;
+    padding: 50px;
     padding-top: 93px;
-    position: relative;
-  
-
+     
+    margin-bottom: 10px;
 
 }
 .gallary-tittle {
@@ -49,8 +47,8 @@ body {
 }
 .submit-request{
     width: 40% !important;
-    height: 500px;
-	padding: 50px;
+    height: 400px;
+	padding: 20px;
     padding-top: 10px;
 	
 	
@@ -71,6 +69,36 @@ body {
 
     .submit-request {
         width: 100% !important;
+    }
+
+}
+
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  .map-container{
+    display: flex;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px; 
+  }
+
+  @media only screen and (max-width: 526px) {
+
+    .map-container{
+       flex-direction: column;    
+    }
+
+    .width{
+        width: 100% !important;
+    }
+
+    .width2{
+        padding: 20px;
     }
 
 }
