@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `amp_dtc`
+-- Database: `adtennis_amp_dtc`
 --
 
 -- --------------------------------------------------------
