@@ -1,6 +1,6 @@
 <?php
 // Include config file
-include $_SERVER['DOCUMENT_ROOT'] . "/Project-holders-project-2/db_conn.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
 // Define variables and initialize with empty values
 $username = $email = $password = "";
