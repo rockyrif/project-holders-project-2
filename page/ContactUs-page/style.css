@@ -28,10 +28,10 @@ body {
 .contact-us {
     height:fit-content;
     width: 100vw;
-    padding: 50px;
-    padding-top: 93px;
-     
+    padding: 0px 50px 50px 50px;
+    margin-top: 25px;
     margin-bottom: 10px;
+    position: relative;
 
 }
 .gallary-tittle {
@@ -43,8 +43,16 @@ body {
     justify-content: center;
     color: #000066;
     font-family: "PF Din Stencil W01 Bold";
-
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    background-color: #91CC00;
 }
+
+.gallary-tittle div{
+    font-size: 25px;
+}
+
 .submit-request{
     width: 40% !important;
     height: 400px;
@@ -102,3 +110,46 @@ body {
     }
 
 }
+
+ .aspect-ratio-256-81 {
+    margin-top: 93px;
+    position: relative;
+    width: 100%;
+    padding-top: calc(81 / 290 * 100%); /* Aspect ratio calculation */
+    border-radius: 0px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensure content stays within rounded borders */
+  }
+  
+  .aspect-ratio-256-81 .carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+  
+  .aspect-ratio-256-81 .carousel-item {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+  
+  .aspect-ratio-256-81 .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+
+  @media only screen and (max-width: 500px) {
+
+    .aspect-ratio-256-81 {
+        
+        padding-top: calc(81 / 140 * 100%); /* Aspect ratio calculation */
+       
+      }
+
+ }
+  
+  
