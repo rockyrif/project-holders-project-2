@@ -48,12 +48,34 @@ session_start();
         ?>
         <!-- Navbar end -->
 
+        <!-- moving images start -->
+
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="gallary-tittle">
+                        <div class="">About Us</div>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="../../Images/moving-img/about-us-moving-img/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../Images/moving-img/about-us-moving-img/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../Images/moving-img/about-us-moving-img/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../Images/moving-img/about-us-moving-img/4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                   
+
+                </div>
+            </div>
+
+            <!-- moving images end -->
+
         <!-- About-us-page-start -->
         <div class="about-us container">
-
-            <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">About Us</P>
-            </div>
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club (ADTC) emerged on the sporting landscape in 2023 under the visionary leadership of Deputy Inspector General of Police, Mr. H.A.N.K. Damayantha Wijaya Sri. Founded with the purpose of promoting tennis within the community, the club quickly evolved into a dynamic hub for tennis enthusiasts in the region. The Ampara District Tennis Club endeavors to promote harmony within society by organizing inclusive tennis events that unite diverse community members. By emphasizing values such as teamwork, respect, and fair play, the club aims to create a positive environment where individuals from varied backgrounds come together through their mutual passion for tennis. Implementing outreach programs, tennis clinics, and community events will additionally strengthen social bonds, fostering understanding and cooperation among residents of the Ampara district.<br><br>
