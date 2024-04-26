@@ -121,7 +121,7 @@ session_start();
                     <div class="width width2" style="width: 50%; padding-left:30px; display:flex; align-items:center;">
                         <div>
                             Ampara District Tennis Courts Complex <br>
-                            077 757 0347 <br>
+                            
                             <a href="https://maps.app.goo.gl/cx7XoBwFaE8puGHHA" target="_blank" style="font-weight: bold;">GET DIRECTION</a>
                         </div>
                     </div>
