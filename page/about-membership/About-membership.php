@@ -77,7 +77,7 @@ session_start();
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000" style="font-family: Arial, sans-serif;">
                 <h1 style=" font-weight: bold;">Membership</h1><br>
-                <p><span style=" font-weight: bold;">Welcome to</span> Ampara District <span style=" font-weight: bold;">Tennis Club (ADTC) Membership information page.</span> </p>
+                <p><span style=" font-weight: bold;">Welcome to Ampara District Tennis Club (ADTC) Membership information page.</span> </p>
                 <p style=" font-weight: bold;">The Ampara District Tennis Club’s purposes are:</p>
                 <ul>
                     <li>To provide a safe, well-maintained environment where tennis can be played.</li>
