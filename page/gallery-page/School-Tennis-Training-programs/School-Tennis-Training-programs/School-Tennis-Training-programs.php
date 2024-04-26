@@ -50,13 +50,32 @@ session_start();
         ?>
         <!-- Navbar end -->
 
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="gallary-tittle">
+                        <div class="">About School Tennis Training Program</div>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="../../../../Images/moving-img/about-school-tennis-training-programme/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/about-school-tennis-training-programme/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/about-school-tennis-training-programme/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/about-school-tennis-training-programme/4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                   
+
+                </div>
+            </div>
+            <!-- moving images end -->
+
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
-
-            <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">School Tennis Training programs</P>
-            </div>
-
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">The purpose of the school tennis training program
                     organized by the Ampara District Tennis Club is to foster a nurturing environment for aspiring young

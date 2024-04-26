@@ -43,7 +43,7 @@ session_start();
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
+            <div class="gallary-tittle1">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Opening Ceremony of ADTC Tennis Courts Complex</P>
             </div>
 

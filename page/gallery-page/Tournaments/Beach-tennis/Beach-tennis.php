@@ -48,12 +48,30 @@ session_start();
         ?>
         <!-- Navbar end -->
 
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="gallary-tittle">
+                        <div class="">beach Tennis</div>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="../../../../Images/moving-img/about-beach-tennis/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/about-beach-tennis/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/about-beach-tennis/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- moving images end -->
+
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Promoting Beach Tennis</P>
-            </div>
+            
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">The purpose of Beach Tennis event organized by the Ampara District Tennis Club is twofold: to foster a love for the sport, promote physical activity, and build a sense of community, while also leveraging the event to boost tourism in the region. By the scenic beauty of our beaches. and providing an engaging sporting experience, we aim attract visitors, thereby contributing to the growth of the local tourism industry.</p>

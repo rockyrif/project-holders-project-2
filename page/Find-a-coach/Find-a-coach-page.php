@@ -47,12 +47,30 @@ session_start();
         ?>
         <!-- Navbar end -->
 
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="gallary-tittle">
+                    <div class="">About Coaching</div>
+                </div>
+                <div class="carousel-item active">
+                    <img src="../../Images/moving-img/about-coaching/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../Images/moving-img/about-coaching/2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../Images/moving-img/about-coaching/3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../Images/moving-img/about-coaching/4.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+        <!-- moving images end -->
+
         <!-- find-a-coach-page-start -->
         <div class="find-a-coach">
-
-            <div class="gallary-tittle">
-                <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">Coaching</P>
-            </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="coach-background">

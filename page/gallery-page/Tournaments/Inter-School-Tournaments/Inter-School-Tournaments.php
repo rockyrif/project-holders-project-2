@@ -45,12 +45,32 @@ session_start();
         ?>
         <!-- Navbar end -->
 
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="gallary-tittle">
+                        <div class="">Inter School Tournaments</div>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="../../../../Images/moving-img/inter-school-tournament/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/inter-school-tournament/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/inter-school-tournament/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                   
+                   
+
+                </div>
+            </div>
+            <!-- moving images end -->
+
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Inter School Tournaments</P>
-            </div>
+            
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">The inter-school tournaments organized by the Ampara District Tennis Club are dynamic events designed to engage students from various schools in the district. These tournaments serve as platforms for fostering a love for tennis, promoting physical activity, and instilling values of teamwork and sportsmanship among participants. Additionally, they offer opportunities for talented young players to showcase their skills and potentially pursue competitive tennis pathways. Through these tournaments, the Ampara District Tennis Club aims to cultivate a vibrant tennis community, encourage youth participation in sports, and contribute to the overall development of young athletes in the region.</p>

@@ -47,12 +47,32 @@ session_start();
         ?>
         <!-- Navbar end -->
 
-        <!-- About-us-page-start -->
-        <div class="about-us container">
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="gallary-tittle">
+                    <div class="">About Membership</div>
+                </div>
+                <div class="carousel-item active">
+                    <img src="../../Images/moving-img/about-membership/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../Images/moving-img/about-membership/2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../Images/moving-img/about-membership/3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../Images/moving-img/about-membership/4.jpg" class="d-block w-100" alt="...">
+                </div>
 
-            <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">About membership</P>
+
             </div>
+        </div>
+        <!-- moving images end -->
+
+        <!-- About-us-page-start -->
+        <div class="about-membership container">
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000" style="font-family: Arial, sans-serif;">

@@ -44,12 +44,34 @@ session_start();
         ?>
         <!-- Navbar end -->
 
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="gallary-tittle">
+                        <div class="">Concordance Year End Tournaments</div>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="../../../../Images/moving-img/adtc-year-end-finals/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/adtc-year-end-finals/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/adtc-year-end-finals/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/adtc-year-end-finals/4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                   
+
+                </div>
+            </div>
+            <!-- moving images end -->
+
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Concordance Year End Tournaments</P>
-            </div>
+            
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">The purpose of the year-end tennis final tournaments organized by the Ampara District Tennis Club is to celebrate the culmination of a year filled with dedication, skill-building, and camaraderie among our tennis community. These tournaments serve as a platform to showcase the talents and progress of our players, fostering healthy competition and sportsmanship. Additionally, they provide an opportunity for players, supporters, and the community to come together, reinforcing the club's commitment to promoting the love of tennis and strengthening the social fabric within the Ampara District.</p>

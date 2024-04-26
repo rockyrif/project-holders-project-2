@@ -50,13 +50,39 @@ session_start();
         ?>
         <!-- Navbar end -->
 
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="gallary-tittle">
+                        <div class="">About Courts</div>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="../../../Images/moving-img/tennis-courts/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../Images/moving-img/tennis-courts/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../Images/moving-img/tennis-courts/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../Images/moving-img/tennis-courts/4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../Images/moving-img/tennis-courts/5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../Images/moving-img/tennis-courts/6.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+            <!-- moving images end -->
+
 
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Courts</P>
-            </div>
+            
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">Tennis Courts in Ampara District : <br><br>
