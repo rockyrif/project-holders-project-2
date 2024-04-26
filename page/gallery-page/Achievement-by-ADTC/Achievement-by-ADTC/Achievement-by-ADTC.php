@@ -52,7 +52,7 @@ session_start();
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">Owidu, a second-year student at Ampara Kawantissa School,
+                <p data-aos="fade-up" data-aos-duration="2000">Uvidu, a second-year student at Ampara Kawantissa School,
                     reached a noteworthy achievement by clinching the second position in a competition held on
                     09/10/2023 in Negombo, Sri Lanka, for participants under 10 years old. Owidu etched his name in
                     history of Ampara by securing the first trophy for Ampara District from the Ampara District Tennis

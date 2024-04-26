@@ -48,11 +48,11 @@ session_start();
         <div class="section-two">
 
             <div class="gallary-tittle1">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">The runner-up position</P>
+                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">The Runner-up Position</P>
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">For the second consecutive time, Ovidu Sri Basuru Putanuwan, a third-year student at Ampara Kawantissa School, secured the runner-up position in the PTS Orange Ball Tennis Tournament organized by the Sri Lanka Tennis Association.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">For the second consecutive time, Uvidu Sri Basuru, a third-year student at Ampara Kawantissa School, secured the runner-up position in the PTS Orange Ball Tennis Tournament organized by the Sri Lanka Tennis Association.</p>
             </div>
 
             <div class="gallery">
