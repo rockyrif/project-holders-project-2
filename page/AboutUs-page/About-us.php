@@ -49,7 +49,6 @@ session_start();
         <!-- Navbar end -->
 
         <!-- moving images start -->
-
         <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="gallary-tittle">
@@ -71,7 +70,6 @@ session_start();
 
                 </div>
             </div>
-
             <!-- moving images end -->
 
         <!-- About-us-page-start -->
