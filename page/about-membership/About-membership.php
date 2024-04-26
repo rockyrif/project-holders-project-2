@@ -89,11 +89,11 @@ session_start();
                 <p><u>We offer Adult and Junior memberships.</u></p>
                 <p>Note: Lighting access is now available with all of the above membership options by default. You don't need to pay anything extra.</p>
                 <hr>
-                <h2>BENEFITS & FEATURES</h2>
+                <h2>Benefits & Features</h2>
                 <ul>
-                    <li>Membership of Ampara District Tennis Club is necessary to participate in competitions.</li>
+                    <li>Membership of ADTC is necessary to participate in competitions.</li>
                     <li>Membership also entitles players to use lighting after sunset.</li>
-                    <li>Membership with Ampara District Tennis Club allows you to enjoy other benefits and coverage from Tennis Club (please contact us for more details).</li>
+                    <li>Membership with ADTC allows you to enjoy other benefits and coverage from Tennis Club (please contact us for more details).</li>
                     <li>Please note that guest fees and lights usage charges are additional to membership fees which you can select as extras when subscribing.</li>
                 </ul>
                 <p><strong>Paying for ADTC membership using Bank Transfer</strong></p>
