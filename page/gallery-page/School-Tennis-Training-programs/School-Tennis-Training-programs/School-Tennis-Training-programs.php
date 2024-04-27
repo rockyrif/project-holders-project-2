@@ -56,9 +56,7 @@ session_start();
                     <div class="gallary-tittle">
                         <div class="">About School Tennis Training Program</div>
                     </div>
-                    <div class="carousel-item active">
-                        <img src="../../../../Images/moving-img/about-school-tennis-training-programme/1.jpg" class="d-block w-100" alt="...">
-                    </div>
+                    
                     <div class="carousel-item">
                         <img src="../../../../Images/moving-img/about-school-tennis-training-programme/2.jpg" class="d-block w-100" alt="...">
                     </div>

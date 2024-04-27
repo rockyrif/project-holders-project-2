@@ -92,8 +92,7 @@ session_start();
                                     </div>
 
                                     <div class="carousal-para">
-                                        <p>Welcome to Ampara District Tennis Club (ADTC), the ultimate tennis destination in our community. We're committed to sharing the joy of tennis, fostering sportsmanship, and creating a friendly environment for players of all skill levels. Join us on the courts as we make enduring memories and celebrate the love of tennis in Ampara District1.
-
+                                        <p>Welcome to the Ampara District Tennis Club! Our commitment is all about building a tennis-loving community. Come join us for playing tennis together and embrace values like discipline, teamwork, and excellence. Let's make our club a place of friendship and sporting success in Ampara.
                                         </p>
                                     </div>
                                 </div>
