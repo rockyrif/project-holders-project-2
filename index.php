@@ -301,7 +301,7 @@ session_start();
                         <ul class="splide__list">
                             <?php
                             include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                            $sql = "SELECT * FROM news ORDER BY news_id DESC;";
+                            $sql = "SELECT * FROM news ORDER BY news_id DESC LIMIT 15;";
                             $result = mysqli_query($conn, $sql);
                             mysqli_close($conn);
                             if ($result && mysqli_num_rows($result) > 0) {
@@ -480,70 +480,84 @@ session_start();
 
 
         <!-- Footer-start -->
-        <div class="footer p-3 ">
-            <div class="follow-us p-4">
-                <h5>Follow us</h5>
-                <div class="line"></div>
+        <div class="footer&copyright">
+            <div class="footer p-3 ">
+                <div class="follow-us p-4">
+                    <h5>Follow us</h5>
+                    <div class="line"></div>
 
-                <div class="links">
-                    <a href="https://www.tiktok.com/@adtc_ampara"><img src="Images/follow-us/1.png" alt="tiktok" width="25"></a>
-                    <a href="https://web.facebook.com/profile.php?id=100092522933660"><img src="Images/follow-us/2.png" alt="facebook" width="25"></a>
-                    <a href="https://www.youtube.com/@amparatennisclub/featured"><img src="Images/follow-us/3.png" alt="youtube" width="25"></a>
+                    <div class="links">
+                        <a href="https://www.tiktok.com/@adtc_ampara"><img src="Images/follow-us/1.png" alt="tiktok" width="25"></a>
+                        <a href="https://web.facebook.com/profile.php?id=100092522933660"><img src="Images/follow-us/2.png" alt="facebook" width="25"></a>
+                        <a href="https://www.youtube.com/@amparatennisclub/featured"><img src="Images/follow-us/3.png" alt="youtube" width="25"></a>
+                    </div>
+                </div>
+                <div class="useful-links p-4">
+                    <h5>About ADTC</h5>
+                    <div class="line"></div>
+                    <a href="/project-holders-project-2/downloads/Terms & conditions of ADTC Website.pdf">Terms And Conditions</a>
+                    <div class="line1"></div>
+                    <a href="/project-holders-project-2/downloads/ADTC Members Handbook 24-25.pdf"> Members Handbook </a>
+                    <div class="line1"></div>
+
+                    <a href="#">Membership
+                        Application</a>
+                    <div class="line1"></div>
+                    <UL>
+                        <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application_Adult.pdf">For Adult</a>
+                            <div class="line1"></div>
+                        </LI>
+                        <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application-Child-1.pdf">For Child</a>
+                            <div class="line1"></div>
+                        </LI>
+
+                    </UL>
+
+                </div>
+                <div class="useful-links p-4">
+                    <h5>Useful Links</h5>
+                    <div class="line"></div>
+                    <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php">Contact us</a>
+                    <div class="line1"></div>
+                    <a href="">Latest News</a>
+                    <div class="line1"></div>
+                    <a href="https://www.sltennis.lk/home.html">SLTA</a>
+                    <div class="line1"></div>
+                    <a href="page/site-map/site-map.php">Site Map</a>
+                    <div class="line1"></div>
+
+                </div>
+                <div class="submit-request p-4">
+                    <h5>Submit your request</h5>
+                    <div class="line"></div>
+                    <form action="" method="POST" name="Feedback-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Name" name="Name">
+
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="Email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp" placeholder="Mobile No" name="Mobile-No">
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="Comments"></textarea>
+                            <label for="floatingTextarea2">Comments</label>
+                        </div>
+                        <script src="index.js"></script>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
                 </div>
             </div>
-            <div class="useful-links p-4">
-                <h5>Useful Links</h5>
-                <div class="line"></div>
-                <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php">Contact us</a>
-                <div class="line1"></div>
-                <a href="">Latest News</a>
-                <div class="line1"></div>
-                <a href="https://www.sltennis.lk/home.html">SLTA</a>
-                <div class="line1"></div>
-                <a href="page/site-map/site-map.php">Site Map</a>
-                <div class="line1"></div>
-                
-
-                <a href="#">Membership
-                    Application</a>
-                <div class="line1"></div>
-                <UL>
-                    <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application_Adult.pdf">For Adult</a>
-                        <div class="line1"></div>
-                    </LI>
-                    <LI><a href="/project-holders-project-2/downloads/ADTC_Member_Application-Child-1.pdf">For Child</a>
-                        <div class="line1"></div>
-                    </LI>
-
-                </UL>
-
+            <!-- Footer-end -->
+            <!-- copy right start -->
+            <div>
+                <br><p style="text-align:center; font-family: Arial, sans-serif; font-size: 16px;">Copyrights © 2024. www.adtennis.lk. All rights reserved.</p>
             </div>
-            <div class="submit-request p-4">
-                <h5>Submit your request</h5>
-                <div class="line"></div>
-                <form action="" method="POST" name="Feedback-form">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Name" name="Name">
-
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="Email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp" placeholder="Mobile No" name="Mobile-No">
-                    </div>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="Comments"></textarea>
-                        <label for="floatingTextarea2">Comments</label>
-                    </div>
-                    <script src="index.js"></script>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-
-                </form>
-            </div>
+            <!-- copy right end -->
         </div>
-        <!-- Footer-end -->
-
 
     </div>
 
