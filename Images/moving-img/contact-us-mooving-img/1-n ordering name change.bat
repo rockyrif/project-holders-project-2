@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set "folder=C:\Users\moham\Downloads\about-us-mooving-img"
+set "folder=C:\xampp\htdocs\project-holders-project-2\Images\moving-img\contact-us-mooving-img"
 set "ext=.jpg"
 set "count=1"
 

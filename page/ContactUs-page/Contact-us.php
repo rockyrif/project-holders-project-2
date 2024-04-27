@@ -71,10 +71,7 @@ session_start();
                     <div class="carousel-item">
                         <img src="../../Images/moving-img/contact-us-mooving-img/4.jpg" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item">
-                        <img src="../../Images/moving-img/contact-us-mooving-img/5.jpg" class="d-block w-100" alt="...">
-                    </div>
-
+                    
                 </div>
             </div>
 

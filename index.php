@@ -79,7 +79,7 @@ session_start();
                 <div class="carousel-item active  img img-1" pause="hover" data-bs-interval="4000">
 
                     <div class="curousel-object" data-aos="fade-left" data-aos-duration="2000">
-                        <img alt="Tennis-bat" src="Images/home-page-carousal/Tennis-bat.gif">
+                        <img alt="Tennis-bat" src="Images/home-page-carousal/Tennis-bat.png">
                     </div>
 
                     <div class="content-flex-center">
@@ -92,7 +92,7 @@ session_start();
                                     </div>
 
                                     <div class="carousal-para">
-                                        <p>Welcome to Ampara District Tennis Club (ADTC), the ultimate tennis destination in our community. We're committed to sharing the joy of tennis, fostering sportsmanship, and creating a friendly environment for players of all skill levels. Join us on the courts as we make enduring memories and celebrate the love of tennis in Ampara District.
+                                        <p>Welcome to Ampara District Tennis Club (ADTC), the ultimate tennis destination in our community. We're committed to sharing the joy of tennis, fostering sportsmanship, and creating a friendly environment for players of all skill levels. Join us on the courts as we make enduring memories and celebrate the love of tennis in Ampara District1.
 
                                         </p>
                                     </div>
@@ -119,7 +119,7 @@ session_start();
 
                 <div class="carousel-item img img-2" data-bs-interval="4000">
                     <div class="curousel-object">
-                        <img alt="pic" src="Images/home-page-carousal/Tennis-bat.gif">
+                        <img alt="pic" src="Images/home-page-carousal/Tennis-bat.png">
                     </div>
                     <div class="content-flex-center">
                         <div class="carousal-content-and-indicator">
@@ -157,7 +157,7 @@ session_start();
 
                 <div class="carousel-item img img-3" data-bs-interval="4000">
                     <div class="curousel-object">
-                        <img alt="pic" src="Images/home-page-carousal/Tennis-bat.gif">
+                        <img alt="pic" src="Images/home-page-carousal/Tennis-bat.png">
                     </div>
                     <div class="content-flex-center">
                         <div class="carousal-content-and-indicator">
@@ -193,7 +193,7 @@ session_start();
 
                 <div class="carousel-item img  img-4" data-bs-interval="5000" id="founder">
                     <div class="curousel-object">
-                        <img alt="Tennis-bat-2" src="Images/home-page-carousal/Tennis-bat.gif">
+                        <img alt="Tennis-bat-2" src="Images/home-page-carousal/Tennis-bat.png">
                     </div>
                     <div class="content-flex-center">
                         <div class="carousal-content-and-indicator">
@@ -247,7 +247,7 @@ session_start();
 
                 <div class="carousel-item img img-5" data-bs-interval="4000">
                     <div class="curousel-object">
-                        <img alt="Tennis-bat-5" src="Images/home-page-carousal/Tennis-bat.gif">
+                        <img alt="Tennis-bat-5" src="Images/home-page-carousal/Tennis-bat.png">
                     </div>
                     <div class="content-flex-center">
                         <div class="carousal-content-and-indicator">
