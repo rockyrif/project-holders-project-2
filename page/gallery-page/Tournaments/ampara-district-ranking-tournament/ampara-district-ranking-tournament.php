@@ -47,15 +47,38 @@ session_start();
         ?>
         <!-- Navbar end -->
 
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="gallary-tittle">
+                        <div class="">Ampara District Ranking Tournament</div>
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="../../../../Images/moving-img/ampara-district-ranking-tournament/1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/ampara-district-ranking-tournament/2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/ampara-district-ranking-tournament/3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/ampara-district-ranking-tournament/4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../../../../Images/moving-img/ampara-district-ranking-tournament/5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <!-- moving images end -->
+
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle1">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Ampara District Ranking Tournament</P>
-            </div>
-
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">AMPARA  RANKING TOURNAMENT was held from 29 - 31 March, 2024 at Ampara District Tennis Courts.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">A recurring event, the Ranking Tournament, is set to take place once every three months in collaboration with the Sri Lanka Tennis Association. The Inaugural Ranking Tournament commenced on March 29th and concluded on March 31st, 2024, at the prestigious Ampara District Tennis Courts. This tournament marks the beginning of a series of competitive events aimed at showcasing the talent and skill within Sri Lanka's tennis community. With participants from various regions expected to compete, the tournament promises to be a thrilling display of athleticism and sportsmanship. The partnership between the organizers and the Sri Lanka Tennis Association ensures that the tournament adheres to professional standards while providing a platform for aspiring tennis players to shine. Through such initiatives, the sport of tennis continues to flourish, fostering a culture of excellence and camaraderie among players and enthusiasts alike.</p>
             </div>
 
             <div class="gallery">
