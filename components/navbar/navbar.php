@@ -302,7 +302,7 @@
                                         MEMBERSHIP
                                     </a>
                                     <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/about-membership/about-membership.php">About membership</a></li>
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/about-membership/about-membership.php">About membership</a></li>
                                         <?php if (!isset($_SESSION['id']) || $_SESSION['privilage'] == "admin") : ?>
                                             <li><a class="dropdown-item" href="/project-holders-project-2/page/become-member/add-new.php">Become a
                                                     member</a></li>
@@ -337,6 +337,8 @@
                                             Calendar</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
                                             De Fruit Tournaments</a></li>
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/ranking-tournament/ranking-tournament.php">
+                                            Ranking Tournament</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php">ADTC
                                             Year End Finals</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter

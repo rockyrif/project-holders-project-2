@@ -52,7 +52,7 @@ session_start();
         <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="gallary-tittle">
-                        <div class="">beach Tennis</div>
+                        <div class="">Beach Tennis</div>
                     </div>
                     <div class="carousel-item active">
                         <img src="../../../../Images/moving-img/about-beach-tennis/1.jpg" class="d-block w-100" alt="...">
