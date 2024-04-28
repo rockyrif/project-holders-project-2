@@ -100,8 +100,8 @@ session_start();
                 <p>If you prefer to pay for your membership using bank transfer, please send us an email at <a href="mailto:amparatennisclub2@gmail.com">amparatennisclub2@gmail.com</a> and we will help you with the process.</p>
                 <p>If you have any inquiries regarding membership you may contact us by following methods:</p>
                 <ol>
-                    <li>Email us with your inquiry at <a href="mailto:amparatennisclub2@gmail.com">admin@adtennis.lk</a> and we will get back to you as soon as we can.</li>
-                    <li>Send us an instant message on Facebook Messenger: <a href="#">[Insert Facebook Messenger link here]</a></li>
+                    <li>Email us with your inquiry at <a href="mailto:admin@adtennis.lk">admin@adtennis.lk</a> and we will get back to you as soon as we can.</li>
+                    <li>Send us an instant message on Facebook Messenger: <a href="https://www.facebook.com/messages/t/100220679757677/">ADTC Facebook Messenger</a></li>
                 </ol>
                 </p>
             </div>
