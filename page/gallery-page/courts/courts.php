@@ -85,15 +85,13 @@ session_start();
             
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">Tennis Courts in Ampara District : <br><br>
-                    The construction of these courts is intended to enhance access to quality tennis infrastructure,
-                    fostering a culture of sportsmanship, physical activity, and community unity among individuals of
-                    all ages and skill levels in Ampага.<br>
+                <p data-aos="fade-up" data-aos-duration="2000">
+                The goal of building these courts is to make it easier for people of all ages and skill levels in Ampara to play tennis on good-quality courts. This will encourage fair play, physical activity, and bring the community together.<br>
                 <ul data-aos="fade-up" data-aos-duration="2000">
                     <li>DS Sennayaka School</li>
-                    <li>Senarath Somarathna Court</li>
-                    <li>Polwatta School Court. </li>
-                    <li>Pothuvil National School,</li>
+                    <li>ADTC Tennis Court Complex</li>
+                    <li>Polwatta School Court</li>
+                    <li>Pothuvil National School</li>
                     <li>Hardy Advanced Technological Institute</li>
                     <li>Gamini National School.</li>
                 </ul>

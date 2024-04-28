@@ -92,7 +92,7 @@ session_start();
                                     </div>
 
                                     <div class="carousal-para">
-                                        <p>Welcome to the Ampara District Tennis Club! Our commitment is all about building a tennis-loving community. Come join us for playing tennis together and embrace values like discipline, teamwork, and excellence. Let's make our club a place of friendship and sporting success in Ampara.
+                                        <p>Welcome to Ampara District Tennis Club (ADTC), the top spot for tennis in our area. We're here to share the joy of tennis, encourage good sportsmanship, and create a friendly space for players of every skill level. Join us on the courts for some fun and tennis excitement in Ampara District.
                                         </p>
                                     </div>
                                 </div>
@@ -206,18 +206,7 @@ session_start();
                                     </div>
 
                                     <div class="carousal-para">
-                                        <p>I am honored to welcome you to the Ampara District Tennis Club. Our
-                                            commitment
-                                            extends beyond law enforcement, it encompasses fostering a community united
-                                            by
-                                            the
-                                            love of tennis. Join us in this endeavor, where the spirit of the game
-                                            intertwines
-                                            with the values of discipline, teamwork, and excellence. Together, let's
-                                            make
-                                            our
-                                            tennis club a beacon of camaraderie and athletic achievement in Ampara
-                                            District.
+                                        <p>Welcome to the Ampara District Tennis Club! Our commitment is all about building a tennis-loving community. Come join us for playing tennis together and embrace values like discipline, teamwork, and excellence. Let's make our club a place of friendship and sporting success in Ampara District.
 
                                         <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div>
                                         <div class="ocupation"> Founder & Deputy Inspector

@@ -69,7 +69,7 @@ session_start();
             
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The purpose of the year-end tennis final tournaments organized by the Ampara District Tennis Club is to celebrate the culmination of a year filled with dedication, skill-building, and camaraderie among our tennis community. These tournaments serve as a platform to showcase the talents and progress of our players, fostering healthy competition and sportsmanship. Additionally, they provide an opportunity for players, supporters, and the community to come together, reinforcing the club's commitment to promoting the love of tennis and strengthening the social fabric within the Ampara District.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">The year-end tennis final tournaments organized by the Ampara District Tennis Club are meant to celebrate the end of a year filled with hard work, improving skills, and friendship among our tennis players. These tournaments show off our players' talents and progress, encouraging fair play and healthy competition. They also bring players, fans, and the community together, showing our club's dedication to tennis and making our community stronger in Ampara District.</p>
             </div>
 
             <div class="gallery">
