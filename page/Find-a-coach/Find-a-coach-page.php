@@ -78,7 +78,7 @@ session_start();
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="coach-background">
                     <div class="content">
-                        <h4>Professional tennis coaching available:</h4>
+                        <h4 style=" font-weight: bold;">Professional tennis coaching available:</h4>
                         <p>ADTC coaching team cater to all levels of players, from beginners (of all ages) to competition players.
                         </p>
                         <p>Equipment is supplied.
