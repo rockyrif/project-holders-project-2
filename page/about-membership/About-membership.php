@@ -76,7 +76,7 @@ session_start();
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000" style="font-family: Arial, sans-serif;">
-                <h1 style=" font-weight: bold;">Membership</h1><br>
+                <h3 style=" font-weight: bold;">Membership</h3><br>
                 <p><span style=" font-weight: bold;">Welcome to Ampara District Tennis Club (ADTC) Membership information page.</span> </p>
                 <p style=" font-weight: bold;">The Ampara District Tennis Club’s purposes are:</p>
                 <ul>
@@ -89,7 +89,7 @@ session_start();
                 <p><u>We offer Adult and Junior memberships.</u></p>
                 <p>Note: Lighting access is now available with all of the above membership options by default. You don't need to pay anything extra.</p>
                 <hr>
-                <h2>Benefits & Features</h2>
+                <h4>Benefits & Features</h4>
                 <ul>
                     <li>Membership of ADTC is necessary to participate in competitions.</li>
                     <li>Membership also entitles players to use lighting after sunset.</li>
@@ -100,8 +100,8 @@ session_start();
                 <p>If you prefer to pay for your membership using bank transfer, please send us an email at <a href="mailto:amparatennisclub2@gmail.com">amparatennisclub2@gmail.com</a> and we will help you with the process.</p>
                 <p>If you have any inquiries regarding membership you may contact us by following methods:</p>
                 <ol>
-                    <li>Email us with your inquiry at <a href="mailto:amparatennisclub2@gmail.com">amparatennisclub2@gmail.com</a> and we will get back to you as soon as we can.</li>
-                    <li>Send us an instant message on Facebook Messenger: <a href="#">[Insert Facebook Messenger link here]</a></li>
+                    <li>Email us with your inquiry at <a href="mailto:admin@adtennis.lk">admin@adtennis.lk</a> and we will get back to you as soon as we can.</li>
+                    <li>Send us an instant message on Facebook Messenger: <a href="https://www.facebook.com/messages/t/100220679757677/">ADTC Facebook Messenger</a></li>
                 </ol>
                 </p>
             </div>

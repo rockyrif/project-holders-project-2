@@ -74,7 +74,7 @@ session_start();
             
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The purpose of Beach Tennis event organized by the Ampara District Tennis Club is twofold: to foster a love for the sport, promote physical activity, and build a sense of community, while also leveraging the event to boost tourism in the region. By the scenic beauty of our beaches. and providing an engaging sporting experience, we aim attract visitors, thereby contributing to the growth of the local tourism industry.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">The Beach Tennis event organized by the Ampara District Tennis Club has two goals: to make people love tennis, stay active, and feel connected, and to bring more tourists to the area. With our beautiful beaches and fun sports, we hope to attract visitors and help the local tourism industry grow.</p>
             </div>
 
             <div class="gallery">

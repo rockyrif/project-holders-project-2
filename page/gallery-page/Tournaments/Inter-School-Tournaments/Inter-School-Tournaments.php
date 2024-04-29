@@ -73,7 +73,7 @@ session_start();
             
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The inter-school tournaments organized by the Ampara District Tennis Club are dynamic events designed to engage students from various schools in the district. These tournaments serve as platforms for fostering a love for tennis, promoting physical activity, and instilling values of teamwork and sportsmanship among participants. Additionally, they offer opportunities for talented young players to showcase their skills and potentially pursue competitive tennis pathways. Through these tournaments, the Ampara District Tennis Club aims to cultivate a vibrant tennis community, encourage youth participation in sports, and contribute to the overall development of young athletes in the region.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">The inter-school tournaments organized by the Ampara District Tennis Club are exciting events where students from different schools in the district can join in. These tournaments are all about getting kids interested in tennis, staying active, and learning about teamwork and fairness. The club wants these tournaments to help create a lively tennis community, get young people involved in sports, and help young athletes grow in the region.</p>
             </div>
 
             <div class="gallery">

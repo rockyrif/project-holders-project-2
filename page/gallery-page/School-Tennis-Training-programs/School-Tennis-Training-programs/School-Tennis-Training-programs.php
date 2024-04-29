@@ -75,12 +75,7 @@ session_start();
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The purpose of the school tennis training program
-                    organized by the Ampara District Tennis Club is to foster a nurturing environment for aspiring young
-                    players. This program aims to develop fundamental tennis skills, instill a sense of sportsmanship,
-                    and promote physical fitness among school students. By providing structured training sessions, the
-                    ADTC seeks to identify and nurture talent, ultimately contributing to the growth of tennis in the
-                    region while fostering a love for the sport among the younger generation.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">The school tennis training program organized by the Ampara District Tennis Club is all about helping young players grow. We want to teach them basic tennis skills, show them how to be fair and respectful, and keep them active. Through our training sessions, we hope to find talented players and help them improve, which will help tennis grow in the region. Plus, we want to make sure kids love playing tennis!</p>
             </div>
 
             <div class="gallery">
