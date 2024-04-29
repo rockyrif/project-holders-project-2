@@ -332,7 +332,7 @@
                                     TOURNAMENTS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Enter Tournament</a></li>
+                                    
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/calender/calender.php">Tournament
                                             Calendar</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
