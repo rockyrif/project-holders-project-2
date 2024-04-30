@@ -111,6 +111,53 @@
             cursor: pointer;
             width: 100%;
         }
+
+        .round-image-container {
+            margin-top: 20px;
+            width: 100%;
+            /* Adjust width as needed */
+            height: 100px;
+            /* Adjust height as needed */
+
+
+
+            /* Hide overflow content (if any) */
+
+            /* Optional: Add a border */
+
+            /* Optional: Add a shadow */
+
+            display: flex;
+            /* Use flexbox */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+        }
+
+        .flex-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+
+
+        }
+
+        .round-image-container .flex-container img {
+
+            max-width: 100%;
+            /* Make the image responsive */
+            max-height: 100%;
+            /* Make the image responsive */
+            object-fit: cover;
+            /* Scale the image while maintaining aspect ratio */
+        }
+
+        * {
+            scrollbar-width: none;
+        }
     </style>
 
 
@@ -164,6 +211,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
 
+                    <!-- install as an app start -->
                     <div class="install-button-div" style="list-style-type: none; display:flex; justify-content:center !important;">
                         <div style="width:100%">
                             <button id="install-button">Install as an App</button>
@@ -206,6 +254,29 @@
 
                         });
                     </script>
+                    <!-- install as an app end -->
+
+                    <!-- profile pic start -->
+
+                    <?php
+                    // Include database connection
+                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                    $email = $_SESSION["email"];
+                    $sql = "SELECT profile_url  FROM members WHERE email = '$email';";
+                    $result = mysqli_query($conn, $sql);
+                    mysqli_close($conn);
+                    $row = mysqli_fetch_assoc($result);
+                    ?>
+
+                    <?php if (isset($row['profile_url'])) { ?>
+                        <div class="round-image-container">
+                            <div class="flex-container">
+                                <img src="/project-holders-project-2/<?= $row['profile_url'] ?>" alt="Image Description">
+                            </div>
+                        </div>
+                    <?php } ?>
+
+                    <!-- profile pic end -->
 
                     <div class="offcanvas-body">
                         <?php if (isset($_SESSION['username'])) : ?>
@@ -332,7 +403,7 @@
                                     TOURNAMENTS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    
+
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/calender/calender.php">Tournament
                                             Calendar</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
@@ -445,7 +516,7 @@
             ' . $_SESSION['response'] . '
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>';
-            
+
             unset($_SESSION['response']);
         }
         ?>
