@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2024 at 08:30 AM
+-- Generation Time: Apr 30, 2024 at 08:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -41,6 +41,7 @@ CREATE TABLE `members` (
   `occupation` text DEFAULT NULL,
   `school` text NOT NULL,
   `gender` enum('male','female','trans') NOT NULL,
+  `profile_url` varchar(100) NOT NULL,
   `proof_url` varchar(100) NOT NULL,
   `payment_status` enum('rejected','pending','approved') NOT NULL DEFAULT 'pending',
   `registration_date` date NOT NULL
@@ -50,14 +51,16 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `proof_url`, `payment_status`, `registration_date`) VALUES
-(42, 'ADTC-FC', 'mohamd', 'Rifky1', 'mnam32@gmail.com', 'sdsd', 'adad', '2024-03-01', '320b sailan road kalmunai kudy 31', 'child', '', 'sdsd', 'female', '', 'approved', '2024-03-24'),
-(44, 'ADTC-MC', 'dfdg', 'dgd', 'mnam32@gmail.com', 'adad', '0776040064', '2024-03-08', 'dgdgdgdg', 'child', '', 'dgdgdg', 'male', '', 'approved', '2024-03-30'),
-(45, 'ADTC-MC', 'dada', 'adad', 'mnam32@gmail.com', 'adad', 'adad', '2024-03-01', 'bxbxbxb', 'child', '', 'xbxbx', 'male', '', 'pending', '2024-03-30'),
-(46, 'ADTC-MC', 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '', 'rejected', '2024-03-30'),
-(51, 'ADTC-FC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-27', 'sdsdsds', 'child', '', 'sdsd', 'female', '', 'rejected', '2024-04-05'),
-(77, 'ADTC-2024-MA', 'mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-22', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/membership-payment-proof/52.jpg', 'approved', '2024-04-22'),
-(79, 'ADTC-2024-MA', 'jone', 'dav', 'jone@gmail.com', '0776040064', '', '2024-04-20', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/membership-payment-proof/78.jpg', 'approved', '0000-00-00');
+INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`, `payment_status`, `registration_date`) VALUES
+(42, 'ADTC-FC', 'mohamd', 'Rifky1', 'mnam32@gmail.com', 'sdsd', 'adad', '2024-03-01', '320b sailan road kalmunai kudy 31', 'child', '', 'sdsd', 'female', '', '', 'approved', '2024-03-24'),
+(44, 'ADTC-MC', 'dfdg', 'dgd', 'mnam32@gmail.com', 'adad', '0776040064', '2024-03-08', 'dgdgdgdg', 'child', '', 'dgdgdg', 'male', '', '', 'approved', '2024-03-30'),
+(45, 'ADTC-MC', 'dada', 'adad', 'mnam32@gmail.com', 'adad', 'adad', '2024-03-01', 'bxbxbxb', 'child', '', 'xbxbx', 'male', '', '', 'pending', '2024-03-30'),
+(46, 'ADTC-MC', 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '', '', 'rejected', '2024-03-30'),
+(51, 'ADTC-FC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-27', 'sdsdsds', 'child', '', 'sdsd', 'female', '', '', 'rejected', '2024-04-05'),
+(77, 'ADTC-2024-MA', 'mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-22', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', '', 'Images/membership-payment-proof/52.jpg', 'approved', '2024-04-22'),
+(79, 'ADTC-2024-MA', 'jone', 'dav', 'jone@gmail.com', '0776040064', '', '2024-04-20', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', '', 'Images/membership-payment-proof/78.jpg', 'approved', '0000-00-00'),
+(80, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 'male', 'Images/profile-pic/80.jpg', '', 'pending', '0000-00-00'),
+(81, 'ADTC-2024-MA', 'mohamed', 'hama', 'mnamrifky@gmail.com', '0776040064', '', '2024-04-05', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/81.jpg', 'Images/membership-payment-proof/81.jpg', 'approved', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -82,7 +85,9 @@ CREATE TABLE `member_fees` (
 
 INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `proof_url`, `payment_status`) VALUES
 (89, 51, 2027, 2, 500.00, '2024-04-19', '../../../Images/payment-proof/1.jpg', 'Not yet'),
-(92, 79, 2024, 4, 2500.00, '2024-04-25', '../../../Images/payment-proof/90.jpg', 'Not yet');
+(92, 79, 2024, 4, 2500.00, '2024-04-25', '../../../Images/payment-proof/90.jpg', 'Not yet'),
+(93, 77, 2025, 4, 2500.00, '2024-04-26', '../../../Images/payment-proof/mnamrifky@gmail.com20254.jpg', 'Not yet'),
+(94, 79, 2025, 3, 4.00, '2024-04-13', '../../../Images/payment-proof/mnamrifky@gmail.com2025-3.jpg', 'Paid');
 
 -- --------------------------------------------------------
 
@@ -175,13 +180,13 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `member_fees`
 --
 ALTER TABLE `member_fees`
-  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `news`
