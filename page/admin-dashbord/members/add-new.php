@@ -24,52 +24,75 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       $school = $_POST['school'];
       $gender = $_POST['gender'];
 
-      // Handle image upload
-      $targetDir = "Images/membership-payment-proof/";
-      $targetDir1 = "../../../Images/membership-payment-proof/";
+      // Handle payment proof image upload
+      $payment_proof_targetDir = "Images/membership-payment-proof/";
+      $payment_proof_targetDir1 = "../../../Images/membership-payment-proof/";
 
       if (isset($_FILES["picture"]) && $_FILES["picture"]["error"] == UPLOAD_ERR_OK) {
-         // Get the last payment_id from the database
-         $sql_last_member_id = "SELECT MAX(member_id) AS max_member_id FROM members";
-         $result_last_member_id = mysqli_query($conn, $sql_last_member_id);
-         $row_last_member_id = mysqli_fetch_assoc($result_last_member_id);
-         $last_member_id = $row_last_member_id['max_member_id'];
-
          // Increment the last payment_id to get the new payment_id
-         $new_member_pic_id = $last_member_id + 1;
+         $new_member_pic_id = $_SESSION["email"];
          // Get file extension
-         $imageFileType = strtolower(pathinfo($_FILES["picture"]["name"], PATHINFO_EXTENSION));
+         $payment_proof_imageFileType = strtolower(pathinfo($_FILES["picture"]["name"], PATHINFO_EXTENSION));
          // Process file upload
-         $targetFile = $targetDir1 . $new_member_pic_id . "." . $imageFileType;
+         $payment_proof_targetFile = $payment_proof_targetDir1 . $new_member_pic_id . "." . $payment_proof_imageFileType;
          // Rest of your code for file upload and processing
       } else {
          // Handle file upload error
          $_SESSION['response'] = "File upload failed with error code: " . $_FILES["picture"]["error"];
       }
 
-      $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+      
       // Check if image file is a valid format and size
-      if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
-         $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
+      if ($payment_proof_imageFileType != "jpg" && $payment_proof_imageFileType != "jpeg" && $payment_proof_imageFileType != "png") {
+         $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed in .";
       } elseif ($_FILES["picture"]["size"] > 500000) { // 500kb limit
          $_SESSION['response'] = "Sorry, your file is too large. Limit to 500 KB.";
       } else {
-         // Proceed with upload and database insertion
-         if (move_uploaded_file($_FILES["picture"]["tmp_name"], $targetFile)) {
-            // Image uploaded successfully, proceed to insert data into database
-            $proof_url = $targetDir . $new_member_pic_id . "." . $imageFileType;;
+         // Handle Profile pic image upload
+         $profile_pic_targetDir = "Images/profile-pic/";
+         $profile_pic_targetDir1 = "../../../Images/profile-pic/";
 
-            // Prepare and execute SQL insert statement
-            $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `proof_url`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender','$proof_url')";
+         $image_info = getimagesize($_FILES["profile"]["tmp_name"]);
+         $width = $image_info[0];
+         $height = $image_info[1];
 
-            if (mysqli_query($conn, $sql)) {
-               $_SESSION['response'] = "Member added successfully.";
-               header("Location: admin-dashbord.php");
-            } else {
-               $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
-            }
+         if (isset($_FILES["profile"]) && $_FILES["profile"]["error"] == UPLOAD_ERR_OK) {
+            // Get file extension
+            $profile_imageFileType = strtolower(pathinfo($_FILES["profile"]["name"], PATHINFO_EXTENSION));
+            // Process file upload
+            $profile_pic_targetFile = $profile_pic_targetDir1 . $new_member_pic_id . "." . $profile_imageFileType;
+            // Rest of your code for file upload and processing
          } else {
-            $_SESSION['response'] = "Sorry, there was an error uploading your file.";
+            // Handle file upload error
+            $_SESSION['response'] = "File upload failed with error code: " . $_FILES["profile"]["error"];
+         }
+
+         
+         // Check if image file is a valid format and size
+         if ($profile_imageFileType != "jpg" && $profile_imageFileType != "jpeg" && $profile_imageFileType != "png") {
+            $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
+         } elseif ($_FILES["profile"]["size"] > 500000) { // 500kb limit
+            $_SESSION['response'] = "Sorry, your profile image is too large. Limit to 500 KB.";
+         } elseif ($width != $height) {
+            $_SESSION['response'] = "Sorry, only square images (1:1 aspect ratio) are allowed as profile picture.";
+         } else {
+            // Proceed with upload and database insertion
+            if (move_uploaded_file($_FILES["profile"]["tmp_name"], $profile_pic_targetFile) && move_uploaded_file($_FILES["picture"]["tmp_name"], $payment_proof_targetFile)) {
+               // Image uploaded successfully, proceed to insert data into database
+               $profile_url = $profile_pic_targetDir . $new_member_pic_id . "." . $profile_imageFileType;
+               $payment_proof_url = $payment_proof_targetDir . $new_member_pic_id . "." . $payment_proof_imageFileType;
+               // Prepare and execute SQL insert statement
+               $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender','$profile_url','$payment_proof_url')";
+
+               if (mysqli_query($conn, $sql)) {
+                  $_SESSION['response'] = "Member added successfully.";
+                  header("Location: admin-dashbord.php");
+               } else {
+                  $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
+               }
+            } else {
+               $_SESSION['response'] = "Sorry, there was an error uploading your file.";
+            }
          }
       }
    }
@@ -114,7 +137,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
             echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                     ' . $_SESSION['response'] . '
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';  
+                    </div>';
          }
          unset($_SESSION['response']);
          ?>
@@ -209,6 +232,11 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                   <label for="gender" class="form-input-label">Female</label>
                   &nbsp;
 
+               </div>
+
+               <div class="mb-3">
+                  <label for="formFile" class="form-label">Profile Picture (1:1 aspact ratio):</label>
+                  <input class="form-control" type="file" id="formFile" name="profile" required>
                </div>
 
                <div class="mb-3">

@@ -191,6 +191,12 @@ session_start();
                                             </label>
                                         </div>
                                         <div class="form-check col-md-4">
+                                            <input class="form-check-input" type="checkbox" value="`profile_url`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`profile_url`', $_GET['column'])) ? 'checked' : ''; ?>>
+                                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                                Profile Picture
+                                            </label>
+                                        </div>
+                                        <div class="form-check col-md-4">
                                             <input class="form-check-input" type="checkbox" value="`proof_url`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`proof_url`', $_GET['column'])) ? 'checked' : ''; ?>>
                                             <label class="form-check-label" for="flexCheckIndeterminate">
                                                 Pyament proof
@@ -437,6 +443,14 @@ session_start();
                                     ?>
 
                                     <?php
+                                    if (isset($_GET['column']) && in_array('`profile_url`', $_GET['column'])) {
+                                    ?>
+                                        <th scope="col">Profile Pic</th>
+                                    <?php
+                                    }
+                                    ?>
+
+                                    <?php
                                     if (isset($_GET['column']) && in_array('`proof_url`', $_GET['column'])) {
                                     ?>
                                         <th scope="col">Payment Proof</th>
@@ -656,6 +670,16 @@ session_start();
                                             ?>
 
                                             <?php
+                                            if (isset($_GET['column']) && in_array('`profile_url`', $_GET['column'])) {
+                                            ?>
+                                                <td>
+                                                    <a href="../../../<?php echo $row["profile_url"]; ?>">view</a>
+                                                </td>
+                                            <?php
+                                            }
+                                            ?>
+
+                                            <?php
                                             if (isset($_GET['column']) && in_array('`proof_url`', $_GET['column'])) {
                                             ?>
                                                 <td>
@@ -774,6 +798,7 @@ session_start();
                                     <th scope="col">Occupation</th>
                                     <th scope="col">School</th>
                                     <th scope="col">Gender</th>
+                                    <th scope="col">Profile Pic</th>
                                     <th scope="col">Payment proof</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Reg Date</th>
@@ -832,6 +857,9 @@ session_start();
                                         </td>
                                         <td>
                                             <?php echo $row["gender"] ?>
+                                        </td>
+                                        <td>
+                                            <a href="../../../<?php echo $row["profile_url"] ?>">View</a>
                                         </td>
                                         <td>
                                             <a href="../../../<?php echo $row["proof_url"] ?>">View</a>

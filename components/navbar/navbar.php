@@ -445,6 +445,7 @@
             ' . $_SESSION['response'] . '
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>';
+            
             unset($_SESSION['response']);
         }
         ?>
@@ -455,7 +456,7 @@
                 if (alertContainer) {
                     alertContainer.remove();
                 }
-            }, 2000);
+            }, 4000);
         </script>
 
         <!-- Aleart end -->

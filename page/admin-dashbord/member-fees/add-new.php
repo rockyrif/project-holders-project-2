@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
       $last_fee_id = $row_last_fee_id['max_fee_id'];
 
       // Increment the last payment_id to get the new payment_id
-      $new_fee_id = $last_fee_id + 1;
+      $new_fee_id = $_SESSION["email"]."-".$year."-".$month;
       // Get file extension
       $imageFileType = strtolower(pathinfo($_FILES["payment-proof"]["name"], PATHINFO_EXTENSION));
       // Process file upload
