@@ -76,7 +76,7 @@ session_start();
 
 
             <div class="carousel-inner">
-                <div class="carousel-item active  img img-1" pause="hover" data-bs-interval="4000000">
+                <div class="carousel-item active  img img-1" pause="hover" data-bs-interval="4000">
 
                     <div class="curousel-object" data-aos="fade-left" data-aos-duration="2000">
                         <img alt="Tennis-bat" src="Images/home-page-carousal/Tennis-bat.png">
