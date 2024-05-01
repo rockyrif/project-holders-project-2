@@ -1,0 +1,15 @@
+---
+deployment:
+  pre_deployment:
+    - /usr/local/cpanel/3rdparty/bin/git add *
+    - /usr/local/cpanel/3rdparty/bin/git commit -m "Committing changes before pull" || true
+  tasks:
+    - export DEPLOYPATH=/home2/adtennis/public_html
+    - /usr/local/cpanel/3rdparty/bin/git pull origin main
+  excludes:
+    - manifest.json
+    - db_conn.php
+    - Images/membership-payment-proof/*
+    - Images/news/*
+    - Images/payment-proof/*
+    - Images/profile-pic/*
