@@ -3,15 +3,6 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home2/adtennis/public_html/project-holders-project-2
     - /bin/cp -r * $DEPLOYPATH
-
-  excludes:
-    - project-holders-project-2/manifest.json
-    - project-holders-project-2/db_conn.php
-    
-    - project-holders-project-2/Images/membership-payment-proof
-    - project-holders-project-2/Images/news
-    - project-holders-project-2/Images/payment-proof
-    - project-holders-project-2/Images/profile-pic
     
 
 
