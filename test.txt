@@ -2,6 +2,18 @@ need to change at hosting manifest.json file url
 
 db_conn.php username and password
 
+important files to handle when editing files on adtennis.lk
+****************************************************************
+
+    - project-holders-project-2/manifest.json
+    - project-holders-project-2/db_conn.php
+    
+    - project-holders-project-2/Images/membership-payment-proof
+    - project-holders-project-2/Images/news
+    - project-holders-project-2/Images/payment-proof
+    - project-holders-project-2/Images/profile-pic
+    
+
 test23
 
 25
