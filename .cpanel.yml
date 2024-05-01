@@ -2,8 +2,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/adtennis/public_html/project-holders-project-2
-    - find . -type f -not -name 'db_conn.php' -exec cp -r {} $DEPLOYPATH/{} \;
-    - cp -r /path/to/db_conn.php $DEPLOYPATH
+    - export EXCLUDE_FILES="$(find . -type f ! -name 'manifest.json' ! -name 'manifest.json' -print0 | xargs -0)"
+    - export EXCLUDE_FOLDERS="$(find . -type d ! -name 'Images/membership-payment-proof' ! -name 'Images/news' ! -name 'Images/payment-proof' ! -name 'Images/profile-pic' -print0 | xargs -0)"
+    - /bin/cp -r --preserve=all $EXCLUDE_FILES $EXCLUDE_FOLDERS $DEPLOYPATH
+
 
 
     
