@@ -7,6 +7,7 @@ deployment:
   excludes:
     - project-holders-project-2/manifest.json
     - project-holders-project-2/db_conn.php
+    
     - project-holders-project-2/Images/membership-payment-proof
     - project-holders-project-2/Images/news
     - project-holders-project-2/Images/payment-proof
