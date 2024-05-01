@@ -1,6 +1,5 @@
 ---
-deployment:
-  
+deployment: 
   tasks:
     - export DEPLOYPATH=/home/adtennis/public_html/project-holders-project-2
     - /bin/cp * $DEPLOYPATH
