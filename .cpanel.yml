@@ -2,7 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/adtennis/public_html/project-holders-project-2
-    - rsync -av --exclude='manifest.json' --exclude='db_conn.php' --exclude='Images/membership-payment-proof' --exclude='Images/news' --exclude='Images/payment-proof' --exclude='Images/profile-pic' . $DEPLOYPATH/
+    - rsync -avvv --exclude='manifest.json' --exclude='db_conn.php' --exclude='Images/membership-payment-proof' --exclude='Images/news' --exclude='Images/payment-proof' --exclude='Images/profile-pic' . $DEPLOYPATH/
+
 
     
 
