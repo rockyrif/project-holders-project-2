@@ -291,7 +291,7 @@
                         <?php
                         // Include database connection
                         include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                        $email = $_SESSION["email"];
+                        $email = (isset($_SESSION["email"]))?$_SESSION["email"]:'';
                         $sql = "SELECT member_id, payment_status  FROM members WHERE email = '$email';";
                         $result = mysqli_query($conn, $sql);
                         mysqli_close($conn);
