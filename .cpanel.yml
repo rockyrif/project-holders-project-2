@@ -2,7 +2,16 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/adtennis/public_html/project-holders-project-2
-    - find . \( -type f -a ! -name 'manifest.json' -a ! -name 'db_conn.php' -a ! -path './Images/membership-payment-proof/*' -a ! -path './Images/news/*' -a ! -path './Images/payment-proof/*' -a ! -path './Images/profile-pic/*' \) -exec cp -r {} $DEPLOYPATH/ \;
+    - find . -type d -exec mkdir -p $DEPLOYPATH/{} \;
+    - find . -type f -exec sh -c '
+          for file do
+              case "$file" in
+                  */manifest.json|*/db_conn.php|*/Images/membership-payment-proof/*|*/Images/news/*|*/Images/payment-proof/*|*/Images/profile-pic/*) ;;
+                  *) cp -r "$file" "$DEPLOYPATH/$file" ;;
+              esac
+          done
+      ' sh {} +
+
 
     
 
