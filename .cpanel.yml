@@ -1,0 +1,15 @@
+---
+deployment:
+  pre_deployment:
+    - /usr/local/cpanel/3rdparty/bin/git add .cpanel.yml
+    - /usr/local/cpanel/3rdparty/bin/git commit -m "Committing .cpanel.yml changes before pull" || true
+  tasks:
+    - export DEPLOYPATH=/home2/adtennis/public_html
+    - /usr/local/cpanel/3rdparty/bin/git pull origin main
+  excludes:
+    - project-holders-project-2/manifest.json
+    - project-holders-project-2/db_conn.php
+    - project-holders-project-2/Images/membership-payment-proof/*
+    - project-holders-project-2/Images/news/*
+    - project-holders-project-2/Images/payment-proof/*
+    - project-holders-project-2/Images/profile-pic/*
