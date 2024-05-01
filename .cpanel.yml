@@ -5,7 +5,7 @@ deployment:
     - /usr/local/cpanel/3rdparty/bin/git commit -m "Committing changes before pull" || true
   tasks:
     - export DEPLOYPATH=/home2/adtennis/public_html
-    - /usr/local/cpanel/3rdparty/bin/git pull origin main
+    - /usr/local/cpanel/3rdparty/bin/git pull --force origin main
   excludes:
     
     - db_conn.php
