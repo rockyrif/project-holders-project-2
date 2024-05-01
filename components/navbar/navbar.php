@@ -257,11 +257,10 @@
                     <!-- install as an app end -->
 
                     <!-- profile pic start -->
-
                     <?php
                     // Include database connection
                     include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                    $email = (isset($_SESSION["email"]))?$_SESSION["email"]:'';
+                    $email = (isset($_SESSION["email"])) ? $_SESSION["email"] : '';
                     $sql = "SELECT profile_url  FROM members WHERE email = '$email';";
                     $result = mysqli_query($conn, $sql);
                     mysqli_close($conn);
@@ -275,7 +274,6 @@
                             </div>
                         </div>
                     <?php } ?>
-
                     <!-- profile pic end -->
 
                     <div class="offcanvas-body">
@@ -290,28 +288,62 @@
                             </ul>
                         <?php endif; ?>
 
+                        <?php
+                        // Include database connection
+                        include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                        $email = $_SESSION["email"];
+                        $sql = "SELECT member_id, payment_status  FROM members WHERE email = '$email';";
+                        $result = mysqli_query($conn, $sql);
+                        mysqli_close($conn);
+                        $row = mysqli_fetch_assoc($result);
+                        ?>
+
                         <?php if (isset($_SESSION['username'])) : ?>
-                            <ul class="navbar-nav justify-content-end flex-grow-1">
-                                <li class="nav-item ">
-                                    <?php
-                                    // Include database connection
-                                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                                    $email = $_SESSION["email"];
-                                    $sql = "SELECT member_id, id_prefix  FROM members WHERE email = '$email';";
-                                    $result = mysqli_query($conn, $sql);
-                                    mysqli_close($conn);
-                                    $row = mysqli_fetch_assoc($result);
-                                    ?>
-                                    <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">Your ID :
-                                        <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?><?= (isset($row["member_id"])) ? $row["member_id"] : 'Please be a member'; ?>
-                                    </a>
-                                    <?php
-                                    if (isset($row["member_id"])) {
-                                        $_SESSION["id"] = $row["member_id"];
-                                    }
-                                    ?>
-                                </li>
-                            </ul>
+                            <?php if (!isset($row['member_id']) || $row["payment_status"] == 'approved') { ?>
+                                <ul class="navbar-nav justify-content-end flex-grow-1">
+                                    <li class="nav-item ">
+                                        <?php
+                                        // Include database connection
+                                        include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                                        $email = $_SESSION["email"];
+                                        $sql = "SELECT member_id, id_prefix  FROM members WHERE email = '$email';";
+                                        $result = mysqli_query($conn, $sql);
+                                        mysqli_close($conn);
+                                        $row = mysqli_fetch_assoc($result);
+                                        ?>
+                                        <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">Your ID :
+                                            <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?><?= (isset($row["member_id"])) ? $row["member_id"] : 'Please be a member'; ?>
+                                        </a>
+                                        <?php
+                                        if (isset($row["member_id"])) {
+                                            $_SESSION["id"] = $row["member_id"];
+                                        }
+                                        ?>
+                                    </li>
+                                </ul>
+                            <?php
+                            } elseif ($row["payment_status"] == 'rejected') {
+                            ?>
+                                <ul class="navbar-nav justify-content-end flex-grow-1">
+                                    <li class="nav-item ">
+                                        <p href="#" class="nav-link nav-link-home active" style="text-align: center;">
+                                            Your membership application is <span style="color: red;">rejected</span> please contact <span style="color: blue;">admin@adtennis.lk</span> from your registered email for enquries.
+                                        </p>
+                                    </li>
+                                </ul>
+                            <?php
+                            } else {
+                            ?>
+                                <ul class="navbar-nav justify-content-end flex-grow-1">
+                                    <li class="nav-item ">
+                                        <a href="#" class="nav-link nav-link-home active" style="text-align: center;">
+                                            Your membership details are currently <span style="">being checked</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            <?php
+                            }
+                            ?>
                         <?php endif; ?>
 
                         <?php if (!isset($_SESSION['username'])) : ?>
