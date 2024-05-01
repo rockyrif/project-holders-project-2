@@ -11,7 +11,7 @@ deployment:
     - project-holders-project-2/Images/membership-payment-proof
     - project-holders-project-2/Images/news
     - project-holders-project-2/Images/payment-proof
-    # - project-holders-project-2/Images/profile-pic
+    - project-holders-project-2/Images/profile-pic
     
 
 
