@@ -1,8 +1,7 @@
----
-deployment: 
-  tasks:
-    - export DEPLOYPATH=/home2/adtennis/public_html/project-holders-project-2
-    - /bin/cp -r * $DEPLOYPATH
+deployments:
+  pre:
+    - command: rsync -av --exclude='db_conn.php' /home2/adtennis/repositories/project-holders-project-2 /home2/adtennis/public_html/project-holders-project-2
+
 
     
 
