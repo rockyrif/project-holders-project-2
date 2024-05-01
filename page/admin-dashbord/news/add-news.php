@@ -9,6 +9,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
         $description = $_POST['description'];
         $publisher = $_SESSION['username'];
+        $publish_date = date("Y-m-d");
 
 
 
@@ -55,8 +56,8 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                     $proof_url = $targetDir . $new_news_pic_id . "." . $imageFileType;;
 
                     // Prepare and execute SQL insert statement
-                    $sql = "INSERT INTO news (pic_path, description, publisher)
-                        VALUES ('$proof_url', '$description', '$publisher')";
+                    $sql = "INSERT INTO news (pic_path, description, publisher, date)
+                        VALUES ('$proof_url', '$description', '$publisher', $publish_date)";
 
                     if (mysqli_query($conn, $sql)) {
                         $_SESSION['response'] = "News publised successfully.";

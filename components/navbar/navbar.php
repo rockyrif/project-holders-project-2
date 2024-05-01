@@ -337,7 +337,7 @@
                                 <ul class="navbar-nav justify-content-end flex-grow-1">
                                     <li class="nav-item ">
                                         <a href="#" class="nav-link nav-link-home active" style="text-align: center;">
-                                            Your membership details are currently <span style="">being checked</span>
+                                            Your membership details are currently <span>being checked</span>
                                         </a>
                                     </li>
                                 </ul>

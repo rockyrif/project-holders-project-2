@@ -23,6 +23,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       $occupation = $_POST['occupation'];
       $school = $_POST['school'];
       $gender = $_POST['gender'];
+      $reg_date = date("Y-m-d");
 
       // Handle payment proof image upload
       $payment_proof_targetDir = "Images/membership-payment-proof/";
@@ -82,7 +83,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                $profile_url = $profile_pic_targetDir . $new_member_pic_id . "." . $profile_imageFileType;
                $payment_proof_url = $payment_proof_targetDir . $new_member_pic_id . "." . $payment_proof_imageFileType;
                // Prepare and execute SQL insert statement
-               $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender','$profile_url','$payment_proof_url')";
+               $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`, `registration_date`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender','$profile_url','$payment_proof_url','$reg_date')";
 
                if (mysqli_query($conn, $sql)) {
                   $_SESSION['response'] = "Member added successfully.";
