@@ -2,8 +2,14 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/adtennis/public_html/project-holders-project-2
-    - find . -type f -not -name 'db_conn.php' -exec cp -r {} $DEPLOYPATH/{} \;
-    - cp -r /path/to/db_conn.php $DEPLOYPATH
+    - find . \( -type f -not -name 'db_conn.php' -not -name 'manifest.json' \) \
+           -o \( -type d ! -path './Images/membership-payment-proof/*' \) \
+           -o \( -type d ! -path './Images/news/*' \) \
+           -o \( -type d ! -path './Images/payment-proof/*' \) \
+           -o \( -type d ! -path './Images/profile-pic/*' \) \
+           -exec cp -r {} $DEPLOYPATH/{} \;
+    - cp -r /path/to/manifest.json /path/to/Images/membership-payment-proof /path/to/Images/news /path/to/Images/payment-proof /path/to/Images/profile-pic $DEPLOYPATH
+
 
 
     
