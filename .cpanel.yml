@@ -2,7 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/adtennis/public_html/project-holders-project-2
-    - find . -type f -not -name 'db_conn.php' -not -name 'manifest.json' -not -path './Images/membership-payment-proof/*' -not -path './Images/news/*' -not -path './Images/payment-proof/*' -not -path './Images/profile-pic/*' -exec cp -r {} $DEPLOYPATH/{} \;
+    - find . -not -name 'db_conn.php' -not -name 'manifest.json' -not -path './Images/membership-payment-proof/*' -not -path './Images/news/*' -not -path './Images/payment-proof/*' -not -path './Images/profile-pic/*' -exec cp -r {} $DEPLOYPATH/{} \;
+
+
 
 
 #     find .: This command starts the search from the current directory (.).
