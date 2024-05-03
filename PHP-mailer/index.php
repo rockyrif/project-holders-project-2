@@ -1,26 +1,26 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
+// Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
-require 'vendor/autoload.php';
+// Load Composer's autoloader
+require '/home2/adtennis/public_html/PHP-mailer/vendor/autoload.php'; // Replace '/path/to/vendor/autoload.php' with the absolute path to your autoload.php file
 
-//Create an instance; passing `true` enables exceptions
+// Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
 try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'mail.adtennis.lk';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'admin@adtennis.lk';                     //SMTP username
-    $mail->Password   = '2l01xVKb:EO.9p';                               //SMTP password
+    // Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_OFF; // Disable debug output for cron job
+    $mail->isSMTP(); // Send using SMTP
+    $mail->Host       = 'mail.adtennis.lk'; // Set the SMTP server to send through
+    $mail->SMTPAuth   = true; // Enable SMTP authentication
+    $mail->Username   = 'admin@adtennis.lk'; // SMTP username
+    $mail->Password   = '2l01xVKb:EO.9p'; // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable explicit TLS encryption
     $mail->Port       = 465;
+
     // Set custom CA certificates to trust the self-signed certificate
     $mail->SMTPOptions = array(
         'ssl' => array(
@@ -30,7 +30,8 @@ try {
         )
     );
 
-    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+    // Include the database connection file
+    require '/home2/adtennis/public_html/project-holders-project-2/db_conn.php'; // Replace '/path/to/project-holders-project-2/db_conn.php' with the absolute path to your db_conn.php file
 
     // Get current month and year
     $current_month = date('m');
@@ -54,13 +55,12 @@ try {
             $mail->setFrom('admin@adtennis.lk', 'AD tennis admin');
             $mail->Subject = "Reminder: Payment Due";
             $mail->Body = "Dear $first_name,\n\nThis is a reminder that your membership fee for the current month is due.\n\nBest regards,\nADTC";
-            
 
             // Send email
             $mail->send();
-            echo "Emails sent successfully";
+            // Do not echo here for cron job
         }
-        
+
     } else {
         echo "No members found.";
     }
@@ -70,3 +70,4 @@ try {
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+?>
