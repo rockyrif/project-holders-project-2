@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "amp_dtc";
+$dbname = "amp_dtc1";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
