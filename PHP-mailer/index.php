@@ -21,7 +21,7 @@ try {
     $mail->Password   = '2l01xVKb:EO.9p';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable explicit TLS encryption
     $mail->Port       = 465;
-    
+
     // Set custom CA certificates to trust the self-signed certificate
     $mail->SMTPOptions = array(
         'ssl' => array(
@@ -31,7 +31,7 @@ try {
         )
     );
 
-    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+    include "/home2/adtennis/public_html/project-holders-project-2/db_conn.php";
 
     // Get current month and year
     $current_month = date('m');
