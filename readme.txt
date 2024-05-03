@@ -39,4 +39,4 @@ deployment:
 # $DEPLOYPATH/{} \;: This specifies the destination path where each file should be copied. $DEPLOYPATH is an environment variable containing the deployment path, and {} is replaced with the path of each file found by find.
 # So, overall, this command finds all regular files in the current directory and its subdirectories, except for those named db_conn.php, and copies each found file to the deployment path specified by $DEPLOYPATH.
 
-test 5001
+test 5002
