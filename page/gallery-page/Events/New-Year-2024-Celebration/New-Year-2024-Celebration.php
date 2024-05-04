@@ -62,59 +62,59 @@ session_start();
             <div class="gallery">
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/1.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/1.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/2.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/2.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/3.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/3.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/4.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/4.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/5.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/5.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/6.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/6.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/7.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/7.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/8.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/8.jpg">
                 </div>
                 <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/9.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/9.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/10.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/10.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/11.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/11.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/12.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/12.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/13.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/13.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/14.jpg">
+                        src="../../../../Images/gallary/Events/New-Year-2024-Celebration/14.jpg">
                 </div> -->
                 <!-- <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/15.jpg">

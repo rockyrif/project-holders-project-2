@@ -383,7 +383,7 @@ session_start();
                     <p class="gallery-info">Opening ceremony of Senerath Somarathna court</p>
                 </div>
                 <div class="image-container">
-                    <img alt="New-Year-2024-Celebration" src="Images/gallary/Events/New-Year-2024-Celebration/New-Year-2024-Celebration/2.jpg">
+                    <img alt="New-Year-2024-Celebration" src="Images/gallary/Events/New-Year-2024-Celebration/2.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Events/New-Year-2024-Celebration/New-Year-2024-Celebration.php'">View</button>
                     <p class="gallery-info">New Year 2024 Celebration</p>
                 </div>

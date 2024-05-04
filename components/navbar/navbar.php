@@ -154,10 +154,6 @@
             object-fit: cover;
             /* Scale the image while maintaining aspect ratio */
         }
-
-        * {
-            scrollbar-width: none;
-        }
     </style>
 
 
@@ -291,7 +287,7 @@
                         <?php
                         // Include database connection
                         include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                        $email = (isset($_SESSION["email"]))?$_SESSION["email"]:'';
+                        $email = (isset($_SESSION["email"])) ? $_SESSION["email"] : '';
                         $sql = "SELECT member_id, payment_status  FROM members WHERE email = '$email';";
                         $result = mysqli_query($conn, $sql);
                         mysqli_close($conn);
@@ -381,6 +377,9 @@
                                                 Calendar</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/member-fees/member_fees.php" target="_blank">Edit
                                                 Payment</a></li>
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/add-gallery/add-gallery.php" target="_blank">Add
+                                                Gallery</a></li>
+
 
                                     </ul>
 
