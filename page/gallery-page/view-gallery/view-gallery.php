@@ -15,7 +15,7 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../common-css-and-js/style.css">
 
     <!-- online fonts start -->
     <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"

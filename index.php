@@ -335,7 +335,7 @@ session_start();
         <!-- Latest-news-page-end -->
 
         <!-- home-section-two-gallery-start -->
-        <div class="section-two">
+        <div class="section-two" id="section-two">
 
             <div class="gallary-tittle" id="gallery">
                 <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">Gallery</P>
@@ -448,12 +448,12 @@ session_start();
             <br>
 
             <div class="gallary-heading">
-                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Courts</p>
+                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">ADTC Assets</p>
             </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
-                    <img alt="courts" src="Images/gallary/courts/courts/5.jpg">
+                    <img alt="courts" src="Images/gallary/ADTC-Assets/courts/5.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/courts/courts.php'">View</button>
                     <p class="gallery-info">Courts</p>
                 </div>
