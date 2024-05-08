@@ -7,6 +7,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
         $category = (isset($_POST['category'])) ? $_POST['category'] : '';
         $tittle = (isset($_POST['tittle'])) ? $_POST['tittle'] : '';
         $tittle_path = strtolower(preg_replace('/\s+/', '-', $tittle));
+        $description = $_POST['description'];
 
         if (isset($_FILES['thumbnail'])) {
             $picture_upload_path = "../../../Images/gallary/" . $category . "/" . $tittle_path . "/1.jpg";
@@ -28,9 +29,9 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
                     include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
-                    $sql = "INSERT INTO gallery (category, tittle, thumbnail) VALUES (?, ?, ?)";
+                    $sql = "INSERT INTO gallery (category, tittle, description, thumbnail) VALUES (?, ?, ?, ?)";
                     $stmt = $conn->prepare($sql);
-                    $stmt->bind_param('sss', $category, $tittle, $databse_thumbnail_path);
+                    $stmt->bind_param('ssss', $category, $tittle, $description, $databse_thumbnail_path);
                     $stmt->execute();
 
                     $stmt->close();
@@ -118,6 +119,10 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                             <div class="mb-3">
                                 <label class="form-label">Tittle:</label>
                                 <input type="text" class="form-control" name="tittle" placeholder="Tittle of your event" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description:</label><br>
+                                <textarea id="description" class="form-control" name="description" rows="4" cols="50"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Thumbnail:</label>
