@@ -103,9 +103,9 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                     <p class="text-muted">Complete the form below to add a new Gallery</p>
                 </div>
 
-                <div class="form-container">
-                    <div class="form">
-                        <form action="add-gallery.php" method="post" enctype="multipart/form-data">
+                <div class="container d-flex justify-content-center">
+                    
+                        <form action="add-gallery.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
                             <div class="mb-3">
                                 <select class="form-select" name="category" aria-label="Default select example" required>
                                     <option selected>Category</option>
@@ -133,7 +133,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                                 <a href="../../../index.php" class="btn btn-danger ">Cancel</a>
                             </div>
                         </form>
-                    </div>
+                   
                 </div>
             </div>
 

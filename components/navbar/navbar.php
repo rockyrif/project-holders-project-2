@@ -302,7 +302,7 @@
                             ?>
                             <?php
                             if (isset($row['payment_status'])) {
-                                $_SESSION["payment_status"] = $row["payment_status"];
+                                $_SESSION["m.payment_status"] = $row["payment_status"];
                             }
                           
                             ?>
