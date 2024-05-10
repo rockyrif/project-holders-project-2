@@ -288,32 +288,33 @@
                         // Include database connection
                         include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
                         $email = (isset($_SESSION["email"])) ? $_SESSION["email"] : '';
-                        $sql = "SELECT member_id, payment_status  FROM members WHERE email = '$email';";
+                        $sql = "SELECT member_id, id_prefix, payment_status FROM members WHERE email = '$email';";
                         $result = mysqli_query($conn, $sql);
-                        mysqli_close($conn);
                         $row = mysqli_fetch_assoc($result);
+                        mysqli_close($conn);
                         ?>
 
                         <?php if (isset($_SESSION['username'])) : ?>
+                            <?php
+                            if (isset($row["member_id"])) {
+                                $_SESSION["id"] = $row["member_id"];
+                            }
+                            ?>
+                            <?php
+                            if (isset($row['payment_status'])) {
+                                $_SESSION["payment_status"] = $row["payment_status"];
+                            }
+                          
+                            ?>
                             <?php if (!isset($row['member_id']) || $row["payment_status"] == 'approved') { ?>
                                 <ul class="navbar-nav justify-content-end flex-grow-1">
                                     <li class="nav-item ">
-                                        <?php
-                                        // Include database connection
-                                        include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                                        $email = $_SESSION["email"];
-                                        $sql = "SELECT member_id, id_prefix  FROM members WHERE email = '$email';";
-                                        $result = mysqli_query($conn, $sql);
-                                        mysqli_close($conn);
-                                        $row = mysqli_fetch_assoc($result);
-                                        ?>
+                                        
                                         <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">Your ID :
                                             <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?><?= (isset($row["member_id"])) ? $row["member_id"] : 'Please be a member'; ?>
                                         </a>
                                         <?php
-                                        if (isset($row["member_id"])) {
-                                            $_SESSION["id"] = $row["member_id"];
-                                        }
+
                                         ?>
                                     </li>
                                 </ul>
@@ -408,8 +409,12 @@
                                         <?php if (!isset($_SESSION['id']) || $_SESSION['privilage'] == "admin") : ?>
                                             <li><a class="dropdown-item" href="/project-holders-project-2/page/become-member/add-new.php">Become a
                                                     member</a></li>
+
                                         <?php endif; ?>
-                                        <?php if (isset($_SESSION['id'])) : ?>
+
+                                        
+
+                                        <?php if (isset($row["payment_status"]) && $row["payment_status"] == 'approved' || $_SESSION['privilage'] == "admin" ) : ?>
                                             <li><a class="dropdown-item" href="/project-holders-project-2/page/payment/add-new.php">Payment</a></li>
                                         <?php endif; ?>
                                     </ul>
