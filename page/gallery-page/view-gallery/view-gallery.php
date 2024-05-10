@@ -40,7 +40,7 @@ session_start();
 
         <!-- Navbar start -->
         <?php
-            include '../../../../components/navbar/navbar.php'; 
+            include '../../../components/navbar/navbar.php'; 
         ?>
         <!-- Navbar end -->
 

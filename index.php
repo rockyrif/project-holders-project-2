@@ -341,11 +341,40 @@ session_start();
                 <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">Gallery</P>
             </div>
 
+
+
             <div class="gallary-heading" id="achievement-by-ADTC">
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Achievement by ADTC</p>
             </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
+                <?php
+                // Include database connection
+                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                $sql = "SELECT * FROM gallery WHERE category = 'Achievement-by-ADTC' ORDER BY id DESC;";
+                $result = mysqli_query($conn, $sql);
+               
+
+                ?>
+
+                <?php if ($result && mysqli_num_rows($result) > 0) {
+                    // Loop through query results
+                    while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                        <div class="image-container">
+
+                            <img alt="Achievement-by-ADTC" src="<?= $row['thumbnail'] ?>" class="image-button-container">
+                            <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/view-gallery/view-gallery.php?id=<?= $row['id'] ?>'">View</button>
+                            <p class="gallery-info"><?= $row['tittle'] ?></p>
+                        </div>
+
+                <?php
+                    }
+                } else {
+                    echo "no resutls";
+                }
+                ?>
                 <div class="image-container">
 
                     <img alt="Achievement-by-ADTC" src="Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/1.webp" class="image-button-container">
@@ -367,6 +396,33 @@ session_start();
             </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
+            <?php
+                // Include database connection
+                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                $sql = "SELECT * FROM gallery WHERE category = 'Events' ORDER BY id DESC;";
+                $result = mysqli_query($conn, $sql);
+               
+
+                ?>
+
+                <?php if ($result && mysqli_num_rows($result) > 0) {
+                    // Loop through query results
+                    while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                        <div class="image-container">
+
+                            <img alt="Achievement-by-ADTC" src="<?= $row['thumbnail'] ?>" class="image-button-container">
+                            <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/view-gallery/view-gallery.php?id=<?= $row['id'] ?>'">View</button>
+                            <p class="gallery-info"><?= $row['tittle'] ?></p>
+                        </div>
+
+                <?php
+                    }
+                } else {
+                    echo "no resutls";
+                }
+                ?>
                 <div class="image-container">
                     <img alt="Laying-foundation-ceremony-for-courts-complex" src="Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/1.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Events/Laying-foundation-ceremony-for-courts-complex/Laying-foundation-ceremony-for-courts-complex.php'">View</button>
@@ -540,7 +596,8 @@ session_start();
             <!-- Footer-end -->
             <!-- copy right start -->
             <div>
-                <br><p style="text-align:center; font-family: Arial, sans-serif; font-size: 16px;">Copyrights © 2024. www.adtennis.lk. All rights reserved.</p>
+                <br>
+                <p style="text-align:center; font-family: Arial, sans-serif; font-size: 16px;">Copyrights © 2024. www.adtennis.lk. All rights reserved.</p>
             </div>
             <!-- copy right end -->
         </div>
