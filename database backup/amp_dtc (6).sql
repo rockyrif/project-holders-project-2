@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2024 at 08:26 PM
+-- Generation Time: May 10, 2024 at 01:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -31,6 +31,7 @@ CREATE TABLE `gallery` (
   `id` int(11) NOT NULL,
   `category` enum('Achievement-by-ADTC','School-Tennis-Training-programs','Tournaments','ADTC-Assets','Events') NOT NULL,
   `tittle` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `thumbnail` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -38,10 +39,9 @@ CREATE TABLE `gallery` (
 -- Dumping data for table `gallery`
 --
 
-INSERT INTO `gallery` (`id`, `category`, `tittle`, `thumbnail`) VALUES
-(15, 'Achievement-by-ADTC', 'Test  3', 'Images/gallary/Achievement-by-ADTC/test-3/1.jpg'),
-(16, 'Achievement-by-ADTC', 'Test  3', 'Images/gallary/Achievement-by-ADTC/test-3/1.jpg'),
-(17, 'Tournaments', 'Test  3', 'Images/gallary/Tournaments/test-3/1.jpg');
+INSERT INTO `gallery` (`id`, `category`, `tittle`, `description`, `thumbnail`) VALUES
+(34, 'Achievement-by-ADTC', 'Test 1', 'ghjghjghjghjghjghj ghjghjghjgjghjgh ghjghjhgjghjghj hjhjgjgh ghjghjghj', 'Images/gallary/Achievement-by-ADTC/test-1/1.jpg'),
+(35, 'ADTC-Assets', 'Test 2', 'hi hello', 'Images/gallary/ADTC-Assets/test-2/1.jpg');
 
 -- --------------------------------------------------------
 
@@ -78,9 +78,8 @@ INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `ema
 (46, 'ADTC-MC', 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '', '', 'rejected', '2024-03-30'),
 (51, 'ADTC-FC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-27', 'sdsdsds', 'child', '', 'sdsd', 'female', '', '', 'rejected', '2024-04-05'),
 (79, 'ADTC-2024-MA', 'jone', 'dav', 'jone@gmail.com', '0776040064', '', '2024-04-20', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', '', 'Images/membership-payment-proof/78.jpg', 'approved', '0000-00-00'),
-(98, 'ADTC-2024-MA', 'Mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '1999-06-22', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'rejected', '2024-05-01'),
-(102, 'ADTC-2024-MA', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-05-03', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/nifla@gmail.com.jpg', 'Images/membership-payment-proof/nifla@gmail.com.jpg', 'approved', '0000-00-00'),
-(103, 'RS-2024-MC', 'Mohamed', 'Rifky', 'thayeel@gmail.com', '0776040064', '', '2024-05-09', '320b sailan road kalmunai kudy 3', 'child', '', 'Mohamed Rifky', 'male', 'Images/profile-pic/thayeel@gmail.com.jpg', 'Images/membership-payment-proof/thayeel@gmail.com.jpg', 'pending', '0000-00-00');
+(111, 'ADTC-2024-MA', 'mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '2024-05-18', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'rejected', '2024-05-10'),
+(113, 'ADTC-2024-MA', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-05-11', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/nifla@gmail.com.jpg', 'Images/membership-payment-proof/nifla@gmail.com.jpg', 'approved', '2024-05-10');
 
 -- --------------------------------------------------------
 
@@ -203,13 +202,13 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT for table `member_fees`
