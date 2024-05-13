@@ -82,11 +82,11 @@ session_start();
             <div class="gallery">
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../Images/gallary/courts/courts/7.jpg">
+                        src="../../Images/gallary/ADTC-Assets/courts/7.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../Images/gallary/courts/courts/2.jpg">
+                        src="../../Images/gallary/ADTC-Assets/courts/2.jpg">
                 </div> 
                 <!--
                 <div class="image-container tall">
