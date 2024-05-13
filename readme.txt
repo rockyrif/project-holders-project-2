@@ -40,3 +40,6 @@ deployment:
 # So, overall, this command finds all regular files in the current directory and its subdirectories, except for those named db_conn.php, and copies each found file to the deployment path specified by $DEPLOYPATH.
 
 test 78
+
+git update-index --skip-worktree PHP-mailer/index.php
+git update-index --skip-worktree manifest.json 
