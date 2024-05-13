@@ -135,7 +135,7 @@ mysqli_close($conn);
                      while ($row = mysqli_fetch_assoc($result)) {
 
                   ?>
-                        <option value="<?= $row['member_id']; ?>"> <?= $row['member_id']; ?> </option>
+                        <option value="<?= $row['member_id']; ?>" <?= ($row['member_id']==$_SESSION['id'])? "selected": ""; ?> > <?= $row['member_id']; ?> </option>
                      <?php
                      }
                   } else {
