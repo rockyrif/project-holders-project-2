@@ -86,9 +86,7 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/4.jpg">
                 </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/5.jpg">
-                </div>
+                
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/6.jpg">
                 </div>

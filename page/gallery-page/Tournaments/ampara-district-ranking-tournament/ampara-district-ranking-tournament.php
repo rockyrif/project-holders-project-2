@@ -82,10 +82,7 @@ session_start();
             </div>
 
             <div class="gallery">
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/ampara-district-ranking-tournament/1.jpg">
-                </div>
+                
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/ampara-district-ranking-tournament/2.jpg">

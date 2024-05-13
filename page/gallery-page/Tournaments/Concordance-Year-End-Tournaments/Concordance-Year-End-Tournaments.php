@@ -73,15 +73,16 @@ session_start();
             </div>
 
             <div class="gallery">
-                <div class="image-container">
+                
+                <div class="image-container ">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/1.jpg">
                 </div>
-                <div class="image-container">
+                <div class="image-container ">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/3.jpg">
                 </div>
@@ -89,19 +90,19 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/6.jpg">
                 </div>
-                <div class="image-container">
+                <div class="image-container ">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/7.jpg">
                 </div>
-                <div class="image-container">
+                <div class="image-container ">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/8.jpg">
                 </div>
@@ -109,26 +110,10 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/9.jpg">
                 </div>
-                <!-- <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/10.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/11.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/12.jpg">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/13.jpg">
-                </div>
                  <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/14.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/10.jpg">
                 </div>
-                <div class="image-container tall">
+                 <!--<div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Concordance-Year-End-Tournaments/15.jpg">
                 </div>
                 <div class="image-container tall">

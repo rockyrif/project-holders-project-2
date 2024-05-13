@@ -61,12 +61,38 @@ session_start();
 <body>
 
     <div class="home">
+        <!-- popup start -->
+        <?php
+        ob_start();
+        // Check if the user has visited the website before
+        if (!isset($_COOKIE['visited'])) {
+            // Set a cookie to track that the user has visited the website
+            setcookie('visited', 'true', time() + (86400 * 30), "/"); // Cookie set to expire in 30 days
+
+            // Embed the YouTube video with autoplay
+            echo '<div id="video-box" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 200px; background-color: #f0f0f0; border: 1px solid #ccc; padding: 1px; z-index:10;">';
+            echo '<button id="close-button" style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border: none; background-color: transparent; cursor: pointer;">';
+            echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+            echo '</button>';
+            echo '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/nmXP-eyZqa8?si=G2ANN434uhpnx7JR&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+            echo '</div>';
+        }
+        ?>
+
+        <script>
+            // Close button functionality
+            document.getElementById('close-button').addEventListener('click', function() {
+                var videoBox = document.getElementById('video-box');
+                videoBox.parentNode.removeChild(videoBox); // Remove the video box
+            });
+        </script>
+
+        <!-- popup end -->
+
         <!-- Navbar start -->
         <?php
         include 'components/navbar/navbar.php';
         ?>
-
-
         <!-- Navbar end -->
 
         <!-- carousel start -->
@@ -368,12 +394,11 @@ session_start();
                             <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/view-gallery/view-gallery.php?id=<?= $row['id'] ?>'">View</button>
                             <p class="gallery-info"><?= $row['tittle'] ?></p>
                         </div>
-                        
+
                 <?php
-                    mysqli_close($conn);}
+                        mysqli_close($conn);
+                    }
                 } else {
-                    
-                    
                 }
                 ?>
                 <div class="image-container">
@@ -419,10 +444,9 @@ session_start();
                         </div>
 
                 <?php
-                   mysqli_close($conn); }
+                        mysqli_close($conn);
+                    }
                 } else {
-                   
-                    
                 }
                 ?>
                 <div class="image-container">
@@ -482,9 +506,9 @@ session_start();
                         </div>
 
                 <?php
-                   mysqli_close($conn); }
+                        mysqli_close($conn);
+                    }
                 } else {
-                    
                 }
                 ?>
                 <div class="image-container">
@@ -502,13 +526,13 @@ session_start();
             </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
-            <?php
+                <?php
                 // Include database connection
                 include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
                 $sql = "SELECT * FROM gallery WHERE category = 'Tournaments' ORDER BY id DESC;";
                 $result = mysqli_query($conn, $sql);
-               
+
 
                 ?>
 
@@ -524,10 +548,9 @@ session_start();
                         </div>
 
                 <?php
-                    mysqli_close($conn);}
+                        mysqli_close($conn);
+                    }
                 } else {
-                   
-                   
                 }
                 ?>
                 <div class="image-container">
@@ -565,13 +588,13 @@ session_start();
             </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
-            <?php
+                <?php
                 // Include database connection
                 include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
                 $sql = "SELECT * FROM gallery WHERE category = 'ADTC-Assets' ORDER BY id DESC;";
                 $result = mysqli_query($conn, $sql);
-               
+
 
                 ?>
 
@@ -587,10 +610,9 @@ session_start();
                         </div>
 
                 <?php
-                   mysqli_close($conn); }
+                        mysqli_close($conn);
+                    }
                 } else {
-                    
-                    
                 }
                 ?>
                 <div class="image-container">
@@ -686,6 +708,9 @@ session_start();
             </div>
             <!-- copy right end -->
         </div>
+        <!-- Footer-end -->
+
+
 
     </div>
 
