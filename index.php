@@ -65,9 +65,9 @@ session_start();
         <?php
         ob_start();
         // Check if the user has visited the website before
-        if (!isset($_COOKIE['visited'])) {
+        if (isset($_COOKIE['visited'])) {
             // Set a cookie to track that the user has visited the website
-            setcookie('visited', 'true', time() + (86400 * 30), "/"); // Cookie set to expire in 30 days
+            // setcookie('visited', 'true', time() + (86400 * 30), "/"); // Cookie set to expire in 30 days
 
             // Embed the YouTube video with autoplay
             echo '<div id="video-box" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 200px; background-color: #f0f0f0; border: 1px solid #ccc; padding: 1px; z-index:10;">';
