@@ -122,62 +122,7 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/ADTC-Assets/courts/8.jpg">
                 </div>
-                <!-- <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../Images/gallary/courts/courts/9.jpg">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../Images/gallary/Achievement by ADTC/10.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../Images/gallary/Achievement by ADTC/11.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../Images/gallary/Achievement by ADTC/12.jpg">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../Images/gallary/Achievement by ADTC/13.jpg">
-                </div> -->
-                <!-- <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/14.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/15.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/16.jpg">
-                </div>
-                <div class="grid-item">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/17.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/18.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/19.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/20.jpg">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/21.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/22.jpg">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/23.jpg">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/24.jpg">
-                </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/25.jpg">
-                </div> -->
+                
             </div>
 
         </div>
