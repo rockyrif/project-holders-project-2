@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Include config file
 include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
@@ -12,7 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate name
     if (empty(trim($_POST["name"]))) {
         $username_err = "Please enter your name.<br>";
-        echo $username_err;
+        $_SESSION['response'] = $username_err;
+        header("location:index.php");
+        exit;
     } else {
         $username = trim($_POST["name"]);
     }
@@ -20,10 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate email format
     if (empty(trim($_POST["email"]))) {
         $email_err = "Please enter your email.<br>";
-        echo $email_err;
+        $_SESSION['response'] = $email_err;
+        header("location:index.php");
+        exit;
     } elseif (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         $email_err = "Invalid email format.<br>";
-        echo $email_err;
+        $_SESSION['response'] = $email_err;
+        header("location:index.php");
+        exit;
     } else {
         $email = trim($_POST["email"]);
     }
@@ -31,10 +38,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate password
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter a password.<br>";
-        echo $password_err;
+        $_SESSION['response'] = $password_err;
+        header("location:index.php");
+        exit;
     } elseif (strlen(trim($_POST["password"])) < 6) {
         $password_err = "Password must have at least 6 characters.<br>";
-        echo $password_err;
+        $_SESSION['response'] = $password_err;
+        header("location:index.php");
+        exit;
     } else {
         $password = trim($_POST["password"]);
     }
@@ -59,10 +70,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if (mysqli_stmt_num_rows($stmt) > 0) {
                     $email_err = "This email is already registered.<br>";
-                    echo $email_err;
+                    $_SESSION['response'] = $email_err;
+                    header("location:index.php");
+                    exit;
                 }
             } else {
-                echo "Oops! Something went wrong. Please try again later.<br>";
+                $_SESSION['response'] = "Oops! Something went wrong. Please try again later.<br>";
             }
 
             // Close statement
@@ -86,10 +99,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if (mysqli_stmt_num_rows($stmt) > 0) {
                     $username_err = "This username is already registered.<br>";
-                    echo $username_err;
+                    $_SESSION['response'] = $username_err;
+                    header("location:index.php");
+                    exit;
                 }
             } else {
-                echo "Oops! Something went wrong. Please try again later.<br>";
+                $_SESSION['response'] = "Oops! Something went wrong. Please try again later.<br>";
             }
 
             // Close statement
@@ -118,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (mysqli_stmt_execute($stmt)) {
 
                     // Redirect to login page
-                    header("location: index.html?signup=1");
+                    header("location: index.php?signup=1");
                 } else {
                     echo "Oops! Something went wrong. Please try again later.";
                 }

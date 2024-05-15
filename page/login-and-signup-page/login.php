@@ -19,7 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate email
     if (empty(trim($_POST["email"]))) {
         $email_err = "Please enter your email.";
-        echo $email_err;
+        $_SESSION['response'] = $email_err;
+        header("location:index.php");
+        exit;
     } else {
         $email = trim($_POST["email"]);
     }
@@ -27,7 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate password
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter your password.";
-        echo $password_err;
+        $_SESSION['response'] = $password_err;
+        header("location:index.php");
+        exit;
     } else {
         $password = trim($_POST["password"]);
     }
@@ -69,13 +73,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         } else {
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
-                            echo $password_err;
+                            $_SESSION['response'] = $password_err;
+                            header("location:index.php");
+                            exit;
                         }
                     }
                 } else {
                     // Display an error message if email doesn't exist
                     $email_err = "No account found with that email.";
-                    echo $email_err;
+                    $_SESSION['response'] = $email_err;
+                    header("location:index.php");
+                    exit;
                 }
             } else {
                 echo "Oops! Something went wrong. Please try again later.";

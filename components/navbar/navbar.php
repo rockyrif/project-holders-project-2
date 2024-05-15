@@ -186,10 +186,10 @@
 
                     <?php if (!isset($_SESSION['username'])) : ?>
                         <div class="nav-item-outer">
-                            <a href="/project-holders-project-2/page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN IN</a>
+                            <a href="/project-holders-project-2/page/login-and-signup-page/index.php" class="nav-link nav-link-login">SIGN IN</a>
                         </div>
                         <div class="nav-item-outer">
-                            <button type="button" class="btn btn-success outer-button" onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.html'">SIGN
+                            <button type="button" class="btn btn-success outer-button" onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.php'">SIGN
                                 UP</button>
                         </div>
                     <?php endif; ?>
@@ -346,9 +346,9 @@
                         <?php if (!isset($_SESSION['username'])) : ?>
                             <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
 
-                                <a href="/project-holders-project-2/page/login-and-signup-page/index.html" class="nav-link nav-link-login">SIGN
+                                <a href="/project-holders-project-2/page/login-and-signup-page/index.php" class="nav-link nav-link-login">SIGN
                                     IN</a>
-                                <button type="button" class="btn btn-success offcanvas-button" onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.html'">SIGN
+                                <button type="button" class="btn btn-success offcanvas-button" onclick="window.location.href='/project-holders-project-2/page/login-and-signup-page/index.php'">SIGN
                                     UP</button>
 
                             </div>
@@ -557,7 +557,7 @@
         }
         ?>
         <script>
-            // Automatically remove the alert after 2 seconds
+            // Automatically remove the alert after 4 seconds
             setTimeout(function() {
                 var alertContainer = document.getElementById('alertContainer');
                 if (alertContainer) {

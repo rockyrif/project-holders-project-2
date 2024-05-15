@@ -61,34 +61,7 @@ session_start();
 <body>
 
     <div class="home">
-        <!-- popup start -->
-        <?php
-        ob_start();
-        // Check if the user has visited the website before
-        if (!isset($_COOKIE['visited'])) {
-            // Set a cookie to track that the user has visited the website
-            setcookie('visited', 'true', time() + (86400 * 30), "/"); // Cookie set to expire in 30 days
-
-            // Embed the YouTube video with autoplay
-            echo '<div id="video-box" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 200px; background-color: #f0f0f0; border: 1px solid #ccc; padding: 1px; z-index:10;">';
-            echo '<button id="close-button" style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border: none; background-color: transparent; cursor: pointer;">';
-            echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M18 6L6 18M6 6l12 12"/></svg>';
-            echo '</button>';
-            echo '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/nmXP-eyZqa8?si=G2ANN434uhpnx7JR&autoplay=1&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-            echo '</div>';
-            
-        }
-        ?>
-
-        <script>
-            // Close button functionality
-            document.getElementById('close-button').addEventListener('click', function() {
-                var videoBox = document.getElementById('video-box');
-                videoBox.parentNode.removeChild(videoBox); // Remove the video box
-            });
-        </script>
-
-        <!-- popup end -->
+     
 
         <!-- Navbar start -->
         <?php
@@ -618,7 +591,7 @@ session_start();
                 ?>
                 <div class="image-container">
                     <img alt="courts" src="Images/gallary/ADTC-Assets/courts/5.jpg">
-                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/courts/courts.php'">View</button>
+                    <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/ADTC-Assets/courts.php'">View</button>
                     <p class="gallery-info">Courts</p>
                 </div>
             </div>
