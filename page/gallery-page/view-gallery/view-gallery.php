@@ -43,7 +43,31 @@ session_start();
         ?>
         <!-- Navbar end -->
 
-        <!-- Achievement-by-ADTC-gallery-start -->
+        <!-- picture upload ui -->
+        <div style="padding-top: 93px; display:flex; justify-content:center; ">
+            <div>
+                <?php $id = $_GET['id']; ?>
+                <form action="add.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data" style="width:100%; min-width:300px;">
+                    <label for="formFile" class="form-label">Pictures:</label>
+                    <div style="display:flex;">
+                        <div class="mb-3">
+                            <input class="form-control" type="file" id="picture" name="picture[]" accept=".jpg, .jpeg, .png" multiple required>
+                        </div>
+                        <div class="mb-3 ms-1">
+                            <button type="submit" class="btn btn-success" name="submit">Add</button>
+                            <a href="../../../index.php" class="btn btn-danger">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- Image input form end -->
+
+
+
+        <!-- ADTC-gallery-start -->
         <div class="section-two">
 
             <?php
@@ -57,7 +81,7 @@ session_start();
             $row = mysqli_fetch_assoc($result)
             ?>
 
-            <div class="gallary-tittle1">
+            <div class="gallary-tittle1" style="padding-top: 0px !important;">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000"><?= $row['tittle'] ?></P>
             </div>
 
@@ -66,16 +90,40 @@ session_start();
             </div>
 
             <div class="gallery">
+                
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../<?= $row['thumbnail'] ?>">
                 </div>
-                <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Achievement-by-ADTC/Achievement-by-ADTC/2.webp">
-                </div>    
+
+
+                <?php
+                // Directory path
+                $tittle = $row['tittle'];
+                $tittle = strtolower(preg_replace('/\s+/', '-', $tittle));
+                $directory = "../../../Images/gallary/{$row['category']}/" . $tittle . "/";
+
+                // Get all files in the directory
+                $files = scandir($directory);
+
+                // Remove "." and ".." from the list
+                $files = array_diff($files, array('.', '..'));
+
+                // Loop through each file
+                foreach ($files as $file) {
+                    // Check if the file is not "1.jpg"
+                    if ($file != '1.jpg') {
+                        // Output the image HTML
+                        echo '<div class="image-container">';
+                        echo '<img data-aos="fade-up" data-aos-duration="2000" src="' . $directory . $file . '">';
+                        echo '</div>';
+                    }
+                }
+                ?>
+
             </div>
 
         </div>
-        <!-- Achievement-by-ADTC-gallery-end -->
+        <!-- ADTC-gallery-end -->
 
 
 
