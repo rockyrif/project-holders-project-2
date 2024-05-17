@@ -31,6 +31,10 @@ session_start();
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
 
+    <!-- Font Awesome start-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome end-->
+
 </head>
 
 <body>
@@ -90,8 +94,8 @@ session_start();
             </div>
 
             <div class="gallery">
-                
-                <div class="image-container">
+
+                <div class="image-container" >
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../<?= $row['thumbnail'] ?>">
                 </div>
 
@@ -113,8 +117,9 @@ session_start();
                     // Check if the file is not "1.jpg"
                     if ($file != '1.jpg') {
                         // Output the image HTML
-                        echo '<div class="image-container">';
+                        echo '<div class="image-container" style="position: relative;">';
                         echo '<img data-aos="fade-up" data-aos-duration="2000" src="' . $directory . $file . '">';
+                        echo '<div style="position: absolute; top:10px; right:10px;"><a href="delete_pic.php?directory='.$directory.'&file='.$file.'&id='.$id.'" class="link-dark" ><i class="fa-solid fa-trash fs-5"></i></a></div>';
                         echo '</div>';
                     }
                 }
