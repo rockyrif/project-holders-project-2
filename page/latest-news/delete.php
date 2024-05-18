@@ -76,7 +76,8 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
         if ($result) {
             // Redirect the user
-            echo "Database deleted successfully";
+            $_SESSION['response'] = "News deleted successfully";
+            header("Location: ../../index.php");
             exit; // Stop further execution
         } else {
             // Provide an error message
@@ -88,6 +89,6 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
     }
 } else {
     // Redirect the user if not logged in as admin
-    header("Location: ../../../index.php");
+    header("Location: ../../index.php");
     exit; // Stop further execution
 }
