@@ -14,9 +14,22 @@ if (isset($_POST['submit'])) {
     $stmt->bind_param('i', $id);
     $stmt->execute();
 
+    $stmt->bind_result($id , $category, $tittle, $description, $thumbnail); // Adjust according to your columns
+
     // Fetch the result
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    if ($stmt->fetch()) {
+        // Process the row and store it in an associative array
+        $row = [
+            'id' => $id ,
+            'category' => $category,
+            'tittle' => $tittle,
+            'description' => $description, // Adjust the names accordingly
+            'thumbnail' => $thumbnail  // Adjust the names accordingly
+        ];
+    } else {
+        // Handle the case where no row is found
+        $row = null;
+    }
 
     // Close the statement and connection
     $stmt->close();
@@ -40,7 +53,7 @@ if (isset($_POST['submit'])) {
     }
 
     // Initialize file naming start point
-    
+
     $fileIndex = 2;
 
     // Loop through each uploaded file
@@ -63,10 +76,8 @@ if (isset($_POST['submit'])) {
             $destination = $uploadDir . $newFileName;
             if (move_uploaded_file($tmpName, $destination)) {
                 $_SESSION['response'] = "File " . $_FILES['picture']['name'][$key] . " uploaded successfully as " . $newFileName . "<br>";
-                
             } else {
                 $_SESSION['response'] = "Error uploading file " . $_FILES['picture']['name'][$key] . "<br>";
-                
             }
 
 
@@ -74,8 +85,6 @@ if (isset($_POST['submit'])) {
             $fileIndex++;
         } else {
             $_SESSION['response'] = "Error with file " . $_FILES['picture']['name'][$key] . "<br>";
-            
-           
         }
     }
     header('Location: view-gallery.php?id=' . $id);
