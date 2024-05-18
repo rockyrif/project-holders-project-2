@@ -1,5 +1,6 @@
 <?php
 session_start();
+$version = date('Ymd');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,7 @@ session_start();
 
     <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=<?= $version; ?>">
 
     <link rel="icon" type="image/png" href="Images/logo.png">
 
