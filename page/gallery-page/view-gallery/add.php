@@ -1,5 +1,5 @@
-<!-- Image input form start -->
 <?php
+ob_start();
 session_start();
 if (isset($_POST['submit'])) {
 
@@ -85,4 +85,4 @@ if (isset($_POST['submit'])) {
     header('location: view-gallery.php');
     exit;
 }
-?>
+ob_end_flush();
