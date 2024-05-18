@@ -57,7 +57,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
                     // Prepare and execute SQL insert statement
                     $sql = "INSERT INTO news (pic_path, description, publisher, date)
-                        VALUES ('$proof_url', '$description', '$publisher', $publish_date)";
+                        VALUES ('$proof_url', '$description', '$publisher', '$publish_date')";
 
                     if (mysqli_query($conn, $sql)) {
                         $_SESSION['response'] = "News publised successfully.";
