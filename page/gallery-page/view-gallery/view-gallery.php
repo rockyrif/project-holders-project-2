@@ -35,6 +35,16 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome end-->
 
+    <style>
+        @media only screen and (max-width: 575.98px) {
+
+            /* max-width for small devices and below */
+            .width {
+                width: 100% !important;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -48,85 +58,109 @@ session_start();
         <!-- Navbar end -->
 
         <!-- picture upload ui -->
-        <div style="padding-top: 93px; display:flex; justify-content:center; ">
-            <div>
-                <?php $id = $_GET['id']; ?>
-                <form action="add.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data" style="width:100%; min-width:300px;">
-                    <label for="formFile" class="form-label">Pictures:</label>
-                    <div style="display:flex;">
-                        <div class="mb-3">
-                            <input class="form-control" type="file" id="picture" name="picture[]" accept=".jpg, .jpeg, .png" multiple required>
+        <div style="padding-top: 93px;">
+            <div style=" display:flex; justify-content:center; ">
+                <div>
+                    <?php $id = $_GET['id']; ?>
+                    <form action="add.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data" style="width:100%; min-width:300px;">
+                        <label for="formFile" class="form-label">Upload Pictures:</label>
+
+                        <div class="d-flex flex-column flex-sm-row mb-3 col-sm-12">
+                            <div class="mb-3 me-2">
+                                <input class="form-control" type="file" id="picture" name="picture[]" accept=".jpg, .jpeg, .png" multiple required>
+                            </div>
+                            <div class="mb-3 me-2 ">
+                                <button type="submit" class="btn btn-success w-100" name="submit">Add</button>
+                            </div>
+                            <div class="mb-3 me-2 ">
+                                <a href="../../../index.php" class="btn btn-danger w-100">Cancel</a>
+                            </div>
+                            <div class="mb-3 me-2">
+                                <?php
+                                $id = $_GET['id'];
+
+                                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                                $sql = "SELECT * FROM gallery WHERE id=$id;";
+                                $result = mysqli_query($conn, $sql);
+                                mysqli_close($conn);
+                                $row = mysqli_fetch_assoc($result);
+
+                                // Directory path
+                                $tittle = $row['tittle'];
+                                $tittle = strtolower(preg_replace('/\s+/', '-', $tittle));
+                                $directory = "../../../Images/gallary/{$row['category']}/" . $tittle . "/";
+                                ?>
+
+                                <a href="delete_all.php?directory='<?= $directory ?>'&id='<?= $id ?>'" class="btn btn-danger w-100">Delete All</a>
+
+                            </div>
                         </div>
-                        <div class="mb-3 ms-1">
-                            <button type="submit" class="btn btn-success" name="submit">Add</button>
-                            <a href="../../../index.php" class="btn btn-danger">Cancel</a>
-                        </div>
-                    </div>
-                </form>
 
-            </div>
-        </div>
-
-        <!-- Image input form end -->
-
-
-
-        <!-- ADTC-gallery-start -->
-        <div class="section-two">
-
-            <?php
-
-            $id = $_GET['id'];
-
-            include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-            $sql = "SELECT * FROM gallery WHERE id=$id;";
-            $result = mysqli_query($conn, $sql);
-            mysqli_close($conn);
-            $row = mysqli_fetch_assoc($result)
-            ?>
-
-            <div class="gallary-tittle1" style="padding-top: 0px !important;">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000"><?= $row['tittle'] ?></P>
-            </div>
-
-            <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000"><?= $row['description'] ?></p>
-            </div>
-
-            <div class="gallery">
-
-                <div class="image-container" >
-                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../<?= $row['thumbnail'] ?>">
+                    </form>
                 </div>
+            </div>
 
+            <!-- Image input form end -->
+
+
+
+            <!-- ADTC-gallery-start -->
+            <div class="section-two" style="margin-top: 0px;">
 
                 <?php
-                // Directory path
-                $tittle = $row['tittle'];
-                $tittle = strtolower(preg_replace('/\s+/', '-', $tittle));
-                $directory = "../../../Images/gallary/{$row['category']}/" . $tittle . "/";
 
-                // Get all files in the directory
-                $files = scandir($directory);
+                $id = $_GET['id'];
 
-                // Remove "." and ".." from the list
-                $files = array_diff($files, array('.', '..'));
-
-                // Loop through each file
-                foreach ($files as $file) {
-                    // Check if the file is not "1.jpg"
-                    if ($file != '1.jpg') {
-                        // Output the image HTML
-                        echo '<div class="image-container" style="position: relative;">';
-                        echo '<img data-aos="fade-up" data-aos-duration="2000" src="' . $directory . $file . '">';
-                        echo '<div style="position: absolute; top:10px; right:10px;"><a href="delete_pic.php?directory='.$directory.'&file='.$file.'&id='.$id.'" class="link-dark" ><i class="fa-solid fa-trash fs-5"></i></a></div>';
-                        echo '</div>';
-                    }
-                }
+                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                $sql = "SELECT * FROM gallery WHERE id=$id;";
+                $result = mysqli_query($conn, $sql);
+                mysqli_close($conn);
+                $row = mysqli_fetch_assoc($result)
                 ?>
 
-            </div>
+                <div class="gallary-tittle1" style="padding-top: 0px !important;">
+                    <P class="fs-4" data-aos="fade-up" data-aos-duration="2000"><?= $row['tittle'] ?></P>
+                </div>
 
+                <div class="gallary-info">
+                    <p data-aos="fade-up" data-aos-duration="2000"><?= $row['description'] ?></p>
+                </div>
+
+                <div class="gallery">
+
+                    <div class="image-container">
+                        <img data-aos="fade-up" data-aos-duration="2000" src="../../../<?= $row['thumbnail'] ?>">
+                    </div>
+
+
+                    <?php
+                    // Directory path
+                    $tittle = $row['tittle'];
+                    $tittle = strtolower(preg_replace('/\s+/', '-', $tittle));
+                    $directory = "../../../Images/gallary/{$row['category']}/" . $tittle . "/";
+
+                    // Get all files in the directory
+                    $files = scandir($directory);
+
+                    // Remove "." and ".." from the list
+                    $files = array_diff($files, array('.', '..'));
+
+                    // Loop through each file
+                    foreach ($files as $file) {
+                        // Check if the file is not "1.jpg"
+                        if ($file != '1.jpg') {
+                            // Output the image HTML
+                            echo '<div class="image-container" style="position: relative;">';
+                            echo '<img data-aos="fade-up" data-aos-duration="2000" src="' . $directory . $file . '">';
+                            echo '<div style="position: absolute; top:10px; right:10px;"><a href="delete_pic.php?directory=' . $directory . '&file=' . $file . '&id=' . $id . '" class="link-danger" ><i class="fa-solid fa-trash fs-5"></i></a></div>';
+                            echo '</div>';
+                        }
+                    }
+                    ?>
+
+                </div>
+
+            </div>
         </div>
         <!-- ADTC-gallery-end -->
 

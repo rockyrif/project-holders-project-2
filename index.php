@@ -655,18 +655,18 @@ session_start();
                     <div class="line"></div>
                     <form action="" method="POST" name="Feedback-form">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Name" name="Name" required>
+                            <input type="text" class="form-control" id="exampleInputname1" aria-describedby="nameHelp" placeholder="Your Name" name="Name" required>
 
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="Email" required>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email" name="Email" required>
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp" placeholder="Mobile No" name="Mobile-No" required>
+                            <input type="text" class="form-control" id="exampleInputmobile1" aria-describedby="mobileHelp" placeholder="Your Mobile No" name="Mobile-No" required>
                         </div>
                         <div class="form-floating mb-3">
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" name="Comments" required></textarea>
-                            <label for="floatingTextarea2">Comments</label>
+                            <label for="floatingTextarea2">Your Comments</label>
                         </div>
                         <script src="index.js"></script>
                         <button type="submit" class="btn btn-primary">Submit</button>
