@@ -1,5 +1,6 @@
 <?php
 session_start();
+$version = date('Ymd');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,15 +10,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
 
-
-
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?= $version; ?>">
 
     <!-- online fonts start -->
     <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">

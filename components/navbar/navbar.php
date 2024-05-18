@@ -304,12 +304,12 @@
                             if (isset($row['payment_status'])) {
                                 $_SESSION["m.payment_status"] = $row["payment_status"];
                             }
-                          
+
                             ?>
                             <?php if (!isset($row['member_id']) || $row["payment_status"] == 'approved') { ?>
                                 <ul class="navbar-nav justify-content-end flex-grow-1">
                                     <li class="nav-item ">
-                                        
+
                                         <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">Your ID :
                                             <?= (isset($row["id_prefix"])) ? $row["id_prefix"] . '-' : ''; ?><?= (isset($row["member_id"])) ? $row["member_id"] : 'Please be a member'; ?>
                                         </a>
@@ -380,6 +380,7 @@
                                                 Payment</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/add-gallery/add-gallery.php" target="_blank">Add
                                                 Gallery</a></li>
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/tournament-schedule/tournament-schedule.php" target="_blank">Tournament Schedule</a></li>
 
 
                                     </ul>
@@ -412,9 +413,9 @@
 
                                         <?php endif; ?>
 
-                                        
 
-                                        <?php if (isset($row["payment_status"]) && $row["payment_status"] == 'approved' || $_SESSION['privilage'] == "admin" ) : ?>
+
+                                        <?php if (isset($row["payment_status"]) && $row["payment_status"] == 'approved' || $_SESSION['privilage'] == "admin") : ?>
                                             <li><a class="dropdown-item" href="/project-holders-project-2/page/payment/add-new.php">Payment</a></li>
                                         <?php endif; ?>
                                     </ul>
