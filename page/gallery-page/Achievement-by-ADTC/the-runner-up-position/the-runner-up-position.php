@@ -64,7 +64,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/3.jpg">
                 </div>

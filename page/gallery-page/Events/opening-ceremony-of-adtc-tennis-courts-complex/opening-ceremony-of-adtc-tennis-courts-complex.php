@@ -58,16 +58,16 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/3.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/6.jpg">
                 </div>
                 <div class="image-container">
@@ -82,12 +82,12 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/10.jpg">
                 </div>
-                <div class="image-container tall">
+                <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/11.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/opening-ceremony-of-adtc-tennis-courts-complex/12.jpg">
-                </div>
+                </div> -->
 
             </div>
 

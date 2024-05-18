@@ -102,16 +102,16 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/ADTC-Assets/courts/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/ADTC-Assets/courts/3.jpg">
                 </div>
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/ADTC-Assets/courts/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/ADTC-Assets/courts/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/ADTC-Assets/courts/6.jpg">
                 </div>
                 <div class="image-container">

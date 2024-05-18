@@ -70,7 +70,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/3.jpg">
                 </div>
@@ -78,11 +78,11 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/6.jpg">
                 </div>
@@ -94,7 +94,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/8.jpg">
                 </div>
-                <!-- <div class="image-container">
+                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/9.jpg">
                 </div>
@@ -102,7 +102,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/10.jpg">
                 </div>
-                <div class="image-container tall">
+                <!--<div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Laying-foundation-ceremony-for-courts-complex/11.jpg">
                 </div>

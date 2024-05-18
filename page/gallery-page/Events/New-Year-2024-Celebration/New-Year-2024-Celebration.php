@@ -68,7 +68,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/New-Year-2024-Celebration/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/New-Year-2024-Celebration/3.jpg">
                 </div>
@@ -76,11 +76,11 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/New-Year-2024-Celebration/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/New-Year-2024-Celebration/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/New-Year-2024-Celebration/6.jpg">
                 </div>

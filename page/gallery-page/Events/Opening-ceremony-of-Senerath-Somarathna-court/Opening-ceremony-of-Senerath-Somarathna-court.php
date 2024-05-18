@@ -61,7 +61,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/3.jpg">
                 </div>
@@ -69,11 +69,11 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/6.jpg">
                 </div>

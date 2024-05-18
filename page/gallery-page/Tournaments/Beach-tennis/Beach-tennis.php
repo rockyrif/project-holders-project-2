@@ -86,7 +86,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/3.jpg">
                 </div>
@@ -94,11 +94,11 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/6.jpg">
                 </div>
@@ -106,11 +106,11 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/7.jpg">
                 </div>
-                <!-- <div class="image-container">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/8.jpg">
-                </div> -->
-                <!-- <div class="image-container">
+                </div> 
+                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/9.jpg">
                 </div>
@@ -118,7 +118,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/10.jpg">
                 </div>
-                <div class="image-container tall">
+                <!--<div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/11.jpg">
                 </div>

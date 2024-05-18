@@ -85,7 +85,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/3.jpg">
                 </div>
@@ -93,15 +93,15 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/6.jpg">
                 </div>
-                <!-- <div class="image-container">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/7.jpg">
                 </div>
@@ -116,8 +116,8 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/10.jpg">
-                </div>
-                <div class="image-container tall">
+                </div> -->
+                <!--<div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/11.jpg">
                 </div>
