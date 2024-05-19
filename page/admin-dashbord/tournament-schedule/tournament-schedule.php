@@ -10,7 +10,6 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
    if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Get form data and sanitize it
       $name = mysqli_real_escape_string($conn, $_POST['tournament-name']);
-      echo $name;
       $type = mysqli_real_escape_string($conn, $_POST['type']);
       $grade = mysqli_real_escape_string($conn, $_POST['grade']);
       $start_date = mysqli_real_escape_string($conn, $_POST['start-date']);
@@ -32,7 +31,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
       // Execute the query
       if ($conn->query($sql) === TRUE) {
-         echo "New record created successfully";
+         $_SESSION['response'] = "New tournament created successfully";
       } else {
          echo "Error: " . $sql . "<br>" . $conn->error;
       }
