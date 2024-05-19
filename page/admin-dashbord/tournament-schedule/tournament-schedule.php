@@ -5,102 +5,42 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
    <?php
    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
-   if (isset($_POST["submit"])) {
-      $id_prefix_text = "ADTC";
-      $id_prefix_gender = ($_POST['gender'] == "male") ? 'M' : 'F';
-      $id_prefix_member_type = ($_POST['member_type'] == "adult") ? 'A' : 'C';
-      $id_prefix_current_year = date("Y");
 
-      $id_prefix = $id_prefix_text . "-" . $id_prefix_current_year . "-" . $id_prefix_gender . $id_prefix_member_type;
-      $first_name = $_POST['first_name'];
-      $last_name = $_POST['last_name'];
-      $email = $_SESSION["email"];
-      $phone1 = $_POST['phone1'];
-      $phone2 = $_POST['phone2'];
-      $dob = $_POST['dob'];
-      $address = $_POST['address'];
-      $member_type = $_POST['member_type'];
-      $occupation = $_POST['occupation'];
-      $school = $_POST['school'];
-      $gender = $_POST['gender'];
-      $reg_date = date("Y-m-d");
+   // Check if form is submitted
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      // Get form data and sanitize it
+      $name = mysqli_real_escape_string($conn, $_POST['tournament-name']);
+      echo $name;
+      $type = mysqli_real_escape_string($conn, $_POST['type']);
+      $grade = mysqli_real_escape_string($conn, $_POST['grade']);
+      $start_date = mysqli_real_escape_string($conn, $_POST['start-date']);
+      $end_date = mysqli_real_escape_string($conn, $_POST['end-date']);
+      $tournament_format = mysqli_real_escape_string($conn, $_POST['tournament-format']);
+      $description = mysqli_real_escape_string($conn, $_POST['description']);
 
-      // Handle payment proof image upload
-      $payment_proof_targetDir = "Images/membership-payment-proof/";
-      $payment_proof_targetDir1 = "../../../Images/membership-payment-proof/";
-
-      if (isset($_FILES["picture"]) && $_FILES["picture"]["error"] == UPLOAD_ERR_OK) {
-         // Increment the last payment_id to get the new payment_id
-         $new_member_pic_id = $_SESSION["email"];
-         // Get file extension
-         $payment_proof_imageFileType = strtolower(pathinfo($_FILES["picture"]["name"], PATHINFO_EXTENSION));
-         // Process file upload
-         $payment_proof_targetFile = $payment_proof_targetDir1 . $new_member_pic_id . "." . $payment_proof_imageFileType;
-         // Rest of your code for file upload and processing
+      // Process age-category array
+      if (isset($_POST['age-category'])) {
+         $age_category = implode(',', $_POST['age-category']);
+         $age_category = mysqli_real_escape_string($conn, $age_category);
       } else {
-         // Handle file upload error
-         $_SESSION['response'] = "File upload failed with error code: " . $_FILES["picture"]["error"];
+         $age_category = '';
       }
 
+      // Construct SQL query
+      $sql = "INSERT INTO tournament_schedule (name, type, grade, start_date, end_date, tournament_format, `age_category[]`, description) 
+            VALUES ('$name', '$type', '$grade', '$start_date', '$end_date', '$tournament_format', '$age_category', '$description')";
 
-      // Check if image file is a valid format and size
-      if ($payment_proof_imageFileType != "jpg" && $payment_proof_imageFileType != "jpeg" && $payment_proof_imageFileType != "png") {
-         $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed in .";
-      } elseif ($_FILES["picture"]["size"] > 500000) { // 500kb limit
-         $_SESSION['response'] = "Sorry, your file is too large. Limit to 500 KB.";
+      // Execute the query
+      if ($conn->query($sql) === TRUE) {
+         echo "New record created successfully";
       } else {
-         // Handle Profile pic image upload
-         $profile_pic_targetDir = "Images/profile-pic/";
-         $profile_pic_targetDir1 = "../../../Images/profile-pic/";
-
-         $image_info = getimagesize($_FILES["profile"]["tmp_name"]);
-         $width = $image_info[0];
-         $height = $image_info[1];
-
-         if (isset($_FILES["profile"]) && $_FILES["profile"]["error"] == UPLOAD_ERR_OK) {
-            // Get file extension
-            $profile_imageFileType = strtolower(pathinfo($_FILES["profile"]["name"], PATHINFO_EXTENSION));
-            // Process file upload
-            $profile_pic_targetFile = $profile_pic_targetDir1 . $new_member_pic_id . "." . $profile_imageFileType;
-            // Rest of your code for file upload and processing
-         } else {
-            // Handle file upload error
-            $_SESSION['response'] = "File upload failed with error code: " . $_FILES["profile"]["error"];
-         }
-
-
-         // Check if image file is a valid format and size
-         if ($profile_imageFileType != "jpg" && $profile_imageFileType != "jpeg" && $profile_imageFileType != "png") {
-            $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
-         } elseif ($_FILES["profile"]["size"] > 500000) { // 500kb limit
-            $_SESSION['response'] = "Sorry, your profile image is too large. Limit to 500 KB.";
-         } elseif ($width != $height) {
-            $_SESSION['response'] = "Sorry, only square images (1:1 aspect ratio) are allowed as profile picture.";
-         } else {
-            // Proceed with upload and database insertion
-            if (move_uploaded_file($_FILES["profile"]["tmp_name"], $profile_pic_targetFile) && move_uploaded_file($_FILES["picture"]["tmp_name"], $payment_proof_targetFile)) {
-               // Image uploaded successfully, proceed to insert data into database
-               $profile_url = $profile_pic_targetDir . $new_member_pic_id . "." . $profile_imageFileType;
-               $payment_proof_url = $payment_proof_targetDir . $new_member_pic_id . "." . $payment_proof_imageFileType;
-               // Prepare and execute SQL insert statement
-               $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`, `registration_date`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender','$profile_url','$payment_proof_url','$reg_date')";
-
-               if (mysqli_query($conn, $sql)) {
-                  $_SESSION['response'] = "Member added successfully.";
-                  header("Location: admin-dashbord.php");
-               } else {
-                  $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
-               }
-            } else {
-               $_SESSION['response'] = "Sorry, there was an error uploading your file.";
-            }
-         }
+         echo "Error: " . $sql . "<br>" . $conn->error;
       }
+
+      // Close the connection
+      $conn->close();
    }
-
    ?>
-
-
 
 
    <!DOCTYPE html>
@@ -134,11 +74,11 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
          <div class="text-center mb-4">
             <h3>Add New Tournament</h3>
-            <p class="text-muted">Complete the form below to add a new member</p>
+            <p class="text-muted">Complete the form below to add a Tournament</p>
          </div>
 
          <div class="container d-flex justify-content-center">
-            <form id="tournament-form" action="" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+            <form id="tournament-form" action="" method="post" style="width:50vw; min-width:300px;">
                <div class="mb-3">
                   <label class="form-label" for="tournament-name-dropdown">Name of Tournament:</label>
                   <select class="form-select" name="tournament-name-dropdown" id="tournament-name-dropdown" required>
@@ -151,7 +91,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                </div>
                <div class="mb-3 tournament-name-text-div" id="tournament-name-text-div" style="display: none;">
                   <label class="form-label">Enter Tournament Name:</label>
-                  <input type="text" class="form-control" name="tournament-name-text">
+                  <input type="text" class="form-control" name="tournament-name-text" id="tournament-name-text">
                </div>
                <input type="hidden" name="tournament-name" id="tournament-name">
 
@@ -196,6 +136,8 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                <div class="mb-3">
                   <label class="form-label" for="grade">Grade:</label>
                   <select class="form-select" name="grade" id="grade" required>
+                     <option value="Grade 1">Grade 1</option>
+                     <option value="Grade 2">Grade 2</option>
                      <option value="Grade 3">Grade 3</option>
                      <option value="Grade 4">Grade 4</option>
                      <option value="Grade 5">Grade 5</option>
@@ -214,116 +156,279 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                </div>
 
                <div class="text-center mb-3">
-                  <h3>Schedule Matches</h3>
+                  <h3>SELECT TYPES OF MATCHES</h3>
                </div>
 
                <div class="mb-3">
                   <label class="form-label" for="tournament-format">Tournament Format:</label>
                   <select class="form-select" name="tournament-format" id="tournament-format" onchange="toggleSections()" required>
-                     <option value="Singles">Singles</option>
-                     <option value="Doubles">Doubles</option>
+                     <option value="singles">Singles</option>
+                     <option value="doubles">Doubles</option>
                   </select>
                </div>
 
                <div id="tournament-format-singles" class="mb-3">
-                  <div class="mb-3">
-                     <label class="form-label" for="tournament-category">Tournament Category:</label>
-                     <select class="form-select" name="tournament-category" id="tournament-category" required>
-                        <option value="Girls">Girls</option>
-                        <option value="Boys">Boys</option>
-                     </select>
-                  </div>
+                  <div class="d-flex justify-content-between">
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label" for="age-category[]">Boys:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="BS">
+                              <label class="form-check-label" for="age-open">
+                                 Open
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BS-18">
+                              <label class="form-check-label" for="age-under-18">
+                                 Under 18
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="BS-16">
+                              <label class="form-check-label" for="age-under-16">
+                                 Under 16
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="BS-14">
+                              <label class="form-check-label" for="age-under-14">
+                                 Under 14
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="BS-12">
+                              <label class="form-check-label" for="age-under-12">
+                                 Under 12
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-10" value="BS-10">
+                              <label class="form-check-label" for="age-under-10">
+                                 Under 10
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-8" value="BS-8">
+                              <label class="form-check-label" for="age-under-8">
+                                 Under 8
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-7" value="BS-7">
+                              <label class="form-check-label" for="age-under-7">
+                                 Under 7
+                              </label>
+                           </div>
+                        </fieldset>
+                     </div>
 
-                  <fieldset class="form-group">
-                     <label class="form-label" for="age-category[]">Age Category:</label>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="Open">
-                        <label class="form-check-label" for="age-open">
-                           Open
-                        </label>
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label" for="age-category[]">Girls:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="GS">
+                              <label class="form-check-label" for="age-open">
+                                 Open
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="GS-18">
+                              <label class="form-check-label" for="age-under-18">
+                                 Under 18
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="GS-16">
+                              <label class="form-check-label" for="age-under-16">
+                                 Under 16
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="GS-14">
+                              <label class="form-check-label" for="age-under-14">
+                                 Under 14
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="GS-12">
+                              <label class="form-check-label" for="age-under-12">
+                                 Under 12
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-10" value="GS-10">
+                              <label class="form-check-label" for="age-under-10">
+                                 Under 10
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-8" value="GS-8">
+                              <label class="form-check-label" for="age-under-8">
+                                 Under 8
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-7" value="GS-7">
+                              <label class="form-check-label" for="age-under-7">
+                                 Under 7
+                              </label>
+                           </div>
+                        </fieldset>
                      </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="Under 18">
-                        <label class="form-check-label" for="age-under-18">
-                           Under 18
-                        </label>
+
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label" for="age-category[]">Women's:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="WS">
+                              <label class="form-check-label" for="age-open">
+                                 Open
+                              </label>
+                           </div>
+
+
+                        </fieldset>
                      </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="Under 16">
-                        <label class="form-check-label" for="age-under-16">
-                           Under 16
-                        </label>
+
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label" for="age-category[]">Men's:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="MS">
+                              <label class="form-check-label" for="age-open">
+                                 Open
+                              </label>
+                           </div>
+                        </fieldset>
                      </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="Under 14">
-                        <label class="form-check-label" for="age-under-14">
-                           Under 14
-                        </label>
-                     </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="Under 12">
-                        <label class="form-check-label" for="age-under-12">
-                           Under 12
-                        </label>
-                     </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-10" value="Under 10">
-                        <label class="form-check-label" for="age-under-10">
-                           Under 10
-                        </label>
-                     </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-8" value="Under 8">
-                        <label class="form-check-label" for="age-under-8">
-                           Under 8
-                        </label>
-                     </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-6" value="Under 6">
-                        <label class="form-check-label" for="age-under-6">
-                           Under 6
-                        </label>
-                     </div>
-                  </fieldset>
+                  </div>
                </div>
 
                <div id="tournament-format-doubles" style="display: none;" class="mb-3">
-                  <div class="mb-3">
-                     <label class="form-label" for="tournament-category">Tournament Category:</label>
-                     <select class="form-select" name="tournament-category" id="tournament-category" required>
-                        <option value="Girls">Girls</option>
-                        <option value="Boys">Boys</option>
-                        <option value="Mixed">Mixed</option>
-                     </select>
-                  </div>
+                  <div class="d-flex justify-content-between">
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label" for="age-category[]">Boys:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="BD">
+                              <label class="form-check-label" for="age-open">
+                                 Open
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BD-18">
+                              <label class="form-check-label" for="age-under-18">
+                                 Under 18
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="BD-16">
+                              <label class="form-check-label" for="age-under-16">
+                                 Under 16
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="BD-14">
+                              <label class="form-check-label" for="age-under-14">
+                                 Under 14
+                              </label>
+                           </div>
+                        </fieldset>
+                     </div>
 
-                  <fieldset class="form-group">
-                     <label class="form-label" for="age-category[]">Age Category:</label>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="Open">
-                        <label class="form-check-label" for="age-open">
-                           Open
-                        </label>
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label" for="age-category[]">Girls:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="GD">
+                              <label class="form-check-label" for="age-open">
+                                 Open
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="GD-18">
+                              <label class="form-check-label" for="age-under-18">
+                                 Under 18
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="GD-16">
+                              <label class="form-check-label" for="age-under-16">
+                                 Under 16
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="GD-14">
+                              <label class="form-check-label" for="age-under-14">
+                                 Under 14
+                              </label>
+                           </div>
+
+                        </fieldset>
                      </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="Under 18">
-                        <label class="form-check-label" for="age-under-18">
-                           Under 18
-                        </label>
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label" for="age-category[]">Women's:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="WD">
+                              <label class="form-check-label" for="age-open">
+                                 Open
+                              </label>
+                           </div>
+
+
+                        </fieldset>
                      </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="Under 16">
-                        <label class="form-check-label" for="age-under-16">
-                           Under 16
-                        </label>
+
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label" for="age-category[]">Men's:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="MD">
+                              <label class="form-check-label" for="age-open">
+                                 Open
+                              </label>
+                           </div>
+                        </fieldset>
                      </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="Under 14">
-                        <label class="form-check-label" for="age-under-14">
-                           Under 14
-                        </label>
-                     </div>
-                  </fieldset>
+                  </div>
+                  <div>
+                     <fieldset class="form-group">
+                        <label class="form-label" for="age-category[]">Mixed:</label>
+                        <div class="form-check">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-adult-open" value="AX">
+                           <label class="form-check-label" for="age-adult-open">
+                              Adult Open
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-kids-open" value="KX">
+                           <label class="form-check-label" for="age-kids-open">
+                              Kids Open
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="XD-18">
+                           <label class="form-check-label" for="age-under-18">
+                              Under 18
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="XD-16">
+                           <label class="form-check-label" for="age-under-16">
+                              Under 16
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="XD-14">
+                           <label class="form-check-label" for="age-under-14">
+                              Under 14
+                           </label>
+                        </div>
+
+                     </fieldset>
+                  </div>
                </div>
 
                <script>
@@ -332,7 +437,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      var singlesSection = document.getElementById("tournament-format-singles");
                      var doublesSection = document.getElementById("tournament-format-doubles");
 
-                     if (formatSelect.value === "Singles") {
+                     if (formatSelect.value === "singles") {
                         singlesSection.style.display = "block";
                         doublesSection.style.display = "none";
                      } else {
