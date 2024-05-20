@@ -61,44 +61,48 @@ $version = date('Ymd');
         <!-- picture upload ui -->
         <div style="padding-top: 93px;">
             <div style=" display:flex; justify-content:center; ">
-                <div>
-                    <?php $id = $_GET['id']; ?>
-                    <form action="add.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data" style="width:100%; min-width:300px;">
-                        <label for="formFile" class="form-label">Upload Pictures:</label>
+                <?php
+                if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
+                ?>
+                    <div>
+                        <?php $id = $_GET['id']; ?>
+                        <form action="add.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data" style="width:100%; min-width:300px;">
+                            <label for="formFile" class="form-label">Upload Pictures:</label>
 
-                        <div class="d-flex flex-column flex-sm-row mb-3 col-sm-12">
-                            <div class="mb-3 me-2">
-                                <input class="form-control" type="file" id="picture" name="picture[]" accept=".jpg, .jpeg, .png" multiple required>
+                            <div class="d-flex flex-column flex-sm-row mb-3 col-sm-12">
+                                <div class="mb-3 me-2">
+                                    <input class="form-control" type="file" id="picture" name="picture[]" accept=".jpg, .jpeg, .png" multiple required>
+                                </div>
+                                <div class="mb-3 me-2 ">
+                                    <button type="submit" class="btn btn-success w-100" name="submit">Add</button>
+                                </div>
+                                <div class="mb-3 me-2 ">
+                                    <a href="../../../index.php" class="btn btn-danger w-100">Cancel</a>
+                                </div>
+                                <div class="mb-3 me-2">
+                                    <?php
+                                    $id = $_GET['id'];
+
+                                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                                    $sql = "SELECT * FROM gallery WHERE id=$id;";
+                                    $result = mysqli_query($conn, $sql);
+                                    mysqli_close($conn);
+                                    $row = mysqli_fetch_assoc($result);
+
+                                    // Directory path
+                                    $tittle = $row['tittle'];
+                                    $tittle = strtolower(preg_replace('/\s+/', '-', $tittle));
+                                    $directory = "../../../Images/gallary/{$row['category']}/" . $tittle . "/";
+                                    ?>
+
+                                    <a href="delete_all.php?directory='<?= $directory ?>'&id='<?= $id ?>'" class="btn btn-danger w-100">Delete All</a>
+
+                                </div>
                             </div>
-                            <div class="mb-3 me-2 ">
-                                <button type="submit" class="btn btn-success w-100" name="submit">Add</button>
-                            </div>
-                            <div class="mb-3 me-2 ">
-                                <a href="../../../index.php" class="btn btn-danger w-100">Cancel</a>
-                            </div>
-                            <div class="mb-3 me-2">
-                                <?php
-                                $id = $_GET['id'];
 
-                                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                                $sql = "SELECT * FROM gallery WHERE id=$id;";
-                                $result = mysqli_query($conn, $sql);
-                                mysqli_close($conn);
-                                $row = mysqli_fetch_assoc($result);
-
-                                // Directory path
-                                $tittle = $row['tittle'];
-                                $tittle = strtolower(preg_replace('/\s+/', '-', $tittle));
-                                $directory = "../../../Images/gallary/{$row['category']}/" . $tittle . "/";
-                                ?>
-
-                                <a href="delete_all.php?directory='<?= $directory ?>'&id='<?= $id ?>'" class="btn btn-danger w-100">Delete All</a>
-
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+                        </form>
+                    </div>
+                <?php } ?>
             </div>
 
             <!-- Image input form end -->
@@ -153,7 +157,11 @@ $version = date('Ymd');
                             // Output the image HTML
                             echo '<div class="image-container" style="position: relative;">';
                             echo '<img data-aos="fade-up" data-aos-duration="2000" src="' . $directory . $file . '">';
-                            echo '<div style="position: absolute; top:10px; right:10px;"><a href="delete_pic.php?directory=' . $directory . '&file=' . $file . '&id=' . $id . '" class="link-danger" ><i class="fa-solid fa-trash fs-5"></i></a></div>';
+                            echo '<div style="position: absolute; top:10px; right:10px;">';
+                            if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
+                                echo '<a href="delete_pic.php?directory=' . $directory . '&file=' . $file . '&id=' . $id . '" class="link-danger"><i class="fa-solid fa-trash fs-5"></i></a>';
+                            }
+                            echo '</div>';
                             echo '</div>';
                         }
                     }

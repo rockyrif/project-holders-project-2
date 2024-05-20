@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
+
 
 $id = $_GET['id'];
 
@@ -30,3 +32,6 @@ if (isset($_GET['directory']) && isset($_GET['file'])) {
     header('Location: view-gallery.php?id=' . $id);
     exit;
 }
+} else {
+    header("Location: ../../../index.php");
+} 

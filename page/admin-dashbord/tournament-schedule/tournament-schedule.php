@@ -14,7 +14,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       $grade = mysqli_real_escape_string($conn, $_POST['grade']);
       $start_date = mysqli_real_escape_string($conn, $_POST['start-date']);
       $end_date = mysqli_real_escape_string($conn, $_POST['end-date']);
-      $tournament_format = mysqli_real_escape_string($conn, $_POST['tournament-format']);
+      
       $description = mysqli_real_escape_string($conn, $_POST['description']);
 
       // Process age-category array
@@ -26,8 +26,8 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       }
 
       // Construct SQL query
-      $sql = "INSERT INTO tournament_schedule (name, type, grade, start_date, end_date, tournament_format, `age_category[]`, description) 
-            VALUES ('$name', '$type', '$grade', '$start_date', '$end_date', '$tournament_format', '$age_category', '$description')";
+      $sql = "INSERT INTO tournament_schedule (name, type, grade, start_date, end_date, `age_category[]`, description) 
+            VALUES ('$name', '$type', '$grade', '$start_date', '$end_date', '$age_category', '$description')";
 
       // Execute the query
       if ($conn->query($sql) === TRUE) {
@@ -84,6 +84,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      <option value="Fruit Juice">Fruit Juice</option>
                      <option value="Beach Tennis">Beach Tennis</option>
                      <option value="Ranking">Ranking</option>
+                     <option value="Inter School">Inter School</option>
                      <option value="Year End">Year End</option>
                      <option value="Other">Other</option>
                   </select>
@@ -127,7 +128,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                <div class="mb-3">
                   <label class="form-label" for="type">Type:</label>
                   <select class="form-select" name="type" id="type" required>
-                     <option value="SLTA Tennis">SLTA Tennis</option>
+                     <option value="SLTA Tennis Tour">SLTA Tennis Tour</option>
                      <option value="Club Tennis">Club Tennis</option>
                   </select>
                </div>
@@ -154,19 +155,13 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                   <input type="date" class="form-control" name="end-date" placeholder="1999-06-22" required>
                </div>
 
-               <div class="text-center mb-3">
-                  <h3>SELECT TYPES OF MATCHES</h3>
-               </div>
 
-               <div class="mb-3">
-                  <label class="form-label" for="tournament-format">Tournament Format:</label>
-                  <select class="form-select" name="tournament-format" id="tournament-format" onchange="toggleSections()" required>
-                     <option value="singles">Singles</option>
-                     <option value="doubles">Doubles</option>
-                  </select>
-               </div>
+
 
                <div id="tournament-format-singles" class="mb-3">
+                  <div class="text-center mb-3">
+                     <h3>SINGLE MATCHES</h3>
+                  </div>
                   <div class="d-flex justify-content-between">
                      <div>
                         <fieldset class="form-group">
@@ -304,7 +299,10 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                   </div>
                </div>
 
-               <div id="tournament-format-doubles" style="display: none;" class="mb-3">
+               <div id="tournament-format-doubles" class="mb-3">
+                  <div class="text-center mb-3">
+                     <h3>DOUBLE MATCHES</h3>
+                  </div>
                   <div class="d-flex justify-content-between">
                      <div>
                         <fieldset class="form-group">
@@ -430,45 +428,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                   </div>
                </div>
 
-               <script>
-                  function toggleSections() {
-                     var formatSelect = document.getElementById("tournament-format");
-                     var singlesSection = document.getElementById("tournament-format-singles");
-                     var doublesSection = document.getElementById("tournament-format-doubles");
 
-                     if (formatSelect.value === "singles") {
-                        singlesSection.style.display = "block";
-                        doublesSection.style.display = "none";
-                     } else {
-                        singlesSection.style.display = "none";
-                        doublesSection.style.display = "block";
-                     }
-                  }
-
-                  function prepareFormData() {
-                     var singlesSection = document.getElementById("tournament-format-singles");
-                     var doublesSection = document.getElementById("tournament-format-doubles");
-
-                     if (singlesSection.style.display === "none") {
-                        removeHiddenSectionData(doublesSection);
-                     } else {
-                        removeHiddenSectionData(singlesSection);
-                     }
-                  }
-
-                  function removeHiddenSectionData(section) {
-                     var inputs = section.querySelectorAll('input, select');
-                     inputs.forEach(function(input) {
-                        if (!input.closest("#tournament-format-singles") || input.closest("#tournament-format-singles").style.display !== "none") {
-                           // If the input is not inside the hidden section or if the hidden section is not hidden
-                           input.removeAttribute('disabled');
-                        } else {
-                           // If the input is inside the hidden section and the hidden section is hidden
-                           input.setAttribute('disabled', 'disabled');
-                        }
-                     });
-                  }
-               </script>
 
                <div class="mb-3">
                   <label class="form-label">Description:</label>
