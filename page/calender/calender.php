@@ -118,9 +118,9 @@ session_start();
                             <img src="../../Images/logo.png" alt="Logo" class="card-logo">
                             <h2 class="card-title"><?= $row['name'] ?></h2>
                             <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
-                            <p class="card-subtitle"><?= $row['description'] ?></p>
+                            <p class="card-subtitle">Ampara District Tennis Club</p>
                             <ul class="card-details">
-                                <li> Grade - <?= $row['grade'] ?></li>
+                                
                                 <li> Start Date - <?= $row['start_date'] ?></li>
                                 <li> End date - <?= $row['end_date'] ?></li>
                                 <li> Age Categories - <?= $row['age_category[]'] ?></li>

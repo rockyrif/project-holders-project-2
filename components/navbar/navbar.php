@@ -429,9 +429,9 @@
                                     COURTS
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/courts/courts.php">About
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/ADTC-Assets/courts.php">About
                                             courts we have</a></li>
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/courts/courts.php">Image
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/ADTC-Assets/courts.php">Image
                                             Gallery</a></li>
                                 </ul>
                             </li>

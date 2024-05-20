@@ -11,7 +11,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       // Get form data and sanitize it
       $name = mysqli_real_escape_string($conn, $_POST['tournament-name']);
       $type = mysqli_real_escape_string($conn, $_POST['type']);
-      $grade = mysqli_real_escape_string($conn, $_POST['grade']);
+     
       $start_date = mysqli_real_escape_string($conn, $_POST['start-date']);
       $end_date = mysqli_real_escape_string($conn, $_POST['end-date']);
       
@@ -26,8 +26,8 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       }
 
       // Construct SQL query
-      $sql = "INSERT INTO tournament_schedule (name, type, grade, start_date, end_date, `age_category[]`, description) 
-            VALUES ('$name', '$type', '$grade', '$start_date', '$end_date', '$age_category', '$description')";
+      $sql = "INSERT INTO tournament_schedule (name, type, start_date, end_date, `age_category[]`, description) 
+            VALUES ('$name', '$type', '$start_date', '$end_date', '$age_category', '$description')";
 
       // Execute the query
       if ($conn->query($sql) === TRUE) {
@@ -81,12 +81,13 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                <div class="mb-3">
                   <label class="form-label" for="tournament-name-dropdown">Name of Tournament:</label>
                   <select class="form-select" name="tournament-name-dropdown" id="tournament-name-dropdown" required>
-                     <option value="Fruit Juice">Fruit Juice</option>
-                     <option value="Beach Tennis">Beach Tennis</option>
-                     <option value="Ranking">Ranking</option>
-                     <option value="Inter School">Inter School</option>
-                     <option value="Year End">Year End</option>
-                     <option value="Other">Other</option>
+                     <option value="Fruit Juice & Beach Tennis Tournament">Fruit Juice & Beach Tennis Tournament</option>
+                     <option value="Fruit Juice Tournament">Fruit Juice Tournament</option>
+                     <option value="Beach Tennis Tournament">Beach Tennis Tournament</option>
+                     <option value="Ranking Tournmaent">Ranking Tournament</option>
+                     <option value="Inter School Tournmaent">Inter School Tournament</option>
+                     <option value="Year End Tournmaent">Year End Tournament</option>
+                     <option value="Other Tournament">Other Tournament</option>
                   </select>
                </div>
                <div class="mb-3 tournament-name-text-div" id="tournament-name-text-div" style="display: none;">
@@ -98,7 +99,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                <script>
                   document.getElementById('tournament-name-dropdown').addEventListener('change', function() {
                      var otherInputDiv = document.getElementById('tournament-name-text-div');
-                     if (this.value === 'Other') {
+                     if (this.value === 'Other Tournament') {
                         otherInputDiv.style.display = 'block';
                      } else {
                         otherInputDiv.style.display = 'none';
@@ -110,7 +111,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      var otherValue = document.getElementById('tournament-name-text').value.trim();
                      var combinedValue;
 
-                     if (dropdownValue === 'Other') {
+                     if (dropdownValue === 'Other Tournament') {
                         if (otherValue === '') {
                            event.preventDefault(); // Prevent form submission if "Other" is selected but no name is entered
                            alert('Please enter a tournament name.');
@@ -128,20 +129,8 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                <div class="mb-3">
                   <label class="form-label" for="type">Type:</label>
                   <select class="form-select" name="type" id="type" required>
-                     <option value="SLTA Tennis Tour">SLTA Tennis Tour</option>
-                     <option value="Club Tennis">Club Tennis</option>
-                  </select>
-               </div>
-
-               <div class="mb-3">
-                  <label class="form-label" for="grade">Grade:</label>
-                  <select class="form-select" name="grade" id="grade" required>
-                     <option value="Grade 1">Grade 1</option>
-                     <option value="Grade 2">Grade 2</option>
-                     <option value="Grade 3">Grade 3</option>
-                     <option value="Grade 4">Grade 4</option>
-                     <option value="Grade 5">Grade 5</option>
-                     <option value="Not defined">Not defined</option>
+                     <option value="SLTA Tennis Tour">SLTA Tennis</option>
+                     <option value="ADTC Tennis">ADTC Tennis</option>
                   </select>
                </div>
 
@@ -155,9 +144,6 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                   <input type="date" class="form-control" name="end-date" placeholder="1999-06-22" required>
                </div>
 
-
-
-
                <div id="tournament-format-singles" class="mb-3">
                   <div class="text-center mb-3">
                      <h3>SINGLE MATCHES</h3>
@@ -166,12 +152,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      <div>
                         <fieldset class="form-group">
                            <label class="form-label" for="age-category[]">Boys:</label>
-                           <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="BS">
-                              <label class="form-check-label" for="age-open">
-                                 Open
-                              </label>
-                           </div>
+                           
                            <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BS-18">
                               <label class="form-check-label" for="age-under-18">
@@ -209,9 +190,9 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-7" value="BS-7">
-                              <label class="form-check-label" for="age-under-7">
-                                 Under 7
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-6" value="BS-6">
+                              <label class="form-check-label" for="age-under-6">
+                                 Under 6
                               </label>
                            </div>
                         </fieldset>
@@ -220,12 +201,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      <div>
                         <fieldset class="form-group">
                            <label class="form-label" for="age-category[]">Girls:</label>
-                           <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="GS">
-                              <label class="form-check-label" for="age-open">
-                                 Open
-                              </label>
-                           </div>
+                           
                            <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="GS-18">
                               <label class="form-check-label" for="age-under-18">
@@ -263,9 +239,9 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-7" value="GS-7">
-                              <label class="form-check-label" for="age-under-7">
-                                 Under 7
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-6" value="GS-6">
+                              <label class="form-check-label" for="age-under-6">
+                                 Under 6
                               </label>
                            </div>
                         </fieldset>
@@ -307,12 +283,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      <div>
                         <fieldset class="form-group">
                            <label class="form-label" for="age-category[]">Boys:</label>
-                           <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="BD">
-                              <label class="form-check-label" for="age-open">
-                                 Open
-                              </label>
-                           </div>
+                           
                            <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BD-18">
                               <label class="form-check-label" for="age-under-18">
@@ -331,18 +302,19 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                                  Under 14
                               </label>
                            </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="BD-12">
+                              <label class="form-check-label" for="age-under-12">
+                                 Under 12
+                              </label>
+                           </div>
                         </fieldset>
                      </div>
 
                      <div>
                         <fieldset class="form-group">
                            <label class="form-label" for="age-category[]">Girls:</label>
-                           <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="GD">
-                              <label class="form-check-label" for="age-open">
-                                 Open
-                              </label>
-                           </div>
+                        
                            <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="GD-18">
                               <label class="form-check-label" for="age-under-18">
@@ -359,6 +331,12 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                               <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="GD-14">
                               <label class="form-check-label" for="age-under-14">
                                  Under 14
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="GD-12">
+                              <label class="form-check-label" for="age-under-12">
+                                 Under 12
                               </label>
                            </div>
 
@@ -394,33 +372,33 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      <fieldset class="form-group">
                         <label class="form-label" for="age-category[]">Mixed:</label>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-adult-open" value="AX">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-adult-open" value="X">
                            <label class="form-check-label" for="age-adult-open">
-                              Adult Open
+                              Open
                            </label>
                         </div>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-kids-open" value="KX">
-                           <label class="form-check-label" for="age-kids-open">
-                              Kids Open
-                           </label>
-                        </div>
-                        <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="XD-18">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="X-18">
                            <label class="form-check-label" for="age-under-18">
                               Under 18
                            </label>
                         </div>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="XD-16">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="X-16">
                            <label class="form-check-label" for="age-under-16">
                               Under 16
                            </label>
                         </div>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="XD-14">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="X-14">
                            <label class="form-check-label" for="age-under-14">
                               Under 14
+                           </label>
+                        </div>
+                        <div class="form-check">
+                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="X-12">
+                           <label class="form-check-label" for="age-under-12">
+                              Under 12
                            </label>
                         </div>
 
