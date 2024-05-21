@@ -46,10 +46,3 @@ git update-index --skip-worktree manifest.json
 
 you 1
 
-you 2
-my 1
-
-my 2
-
-my 3
-
