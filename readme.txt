@@ -45,7 +45,3 @@ git update-index --skip-worktree PHP-mailer/index.php
 git update-index --skip-worktree manifest.json 
 
 test
-
-test1
-
-test2
