@@ -451,6 +451,7 @@
                                             Year End Finals</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter
                                             School Tournaments</a></li>
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Beach Tennis Tournament</a></li>
 
                                 </ul>
                             </li>
