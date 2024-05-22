@@ -18,8 +18,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -53,36 +52,25 @@ session_start();
 
 
                 <div class="carousel-inner">
-                    <div class="carousel-item active img  img-1"  id="founder">
+                    <div class="carousel-item active img  img-1" id="founder">
                         <div class="curousel-object">
-                            <img alt="Tennis-bat-2" src="../../Images/home-page-carousal/Tennis-bat.gif">
+                            <img alt="Tennis-bat-2" src="../../Images/home-page-carousal/Tennis-bat.png">
                         </div>
                         <div class="content-flex-center">
                             <div class="carousal-content-and-indicator">
-                                <div class="carousel-content carousel-content-4" data-aos="fade-up"
-                                    data-aos-duration="1000">
+                                <div class="carousel-content carousel-content-4" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="carousal-para-head">
                                         <div class="mb-3">
-                                            <img alt="dig-sir" src="../../Images/home-page-carousal/dig-sir.jpg" height="150"
-                                                style="border-radius: 100%;">
+                                            <img alt="dig-sir" src="../../Images/home-page-carousal/dig-sir.jpg" height="150" style="border-radius: 100%;">
                                         </div>
                                         <h5 class="carousal-para-heading">Founder's Message</h5>
                                         <div class="carousal-para">
-                                            <p>I am honored to welcome you to the Ampara District Tennis Club. Our
-                                                commitment
-                                                extends beyond law enforcement, it encompasses fostering a community
-                                                united
-                                                by
-                                                the
-                                                love of tennis. Join us in this endeavor, where the spirit of the game
-                                                intertwines
-                                                with the values of discipline, teamwork, and excellence. Together, let's
-                                                make
-                                                our
-                                                tennis club a beacon of camaraderie and athletic achievement in Ampara
-                                                District.
+                                            <p>Welcome to the Ampara District Tennis Club! We are dedicated to fostering a community passionate about
+                                                tennis. Join us on the courts to embrace the values of discipline, teamwork, and excellence. Let's make our
+                                                club a vibrant and enjoyable place, where every achievement is a victory worth celebrating.
 
-                                                <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div> <div class="ocupation"> Founder & Deputy Inspector
+                                            <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div>
+                                            <div class="ocupation"> Founder & Deputy Inspector
                                                 General of Police</div>
                                             </p>
                                         </div>

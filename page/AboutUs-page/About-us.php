@@ -73,9 +73,24 @@ session_start();
         <div class="about-us container">
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club (ADTC) started in 2023 with Deputy Inspector General of Police, Mr. H.A.N.K. Damayantha Wijaya Sri, leading the way. It was founded to promote tennis in the community and quickly became a popular spot for tennis lovers in the region. The club aims to bring people together through inclusive tennis events that promote harmony in society. By focusing on values like teamwork, respect, and fair play, the club creates a positive environment where people from different backgrounds connect through their shared love for tennis. Outreach programs, tennis clinics, and community events will also help strengthen social bonds, fostering understanding and cooperation among residents of the Ampara district.<br><br>
-
-                    Even though the ADTC had few resources at the start, it kept going strong and made impressive progress fast. By welcoming everyone, helping people get better at tennis, and getting the community involved, the Ampara District Tennis Club has become really important. It brings together tennis fans and makes the sports scene in the community more exciting. </p>
+                <p data-aos="fade-up" data-aos-duration="2000">
+                    The Ampara District Tennis Club (ADTC) was established in 2023 under the guidance of Mr.
+                    H.A.N.K. Damayantha Wijaya Sri, Deputy Inspector General of Police. ADTC has quickly
+                    become one of the fastest-growing sports clubs in the country. Despite limited resources, ADTC
+                    has successfully built nine tennis courts across the district.<br><br>
+                    In a world where harmony among communities is a widely discussed topic, Ampara stands out as
+                    a district where diverse communities coexist. Sport, particularly tennis, is a powerful tool for
+                    fostering racial harmony. ADTC is committed to strengthening social cohesion through tennis
+                    across the island.<br><br>
+                    ADTC aims to popularize tennis among all schools in the district, with the primary objective of
+                    developing national and international level tennis players from Digamadulla. Our focus extends
+                    beyond tennis development to include enhancing children's language proficiency, communication
+                    skills, personality, and leadership qualities.<br><br>
+                    In addition to promoting tennis, ADTC conducts outreach programs, community development
+                    projects, health campaigns, and CSR initiatives to foster happiness and prosperity in the
+                    community. Join us at ADTC, where we are dedicated to creating a vibrant, inclusive, and thriving
+                    community through the love of tennis.
+                </p>
             </div>
 
             <div class="gallery">

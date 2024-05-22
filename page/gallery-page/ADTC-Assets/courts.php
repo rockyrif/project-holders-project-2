@@ -64,7 +64,7 @@ session_start();
                 <div class="carousel-item">
                     <img src="../../../Images/moving-img/tennis-courts/3.jpg" class="d-block w-100" alt="...">
                 </div>
-        
+
                 <div class="carousel-item">
                     <img src="../../../Images/moving-img/tennis-courts/5.jpg" class="d-block w-100" alt="...">
                 </div>
@@ -83,15 +83,20 @@ session_start();
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">
-                    The goal of building these courts is to make it easier for people of all ages and skill levels in Ampara to play tennis on good-quality courts. This will encourage fair play, physical activity, and bring the community together.<br>
+                    There are Nine Tennis courts throughout the district as follows.<br>
+                </p>
                 <ul data-aos="fade-up" data-aos-duration="2000">
-                    <li>DS Sennayaka School</li>
-                    <li>ADTC Tennis Court Complex</li>
-                    <li>Polwatta School Court</li>
+                    <li>ADTC Courts Complex (Four Courts)</li>
+                    <li>DS Sennayaka College</li>
+                    <li>Polwatta National School</li>
                     <li>Pothuvil National School</li>
                     <li>Hardy Advanced Technological Institute</li>
-                    <li>Gamini National School.</li>
+                    <li>Gamini National School</li>
                 </ul>
+                <p data-aos="fade-up" data-aos-duration="2000">
+                Out of the nine courts mentioned, five courts (four at ADTC and one at D.S. Senanayake College)
+                are equipped with lights, allowing for day and night play. All the courts are used for coaching
+                programs, tennis clinics, and national and international level tennis tournaments.
                 </p>
             </div>
 
@@ -120,7 +125,7 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/ADTC-Assets/courts/8.jpg">
                 </div>
-                
+
             </div>
 
         </div>

@@ -77,22 +77,20 @@ session_start();
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="coach-background">
-                    <div class="content">
-                        <h4 style=" font-weight: bold;">Professional tennis coaching available:</h4>
-                        <p>ADTC coaching team cater to all levels of players, from beginners (of all ages) to competition players.
-                        </p>
-                        <p>Equipment is supplied.
-                        </p>
-                        <p class="fs-5" style="text-decoration: underline;">Coaching is available as follows
+                    <div  style="font-family: Arial, sans-serif;">
+                        <h1>Professional tennis coaching available:</h1>
+                        <p>ADTC offers professional coaching sessions to enhance your tennis skills. We conduct the
+                            following coaching sessions on weekdays and weekends:
                         </p>
                         <ul>
-                            <li>Week Days and Week Nights
+                            <li>Group Coaching: Free of charge.
                             </li>
-                            <li>Weekends and Weekends Nights
+                            <li>Individual Coaching: 1000/= per hour.
                             </li>
-                            <li> Individual or Group</li>
                         </ul>
-                        <p class="fs-5">If you are interested in joining the coaching program please contact:
+                        <p >Our experienced coaches are dedicated to helping you reach your full potential on the court.
+                            Whether you prefer group sessions or one-on-one coaching, we are here to support your tennis
+                            journey.
                         </p>
                     </div>
                 </div>

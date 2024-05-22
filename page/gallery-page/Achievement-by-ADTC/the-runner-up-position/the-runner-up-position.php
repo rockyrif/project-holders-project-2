@@ -8,18 +8,17 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
-    
+
     <link rel="stylesheet" href="../../common-css-and-js/style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -40,7 +39,7 @@ session_start();
 
         <!-- Navbar start -->
         <?php
-            include '../../../../components/navbar/navbar.php'; 
+        include '../../../../components/navbar/navbar.php';
         ?>
         <!-- Navbar end -->
 
@@ -52,28 +51,30 @@ session_start();
             </div>
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">For the second consecutive time, Uvidu Sri Basuru, a third-year student at Ampara Kawantissa School, secured the runner-up position in the PTS Orange Ball Tennis Tournament organized by the Sri Lanka Tennis Association.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">Uvindu Sri Basuru, a third-grade student at Ampara Kawantissa School, has once again demonstrated his
+                    exceptional talent in tennis by securing the runner-up position in the PTS Orange Ball Tennis Tournament
+                    organized by the Sri Lanka Tennis Association. This impressive achievement marks the second consecutive
+                    time that Uvindu has excelled in this prestigious tournament. His consistent performance highlights his
+                    dedication and skill in the sport, bringing pride to Ampara and serving as an inspiration to aspiring young
+                    tennis players.
+                </p>
             </div>
 
             <div class="gallery">
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/1.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/1.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/2.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/2.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/3.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/3.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/4.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Achievement-by-ADTC/the-runner-up-position/4.jpg">
                 </div>
-                
-                
+
+
             </div>
 
         </div>

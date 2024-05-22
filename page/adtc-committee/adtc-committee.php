@@ -45,33 +45,43 @@ session_start();
 
         <!-- moving images start -->
         <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="gallary-tittle">
-                        <div class="">ADTC Founder</div>
-                    </div>
-                    <div class="carousel-item active">
-                        <img src="../../Images/moving-img/adtc-founder/1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../Images/moving-img/adtc-founder/2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../Images/moving-img/adtc-founder/3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    
-                   
-
+            <div class="carousel-inner">
+                <div class="gallary-tittle">
+                    <div class="">ADTC Founder</div>
                 </div>
+                <div class="carousel-item active">
+                    <img src="../../Images/moving-img/adtc-founder/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../Images/moving-img/adtc-founder/2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../Images/moving-img/adtc-founder/3.jpg" class="d-block w-100" alt="...">
+                </div>
+
+
+
             </div>
-            <!-- moving images end -->
+        </div>
+        <!-- moving images end -->
 
         <!-- adtc-committee-page-start -->
         <div class="adtc-committee">
 
-            
+
 
             <div class="gallary-heading container">
-                <p style="text-align: left;" data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club (ADTC) made its mark on the sporting scene in 2023, thanks to the visionary leadership of Deputy Inspector General of Police, Mr. H.A.N.K. Damayantha Wijaya Sri. The club aimed to make tennis great in the community and quickly became a lively place for tennis fans in the area.</p>
+                <p style="text-align: left;" data-aos="fade-up" data-aos-duration="2000">Until 2022, the kids in Ampara had no access to tennis. However, the arrival of Mr. Damayantha Wijaya
+                    Sri as Deputy Inspector General of Ampara marked a significant change. He initiated the construction of
+                    the district's first tennis court at DS Senanayaka College. Eight additional tennis courts were built
+                    consecutively at Polwaththa Vidyalaya, Hardy Advanced Technological Institute, Gamini Vidyalaya, and
+                    Ampara Senarath Somarathna Ground.<br><br>
+
+                    Mr. Damayantha Wijaya Sri, driven by the belief that all children deserve equal opportunities regardless of
+                    their birthplace, has worked tirelessly to support the children of Digamadulla. Despite facing numerous
+                    challenges, his visionary leadership has greatly benefited the community.
+                    DIG Damayantha Wijaya Sri’s ambition is to develop tennis players from Ampara who will one day achieve
+                    international titles.</p>
             </div>
 
 
@@ -82,7 +92,7 @@ session_start();
                     <img alt="Achievement-by-ADTC" src="../../Images/adtc-committee/1.jpg" class="image-button-container">
 
                     <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri<br>
-                        <button type="button" class="btn btn-success gallery-button mt-1" onclick="window.location.href='../founder-msg/founder-msg.php'">Founder's Message</button>
+                        <button type="button" class="btn btn-success gallery-button mt-1" onclick="window.location.href='../founder-msg/founder-msg.php'">Founder's message</button>
                     </p>
                 </div>
 

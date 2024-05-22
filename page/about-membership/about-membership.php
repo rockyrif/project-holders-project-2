@@ -76,33 +76,43 @@ session_start();
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000" style="font-family: Arial, sans-serif;">
-                <h3 style=" font-weight: bold;">Membership</h3><br>
-                <p><span style=" font-weight: bold;">Welcome to Ampara District Tennis Club (ADTC) Membership information page.</span> </p>
-                <p style=" font-weight: bold;">The Ampara District Tennis Club’s purposes are:</p>
+                <h1>About Memberships</h1>
+                <p>Welcome to the Ampara District Tennis Club (ADTC) Membership Information Page.</p>
+
+                <h2>What ADTC Offers:</h2>
                 <ul>
-                    <li>To provide a safe, well-maintained environment where tennis can be played.</li>
-                    <li>To provide quality tennis playing opportunities for players of all ages, genders, cultures, and abilities.</li>
-                    <li>To encourage tennis participation among children of all ages and abilities.</li>
-                    <li>To arrange social activities for the enjoyment of members of the association.</li>
-                    <li>To do such things incidental to the above which the association or the committee may consider desirable in the interests of the association and its members.</li>
+                    <li>A safe, well-maintained environment for playing tennis.</li>
+                    <li>Quality tennis opportunities for players of all ages, genders, cultures, and abilities.</li>
+                    <li>Social and recreational activities for members.</li>
+                    <li>Pathways for national and international level achievements.</li>
                 </ul>
-                <p><u>We offer Adult and Junior memberships.</u></p>
-                <p>Note: Lighting access is now available with all of the above membership options by default. You don't need to pay anything extra.</p>
-                <hr>
-                <h4>Benefits & Features</h4>
+
+                <h2>Our Mission:</h2>
+                <p>ADTC aims to promote and popularize tennis among both children and adult players.</p>
+
+                <h2>Membership Fees:</h2>
+                <p>Membership fees cover:</p>
                 <ul>
-                    <li>Membership of ADTC is necessary to participate in competitions.</li>
-                    <li>Membership also entitles players to use lighting after sunset.</li>
-                    <li>Membership with ADTC allows you to enjoy other benefits and coverage from Tennis Club (please contact us for more details).</li>
-                    <li>Please note that guest fees and lights usage charges are additional to membership fees which you can select as extras when subscribing.</li>
+                    <li>Court maintenance</li>
+                    <li>Coaches' payments</li>
+                    <li>Tournament arrangements</li>
+                    <li>Support for talented players facing financial challenges</li>
                 </ul>
-                <p><strong>Paying for ADTC membership using Bank Transfer</strong></p>
-                <p>If you prefer to pay for your membership using bank transfer, please send us an email at <a href="mailto:amparatennisclub2@gmail.com">amparatennisclub2@gmail.com</a> and we will help you with the process.</p>
-                <p>If you have any inquiries regarding membership you may contact us by following methods:</p>
-                <ol>
-                    <li>Email us with your inquiry at <a href="mailto:admin@adtennis.lk">admin@adtennis.lk</a> and we will get back to you as soon as we can.</li>
-                    <li>Send us an instant message on Facebook Messenger: <a href="https://www.facebook.com/messages/t/100220679757677/">ADTC Facebook Messenger</a></li>
-                </ol>
+                <p>The membership fee is periodically reviewed and set by the committee. Current fees are as follows:</p>
+                <ul>
+                    <li>Adult Players: 2500/= per month</li>
+                    <li>Kid Players: 2000/= per month</li>
+                    <li>Under the lights: 1000/= per hour</li>
+                    <li>Guest Players: 500/= per hour</li>
+                </ul>
+
+                <h2>Payment Information:</h2>
+                <p>Membership fees can be conveniently paid directly to the bank. After completing the transaction, kindly attach the payment slip to the receipt or upload it to our system using the following link: <a href="https://adtennis.lk/project-holders-project-2/page/become-member/add-new.php">Click here to upload your payment slip</a>.</p>
+
+                <h2>Bank Details:</h2>
+                <p>(Insert Bank Details Here)</p>
+
+                <p>Thank you for being a part of ADTC, where we strive to make tennis accessible and enjoyable for everyone.</p>
                 </p>
             </div>
 

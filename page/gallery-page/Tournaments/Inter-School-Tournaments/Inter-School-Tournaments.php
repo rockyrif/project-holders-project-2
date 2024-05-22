@@ -8,18 +8,17 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
-    
+
     <link rel="stylesheet" href="../../common-css-and-js/style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -41,61 +40,63 @@ session_start();
 
         <!-- Navbar start -->
         <?php
-        include '../../../../components/navbar/navbar.php'; 
+        include '../../../../components/navbar/navbar.php';
         ?>
         <!-- Navbar end -->
 
         <!-- moving images start -->
         <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="gallary-tittle">
-                        <div class="">Inter School Tournaments</div>
-                    </div>
-                    <div class="carousel-item active">
-                        <img src="../../../../Images/moving-img/inter-school-tournament/1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../../../Images/moving-img/inter-school-tournament/2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../../../Images/moving-img/inter-school-tournament/3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                   
-                   
-
+            <div class="carousel-inner">
+                <div class="gallary-tittle">
+                    <div class="">Inter School Tournaments</div>
                 </div>
+                <div class="carousel-item active">
+                    <img src="../../../../Images/moving-img/inter-school-tournament/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../../../Images/moving-img/inter-school-tournament/2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../../../Images/moving-img/inter-school-tournament/3.jpg" class="d-block w-100" alt="...">
+                </div>
+
+
+
             </div>
-            <!-- moving images end -->
+        </div>
+        <!-- moving images end -->
 
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            
+
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The inter-school tournaments organized by the Ampara District Tennis Club are exciting events where students from different schools in the district can join in. These tournaments are all about getting kids interested in tennis, staying active, and learning about teamwork and fairness. The club wants these tournaments to help create a lively tennis community, get young people involved in sports, and help young athletes grow in the region.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">Currently, children in eleven schools are undergoing tennis coaching. The best way to promote
+                    tennis is by holding tournaments. To achieve this goal, an inter-school tennis tournament was
+                    established. This tournament is held every three months at the ADTC court premises and features
+                    singles, doubles, and mixed categories. Trophies and certificates are awarded to the winners,
+                    runners-up, and second runners-up. Additionally, all participants receive a certificate to motivate
+                    them.<br><br>This initiative fosters cooperation among students from different schools, helping them form
+                    strong bonds. It also encourages principals and staff to promote tennis in their respective schools.
+                    Ultimately, this effort aims to develop national and international-level tennis players from Ampara.</p>
             </div>
 
             <div class="gallery">
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/1.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/1.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/2.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/2.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/3.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/3.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/4.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/4.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/5.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Inter-School-Tournaments/5.jpg">
                 </div>
                 <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"

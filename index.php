@@ -62,7 +62,7 @@ $version = date('Ymd');
 <body>
 
     <div class="home">
-     
+
 
         <!-- Navbar start -->
         <?php
@@ -91,7 +91,10 @@ $version = date('Ymd');
                                     </div>
 
                                     <div class="carousal-para">
-                                        <p>Welcome to Ampara District Tennis Club (ADTC), the top spot for tennis in our area. We're here to share the joy of tennis, encourage good sportsmanship, and create a friendly space for players of every skill level. Join us on the courts for some fun and tennis excitement in Ampara District.
+                                        <p>Welcome to Ampara District Tennis Club (ADTC), the premier destination for tennis
+                                            enthusiasts in our area. We're here to share the joy of Tennis, encourage good
+                                            sportsmanship, and create a friendly space for players of every skill levels. Join us on the
+                                            courts for some fun and Tennis excitement
                                         </p>
                                     </div>
                                 </div>
@@ -130,7 +133,9 @@ $version = date('Ymd');
                                 </div>
 
                                 <div class="carousal-para">
-                                    <p>To create a vibrant tennis community in Ampara District, where people of all ages come together to enjoy the sport, build lasting friendships, and lead active lives.
+                                    <p>To create a vibrant Tennis community in Ampara District, where people of all ages come together
+                                        to enjoy the sport, build lasting friendships, and lead active lives
+
                                     </p>
                                 </div>
                             </div>
@@ -167,7 +172,9 @@ $version = date('Ymd');
                                 </div>
 
                                 <div class="carousal-para">
-                                    <p>Our mission is to provide quality tennis facilities, coaching, and programs that promote skill development, sportsmanship, and inclusivity. We aim to foster a welcoming environment where everyone feels valued and supported in their tennis journey, contributing to the overall well-being of our community.</p>
+                                    <p>Our mission is to offer top-quality tennis facilities, coaching, and programs that enhance leadership skills,
+                                        language proficiency, effective communication, and sportsmanship, all contributing to a healthier nation.
+                                    </p>
                                 </div>
 
                             </div>
@@ -205,7 +212,9 @@ $version = date('Ymd');
                                     </div>
 
                                     <div class="carousal-para">
-                                        <p>Welcome to the Ampara District Tennis Club! Our commitment is all about building a tennis-loving community. Come join us for playing tennis together and embrace values like discipline, teamwork, and excellence. Let's make our club a place of friendship and sporting success in Ampara District.
+                                        <p>Welcome to the Ampara District Tennis Club! We are dedicated to fostering a community passionate about
+                                            tennis. Join us on the courts to embrace the values of discipline, teamwork, and excellence. Let's make our
+                                            club a vibrant and enjoyable place, where every achievement is a victory worth celebrating
 
                                         <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div>
                                         <div class="ocupation"> Founder & Deputy Inspector
@@ -247,8 +256,8 @@ $version = date('Ymd');
                                 </div>
 
                                 <div class="carousal-para">
-                                    <p>Ampara District Tennis Club is dedicated to nurturing tennis talent and promoting
-                                        excellence through its affiliation with the Sri Lanka Tennis Association (SLTA)
+                                    <p>ADTC is dedicated to nurturing tennis talent and promoting excellence through its affiliation with
+                                        the Sri Lanka Tennis Association (SLTA)
                                     </p>
                                 </div>
 
@@ -371,8 +380,9 @@ $version = date('Ymd');
                         </div>
 
                 <?php
-                        
-                    }mysqli_close($conn);
+
+                    }
+                    mysqli_close($conn);
                 } else {
                 }
                 ?>
@@ -419,8 +429,9 @@ $version = date('Ymd');
                         </div>
 
                 <?php
-                        
-                    }mysqli_close($conn);
+
+                    }
+                    mysqli_close($conn);
                 } else {
                 }
                 ?>
@@ -481,8 +492,9 @@ $version = date('Ymd');
                         </div>
 
                 <?php
-                        
-                    }mysqli_close($conn);
+
+                    }
+                    mysqli_close($conn);
                 } else {
                 }
                 ?>
@@ -523,8 +535,9 @@ $version = date('Ymd');
                         </div>
 
                 <?php
-                        
-                    }mysqli_close($conn);
+
+                    }
+                    mysqli_close($conn);
                 } else {
                 }
                 ?>
@@ -585,8 +598,9 @@ $version = date('Ymd');
                         </div>
 
                 <?php
-                        
-                    }mysqli_close($conn);
+
+                    }
+                    mysqli_close($conn);
                 } else {
                 }
                 ?>

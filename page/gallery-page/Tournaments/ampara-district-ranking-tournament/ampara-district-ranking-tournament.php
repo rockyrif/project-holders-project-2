@@ -77,7 +77,13 @@ session_start();
         <div class="section-two">
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">We'll have a Ranking Tournament every three months, working with the Sri Lanka Tennis Association. The first one was from March 29th to March 31st, 2024, at the Ampara District Tennis Courts. It's the start of many competitive events to show off talent in Sri Lanka's tennis community. Players from different places will compete, making it an exciting show of skill and sportsmanship. Working with the Sri Lanka Tennis Association means the tournament meets professional standards and gives new players a chance to shine. Events like this help tennis grow, bringing players and fans closer together.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">Ranking tournaments will be held every six months. Marking a historical milestone, the first Level 05
+                    ranking tennis tournament was held from March 29-31, 2024, with the coordination of SLTA. The second
+                    Level 03 ranking tournament is scheduled for September 6-15, 2024. The primary advantage of ranking
+                    tournaments is the significant exposure they provide to the kids in Ampara, serving as a strong motivational
+                    factor to enhance competitiveness among young tennis players in the district. Additionally, these
+                    tournaments support the development of the local hotel industry.
+                </p>
             </div>
 
             <div class="gallery">

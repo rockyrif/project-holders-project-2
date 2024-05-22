@@ -68,7 +68,9 @@ session_start();
 
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The year-end tennis final tournaments organized by the Ampara District Tennis Club are meant to celebrate the end of a year filled with hard work, improving skills, and friendship among our tennis players. These tournaments show off our players' talents and progress, encouraging fair play and healthy competition. They also bring players, fans, and the community together, showing our club's dedication to tennis and making our community stronger in Ampara District.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">The Year-End Tournament is conducted to evaluate the talents of ADTC kids and adult players. All
+                    participants are ranked based on their performance. This tournament celebrates the efforts and dedication
+                    of the members over the past year.</p>
             </div>
 
             <div class="gallery">

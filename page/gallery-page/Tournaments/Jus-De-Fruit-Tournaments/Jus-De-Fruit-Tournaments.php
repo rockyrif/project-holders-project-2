@@ -70,7 +70,10 @@ session_start();
         <div class="section-two">
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The idea behind it was to create a trophy for the champion that symbolizes a shared experience for everyone involved, acknowledging the collective effort that contributes to the tournament's success.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">The essence of this tennis tournament lies in the creation of a trophy that embodies a shared
+                    experience for all participants, recognizing the collective effort that shapes the success of the
+                    tournament.
+                </p>
             </div>
 
             <div class="gallery">
@@ -86,7 +89,7 @@ session_start();
                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/4.jpg">
                 </div>
-                
+
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/6.jpg">
                 </div>
