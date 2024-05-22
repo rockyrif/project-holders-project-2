@@ -486,18 +486,7 @@
                                             Gallery</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    BEACH TENNIS
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">About
-                                            Beach Tennis</a></li>
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/calender/calender.php">Tournaments / Activities</a></li>
-                                    <li><a class="dropdown-item dropdown" href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Image
-                                            Gallery</a></li>
-                                </ul>
-                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     ACHIEVEMENTS
