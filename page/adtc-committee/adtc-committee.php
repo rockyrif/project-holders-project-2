@@ -71,7 +71,7 @@ session_start();
 
 
             <div class="gallary-heading container">
-                <p style="text-align: left;" data-aos="fade-up" data-aos-duration="2000">Until 2022, the kids in Ampara had no access to tennis. However, the arrival of Mr. Damayantha Wijaya
+                <p style="text-align: left; text-align: justify;" data-aos="fade-up" data-aos-duration="2000">Until 2022, the kids in Ampara had no access to tennis. However, the arrival of Mr. Damayantha Wijaya
                     Sri as Deputy Inspector General of Ampara marked a significant change. He initiated the construction of
                     the district's first tennis court at DS Senanayaka College. Eight additional tennis courts were built
                     consecutively at Polwaththa Vidyalaya, Hardy Advanced Technological Institute, Gamini Vidyalaya, and
