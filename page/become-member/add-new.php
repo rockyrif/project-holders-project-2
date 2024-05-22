@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+// php mailing header
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+
 if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["privilage"] == "admin") {
 ?>
 
@@ -42,7 +48,7 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
          $_SESSION['response'] = "File upload failed with error code: " . $_FILES["picture"]["error"];
       }
 
-      
+
       // Check if image file is a valid format and size
       if ($payment_proof_imageFileType != "jpg" && $payment_proof_imageFileType != "jpeg" && $payment_proof_imageFileType != "png") {
          $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed in .";
@@ -68,7 +74,7 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
             $_SESSION['response'] = "File upload failed with error code: " . $_FILES["profile"]["error"];
          }
 
-         
+
          // Check if image file is a valid format and size
          if ($profile_imageFileType != "jpg" && $profile_imageFileType != "jpeg" && $profile_imageFileType != "png") {
             $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
@@ -86,6 +92,47 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
                $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`, `registration_date`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender','$profile_url','$payment_proof_url','$reg_date')";
 
                if (mysqli_query($conn, $sql)) {
+
+
+
+                  require '../../PHP-mailer/vendor/autoload.php';
+
+
+                  $mail = new PHPMailer(true);
+
+                  try {
+                     $mail->isSMTP();                                            //Send using SMTP
+                     $mail->Host       = 'mail.adtennis.lk';                     //Set the SMTP server to send through
+                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                     $mail->Username   = 'admin@adtennis.lk';                     //SMTP username
+                     $mail->Password   = '2l01xVKb:EO.9p';                               //SMTP password
+                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable explicit TLS encryption
+                     $mail->Port       = 465;
+
+                     // Set custom CA certificates to trust the self-signed certificate
+                     $mail->SMTPOptions = array(
+                        'ssl' => array(
+                           'verify_peer' => false,
+                           'verify_peer_name' => false,
+                           'allow_self_signed' => true
+                        )
+                     );
+
+                     $mail->setFrom('admin@adtennis.lk', 'Auto mail generator');
+                     $mail->addAddress('amparatennisclub2@gmail.com', 'AD tennis');
+
+                     $mail->isHTML(true);
+                     $mail->Subject = 'new member submission';
+                     $mail->Body    = "new member submission from $email";
+                     $mail->AltBody = "new member submission from $email";
+
+                     $mail->send();
+                     echo 'Message has been sent';
+                  } catch (Exception $e) {
+                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                  }
+
+
                   $_SESSION['response'] = "Membership application send for review successfully ";
                   header("Location: ../../index.php");
                   exit;
@@ -132,7 +179,7 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
 
       <div class="container" style="margin-top:93px;">
 
-         
+
 
          <div class="text-center mb-4">
             <h3>Become a new member</h3>
