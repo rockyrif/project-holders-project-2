@@ -13,7 +13,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
     }
 
     if ($conn->query($sql) === TRUE) {
-        $_SESSION['response'] = "Tournament data deleted successfully";
+        $_SESSION['response'] = "Tournament schedule deleted successfully";
         header('location: calender.php');
         exit;
     } else {
