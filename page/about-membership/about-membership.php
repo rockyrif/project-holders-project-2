@@ -76,10 +76,10 @@ session_start();
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000" style="font-family: Arial, sans-serif;">
-                <h1>About Memberships</h1>
+                <h3>About Memberships</h3>
                 <p>Welcome to the Ampara District Tennis Club (ADTC) Membership Information Page.</p>
 
-                <h2>What ADTC Offers:</h2>
+                <h5>What ADTC Offers:</h5>
                 <ul>
                     <li>A safe, well-maintained environment for playing tennis.</li>
                     <li>Quality tennis opportunities for players of all ages, genders, cultures, and abilities.</li>
@@ -87,10 +87,10 @@ session_start();
                     <li>Pathways for national and international level achievements.</li>
                 </ul>
 
-                <h2>Our Mission:</h2>
+                <h5>Our Mission:</h5>
                 <p>ADTC aims to promote and popularize tennis among both children and adult players.</p>
 
-                <h2>Membership Fees:</h2>
+                <h5>Membership Fees:</h5>
                 <p>Membership fees cover:</p>
                 <ul>
                     <li>Court maintenance</li>
@@ -106,10 +106,10 @@ session_start();
                     <li>Guest Players: 500/= per hour</li>
                 </ul>
 
-                <h2>Payment Information:</h2>
+                <h5>Payment Information:</h5>
                 <p>Membership fees can be conveniently paid directly to the bank. After completing the transaction, kindly attach the payment slip to the receipt or upload it to our system using the following link: <a href="https://adtennis.lk/project-holders-project-2/page/become-member/add-new.php">Click here to upload your payment slip</a>.</p>
 
-                <h2>Bank Details:</h2>
+                <h5>Bank Details:</h5>
                 <p>(Insert Bank Details Here)</p>
 
                 <p>Thank you for being a part of ADTC, where we strive to make tennis accessible and enjoyable for everyone.</p>
