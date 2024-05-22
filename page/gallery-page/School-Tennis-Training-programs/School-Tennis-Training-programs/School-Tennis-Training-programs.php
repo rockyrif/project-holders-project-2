@@ -73,9 +73,10 @@ session_start();
 
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
-            <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The primary focus group of ADTC is school children. Currently, our tennis coaching programs are
+            <div class="gallary-info" data-aos="fade-up" data-aos-duration="2000">
+                <p>The primary focus group of ADTC is school children. Currently, our tennis coaching programs are
                     conducted in the following schools:
+                </p>
                 <ul>
                     <li>DS Sennayaka National</li>
                     <li>Bandaranayaka Balika National School</li>
@@ -89,21 +90,22 @@ session_start();
                     <li>Kotavehera Vidyalaya</li>
                     <li>Kavanthissa Primary School</li>
                 </ul>
-                Children under 12 are trained on school premises free of charge by professional coaches, while
-                those over 12 receive their training at the ADTC Tennis Courts Complex. ADTC provides
-                tennis rackets and balls for all coaching sessions.
-                <br><br>
-                In collaboration with the Sri Lanka Tennis Association (SLTA), we also offer advanced
-                coaching sessions and tennis clinics to enhance the skills of identified players. Each month,
-                school children compete with their peers and are ranked based on their performances.
-                <br><br>
-                To add an element of fun, we facilitate beach tennis for school children at Arugambay Beach
-                and Senarath Somarathna Ground. Beach tennis tournaments are organized bi-monthly to
-                provide additional enjoyment and competition
-                <br><br>
-                Through these coaching sessions, children in Digamadulla develop not only tennis skills but
-                also language proficiency, communication abilities, and leadership qualities. Our ultimate
-                objective is to nurture national and international level tennis players from Digamadulla
+                <p>
+                    Children under 12 are trained on school premises free of charge by professional coaches, while
+                    those over 12 receive their training at the ADTC Tennis Courts Complex. ADTC provides
+                    tennis rackets and balls for all coaching sessions.
+                    <br><br>
+                    In collaboration with the Sri Lanka Tennis Association (SLTA), we also offer advanced
+                    coaching sessions and tennis clinics to enhance the skills of identified players. Each month,
+                    school children compete with their peers and are ranked based on their performances.
+                    <br><br>
+                    To add an element of fun, we facilitate beach tennis for school children at Arugambay Beach
+                    and Senarath Somarathna Ground. Beach tennis tournaments are organized bi-monthly to
+                    provide additional enjoyment and competition
+                    <br><br>
+                    Through these coaching sessions, children in Digamadulla develop not only tennis skills but
+                    also language proficiency, communication abilities, and leadership qualities. Our ultimate
+                    objective is to nurture national and international level tennis players from Digamadulla
                 </p>
 
             </div>
