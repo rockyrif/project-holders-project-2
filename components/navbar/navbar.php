@@ -374,8 +374,7 @@
                                                 members</a></li>
                                         <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing" target="_blank">Edit
                                                 Feedback form</a></li>
-                                        <li><a class="dropdown-item" href="https://calendar.google.com/calendar/u/0/r" target="_blank">Edit
-                                                Calendar</a></li>
+                                        
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/member-fees/member_fees.php" target="_blank">Edit
                                                 Payment</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/add-gallery/add-gallery.php" target="_blank">Add
