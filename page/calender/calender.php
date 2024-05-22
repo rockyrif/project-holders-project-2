@@ -120,20 +120,25 @@ session_start();
                             <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
                             <p class="card-subtitle">Ampara District Tennis Club</p>
                             <ul class="card-details">
-                                
+
                                 <li> Start Date - <?= $row['start_date'] ?></li>
                                 <li> End date - <?= $row['end_date'] ?></li>
                                 <li> Age Categories - <?= $row['age_category[]'] ?></li>
                                 <li> Type - <?= $row['type'] ?></li>
-                               
+
                             </ul>
                             <?php
                             if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                             ?>
                                 <div class="crud">
-                                    <!-- <a href="" style="color: black;"><i class="fa-solid fa-trash fs-5" style="margin-right: 5px;"></i></a> -->
+                                    <a href="delete.php?id=<?= $row['id'] ?>" style="color: black;" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5" style="margin-right: 5px;"></i></a>
                                     <a href="edit.php?id=<?= $row['id'] ?>" style="color: black;"><i class="fa-solid fa-pen-to-square fs-5 "></i></a>
                                 </div>
+                                <script>
+                                    function confirmDelete() {
+                                        return confirm("Are you sure you want to delete this record?");
+                                    }
+                                </script>
                             <?php } ?>
                         </div>
                     </div>
