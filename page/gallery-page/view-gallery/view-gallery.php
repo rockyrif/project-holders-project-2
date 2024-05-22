@@ -81,13 +81,48 @@ $version = date('Ymd');
                                 </div>
                                 <div class="mb-3 me-2">
                                     <?php
-                                    $id = $_GET['id'];
-
                                     include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                                    $sql = "SELECT * FROM gallery WHERE id=$id;";
-                                    $result = mysqli_query($conn, $sql);
-                                    mysqli_close($conn);
-                                    $row = mysqli_fetch_assoc($result);
+                                    if (isset($id) && is_numeric($id)) {
+                                        // Prepare the SQL statement
+                                        $stmt = $conn->prepare("SELECT * FROM gallery WHERE id = ?");
+                                        $stmt->bind_param("i", $id);
+
+                                        // Execute the statement
+                                        if ($stmt->execute()) {
+                                            // Bind the result variables
+                                            $stmt->bind_result($id, $column1, $column2, $column3, $column4); // Adjust this based on your table columns
+
+                                            // Fetch the result
+                                            if ($stmt->fetch()) {
+                                                $row = [
+                                                    'id' => $id,
+                                                    'category' => $column1,
+                                                    'tittle' => $column2,
+                                                    'description' => $column3,
+                                                    'thumbnail' => $column4,
+                                                ];
+                                                // Process $row here as needed
+                                            } else {
+                                                // Handle case where no record was found
+                                                error_log("No record found with id: " . $id);
+                                                // Optionally set an error response or message here
+                                            }
+                                            // Close the statement
+                                            $stmt->close();
+
+                                            // Close the connection
+                                            $conn->close();
+                                        } else {
+                                            // Handle execution error
+                                            error_log("Error executing query: " . $stmt->error);
+                                            // Optionally set an error response or message here
+                                        }
+                                    } else {
+                                        // Handle invalid ID
+                                        error_log("Invalid ID provided.");
+                                        // Optionally set an error response or message here
+                                        // Example: header('Location: error_page.php'); exit;
+                                    }
 
                                     // Directory path
                                     $tittle = $row['tittle'];
@@ -95,7 +130,8 @@ $version = date('Ymd');
                                     $directory = "../../../Images/gallary/{$row['category']}/" . $tittle . "/";
                                     ?>
 
-                                    <a href="delete_all.php?directory='<?= $directory ?>'&id='<?= $id ?>'" class="btn btn-danger w-100">Delete All</a>
+                                    <a href="delete_all.php?directory=<?= htmlspecialchars($directory) ?>&id=<?= htmlspecialchars($id) ?>" class="btn btn-danger w-100">Delete All</a>
+
 
                                 </div>
                             </div>
@@ -112,16 +148,7 @@ $version = date('Ymd');
             <!-- ADTC-gallery-start -->
             <div class="section-two" style="margin-top: 0px;">
 
-                <?php
 
-                $id = $_GET['id'];
-
-                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-                $sql = "SELECT * FROM gallery WHERE id=$id;";
-                $result = mysqli_query($conn, $sql);
-                mysqli_close($conn);
-                $row = mysqli_fetch_assoc($result)
-                ?>
 
                 <div class="gallary-tittle1" style="padding-top: 0px !important;">
                     <P class="fs-4" data-aos="fade-up" data-aos-duration="2000"><?= $row['tittle'] ?></P>
