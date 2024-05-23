@@ -129,7 +129,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                <div class="mb-3">
                   <label class="form-label" for="type">Type:</label>
                   <select class="form-select" name="type" id="type" required>
-                     <option value="SLTA Tennis Tour">SLTA Tennis</option>
+                     <option value="SLTA Tennis">SLTA Tennis</option>
                      <option value="ADTC Tennis">ADTC Tennis</option>
                   </select>
                </div>
