@@ -374,7 +374,7 @@
                                                 members</a></li>
                                         <li><a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1ifUHRMPgKsO7NixgJilVabP3aFcOyKBQ4L3RwrKf6yM/edit?usp=sharing" target="_blank">Edit
                                                 Feedback form</a></li>
-                                        
+
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/member-fees/member_fees.php" target="_blank">Edit
                                                 Payment</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/add-gallery/add-gallery.php" target="_blank">Add
@@ -398,14 +398,15 @@
                                 <a href="/project-holders-project-2/page/ContactUs-page/Contact-us.php" class="nav-link nav-link-contact">CONTACT</a>
                             </li>
 
-                            <?php if (isset($_SESSION["username"])) : ?>
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        MEMBERSHIP
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/about-membership/about-membership.php">About membership</a></li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    MEMBERSHIP
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/about-membership/about-membership.php">About membership</a></li>
+                                    <?php if (isset($_SESSION["username"])) : ?>
                                         <?php if (!isset($_SESSION['id']) || $_SESSION['privilage'] == "admin") : ?>
                                             <li><a class="dropdown-item" href="/project-holders-project-2/page/become-member/add-new.php">Become a
                                                     member</a></li>
@@ -417,11 +418,12 @@
                                         <?php if (isset($row["payment_status"]) && $row["payment_status"] == 'approved' || $_SESSION['privilage'] == "admin") : ?>
                                             <li><a class="dropdown-item" href="/project-holders-project-2/page/payment/add-new.php">Payment</a></li>
                                         <?php endif; ?>
-                                    </ul>
+                                    <?php endif; ?>
+                                </ul>
 
-                                </li>
+                            </li>
 
-                            <?php endif; ?>
+
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -485,7 +487,7 @@
                                             Gallery</a></li>
                                 </ul>
                             </li>
-                            
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     ACHIEVEMENTS
