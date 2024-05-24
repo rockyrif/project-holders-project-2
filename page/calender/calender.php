@@ -37,7 +37,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome end-->
 
-    
+
 
 
 </head>
@@ -114,77 +114,89 @@ session_start();
             // Include the database connection file
             include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
-        
+
             if (isset($_POST['submit'])) {
                 // Get form values
                 $startDate = $_POST['startDate'];
                 $endDate = $_POST['endDate'];
                 $stateFilter = $_POST['stateFilter'];
                 $tournamentName = $_POST['tournamentName'];
-            
+
                 // Generate SQL query
                 $sql = "SELECT * FROM tournament_schedule WHERE 1=1";
                 $params = array();
-            
+
                 if (!empty($startDate)) {
                     $sql .= " AND start_date >= ?";
                     $params[] = $startDate;
                 }
-            
+
                 if (!empty($endDate)) {
                     $sql .= " AND end_date <= ?";
                     $params[] = $endDate;
                 }
-            
+
                 if (!empty($stateFilter)) {
                     $sql .= " AND state = ?";
                     $params[] = $stateFilter;
                 }
-            
+
                 if (!empty($tournamentName)) {
                     $sql .= " AND name LIKE ?";
                     $params[] = "%$tournamentName%";
                 }
-            
+
                 // Prepare the statement
                 $stmt = $conn->prepare($sql);
-                
+
                 if ($stmt === false) {
                     die("Error in preparing statement: " . $conn->error);
                 }
-            
+
                 // Bind parameters
                 $types = str_repeat('s', count($params)); // Assuming all parameters are strings
                 $stmt->bind_param($types, ...$params);
-                
+
                 // Execute the statement
                 if (!$stmt->execute()) {
                     die("Error in executing statement: " . $stmt->error);
                 }
-            
-                // Get result
-                $result = $stmt->get_result();
-            
+
+                // Bind result variables
+                $stmt->bind_result($id,$name, $type, $start_date,$end_date,$tournament_format,$age_category,$description, $state, /*, ... */);
+
                 // Fetch the results
-                $rows = $result->fetch_all(MYSQLI_ASSOC);
-            
-                // Free result
-                $result->free();
-            
+                $rows = array();
+                while ($stmt->fetch()) {
+                    $row = array(
+                        'id' => $id,
+                        'name' => $name,
+                        'type' => $type,
+                        'start_date' => $start_date,
+                        'end_date' => $end_date,
+                        'tournament_format' => $tournament_format,
+                        'age_category[]' => $age_category,
+                        'description' => $description,
+                        'state' => $state,
+                        // ...
+                    );
+                    $rows[] = $row;
+                }
+
                 // Close statement
                 $stmt->close();
             } else {
                 // Define the default SQL query
                 $sql = "SELECT * FROM tournament_schedule ORDER BY id DESC";
-            
+
                 // Execute the query
                 $result = $conn->query($sql);
-            
+
                 // Check if the query was successful
                 if (!$result) {
                     die("Query failed: " . $conn->error);
                 }
-            
+
                 // Fetch all rows
                 $rows = [];
                 if ($result->num_rows > 0) {
@@ -192,33 +204,33 @@ session_start();
                         $rows[] = $row;
                     }
                 }
-            
+
                 // Free result set
                 $result->free();
             }
-            
+
             // Other functions
             function formatString($str)
             {
                 // Replace underscores with spaces
                 $str = str_replace('_', ' ', $str);
-            
+
                 // Capitalize the first letter of the string
                 $str = ucfirst($str);
-            
+
                 return $str;
             }
             function formatString2($str)
             {
                 // Replace underscores with spaces
-            
-            
+
+
                 // Capitalize the first letter of the strin
-            
+
                 return $str;
             }
             ?>
-            
+
 
             <div class="card-container">
                 <?php foreach ($rows as $row) {
