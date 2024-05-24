@@ -89,7 +89,7 @@ session_start();
                             <select name="stateFilter" id="stateFilter" class="form-control">
                                 <option value="" <?php if ($stateFilter == "") echo 'selected="selected"'; ?>>Select State</option>
                                 <option value="entry_open" <?php if ($stateFilter == "entry_open") echo 'selected="selected"'; ?>>Entry Open</option>
-                                <option value="canceled" <?php if ($stateFilter == "canceled") echo 'selected="selected"'; ?>>Canceled</option>
+                                <option value="cancelled" <?php if ($stateFilter == "cancelled") echo 'selected="selected"'; ?>>Cancelled</option>
                                 <option value="matches_on" <?php if ($stateFilter == "matches_on") echo 'selected="selected"'; ?>>Matches On</option>
                                 <option value="completed" <?php if ($stateFilter == "completed") echo 'selected="selected"'; ?>>Completed</option>
                             </select>
