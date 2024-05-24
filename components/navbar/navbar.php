@@ -173,7 +173,7 @@
                     </span>
                 </a>
 
-                <div class="navbar-nav-outer ">
+                <div class="navbar-nav-outer">
                     <div class="nav-item-outer ">
                         <a href="/project-holders-project-2/index.php" class="nav-link nav-link-home active">HOME</a>
                     </div>

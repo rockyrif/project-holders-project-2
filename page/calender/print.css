@@ -1,0 +1,37 @@
+@media print {
+  .filter-container {
+    display: none !important;
+  }
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  .navbar-nav-outer {
+    display: none !important;
+  }
+  .nav-group {
+    position: static !important;
+  }
+  .calender-body {
+    padding-top: 0px;
+  }
+  .crud {
+    display: none !important;
+  }
+  @media (max-width: 768px) {
+    .card {
+      width: calc(33%); /* Two cards per row by default */
+    }
+  }
+  .calender-body.container {
+    margin: 5px !important;
+    margin-right: 5px !important;
+  }
+  .card {
+    page-break-inside: avoid; /* Prevents the div from being split across pages */
+  }
+  .container {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+}

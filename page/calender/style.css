@@ -1,192 +1,189 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    width: 100vw;
-    height: fit-content;
-    overflow-x: hidden;
-    background-color: #ddd;
-
-
+  width: 100vw;
+  height: fit-content;
+  overflow-x: hidden;
+  background-color: #ddd;
 }
 
 /* home start */
 .home {
-    position: relative;
-    top: 0%;
-    height: fit-content;
+  position: relative;
+  top: 0%;
+  height: fit-content;
 }
 
 /* home end */
 
-
-
-
 /* home page section two */
 
 .calender-body {
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 
-    padding: 20px;
-    padding-top: 93px;
-    position: relative;
-
-
-
+  padding: 20px;
+  padding-top: 93px;
+  position: relative;
 }
 
 .tittle {
-    text-align: center;
-    width: 100%;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000066;
-    font-family: "PF Din Stencil W01 Bold";
-
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000066;
+  font-family: "PF Din Stencil W01 Bold";
 }
 
-
-
-.calender{
-    display: flex;
-    justify-content: center;
+.calender {
+  display: flex;
+  justify-content: center;
 }
 
 /* card */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
 }
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 350px;
-    width: calc(33% - 20px); /* Two cards per row by default */
-    margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 350px;
+  width: calc(33% - 20px); /* Two cards per row by default */
+  margin: 10px;
 }
 
 .card-body {
-    padding: 20px;
-    text-align: center;
-    position: relative;
+  padding: 20px;
+  text-align: center;
+  position: relative;
 }
 
-.crud{
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
+.crud {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 }
 
 .card-logo {
-    width: 80px;
-    height: auto;
-    margin-bottom: 15px;
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
 }
 
 .card-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .card-status {
-    display: inline-block;
-    
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-bottom: 10px;
+  display: inline-block;
+
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.entry_open{
-    background-color: green;
+.entry_open {
+  background-color: green;
 }
 
-.cancelled{
-    background-color: red;
+.cancelled {
+  background-color: red;
 }
 
-.matches_on{
-    background-color: yellow;
-    color: black;
+.matches_on {
+  background-color: yellow;
+  color: black;
 }
 
-.completed{
-    background-color: darkgreen;
+.completed {
+  background-color: darkgreen;
 }
 
 .card-subtitle {
-    font-size: 14px;
-    color: #6c757d;
-    margin: 0;
-    margin-bottom: 20px;
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .card-details {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
 }
 
 .card-details li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: #495057;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #495057;
 }
 
 .card-details i {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 /* Icons (use FontAwesome or similar icon library) */
 .icon-calendar:before {
-    content: "\f073";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+  content: "\f073";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 .icon-event:before {
-    content: "\f073";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+  content: "\f073";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 .icon-category:before {
-    content: "\f0c0";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+  content: "\f0c0";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 .icon-grade:before {
-    content: "\f005";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+  content: "\f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
-    .card {
-        width: 100%; /* Cards take up full width on mobile */
-        margin: 10px 0; /* Adjust margin for spacing */
-    }
+  .card {
+    width: 100%; /* Cards take up full width on mobile */
+    margin: 10px 0; /* Adjust margin for spacing */
+  }
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-input {
+  margin-bottom: 10px;
 }

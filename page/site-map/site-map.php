@@ -67,12 +67,13 @@ session_start();
                     <div class="site-map-grid-item">
                         <p><a href="#">3. Membershop</a></p>
                         <ul>
+                            <li><a href="../about-membership/about-membership.php">About membership</a></li>
                             <li><a href="../become-member/add-new.php">Become a member</a></li>
                             <li><a href="../payment/add-new.php">Payment</a></li>
                         </ul>
                     </div>
                     <div class="site-map-grid-item">
-                        <p><a href="../login-and-signup-page/index.html">4. Log in</a></p>
+                        <p><a href="../login-and-signup-page/index.php">4. Log in</a></p>
                     </div>
                     <div class="site-map-grid-item">
                         <p><a href="">5. Courts</a></p>

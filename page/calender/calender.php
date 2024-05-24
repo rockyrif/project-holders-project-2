@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +10,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tournament Calendar</title>
 
-
-
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
@@ -18,6 +17,7 @@ session_start();
     <!-- bootstrap end -->
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="print.css" media="print">
 
     <!-- online fonts start -->
     <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
@@ -37,6 +37,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome end-->
 
+    
 
 
 </head>
@@ -52,62 +53,172 @@ session_start();
         <!-- Navbar end -->
 
         <!-- About-us-page-start -->
-        <div class="calender-body container">
+        <div class="calender-body ">
 
             <div class="tittle">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Tournament Calendar</P>
             </div>
 
             <?php
+            // Initialize variables to store form values
+            $startDate = $endDate = $stateFilter = $tournamentName = "";
+
+            // Check if the form is submitted
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Retrieve form values from POST data
+                $startDate = $_POST['startDate'];
+                $endDate = $_POST['endDate'];
+                $stateFilter = $_POST['stateFilter'];
+                $tournamentName = $_POST['tournamentName'];
+            }
+            ?>
+
+            <div class="container filter-container p-3">
+                <form id="filterForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="row">
+                        <div class="col-md-3 filter-input">
+                            <label for="startDate">Start Date:</label>
+                            <input type="date" name="startDate" id="startDate" class="form-control" value="<?php echo $startDate; ?>">
+                        </div>
+                        <div class="col-md-3 filter-input">
+                            <label for="endDate">End Date:</label>
+                            <input type="date" name="endDate" id="endDate" class="form-control" value="<?php echo $endDate; ?>">
+                        </div>
+                        <div class="col-md-3 filter-input">
+                            <label for="stateFilter">State of Tournament:</label>
+                            <select name="stateFilter" id="stateFilter" class="form-control">
+                                <option value="" <?php if ($stateFilter == "") echo 'selected="selected"'; ?>>Select State</option>
+                                <option value="entry_open" <?php if ($stateFilter == "entry_open") echo 'selected="selected"'; ?>>Entry Open</option>
+                                <option value="canceled" <?php if ($stateFilter == "canceled") echo 'selected="selected"'; ?>>Canceled</option>
+                                <option value="matches_on" <?php if ($stateFilter == "matches_on") echo 'selected="selected"'; ?>>Matches On</option>
+                                <option value="completed" <?php if ($stateFilter == "completed") echo 'selected="selected"'; ?>>Completed</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 filter-input">
+                            <label for="tournamentName">Tournament Name:</label>
+                            <input type="text" name="tournamentName" id="tournamentName" class="form-control" placeholder="Tournament Name" value="<?php echo $tournamentName; ?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-right">
+                            <input type="submit" class="btn btn-primary me-2" value="Filter" name="submit">
+                            <button type="button" onclick="window.print();" id="printButton" class="btn btn-primary me-2">Print</button>
+                            <a href="calender.php" class="btn btn-primary">Reset</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <?php
             // Include the database connection file
             include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
-            // Define the SQL query
-            $sql = "SELECT * FROM tournament_schedule ORDER BY id DESC;";
-
-            // Execute the query
-            $result = mysqli_query($conn, $sql);
-
-            // Check if the query was successful
-            if (!$result) {
-                die("Query failed: " . mysqli_error($conn));
-            }
-
-            // Fetch all rows and close the connection
-            $rows = [];
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $rows[] = $row;
+        
+            if (isset($_POST['submit'])) {
+                // Get form values
+                $startDate = $_POST['startDate'];
+                $endDate = $_POST['endDate'];
+                $stateFilter = $_POST['stateFilter'];
+                $tournamentName = $_POST['tournamentName'];
+            
+                // Generate SQL query
+                $sql = "SELECT * FROM tournament_schedule WHERE 1=1";
+                $params = array();
+            
+                if (!empty($startDate)) {
+                    $sql .= " AND start_date >= ?";
+                    $params[] = $startDate;
                 }
+            
+                if (!empty($endDate)) {
+                    $sql .= " AND end_date <= ?";
+                    $params[] = $endDate;
+                }
+            
+                if (!empty($stateFilter)) {
+                    $sql .= " AND state = ?";
+                    $params[] = $stateFilter;
+                }
+            
+                if (!empty($tournamentName)) {
+                    $sql .= " AND name LIKE ?";
+                    $params[] = "%$tournamentName%";
+                }
+            
+                // Prepare the statement
+                $stmt = $conn->prepare($sql);
+                
+                if ($stmt === false) {
+                    die("Error in preparing statement: " . $conn->error);
+                }
+            
+                // Bind parameters
+                $types = str_repeat('s', count($params)); // Assuming all parameters are strings
+                $stmt->bind_param($types, ...$params);
+                
+                // Execute the statement
+                if (!$stmt->execute()) {
+                    die("Error in executing statement: " . $stmt->error);
+                }
+            
+                // Get result
+                $result = $stmt->get_result();
+            
+                // Fetch the results
+                $rows = $result->fetch_all(MYSQLI_ASSOC);
+            
+                // Free result
+                $result->free();
+            
+                // Close statement
+                $stmt->close();
+            } else {
+                // Define the default SQL query
+                $sql = "SELECT * FROM tournament_schedule ORDER BY id DESC";
+            
+                // Execute the query
+                $result = $conn->query($sql);
+            
+                // Check if the query was successful
+                if (!$result) {
+                    die("Query failed: " . $conn->error);
+                }
+            
+                // Fetch all rows
+                $rows = [];
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $rows[] = $row;
+                    }
+                }
+            
+                // Free result set
+                $result->free();
             }
-
-            // Free result set
-            mysqli_free_result($result);
-
-            // Close the database connection
-            mysqli_close($conn);
-
-
+            
+            // Other functions
             function formatString($str)
             {
                 // Replace underscores with spaces
                 $str = str_replace('_', ' ', $str);
-
+            
                 // Capitalize the first letter of the string
                 $str = ucfirst($str);
-
+            
                 return $str;
             }
             function formatString2($str)
             {
                 // Replace underscores with spaces
-
-
+            
+            
                 // Capitalize the first letter of the strin
-
+            
                 return $str;
             }
             ?>
+            
 
             <div class="card-container">
                 <?php foreach ($rows as $row) {
