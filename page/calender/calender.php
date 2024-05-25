@@ -163,7 +163,7 @@ session_start();
                 }
 
                 // Bind result variables
-                $stmt->bind_result($id,$name, $type, $start_date,$end_date,$tournament_format,$age_category,$description, $state, /*, ... */);
+                $stmt->bind_result($id, $name, $type, $start_date, $end_date, $tournament_format, $age_category, $description, $state, /*, ... */);
 
                 // Fetch the results
                 $rows = array();
@@ -240,7 +240,14 @@ session_start();
                         <div class="card-body">
                             <img src="../../Images/logo.png" alt="Logo" class="card-logo">
                             <h2 class="card-title"><?= $row['name'] ?></h2>
-                            <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
+                            <div class="d-flex justify-content-center">
+                                <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
+                                <?php if ($row['state'] == 'entry_open') {
+                                ?>
+                                    <a href="apply.php?id=<?= $row['id'] ?>" class="btn btn-primary apply ms-1">Apply</a>
+                                <?php
+                                } ?>
+                            </div>
                             <p class="card-subtitle">Ampara District Tennis Club</p>
                             <ul class="card-details">
 
