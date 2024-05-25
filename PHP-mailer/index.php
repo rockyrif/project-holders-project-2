@@ -41,13 +41,17 @@ try {
     $sql = "SELECT DISTINCT m.email, m.first_name
     FROM members m
     LEFT JOIN member_fees mf ON m.member_id = mf.member_id
-    WHERE (mf.member_id IS NULL AND m.payment_status <> 'rejected')
-           OR (mf.member_id NOT IN (
-                SELECT mf2.member_id
-                FROM member_fees mf2
-                WHERE mf2.month = $current_month AND mf2.year = $current_year
-              ))
-           OR (mf.month = $current_month AND mf.year = $current_year AND mf.payment_status = 'Not yet')";
+    WHERE (m.payment_status <> 'rejected' AND m.payment_status <> 'pending')
+          AND (
+                (mf.member_id NOT IN (
+                    SELECT mf2.member_id
+                    FROM member_fees mf2
+                    WHERE mf2.month = $current_month AND mf2.year = $current_year
+                ))
+                OR (mf.month = $current_month AND mf.year = $current_year AND mf.payment_status = 'Not yet')
+                OR (mf.member_id IS NULL)
+              )";
+
 
     $result = $conn->query($sql);
 
