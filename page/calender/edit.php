@@ -449,7 +449,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
 
                     <div class="mb-3">
-                        <label class="form-label">Description:</label>
+                        <label class="form-label">Registration fee amount:</label>
                         <input type="text" class="form-control" name="description" value="<?php echo htmlspecialchars($description); ?>">
                     </div>
 
