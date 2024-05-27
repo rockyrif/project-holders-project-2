@@ -22,12 +22,13 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
 
         // Handle image upload
         $targetDir = "../../Images/tournament-payment-proof/";
-        $database_directory = "Images/tournament-payment-proof/";
+        
         if (isset($_FILES["payment-proof"]) && $_FILES["payment-proof"]["error"] == UPLOAD_ERR_OK) {
-
-            $time = date('His');
+            
+            date_default_timezone_set('Asia/Colombo');
+            $dateTime = date('YmdHis');
             // Increment the last payment_id to get the new payment_id
-            $new_file_name = $_SESSION["email"] . "-" . $time;
+            $new_file_name = $_SESSION["email"] . "-" . $dateTime;
             // Get file extension
             $imageFileType = strtolower(pathinfo($_FILES["payment-proof"]["name"], PATHINFO_EXTENSION));
             // Process file upload
@@ -62,7 +63,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                 }
 
                 // Bind parameters to the statement
-                mysqli_stmt_bind_param($stmt, 'isissss', $tournament_id, $tournament_name, $member_id, $age_category, $amount, $paid_date, $database_directory);
+                mysqli_stmt_bind_param($stmt, 'isissss', $tournament_id, $tournament_name, $member_id, $age_category, $amount, $paid_date, $proof_url);
 
                 // Execute the statement
                 if (mysqli_stmt_execute($stmt)) {;
