@@ -22,11 +22,6 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
       $targetDir = "../../Images/payment-proof/";
       $retrive_dir = "../../../Images/payment-proof/";
       if (isset($_FILES["payment-proof"]) && $_FILES["payment-proof"]["error"] == UPLOAD_ERR_OK) {
-         // Get the last payment_id from the database
-         $sql_last_fee_id = "SELECT MAX(fee_id) AS max_fee_id FROM member_fees";
-         $result_last_fee_id = mysqli_query($conn, $sql_last_fee_id);
-         $row_last_fee_id = mysqli_fetch_assoc($result_last_fee_id);
-         $last_fee_id = $row_last_fee_id['max_fee_id'];
 
          // Increment the last payment_id to get the new payment_id
          $new_fee_id = $_SESSION["email"] . "-" . $year . "-" . $month;
@@ -53,13 +48,13 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
             $proof_url = $retrive_dir . $new_fee_id . "." . $imageFileType;;
 
             // Prepare and execute SQL insert statement
-            $sql = "INSERT INTO member_fees (member_id, year, month, fee_amount, paid_date, proof_url)
-                    VALUES ('$member_id', '$year', '$month', '$fee_amount', '$payment_date', '$proof_url')";
+            $sql = "INSERT INTO member_fees (member_id, year, month, fee_amount, paid_date, proof_url) VALUES (?, ?, ?, ?, ?, ?)";
 
-            if (mysqli_query($conn, $sql)) {
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("iissss", $member_id, $year, $month, $fee_amount, $payment_date, $proof_url);
 
+            if ($stmt->execute()) {
                require '../../PHP-mailer/vendor/autoload.php';
-
 
                $mail = new PHPMailer(true);
 
@@ -67,9 +62,9 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
                   $mail->isSMTP();                                            //Send using SMTP
                   $mail->Host       = 'mail.adtennis.lk';                     //Set the SMTP server to send through
                   $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                  $mail->Username   = 'admin@adtennis.lk';                     //SMTP username
-                  $mail->Password   = '2l01xVKb:EO.9p';                               //SMTP password
-                  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable explicit TLS encryption
+                  $mail->Username   = 'admin@adtennis.lk';                    //SMTP username
+                  $mail->Password   = '2l01xVKb:EO.9p';                       //SMTP password
+                  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                   $mail->Port       = 465;
 
                   // Set custom CA certificates to trust the self-signed certificate
@@ -85,9 +80,9 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
                   $mail->addAddress('amparatennisclub2@gmail.com', 'AD tennis');
 
                   $mail->isHTML(true);
-                  $mail->Subject = 'new payment submission';
-                  $mail->Body    = "new payment submission from member id " . $member_id;
-                  $mail->AltBody = "new payment submission from member id " . $member_id;
+                  $mail->Subject = 'New Payment Submission';
+                  $mail->Body    = "New payment submission from member ID " . $member_id;
+                  $mail->AltBody = "New payment submission from member ID " . $member_id;
 
                   $mail->send();
                   // echo 'Message has been sent';
@@ -97,15 +92,16 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
 
                $_SESSION['response'] = "Record inserted successfully.";
             } else {
-               $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
+               $_SESSION['response'] = "Error inserting record: " . $conn->error;
             }
+
+            $stmt->close();
+            $conn->close();
          } else {
             $_SESSION['response'] = "Sorry, there was an error uploading your file.";
          }
       }
    }
-   // Close database connection
-   mysqli_close($conn);
    ?>
 
 
@@ -224,7 +220,7 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
 
                <div class="mb-3">
                   <button type="submit" class="btn btn-success" name="submit">Save</button>
-                  <a href="member_fees.php.php" class="btn btn-danger ">Cancel</a>
+                  <a href="../../index.php" class="btn btn-danger ">Cancel</a>
                </div>
             </form>
          </div>
