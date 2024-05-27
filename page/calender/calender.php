@@ -255,7 +255,7 @@ session_start();
                                 <li> End date - <?= $row['end_date'] ?></li>
                                 <li> Age Categories - <?= $row['age_category[]'] ?></li>
                                 <li> Type - <?= $row['type'] ?></li>
-                                <li> Fee - <?= $row['description'] ?></li>
+                                <li> Registration fee amount - <?= $row['description'] ?></li>
 
                             </ul>
                             <?php
