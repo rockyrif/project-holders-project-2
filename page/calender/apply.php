@@ -67,7 +67,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
 
                 // Execute the statement
                 if (mysqli_stmt_execute($stmt)) {;
-                    $_SESSION['response'] = "Record inserted successfully.";
+                    $_SESSION['response'] = "Application submitted successfully.";
                     header('location:calender.php');
                     exit;
                 } else {
