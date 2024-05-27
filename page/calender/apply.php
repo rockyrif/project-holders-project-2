@@ -1,6 +1,89 @@
 <?php
 session_start();
 if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
+
+
+    // Check if form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+        $tournament_id = $_POST['id'];
+        $tournament_name = $_POST['tournament-name'];
+        $member_id = $_POST['member-id'];
+        // Process age-category array
+        if (isset($_POST['age-category'])) {
+            $age_category = implode(',', $_POST['age-category']);
+            $age_category = mysqli_real_escape_string($conn, $age_category);
+        } else {
+            $age_category = '';
+        }
+        $amount = $_POST['amount'];
+        $paid_date = $_POST['payment-date'];
+
+        // Handle image upload
+        $targetDir = "../../Images/tournament-payment-proof/";
+        $database_directory = "Images/tournament-payment-proof/";
+        if (isset($_FILES["payment-proof"]) && $_FILES["payment-proof"]["error"] == UPLOAD_ERR_OK) {
+
+            $time = date('His');
+            // Increment the last payment_id to get the new payment_id
+            $new_file_name = $_SESSION["email"] . "-" . $time;
+            // Get file extension
+            $imageFileType = strtolower(pathinfo($_FILES["payment-proof"]["name"], PATHINFO_EXTENSION));
+            // Process file upload
+            $targetFile = $targetDir . $new_file_name . "." . $imageFileType;
+            // Rest of your code for file upload and processing
+        } else {
+            // Handle file upload error
+            $_SESSION['response'] = "File upload failed with error code: " . $_FILES["payment-proof"]["error"];
+        }
+
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        // Check if image file is a valid format and size
+        if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
+            $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
+        } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 500kb limit
+            $_SESSION['response'] = "Sorry, your file is too large. limit to 500kb.";
+        } else {
+            // Upload image
+            if (move_uploaded_file($_FILES["payment-proof"]["tmp_name"], $targetFile)) {
+                // Image uploaded successfully, proceed to insert data into database
+                $proof_url = $targetFile;
+
+                // SQL statement with placeholders
+                $sql = "INSERT INTO `tournament-payment` (tournament_id, tournament_name, member_id, `age_category[]`, fee, paid_date, proof_url)
+                                    VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+                // Initialize a prepared statement
+                $stmt = mysqli_prepare($conn, $sql);
+
+                if ($stmt === false) {
+                    die('Prepare failed: ' . mysqli_error($conn));
+                }
+
+                // Bind parameters to the statement
+                mysqli_stmt_bind_param($stmt, 'isissss', $tournament_id, $tournament_name, $member_id, $age_category, $amount, $paid_date, $database_directory);
+
+                // Execute the statement
+                if (mysqli_stmt_execute($stmt)) {;
+                    $_SESSION['response'] = "Record inserted successfully.";
+                    header('location:calender.php');
+                    exit;
+                } else {
+                    $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
+
+                // Close the statement
+                mysqli_stmt_close($stmt);
+
+                // Close the database connection
+                mysqli_close($conn);
+            } else {
+                $_SESSION['response'] = "Sorry, there was an error uploading your file.";
+            }
+        }
+    }
+
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -138,6 +221,8 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                     <?php } ?>
                 </div>
 
+
+
                 <div class="application-container">
                     <div class="text-center mb-4 mt-4">
                         <h3>Apply here</h3>
@@ -145,7 +230,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                     </div>
 
                     <div class="container d-flex justify-content-center">
-                        <form action="add-new.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+                        <form action="apply.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
 
                             <div class="mb-3">
                                 <label class="form-label">Member ID:</label>
@@ -479,6 +564,27 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                                 <label for="formFile" class="form-label">Payment proof:</label>
                                 <input class="form-control" type="file" id="formFile" name="payment-proof">
                             </div>
+                            <input type="hidden" name="id" value="<?= $id ?>">
+                            <?php
+                            include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                            // Fetch the single value from the database
+                            $sql = "SELECT `name` FROM tournament_schedule WHERE id = $id"; // Update with your actual table name and condition
+                            $result = $conn->query($sql);
+
+                          
+                            $tournament_name = '';
+                            if ($result->num_rows > 0) {
+                                // Assuming there is only one row
+                                $row = $result->fetch_assoc();
+                                // Split the comma-separated string into an array
+                                
+                                $tournament_name = $row["name"];
+                            } else {
+                                echo "0 results";
+                            }
+                            $conn->close();
+                            ?>
+                            <input type="hidden" name="tournament-name" value="<?= $row['name'] ?>">
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-success" name="submit">Apply</button>
                                 <a href="member_fees.php.php" class="btn btn-danger ">Cancel</a>

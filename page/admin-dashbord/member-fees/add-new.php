@@ -16,12 +16,7 @@ if (isset($_POST["submit"])) {
    // Handle image upload
    $targetDir = "../../../Images/payment-proof/";
    if (isset($_FILES["payment-proof"]) && $_FILES["payment-proof"]["error"] == UPLOAD_ERR_OK) {
-      // Get the last payment_id from the database
-      $sql_last_fee_id = "SELECT MAX(fee_id) AS max_fee_id FROM member_fees";
-      $result_last_fee_id = mysqli_query($conn, $sql_last_fee_id);
-      $row_last_fee_id = mysqli_fetch_assoc($result_last_fee_id);
-      $last_fee_id = $row_last_fee_id['max_fee_id'];
-
+      
       // Increment the last payment_id to get the new payment_id
       $new_fee_id = $_SESSION["email"]."-".$year."-".$month;
       // Get file extension
@@ -38,7 +33,7 @@ if (isset($_POST["submit"])) {
    // Check if image file is a valid format and size
    if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
       $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
-   } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 2MB limit
+   } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 500kb limit
       $_SESSION['response'] = "Sorry, your file is too large. limit to 500kb.";
    } else {
       // Upload image
