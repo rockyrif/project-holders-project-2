@@ -134,7 +134,7 @@ $version = date('Ymd');
 
                                 <div class="carousal-para">
                                     <p>To create a vibrant Tennis community in Ampara District, where people of all ages come together
-                                        to enjoy the sport, build lasting friendships, and lead active lives
+                                        to enjoy the sport, build lasting friendships, and lead active lives.
 
                                     </p>
                                 </div>
@@ -172,8 +172,9 @@ $version = date('Ymd');
                                 </div>
 
                                 <div class="carousal-para">
-                                    <p>Our mission is to offer top-quality tennis facilities, coaching, and programs that enhance leadership skills,
-                                        language proficiency, effective communication, and sportsmanship, all contributing to a healthier nation.
+                                    <p>Our mission is to provide top-quality tennis facilities, coaching, and programs that promote
+                                        leadership skills, language proficiency, effective communication, and sportsmanship,
+                                        ultimately contributing to the development of a healthy nation.
                                     </p>
                                 </div>
 
@@ -212,12 +213,11 @@ $version = date('Ymd');
                                     </div>
 
                                     <div class="carousal-para">
-                                        <p>Welcome to the Ampara District Tennis Club! We are dedicated to fostering a community passionate about
-                                            tennis. Join us on the courts to embrace the values of discipline, teamwork, and excellence. Let's make our
-                                            club a vibrant and enjoyable place, where every achievement is a victory worth celebrating
+                                        <p>Welcome to the Ampara District Tennis Club! Our commitment is all about building a Tennisloving community. Come, join & play tennis and embrace values of discipline, teamwork, and
+                                            excellence. Let's make our club an enjoyable platform with victorious achievements.
 
                                         <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div>
-                                        <div class="ocupation"> Founder & Deputy Inspector
+                                        <div class="ocupation"> Deputy Inspector
                                             General of Police</div>
                                         </p>
                                     </div>
@@ -544,27 +544,27 @@ $version = date('Ymd');
                 <div class="image-container">
                     <img alt="Beach-tennis" src="Images/gallary/Tournaments/Beach-tennis/1.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php'">View</button>
-                    <p class="gallery-info">Beach tennis</p>
+                    <p class="gallery-info">Beach Tennis Tournament</p>
                 </div>
                 <div class="image-container">
                     <img alt="Concordance-Year-End-Tournaments" src="Images/gallary/Tournaments/Concordance-Year-End-Tournaments/7.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php'">View</button>
-                    <p class="gallery-info">Concordance Year End Tournaments</p>
+                    <p class="gallery-info">Year-End Tournament</p>
                 </div>
                 <div class="image-container">
                     <img alt="Inter-School-Tournaments" src="Images/gallary/Tournaments/Inter-School-Tournaments/1.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php'">View</button>
-                    <p class="gallery-info">Inter School Tournaments</p>
+                    <p class="gallery-info">Inter-School Tournament</p>
                 </div>
                 <div class="image-container">
                     <img alt="Jus-De-Fruit-Tournaments" src="Images/gallary/Tournaments/Jus-De-Fruit-Tournaments/2.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php'">View</button>
-                    <p class="gallery-info">Jus De Fruit Tournaments</p>
+                    <p class="gallery-info">Jus De Fruit Tournament</p>
                 </div>
                 <div class="image-container">
                     <img alt="Ampara District Ranking Tournament" src="Images/gallary/Tournaments/ampara-district-ranking-tournament/1.jpg">
                     <button type="button" class="btn btn-success gallery-button" onclick="window.location.href='page/gallery-page/Tournaments/ampara-district-ranking-tournament/ampara-district-ranking-tournament.php'">View</button>
-                    <p class="gallery-info">Ampara District Ranking Tournament</p>
+                    <p class="gallery-info">Ranking Tournament</p>
                 </div>
 
             </div>

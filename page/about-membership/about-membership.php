@@ -76,7 +76,7 @@ session_start();
 
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000" style="font-family: Arial, sans-serif;">
-                <h3>About Memberships</h3>
+
                 <p>Welcome to the Ampara District Tennis Club (ADTC) Membership Information Page.</p>
 
                 <h5>What ADTC Offers:</h5>
@@ -91,7 +91,7 @@ session_start();
                 <p>ADTC aims to promote and popularize tennis among both children and adult players.</p>
 
                 <h5>Membership Fees:</h5>
-                <p>Membership fees cover:</p>
+                <p>Membership fees are utilized for following requirements:</p>
                 <ul>
                     <li>Court maintenance</li>
                     <li>Coaches' payments</li>
@@ -110,7 +110,14 @@ session_start();
                 <p>Membership fees can be conveniently paid directly to the bank. After completing the transaction, kindly attach the payment slip to the receipt or upload it to our system using the following link: <a href="https://adtennis.lk/project-holders-project-2/page/become-member/add-new.php">Click here to upload your payment slip</a>.</p>
 
                 <h5>Bank Details:</h5>
-                <p>(Insert Bank Details Here)</p>
+                <ul>
+                    <li>Bank Name: Sampath Bank</li>
+                    <li>Branch: Ampara</li>
+                    <li>Account Name: Ampara District Tennis Club</li>
+                    <li>Current Account Number: 006260000568</li>
+                    <li>Savings Account Number: 106626100819</li>
+
+                </ul>
 
                 <p>Thank you for being a part of ADTC, where we strive to make tennis accessible and enjoyable for everyone.</p>
                 </p>

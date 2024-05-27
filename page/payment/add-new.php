@@ -167,7 +167,7 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
                      <?php
                      include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
                      // Select data from member_fees table
-                     $sql = "SELECT `member_id` FROM `members` ORDER BY `member_id` DESC";
+                     $sql = "SELECT `member_id`,`id_prefix` FROM `members` ORDER BY `member_id` DESC";
                      $result = mysqli_query($conn, $sql);
 
                      if ($result && mysqli_num_rows($result) > 0) {
@@ -175,7 +175,7 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
                         while ($row = mysqli_fetch_assoc($result)) {
 
                      ?>
-                           <option value="<?= $row['member_id']; ?>" <?= ($row['member_id'] == $_SESSION['id']) ? "selected" : ""; ?>> <?= $row['member_id']; ?> </option>
+                           <option value="<?= $row['member_id']; ?>" <?= ($row['member_id'] == $_SESSION['id']) ? "selected" : ""; ?>> <?= $row['id_prefix']; ?>-<?= $row['member_id']; ?> </option>
                         <?php
                         }
                      } else {

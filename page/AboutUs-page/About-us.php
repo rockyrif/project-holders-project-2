@@ -75,13 +75,13 @@ session_start();
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">
                     The Ampara District Tennis Club (ADTC) was established in 2023 under the guidance of Mr.
+                    2
                     H.A.N.K. Damayantha Wijaya Sri, Deputy Inspector General of Police. ADTC has quickly
                     become one of the fastest-growing sports clubs in the country. Despite limited resources, ADTC
                     has successfully built nine tennis courts across the district.<br><br>
-                    In a world where harmony among communities is a widely discussed topic, Ampara stands out as
-                    a district where diverse communities coexist. Sport, particularly tennis, is a powerful tool for
-                    fostering racial harmony. ADTC is committed to strengthening social cohesion through tennis
-                    across the island.<br><br>
+                    Harmony among communities is a widely discussed topic, today. Ampara is a district where
+                    diverse communities coexist. Sport, particularly tennis, is a powerful tool for fostering racial
+                    harmony. ADTC is committed to strengthening social cohesion through tennis across the island.<br><br>
                     ADTC aims to popularize tennis among all schools in the district, with the primary objective of
                     developing national and international level tennis players from Digamadulla. Our focus extends
                     beyond tennis development to include enhancing children's language proficiency, communication
@@ -90,6 +90,7 @@ session_start();
                     projects, health campaigns, and CSR initiatives to foster happiness and prosperity in the
                     community. Join us at ADTC, where we are dedicated to creating a vibrant, inclusive, and thriving
                     community through the love of tennis.
+
                 </p>
             </div>
 

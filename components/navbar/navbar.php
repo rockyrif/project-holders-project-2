@@ -445,13 +445,12 @@
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/calender/calender.php">Tournament
                                             Calendar</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Jus-De-Fruit-Tournaments/Jus-De-Fruit-Tournaments.php">Jus
-                                            De Fruit Tournaments</a></li>
+                                            De Fruit Tournament</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/ampara-district-ranking-tournament/ampara-district-ranking-tournament.php">
                                             Ranking Tournament</a></li>
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php">ADTC
-                                            Year End Finals</a></li>
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter
-                                            School Tournaments</a></li>
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Concordance-Year-End-Tournaments/Concordance-Year-End-Tournaments.php">Year-End Tournament</a></li>
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Inter-School-Tournaments/Inter-School-Tournaments.php">Inter-School Tournaments
+                                        </a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Beach Tennis Tournament</a></li>
 
                                 </ul>
