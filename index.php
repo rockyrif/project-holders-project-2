@@ -215,11 +215,12 @@ $version = date('Ymd');
                                     <div class="carousal-para">
                                         <p>Welcome to the Ampara District Tennis Club! Our commitment is all about building a Tennisloving community. Come, join & play tennis and embrace values of discipline, teamwork, and
                                             excellence. Let's make our club an enjoyable platform with victorious achievements.
-
+                                        <div class="dig-name">
                                         <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div>
                                         <div class="ocupation"> Deputy Inspector
                                             General of Police</div>
                                         </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

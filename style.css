@@ -159,6 +159,15 @@ body::-webkit-scrollbar {
   border-radius: 20px;
 }
 
+@media only screen and (max-width: 772px) {
+  .dig-name{
+      display: flex;
+      flex-direction: column;
+  }
+  .name{
+    margin-bottom: 5px;
+  }
+}
 /* home carousal end  */
 
 /* home page section two */
