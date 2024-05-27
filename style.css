@@ -146,6 +146,8 @@ body::-webkit-scrollbar {
   display: inline;
   font-family: "PF Din Stencil W01 Bold";
   color: #000066;
+  padding: 5px 10px;;
+  border-radius: 20px;
 }
 
 .ocupation {
@@ -153,6 +155,8 @@ body::-webkit-scrollbar {
   display: inline;
   font-family: "PF Din Stencil W01 Bold";
   color: #000066;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
 /* home carousal end  */
