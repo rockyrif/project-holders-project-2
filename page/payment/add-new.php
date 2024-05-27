@@ -5,6 +5,7 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// ($_SESSION["m.payment_status"] is setted in components navbar.php
 if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])) || $_SESSION["privilage"] == "admin") {
 ?>
    <?php

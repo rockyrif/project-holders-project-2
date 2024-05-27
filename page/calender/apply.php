@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+if ($_SESSION["loggedin"] = true && isset($_SESSION["username"]))  {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -505,3 +505,8 @@ session_start();
 </body>
 
 </html>
+<?php
+} else {
+   header("Location: ../../page/login-and-signup-page/index.php");
+}
+?>
