@@ -53,7 +53,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                     $proof_url = $targetFile;
 
                     // SQL statement with placeholders
-                    $sql = "INSERT INTO `tournament-application` (tournament_id, tournament_name, member_id, `age_category[]`, fee, paid_date, proof_url)
+                    $sql = "INSERT INTO `tournament_application` (tournament_id, tournament_name, member_id, `age_category[]`, fee, paid_date, proof_url)
                                     VALUES (?, ?, ?, ?, ?, ?, ?)";
 
                     // Initialize a prepared statement

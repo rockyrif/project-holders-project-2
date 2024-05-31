@@ -7,7 +7,7 @@ if (isset($_GET["id"])) {
 
     $id = $_GET["id"];
 
-    $sql1 = "SELECT `proof_url` FROM `member_fees` WHERE fee_id = ?";
+    $sql1 = "SELECT `proof_url` FROM `tournament_application` WHERE application_id  = ?";
 
     // Prepare the statement
     $stmt1 = $conn->prepare($sql1);
@@ -25,7 +25,7 @@ if (isset($_GET["id"])) {
 
         // Fetch the result
         if ($stmt1->fetch()) {
-            $file_path =  $pic_path;
+            $file_path =  "../".$pic_path;
 
             if (file_exists($file_path)) {
                 if (unlink($file_path)) {
@@ -49,7 +49,7 @@ if (isset($_GET["id"])) {
 
     $id = isset($_GET["id"]) ? $_GET["id"] : '';
 
-    $sql = "DELETE FROM `member_fees` WHERE fee_id = ?";
+    $sql = "DELETE FROM `tournament_application` WHERE application_id  = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
 

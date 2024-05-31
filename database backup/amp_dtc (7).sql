@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2024 at 01:01 PM
+-- Generation Time: May 31, 2024 at 11:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -72,7 +72,7 @@ INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `ema
 (79, 'ADTC-2024-MA', 'jone', 'dav', 'jone@gmail.com', '0776040064', '', '2024-04-20', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', '', 'Images/membership-payment-proof/78.jpg', 'rejected', '0000-00-00'),
 (114, 'ADTC-2024-MA', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-05-10', '320b sailan road kalmunai kudy 4', 'adult', 'sddddddddddd', '', 'male', 'Images/profile-pic/nifla@gmail.com.jpg', 'Images/membership-payment-proof/nifla@gmail.com.jpg', 'rejected', '2024-05-13'),
 (115, 'ADTC-2024-MA', 'mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '2024-05-16', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'approved', '2024-05-13'),
-(122, 'ADTC-2024-MA', 'mohamed ', 'test', 'test@gmail.com', '0776040064', '', '2024-05-31', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ ucsc', '', 'male', 'Images/profile-pic/test@gmail.com.jpg', 'Images/membership-payment-proof/test@gmail.com.jpg', 'rejected', '2024-05-25');
+(122, 'ADTC-2024-MA', 'mohamed ', 'test', 'test@gmail.com', '0776040064', '', '2024-05-31', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ ucsc', '', 'male', 'Images/profile-pic/test@gmail.com.jpg', 'Images/membership-payment-proof/test@gmail.com.jpg', 'approved', '2024-05-25');
 
 -- --------------------------------------------------------
 
@@ -124,19 +124,34 @@ INSERT INTO `news` (`news_id`, `pic_path`, `description`, `publisher`, `date`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tournament-payment`
+-- Table structure for table `tournament_application`
 --
 
-CREATE TABLE `tournament-payment` (
-  `id` int(255) NOT NULL,
+CREATE TABLE `tournament_application` (
+  `application_id` int(255) NOT NULL,
   `tournament_id` int(255) NOT NULL,
   `tournament_name` varchar(255) NOT NULL,
   `member_id` int(255) NOT NULL,
   `age_category[]` varchar(255) NOT NULL,
   `fee` varchar(255) NOT NULL,
   `paid_date` date NOT NULL,
-  `proof_url` varchar(255) NOT NULL
+  `proof_url` varchar(255) NOT NULL,
+  `payment_status` enum('Approved','Pending','Rejected') NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tournament_application`
+--
+
+INSERT INTO `tournament_application` (`application_id`, `tournament_id`, `tournament_name`, `member_id`, `age_category[]`, `fee`, `paid_date`, `proof_url`, `payment_status`) VALUES
+(6, 59, 'Fruit Juice & Beach Tennis Tournament', 122, 'GS-16', '6', '2024-05-16', '../../Images/tournament-payment-proof/test@gmail.com-131729.jpg', 'Pending'),
+(7, 59, 'Fruit Juice & Beach Tennis Tournament', 122, 'BS-18', '1', '2024-05-17', '../../Images/tournament-payment-proof/test@gmail.com-165518.jpg', 'Rejected'),
+(8, 59, 'Fruit Juice & Beach Tennis Tournament', 122, 'GS-18,GS-16', '4', '2024-05-25', '../../Images/tournament-payment-proof/test@gmail.com-20240527165719.jpg', 'Pending'),
+(9, 60, 'rocky', 115, 'GS-18,GS-16,GS-14,GS-12', '3', '2024-05-10', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240527170621.jpg', 'Approved'),
+(10, 58, 'test2', 115, 'GS-18,GS-16,GS-14', '900', '2024-05-09', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240527172545.jpg', 'Rejected'),
+(11, 60, 'Beach Tennis Tournament', 115, 'GS-18,GS-16,GD-18,GD-16', '10', '2024-05-10', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240531074929.jpg', 'Pending'),
+(12, 60, 'Beach Tennis Tournament', 115, 'GS-18,GS-16,GD-18,GD-16', '4', '2024-05-04', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240531093448.jpg', 'Approved'),
+(13, 60, 'Beach Tennis Tournament', 115, 'GS-8,GS-6', '2', '2024-05-02', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240531150924.jpg', 'Rejected');
 
 -- --------------------------------------------------------
 
@@ -145,7 +160,7 @@ CREATE TABLE `tournament-payment` (
 --
 
 CREATE TABLE `tournament_schedule` (
-  `id` int(255) NOT NULL,
+  `tournament_id` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `type` varchar(100) NOT NULL,
   `start_date` date NOT NULL,
@@ -160,11 +175,12 @@ CREATE TABLE `tournament_schedule` (
 -- Dumping data for table `tournament_schedule`
 --
 
-INSERT INTO `tournament_schedule` (`id`, `name`, `type`, `start_date`, `end_date`, `tournament_format`, `age_category[]`, `description`, `state`) VALUES
-(54, 'test4', 'SLTA Tennis', '2024-05-22', '2024-05-04', 'singles', 'GS-18,GS-16,GS-14,GS-12,BD-18,BD-16,BD-14,BD-12,GD-18,GD-16,GD-14,GD-12,X-18,X-16', 'test1', 'entry_open'),
-(55, 'test3', 'SLTA Tennis', '2024-05-04', '2024-05-22', 'singles', 'GS-18,BD-12,X-18,X-16', 'test1', 'entry_open'),
-(58, 'test2', 'SLTA Tennis', '2024-05-24', '2024-05-31', 'singles', 'GS-18,GS-16,GS-14', 'test1', 'cancelled'),
-(59, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-01', '2024-06-30', 'singles', 'BS-18,BS-16,GS-18,GS-16', '1000/=', 'entry_open');
+INSERT INTO `tournament_schedule` (`tournament_id`, `name`, `type`, `start_date`, `end_date`, `tournament_format`, `age_category[]`, `description`, `state`) VALUES
+(54, 'test4', 'SLTA Tennis', '2024-05-22', '2024-05-04', 'singles', 'GS-18,GS-16,GS-14,GS-12,BD-18,BD-16,BD-14,BD-12,GD-18,GD-16,GD-14,GD-12,X-18,X-16', '900/=', 'entry_open'),
+(55, 'test3', 'SLTA Tennis', '2024-05-04', '2024-05-22', 'singles', 'GS-18,BD-12,X-18,X-16', '700/=', 'entry_open'),
+(58, 'test2', 'SLTA Tennis', '2024-05-24', '2024-05-31', 'singles', 'GS-18,GS-16,GS-14', '900/=', 'entry_open'),
+(59, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-01', '2024-06-30', 'singles', 'BS-18,BS-16,GS-18,GS-16', '1000/=', 'entry_open'),
+(60, 'Beach Tennis Tournament', 'ADTC Tennis', '2024-05-11', '2024-05-04', 'singles', 'GS-18,GS-16,GS-14,GS-12,GS-10,GS-8,GS-6,GD-18,GD-16,GD-14,GD-12', '123', 'entry_open');
 
 -- --------------------------------------------------------
 
@@ -219,10 +235,10 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`news_id`);
 
 --
--- Indexes for table `tournament-payment`
+-- Indexes for table `tournament_application`
 --
-ALTER TABLE `tournament-payment`
-  ADD PRIMARY KEY (`id`),
+ALTER TABLE `tournament_application`
+  ADD PRIMARY KEY (`application_id`),
   ADD KEY `member_id` (`member_id`),
   ADD KEY `tournament-id` (`tournament_id`);
 
@@ -230,7 +246,7 @@ ALTER TABLE `tournament-payment`
 -- Indexes for table `tournament_schedule`
 --
 ALTER TABLE `tournament_schedule`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`tournament_id`);
 
 --
 -- Indexes for table `user_login`
@@ -269,22 +285,22 @@ ALTER TABLE `news`
   MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `tournament-payment`
+-- AUTO_INCREMENT for table `tournament_application`
 --
-ALTER TABLE `tournament-payment`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `tournament_application`
+  MODIFY `application_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tournament_schedule`
 --
 ALTER TABLE `tournament_schedule`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `tournament_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -297,11 +313,11 @@ ALTER TABLE `member_fees`
   ADD CONSTRAINT `member_fees_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`member_id`);
 
 --
--- Constraints for table `tournament-payment`
+-- Constraints for table `tournament_application`
 --
-ALTER TABLE `tournament-payment`
-  ADD CONSTRAINT `tournament-payment_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`member_id`),
-  ADD CONSTRAINT `tournament-payment_ibfk_2` FOREIGN KEY (`tournament_id`) REFERENCES `tournament_schedule` (`id`);
+ALTER TABLE `tournament_application`
+  ADD CONSTRAINT `tournament_application_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`member_id`),
+  ADD CONSTRAINT `tournament_application_ibfk_2` FOREIGN KEY (`tournament_id`) REFERENCES `tournament_schedule` (`tournament_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
