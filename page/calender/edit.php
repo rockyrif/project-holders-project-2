@@ -10,7 +10,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
         $id = mysqli_real_escape_string($conn, $_GET['id']);
 
         // Fetch tournament data
-        $sql = "SELECT * FROM tournament_schedule WHERE id = '$id'";
+        $sql = "SELECT * FROM tournament_schedule WHERE tournament_id = '$id'";
         $result = mysqli_query($conn, $sql);
 
         if ($result && mysqli_num_rows($result) > 0) {
