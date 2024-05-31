@@ -53,7 +53,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                     $proof_url = $targetFile;
 
                     // SQL statement with placeholders
-                    $sql = "INSERT INTO `tournament-payment` (tournament_id, tournament_name, member_id, `age_category[]`, fee, paid_date, proof_url)
+                    $sql = "INSERT INTO `tournament-application` (tournament_id, tournament_name, member_id, `age_category[]`, fee, paid_date, proof_url)
                                     VALUES (?, ?, ?, ?, ?, ?, ?)";
 
                     // Initialize a prepared statement
@@ -152,7 +152,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                     $id = $_GET['id'];
 
                     // Define the default SQL query
-                    $sql = "SELECT * FROM tournament_schedule WHERE id = $id ORDER BY id DESC";
+                    $sql = "SELECT * FROM tournament_schedule WHERE tournament_id = $id ORDER BY tournament_id DESC";
 
                     // Execute the query
                     $result = $conn->query($sql);
@@ -267,7 +267,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                                     include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
                                     // Fetch the single value from the database
-                                    $sql = "SELECT `age_category[]` FROM tournament_schedule WHERE id = $id"; // Update with your actual table name and condition
+                                    $sql = "SELECT `age_category[]` FROM tournament_schedule WHERE tournament_id = $id"; // Update with your actual table name and condition
                                     $result = $conn->query($sql);
 
                                     $selected_categories = [];
@@ -570,7 +570,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                                 <?php
                                 include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
                                 // Fetch the single value from the database
-                                $sql = "SELECT `name` FROM tournament_schedule WHERE id = $id"; // Update with your actual table name and condition
+                                $sql = "SELECT `name` FROM tournament_schedule WHERE tournament_id = $id"; // Update with your actual table name and condition
                                 $result = $conn->query($sql);
 
 

@@ -52,7 +52,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
         // Construct SQL query for update
         if (isset($id)) {
-            $sql = "UPDATE tournament_schedule SET name='$name', type='$type', start_date='$start_date', end_date='$end_date', `age_category[]`='$age_category', description='$description', state='$state' WHERE id='$id'";
+            $sql = "UPDATE tournament_schedule SET name='$name', type='$type', start_date='$start_date', end_date='$end_date', `age_category[]`='$age_category', description='$description', state='$state' WHERE tournament_id='$id'";
         } else {
             // Construct SQL query for insert
             $sql = "INSERT INTO tournament_schedule (name, type, start_date, end_date, `age_category[]`, description, state) 

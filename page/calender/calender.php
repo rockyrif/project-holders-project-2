@@ -187,7 +187,7 @@ session_start();
                 $stmt->close();
             } else {
                 // Define the default SQL query
-                $sql = "SELECT * FROM tournament_schedule ORDER BY id DESC";
+                $sql = "SELECT * FROM tournament_schedule ORDER BY tournament_id DESC";
 
                 // Execute the query
                 $result = $conn->query($sql);
@@ -244,7 +244,7 @@ session_start();
                                 <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
                                 <?php if ($row['state'] == 'entry_open') {
                                 ?>
-                                    <a href="apply.php?id=<?= $row['id'] ?>" class="btn btn-primary apply ms-1">Apply</a>
+                                    <a href="apply.php?id=<?= $row['tournament_id'] ?>" class="btn btn-primary apply ms-1">Apply</a>
                                 <?php
                                 } ?>
                             </div>
@@ -262,8 +262,8 @@ session_start();
                             if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                             ?>
                                 <div class="crud">
-                                    <a href="delete.php?id=<?= $row['id'] ?>" style="color: black;" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5" style="margin-right: 5px;"></i></a>
-                                    <a href="edit.php?id=<?= $row['id'] ?>" style="color: black;"><i class="fa-solid fa-pen-to-square fs-5 "></i></a>
+                                    <a href="delete.php?id=<?= $row['tournament_id'] ?>" style="color: black;" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5" style="margin-right: 5px;"></i></a>
+                                    <a href="edit.php?id=<?= $row['tournament_id'] ?>" style="color: black;"><i class="fa-solid fa-pen-to-square fs-5 "></i></a>
                                 </div>
                                 <script>
                                     function confirmDelete() {

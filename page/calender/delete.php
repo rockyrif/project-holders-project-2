@@ -8,7 +8,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
         $id = $_GET['id'];
 
         // Prepare the SQL statement
-        $stmt = $conn->prepare("DELETE FROM tournament_schedule WHERE id = ?");
+        $stmt = $conn->prepare("DELETE FROM tournament_schedule WHERE tournament_id = ?");
         $stmt->bind_param("i", $id);
 
         if ($stmt->execute()) {

@@ -380,7 +380,7 @@
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/add-gallery/add-gallery.php" target="_blank">Add
                                                 Gallery</a></li>
                                         <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/tournament-schedule/tournament-schedule.php" target="_blank">Tournament Schedule</a></li>
-
+                                        <li><a class="dropdown-item" href="/project-holders-project-2/page/admin-dashbord/tournament-application/tournament-application.php" target="_blank">Tournament Applicaton</a></li>
 
                                     </ul>
 
