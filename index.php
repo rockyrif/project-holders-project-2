@@ -216,10 +216,10 @@ $version = date('Ymd');
                                         <p>Welcome to the Ampara District Tennis Club! Our commitment is all about building a Tennisloving community. Come, join & play tennis and embrace values of discipline, teamwork, and
                                             excellence. Let's make our club an enjoyable platform with victorious achievements.
                                         <div class="dig-name">
-                                        <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div>
-                                        <div class="ocupation"> Deputy Inspector
-                                            General of Police</div>
-                                        </p>
+                                            <div class="name">Mr. H.A.N.K. Damayantha Wijaya Sri</div>
+                                            <div class="ocupation"> Deputy Inspector
+                                                General of Police</div>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -685,11 +685,35 @@ $version = date('Ymd');
                             <label for="floatingTextarea2">Your Comments</label>
                         </div>
                         <script src="index.js"></script>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
 
                     </form>
                 </div>
             </div>
+
+            <script>
+                // Function to show loading overlay
+                function showLoadingOverlay() {
+                    document.getElementById('loadingOverlay').style.display = 'block';
+                }
+
+                // Function to hide loading overlay
+                function hideLoadingOverlay() {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }
+
+                // Add event listener to form submit button (replace 'submitButton' with your actual button ID)
+                document.getElementById('submitButton').addEventListener('click', function() {
+                    // Show loading overlay when button is clicked
+                    showLoadingOverlay();
+                });
+
+                // Listen for window onload event to hide loading overlay
+                window.onload = function() {
+                    // Hide loading overlay when all resources are loaded
+                    hideLoadingOverlay();
+                };
+            </script>
             <!-- Footer-end -->
             <!-- copy right start -->
             <div>

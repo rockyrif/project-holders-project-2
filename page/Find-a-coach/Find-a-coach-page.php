@@ -77,8 +77,8 @@ session_start();
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="coach-background">
-                    <div  style="font-family: Arial, sans-serif;">
-                        
+                    <div style="font-family: Arial, sans-serif;">
+
                         <p>ADTC offers professional coaching sessions to enhance your tennis skills. We conduct the
                             following coaching sessions on weekdays and weekends:
                         </p>
@@ -88,7 +88,7 @@ session_start();
                             <li>Individual Coaching: 1000/= per hour.
                             </li>
                         </ul>
-                        <p >Our experienced coaches are dedicated for helping you to make success your tennis journey.
+                        <p>Our experienced coaches are dedicated for helping you to make success your tennis journey.
                         </p>
                     </div>
                 </div>
@@ -111,11 +111,36 @@ session_start();
                             <label for="floatingTextarea2">Your Message</label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                        <button id="submitButton" type="submit" class="btn btn-primary">SEND MESSAGE</button>
                         <Script src="index.js"></Script>
                     </form>
                 </div>
 
+                <!-- loading screen script start -->
+                <script>
+                    // Function to show loading overlay
+                    function showLoadingOverlay() {
+                        document.getElementById('loadingOverlay').style.display = 'block';
+                    }
+
+                    // Function to hide loading overlay
+                    function hideLoadingOverlay() {
+                        document.getElementById('loadingOverlay').style.display = 'none';
+                    }
+
+                    // Add event listener to form submit button (replace 'submitButton' with your actual button ID)
+                    document.getElementById('submitButton').addEventListener('click', function() {
+                        // Show loading overlay when button is clicked
+                        showLoadingOverlay();
+                    });
+
+                    // Listen for window onload event to hide loading overlay
+                    window.onload = function() {
+                        // Hide loading overlay when all resources are loaded
+                        hideLoadingOverlay();
+                    };
+                </script>
+                <!-- loading screen script end -->
 
 
 

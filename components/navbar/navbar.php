@@ -154,6 +154,46 @@
             object-fit: cover;
             /* Scale the image while maintaining aspect ratio */
         }
+
+
+        /* Loading screen styles */
+        #loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 9999;
+
+            visibility: visible;
+        }
+
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            /* Position in the vertical center */
+            left: 50%;
+            /* Position in the horizontal center */
+            transform: translate(-50%, -50%);
+            /* Adjust centering */
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #3498db;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 
 
@@ -162,6 +202,26 @@
 <body>
 
     <!-- Navbar start -->
+    <!-- Loading screen start-->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script>
+        // Function to hide loading overlay
+        function hideLoadingOverlay() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+        // Listen for window onload event to hide loading overlay
+        window.onload = function() {
+            // Hide loading overlay when all resources are loaded
+            hideLoadingOverlay();
+        };
+    </script>
+    <!-- Loading screen end-->
+
+
+
     <div class="nav-group navbar-dark" id="navbar">
 
         <nav class="navbar">

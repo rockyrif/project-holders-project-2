@@ -9,6 +9,8 @@ use PHPMailer\PHPMailer\Exception;
 if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["privilage"] == "admin") {
 ?>
 
+
+
    <?php
    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
    if (isset($_POST["submit"])) {
@@ -187,7 +189,7 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
          </div>
 
          <div class="container d-flex justify-content-center">
-            <form action="" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+            <form method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
                <div class="row mb-3">
                   <div class="col">
                      <label class="form-label">First Name:</label>
@@ -281,13 +283,37 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
                </div>
 
                <div class="mb-3">
-                  <button type="submit" class="btn btn-success" name="submit">Apply</button>
+                  <button id="submitButton" type="submit" class="btn btn-success" name="submit">Apply</button>
                   <a href="admin-dashbord.php" class="btn btn-danger ">Cancel</a>
                </div>
             </form>
+
          </div>
       </div>
 
+      <script>
+         // Function to show loading overlay
+         function showLoadingOverlay() {
+            document.getElementById('loadingOverlay').style.display = 'block';
+         }
+
+         // Function to hide loading overlay
+         function hideLoadingOverlay() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+         }
+
+         // Add event listener to form submit button (replace 'submitButton' with your actual button ID)
+         document.getElementById('submitButton').addEventListener('click', function() {
+            // Show loading overlay when button is clicked
+            showLoadingOverlay();
+         });
+
+         // Listen for window onload event to hide loading overlay
+         window.onload = function() {
+            // Hide loading overlay when all resources are loaded
+            hideLoadingOverlay();
+         };
+      </script>
       <!-- Bootstrap -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 

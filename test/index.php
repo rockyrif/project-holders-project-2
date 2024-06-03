@@ -20,13 +20,11 @@
       z-index: 9999;
     }
 
-    /* Spin animation */
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
 
-    /* Hide the loader by default */
     body.loaded .loader {
       display: none;
     }
@@ -45,21 +43,21 @@
 </head>
 <body>
   <div id="loader" class="loader"></div>
+  <div class="overlay"></div>
 
   <script>
-    // Show loader on page load
     document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove('loaded');
     });
 
-    // Hide loader once the page is fully loaded
     window.addEventListener("load", function() {
-      document.body.classList.add('loaded');
+      setTimeout(function() {
+        document.body.classList.add('loaded');
+      }, 2000); // Simulate a 2-second loading delay
     });
   </script>
 
   <!-- Your website content here -->
-  <div class="overlay"></div>
   <h1>Welcome to My Website</h1>
   <p>This is an example of a loading animation.</p>
 </body>

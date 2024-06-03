@@ -71,7 +71,7 @@ session_start();
                     <div class="carousel-item">
                         <img src="../../Images/moving-img/contact-us-mooving-img/4.jpg" class="d-block w-100" alt="...">
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -100,16 +100,38 @@ session_start();
                             <label for="floatingTextarea2">Your Message</label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                        <button id="submitButton" type="submit" class="btn btn-primary">SEND MESSAGE</button>
                         <Script src="index.js"></Script>
                     </form>
-
-
-
-
-
-
                 </div>
+
+                <!-- loading screen script start -->
+                <script>
+                    // Function to show loading overlay
+                    function showLoadingOverlay() {
+                        document.getElementById('loadingOverlay').style.display = 'block';
+                    }
+
+                    // Function to hide loading overlay
+                    function hideLoadingOverlay() {
+                        document.getElementById('loadingOverlay').style.display = 'none';
+                    }
+
+                    // Add event listener to form submit button (replace 'submitButton' with your actual button ID)
+                    document.getElementById('submitButton').addEventListener('click', function() {
+                        // Show loading overlay when button is clicked
+                        showLoadingOverlay();
+                    });
+
+                    // Listen for window onload event to hide loading overlay
+                    window.onload = function() {
+                        // Hide loading overlay when all resources are loaded
+                        hideLoadingOverlay();
+                    };
+                </script>
+                <!-- loading screen script end -->
+
+
 
                 <div class="map-container">
                     <div class="width" style="width: 50%;">
@@ -118,7 +140,7 @@ session_start();
                     <div class="width width2" style="width: 50%; padding-left:30px; display:flex; align-items:center;">
                         <div>
                             Ampara District Tennis Courts Complex <br>
-                            
+
                             <a href="https://maps.app.goo.gl/cx7XoBwFaE8puGHHA" target="_blank" style="font-weight: bold;">GET DIRECTION</a>
                         </div>
                     </div>

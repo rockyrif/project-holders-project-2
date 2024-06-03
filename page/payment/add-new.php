@@ -220,11 +220,34 @@ if (($_SESSION["m.payment_status"] == "approved" && isset($_SESSION["username"])
                </div>
 
                <div class="mb-3">
-                  <button type="submit" class="btn btn-success" name="submit">Save</button>
+                  <button id="submitButton" type="submit" class="btn btn-success" name="submit">Save</button>
                   <a href="../../index.php" class="btn btn-danger ">Cancel</a>
                </div>
             </form>
          </div>
+         <script>
+            // Function to show loading overlay
+            function showLoadingOverlay() {
+               document.getElementById('loadingOverlay').style.display = 'block';
+            }
+
+            // Function to hide loading overlay
+            function hideLoadingOverlay() {
+               document.getElementById('loadingOverlay').style.display = 'none';
+            }
+
+            // Add event listener to form submit button (replace 'submitButton' with your actual button ID)
+            document.getElementById('submitButton').addEventListener('click', function() {
+               // Show loading overlay when button is clicked
+               showLoadingOverlay();
+            });
+
+            // Listen for window onload event to hide loading overlay
+            window.onload = function() {
+               // Hide loading overlay when all resources are loaded
+               hideLoadingOverlay();
+            };
+         </script>
       </div>
 
       <!-- Bootstrap -->
