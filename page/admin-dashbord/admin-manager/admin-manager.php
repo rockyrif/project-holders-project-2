@@ -156,6 +156,7 @@ session_start();
                     // Call the restoreScrollPositions function when the page loads
                     window.onload = function() {
                         restoreScrollPositions();
+                        hideLoadingOverlay();
                     };
                 </script>
                 <!-- scroll to same position when reload. end -->

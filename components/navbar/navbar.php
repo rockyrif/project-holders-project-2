@@ -163,7 +163,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.5);
             z-index: 9999;
 
             visibility: visible;
@@ -210,12 +210,18 @@
     <script>
         // Function to hide loading overlay
         function hideLoadingOverlay() {
+            console.log('Hiding loading overlay...'); // Log message
+             // Pause execution here
             document.getElementById('loadingOverlay').style.display = 'none';
         }
+
         // Listen for window onload event to hide loading overlay
         window.onload = function() {
+            console.log('Window onload event fired.'); // Log message
+            // Pause execution here
             // Hide loading overlay when all resources are loaded
             hideLoadingOverlay();
+            // if there are two window.onload fuction in a file check hideLoadingOverlay(); on other fuction
         };
     </script>
     <!-- Loading screen end-->
