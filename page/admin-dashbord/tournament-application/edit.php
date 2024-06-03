@@ -1,214 +1,594 @@
 <?php
 session_start();
-if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
-?>
-
-  <?php
-  include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-
-  if (isset($_POST["submit"])) {
-    $id = $_GET["id"];
-    $member_id = $_POST['member-id'];
-    $year = $_POST['year'];
-    $month = $_POST['month'];
-    $fee_amount = $_POST['fee-amount'];
-    $payment_date = $_POST['payment-date'];
-
-    // Check if payment proof is set
-    $proof_url = '';
-    if (isset($_FILES["payment-proof"]) && $_FILES["payment-proof"]["error"] == UPLOAD_ERR_OK) {
-      // Handle image upload
-      $targetDir = "../../../Images/payment-proof/";
-      // Process file upload
-      $targetFile = $targetDir . $id . "." . strtolower(pathinfo($_FILES["payment-proof"]["name"], PATHINFO_EXTENSION));
-
-      // Check file format and size
-      $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-      if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
-        echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-      } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 500kb limit
-        echo "Sorry, your file is too large. limit to 500kb.";
-      } else {
-        // Upload image
-        if (move_uploaded_file($_FILES["payment-proof"]["tmp_name"], $targetFile)) {
-          // Image uploaded successfully
-          $proof_url = $targetFile;
-        } else {
-          echo "Sorry, there was an error uploading your file.";
-        }
-      }
-    }
-
-    // Prepare SQL update statement
-    $sql = "UPDATE member_fees 
-          SET fee_amount = '$fee_amount', 
-              paid_date = '$payment_date',
-              member_id = $member_id,
-              month = $month,
-              year = $year";
-
-    // Include proof_url in the update if it's set
-    if ($proof_url !== '') {
-      $sql .= ", proof_url = '$proof_url'";
-    }
-
-    // Add WHERE clause
-    $sql .= " WHERE fee_id = '$id'";
-
-    // Execute SQL statement
-    if (mysqli_query($conn, $sql)) {
-      $conn->close();
-      $_SESSION['response'] = "Record updated successfully.";
-    } else {
-      $_SESSION['response'] = "Error updating record: " . mysqli_error($conn);
-    }
-  }
-  ?>
+if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
+    if (($_SESSION["m.payment_status"] == "approved")) {
 
 
+        // Check if form is submitted
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
-
-
-  <!DOCTYPE html>
-  <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
-    <!-- online fonts end -->
-
-    <title>ADTC edit fee</title>
-  </head>
-
-  <body>
-    <?php
-    include '../../../components/navbar/navbar.php';
-    ?>
-
-
-
-    <div class="container" style="margin-top:93px;">
-      <div class="text-center mb-4">
-        <h3>Edit Payment</h3>
-        <p class="text-muted">Complete the form below to Edit a payment</p>
-      </div>
-
-      <?php
-      $id = $_GET["id"];
-      $sql = "SELECT * FROM `member_fees` WHERE fee_id = $id LIMIT 1";
-      include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-      $result = mysqli_query($conn, $sql);
-
-      $row = mysqli_fetch_assoc($result);
-
-
-      ?>
-
-      <div class="container form-container d-flex justify-content-center">
-        <?php
-        //  Delete Aleart start
-        if (isset($_SESSION['response'])) {
-          echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-            ' . $_SESSION['response'] . '
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>';
-
-          // Unset the response from session to clear it after displaying
-          unset($_SESSION['response']);
-        }
-        // delete Aleart end
-
-        ?>
-        <form action="edit.php?id=<?= $_GET["id"] ?>" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
-
-          <div class="mb-3">
-            <label class="form-label">Member ID:</label>
-            <select class="form-select" name="member-id">
-              <?php
-
-              // Select data from member_fees table
-              $sql1 = "SELECT `member_id` FROM `members` ORDER BY `member_id` DESC";
-              $result1 = mysqli_query($conn, $sql1);
-              $conn->close();
-              if ($result1 && mysqli_num_rows($result1) > 0) {
-                // Loop through query results
-                while ($row1 = mysqli_fetch_assoc($result1)) {
-
-              ?>
-                  <option value="<?= $row1['member_id']; ?>" <?= ($row1['member_id'] == $row['member_id']) ? 'selected' : ''; ?>> <?= $row1['member_id']; ?> </option>
-                <?php
-                }
-              } else {
-                ?>
-                <option value="">no records</option>
-              <?php
-              }
-              ?>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="year" class="form-label">Enter year payment for:</label>
-            <input type="number" class="form-control" pattern="\d{4}" id="year" name="year" min="2023" max="3000" placeholder="2024" value="<?= $row['year'] ?>">
-          </div>
-
-          <div class="mb-3">
-            <label for="year" class="form-label">Enter month payment for:</label>
-            <input type="number" class="form-control" pattern="\d{2}" id="month" name="month" min="01" max="12" placeholder="01" value="<?= $row['month'] ?>">
-          </div>
-
-          <!-- <script>
-          document.getElementById('month').addEventListener('input', function(event) {
-            let value = event.target.value;
-            if (value.length === 1 && value !== '0') {
-              event.target.value = '0' + value; // prepend '0' if the length is 1 and the value is not '0'
-            } else if (value.length > 2) {
-              event.target.value = value.slice(0, 2); // truncate to the first two characters if the length is greater than 2
+            $applicaton_id = $_POST['ta_id'];
+           
+            $member_id = $_POST['member-id'];
+            // Process age-category array
+            if (isset($_POST['age-category'])) {
+                $age_category = implode(',', $_POST['age-category']);
+                $age_category = mysqli_real_escape_string($conn, $age_category);
+            } else {
+                $age_category = '';
             }
-          });
-        </script> -->
+            $amount = $_POST['amount'];
+            $paid_date = $_POST['payment-date'];
 
-          <div class="mb-3">
-            <label for="fee-amount" class="form-label">Fee amount:</label>
-            <input type="number" class="form-control" id="fee-amount" name="fee-amount" placeholder="250" value="<?= $row['fee_amount'] ?>">
-          </div>
+            // Handle image upload
+            $targetDir = "../../../Images/tournament-payment-proof/";
 
-          <div class="mb-3">
-            <label class="form-label">Paid date:</label>
-            <input type="date" class="form-control" name="payment-date" placeholder="1999-06-22" required value="<?= $row['paid_date'] ?>">
-          </div>
+            if (isset($_FILES["payment-proof"]) && $_FILES["payment-proof"]["error"] == UPLOAD_ERR_OK) {
 
-          <div class="mb-3">
-            <label for="formFile" class="form-label">Payment proof:</label>
-            <input class="form-control" type="file" id="formFile" name="payment-proof">
-          </div>
+                date_default_timezone_set('Asia/Colombo');
+                $dateTime = date('YmdHis');
+                // Increment the last payment_id to get the new payment_id
+                $new_file_name = $_SESSION["email"] . "-" . $dateTime;
+                // Get file extension
+                $imageFileType = strtolower(pathinfo($_FILES["payment-proof"]["name"], PATHINFO_EXTENSION));
+                // Process file upload
+                $targetFile = $targetDir . $new_file_name . "." . $imageFileType;
+                // Rest of your code for file upload and processing
+            } else {
+                // Handle file upload error
+                $_SESSION['response'] = "File upload failed with error code: " . $_FILES["payment-proof"]["error"];
+            }
 
-          <div class="mb-3">
-            <button type="submit" class="btn btn-success" name="submit">Upadte</button>
-            <a href="member_fees.php" class="btn btn-danger ">Cancel</a>
-          </div>
-        </form>
-      </div>
-    </div>
+            if (isset($_FILES["payment-proof"]) && $_FILES["payment-proof"]["error"] == UPLOAD_ERR_OK) {
+                $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+                // Check if image file is a valid format and size
+                if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
+                    $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
+                } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 500kb limit
+                    $_SESSION['response'] = "Sorry, your file is too large. limit to 500kb.";
+                } else {
+                    // Upload image
+                    if (move_uploaded_file($_FILES["payment-proof"]["tmp_name"], $targetFile)) {
+                        // Image uploaded successfully, proceed to insert data into database
+                        $proof_url = "../../Images/tournament-payment-proof/" . $new_file_name . "." . $imageFileType;
 
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+                        // SQL statement with placeholders
+                        $sql = "UPDATE `tournament_application`
+                    SET member_id = ?, 
+                        `age_category[]` = ?, 
+                        fee = ?, 
+                        paid_date = ?, 
+                        proof_url = ?
+                    WHERE application_id = ?;
+                    ";
 
-  </body>
+                        // Initialize a prepared statement
+                        $stmt = mysqli_prepare($conn, $sql);
 
-  </html>
-<?php } else {
-  header("Location: ../../../index.php");
-} ?>
+                        if ($stmt === false) {
+                            die('Prepare failed: ' . mysqli_error($conn));
+                        }
+
+                        // Bind parameters to the statement
+                        mysqli_stmt_bind_param($stmt, 'isissi', $member_id, $age_category, $amount, $paid_date, $proof_url, $applicaton_id);
+
+                        // Execute the statement
+                        if (mysqli_stmt_execute($stmt)) {;
+                            $_SESSION['response'] = "Application edited successfully.";
+                            header('location:tournament-application.php');
+                            exit;
+                        } else {
+                            $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
+                        }
+
+                        // Close the statement
+                        mysqli_stmt_close($stmt);
+
+                        // Close the database connection
+                        mysqli_close($conn);
+                    } else {
+                        $_SESSION['response'] = "Sorry, there was an error uploading your file.";
+                    }
+                }
+            }else{
+                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                $sql = "UPDATE `tournament_application`
+                SET member_id = ?, 
+                    `age_category[]` = ?, 
+                    fee = ?, 
+                    paid_date = ?   
+                WHERE application_id = ?;
+                ";
+
+                    // Initialize a prepared statement
+                    $stmt = mysqli_prepare($conn, $sql);
+
+                    if ($stmt === false) {
+                        die('Prepare failed: ' . mysqli_error($conn));
+                    }
+
+                    // Bind parameters to the statement
+                    mysqli_stmt_bind_param($stmt, 'isisi', $member_id, $age_category, $amount, $paid_date, $applicaton_id);
+
+                    // Execute the statement
+                    if (mysqli_stmt_execute($stmt)) {;
+                        $_SESSION['response'] = "Application edited successfully.";
+                        header('location:tournament-application.php');
+                        exit;
+                    } else {
+                        $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
+                    }
+
+                    // Close the statement
+                    mysqli_stmt_close($stmt);
+
+                    // Close the database connection
+                    mysqli_close($conn);
+            }
+        }
+
+?>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Tournament Calendar</title>
+
+            <!-- bootstarp start -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- bootstrap end -->
+
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="print.css" media="print">
+
+            <!-- online fonts start -->
+            <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
+            <!-- online fonts end -->
+
+            <!-- Goolge fonts start -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+            <!-- Goolge fonts end -->
+
+            <!-- AOS  start-->
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+            <!-- AOS  end-->
+
+            <!-- Font Awesome start-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <!-- Font Awesome end-->
+
+
+
+
+        </head>
+
+        <body>
+
+            <div class="home">
+
+                <!-- Navbar start -->
+                <?php
+                include '../../../components/navbar/navbar.php';
+                ?>
+                <!-- Navbar end -->
+
+                <!-- About-us-page-start -->
+                <div class="calender-body ">
+
+                    <div class="tittle">
+                        <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Tournament Application</P>
+                    </div>
+
+
+                    <?php
+                    // Include the database connection file
+                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                    $id = $_GET['id'];
+
+                    // Define the default SQL query
+                    $sql = "SELECT * FROM tournament_schedule WHERE tournament_id = $id ORDER BY tournament_id DESC";
+
+                    // Execute the query
+                    $result = $conn->query($sql);
+
+                    // Check if the query was successful
+                    if (!$result) {
+                        die("Query failed: " . $conn->error);
+                    }
+
+                    // Fetch all rows
+                    $rows = [];
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $rows[] = $row;
+                        }
+                    }
+
+                    // Free result set
+                    $result->free();
+
+
+                    // Other functions
+                    function formatString($str)
+                    {
+                        // Replace underscores with spaces
+                        $str = str_replace('_', ' ', $str);
+
+                        // Capitalize the first letter of the string
+                        $str = ucfirst($str);
+
+                        return $str;
+                    }
+                    function formatString2($str)
+                    {
+                        // Replace underscores with spaces
+
+
+                        // Capitalize the first letter of the strin
+
+                        return $str;
+                    }
+                    ?>
+
+
+                    <div class="card-container">
+                        <?php foreach ($rows as $row) {
+
+                        ?>
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../../../Images/logo.png" alt="Logo" class="card-logo">
+                                    <h2 class="card-title"><?= $row['name'] ?></h2>
+                                    <div class="d-flex justify-content-center">
+                                        <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
+                                    </div>
+                                    <p class="card-subtitle">Ampara District Tennis Club</p>
+                                    <ul class="card-details">
+
+                                        <li> Start Date - <?= $row['start_date'] ?></li>
+                                        <li> End date - <?= $row['end_date'] ?></li>
+                                        <li> Age Categories - <?= $row['age_category[]'] ?></li>
+                                        <li> Type - <?= $row['type'] ?></li>
+                                        <li> Registration fee amount - <?= $row['description'] ?></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+
+
+                    <div class="application-container">
+                        <div class="text-center mb-4 mt-4">
+                            <h3>Apply here</h3>
+                            <p class="text-muted">Complete the form below to apply the tournament</p>
+                        </div>
+
+                        <div class="container d-flex justify-content-center">
+                            <form action="edit.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+
+                                <?php
+                                $ta_id = $_GET['ta_id'];
+                                include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                                // Select data from member_fees table
+                                $sql = "SELECT * FROM `tournament_application` WHERE application_id = $ta_id ORDER BY `application_id` DESC";
+                                $result = mysqli_query($conn, $sql);
+                                $conn->close();
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    $application_row = mysqli_fetch_assoc($result);
+                                    $applied_category = explode(',', $application_row["age_category[]"]);
+                                }
+
+                                ?>
+                                <div class="mb-3">
+                                    <label class="form-label">Member ID:</label>
+                                    <select class="form-select" name="member-id">
+                                        <option value=""> Select </option>
+                                        <?php
+                                        include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                                        // Select data from member_fees table
+                                        $sql = "SELECT `member_id`,`id_prefix` FROM `members` ORDER BY `member_id` DESC";
+                                        $result = mysqli_query($conn, $sql);
+
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            // Loop through query results
+                                            while ($row = mysqli_fetch_assoc($result)) {
+
+                                        ?>
+                                                <option value="<?= $row['member_id']; ?>" <?= ($row['member_id'] == $application_row['member_id']) ? "selected" : ""; ?>> <?= $row['id_prefix']; ?>-<?= $row['member_id']; ?> </option>
+                                            <?php
+                                            }
+                                        } else {
+                                            ?>
+                                            <option value="">no records</option>
+                                        <?php
+                                            $conn->close();
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <?php
+                                    // Include the database connection file
+                                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                                    // Fetch the single value from the database
+                                    $sql = "SELECT `age_category[]` FROM tournament_schedule WHERE tournament_id = $id"; // Update with your actual table name and condition
+                                    $result = $conn->query($sql);
+
+                                    $selected_categories = [];
+                                    if ($result->num_rows > 0) {
+                                        // Assuming there is only one row
+                                        $row = $result->fetch_assoc();
+                                        // Split the comma-separated string into an array
+                                        $selected_categories = explode(',', $row["age_category[]"]);
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                    $conn->close();
+
+                                    // Function to check if a category should be hidden
+                                    function is_hidden($category, $selected_categories)
+                                    {
+                                        return in_array($category, $selected_categories) ? '' : 'd-none';
+                                    }
+
+
+                                    ?>
+
+
+
+                                    <div id="tournament-format-singles" class="mb-3">
+                                        <div class="text-center mb-3">
+                                            <h3>SINGLE MATCHES</h3>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <fieldset class="form-group" id="mixed-fieldset">
+                                                    <label class="form-label" for="age-category[]">Boys:</label>
+                                                    <div class="form-check <?php echo is_hidden('BS-18', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BS-18" <?= in_array('BS-18', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-18">Under 18</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BS-16', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="BS-16" <?= in_array('BS-16', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-16">Under 16</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BS-14', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="BS-14" <?= in_array('BS-14', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-14">Under 14</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BS-12', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="BS-12" <?= in_array('BS-12', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-12">Under 12</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BS-10', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-10" value="BS-10" <?= in_array('BS-10', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-10">Under 10</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BS-8', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-8" value="BS-8" <?= in_array('BS-8', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-8">Under 8</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BS-6', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-6" value="BS-6" <?= in_array('BS-6', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-6">Under 6</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div>
+                                                <fieldset class="form-group">
+                                                    <label class="form-label" for="age-category[]">Girls:</label>
+                                                    <div class="form-check <?php echo is_hidden('GS-18', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="GS-18" <?= in_array('GS-18', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-18">Under 18</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GS-16', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="GS-16" <?= in_array('GS-16', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-16">Under 16</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GS-14', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="GS-14" <?= in_array('GS-14', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-14">Under 14</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GS-12', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="GS-12" <?= in_array('GS-12', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-12">Under 12</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GS-10', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-10" value="GS-10" <?= in_array('GS-10', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-10">Under 10</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GS-8', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-8" value="GS-8" <?= in_array('GS-8', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-8">Under 8</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GS-6', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-6" value="GS-6" <?= in_array('GS-6', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-6">Under 6</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div>
+                                                <fieldset class="form-group">
+                                                    <label class="form-label" for="age-category[]">Women's:</label>
+                                                    <div class="form-check <?php echo is_hidden('WS', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="WS" <?= in_array('WS', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-open">Open</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div>
+                                                <fieldset class="form-group">
+                                                    <label class="form-label" for="age-category[]">Men's:</label>
+                                                    <div class="form-check <?php echo is_hidden('MS', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="MS" <?= in_array('MS', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-open">Open</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="tournament-format-doubles" class="mb-3">
+                                        <div class="text-center mb-3">
+                                            <h3>DOUBLE MATCHES</h3>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <fieldset class="form-group">
+                                                    <label class="form-label" for="age-category[]">Boys:</label>
+                                                    <div class="form-check <?php echo is_hidden('BD-18', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BD-18" <?= in_array('BD-18', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-18">Under 18</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BD-16', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="BD-16" <?= in_array('BD-16', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-16">Under 16</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BD-14', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="BD-14" <?= in_array('BD-14', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-14">Under 14</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('BD-12', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="BD-12" <?= in_array('BD-12', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-12">Under 12</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div>
+                                                <fieldset class="form-group">
+                                                    <label class="form-label" for="age-category[]">Girls:</label>
+                                                    <div class="form-check <?php echo is_hidden('GD-18', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="GD-18" <?= in_array('GD-18', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-18">Under 18</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GD-16', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="GD-16" <?= in_array('GD-16', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-16">Under 16</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GD-14', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="GD-14" <?= in_array('GD-14', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-14">Under 14</label>
+                                                    </div>
+                                                    <div class="form-check <?php echo is_hidden('GD-12', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="GD-12" <?= in_array('GD-12', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-under-12">Under 12</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div>
+                                                <fieldset class="form-group">
+                                                    <label class="form-label" for="age-category[]">Women's:</label>
+                                                    <div class="form-check <?php echo is_hidden('WD', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="WD" <?= in_array('WD', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-open">Open</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <div>
+                                                <fieldset class="form-group">
+                                                    <label class="form-label" for="age-category[]">Men's:</label>
+                                                    <div class="form-check <?php echo is_hidden('MD', $selected_categories); ?>">
+                                                        <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="MD" <?= in_array('MD', $applied_category) ? 'checked' : ''; ?>>
+                                                        <label class="form-check-label" for="age-open">Open</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <fieldset class="form-group">
+                                                <label class="form-label" for="age-category[]">Mixed:</label>
+                                                <div class="form-check <?php echo is_hidden('X', $selected_categories); ?>">
+                                                    <input class="form-check-input" type="checkbox" name="age-category[]" id="age-adult-open" value="X" <?= in_array('X', $applied_category) ? 'checked' : ''; ?>>
+                                                    <label class="form-check-label" for="age-adult-open">Open</label>
+                                                </div>
+                                                <div class="form-check <?php echo is_hidden('X-18', $selected_categories); ?>">
+                                                    <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="X-18" <?= in_array('X-18', $applied_category) ? 'checked' : ''; ?>>
+                                                    <label class="form-check-label" for="age-under-18">Under 18</label>
+                                                </div>
+                                                <div class="form-check <?php echo is_hidden('X-16', $selected_categories); ?>">
+                                                    <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="X-16" <?= in_array('X-16', $applied_category) ? 'checked' : ''; ?>>
+                                                    <label class="form-check-label" for="age-under-16">Under 16</label>
+                                                </div>
+                                                <div class="form-check <?php echo is_hidden('X-14', $selected_categories); ?>">
+                                                    <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="X-14" <?= in_array('X-14', $applied_category) ? 'checked' : ''; ?>>
+                                                    <label class="form-check-label" for="age-under-14">Under 14</label>
+                                                </div>
+                                                <div class="form-check <?php echo is_hidden('X-12', $selected_categories); ?>">
+                                                    <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="X-12" <?= in_array('X-12', $applied_category) ? 'checked' : ''; ?>>
+                                                    <label class="form-check-label" for="age-under-12">Under 12</label>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="amount" class="form-label">Registration fee amount:</label>
+                                    <input type="number" class="form-control" id="amount" name="amount" placeholder="eg:600/=" value="<?= $application_row['fee'] ?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Paid date:</label>
+                                    <input type="date" class="form-control" name="payment-date" placeholder="1999-06-22" value="<?= $application_row['paid_date'] ?>" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Payment proof:</label>
+                                    <input class="form-control" type="file" id="formFile" name="payment-proof">
+                                </div>
+                                <input type="hidden" name="ta_id" value="<?= $ta_id ?>">
+                                
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-success" name="submit">Apply</button>
+                                    <a href="tournament-application.php" class="btn btn-danger ">Cancel</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- About-us-page-end -->
+
+
+
+
+            </div>
+
+            <!-- AOS script start -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <!-- AOS script end-->
+
+        </body>
+
+        </html>
+<?php
+    } else {
+        $_SESSION['response'] = "Please be a approved member";
+        header("Location: ../../index.php");
+        exit;
+    }
+} else {
+    $_SESSION['response'] = "Log in first and try to apply tournament";
+    header("Location: ../../page/login-and-signup-page/index.php");
+    exit;
+}
+?>

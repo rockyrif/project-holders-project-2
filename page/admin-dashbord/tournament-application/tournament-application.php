@@ -320,7 +320,7 @@ session_start();
 
                                         <div class="row">
                                             <div class="col-md-12 mb-2">
-                                                <a href="add-new.php" class="btn btn-dark">Add New</a>
+                                                <a href="../../../page/calender/calender.php" class="btn btn-dark">Add New</a>
                                                 <button class="btn btn-dark" type="submit">Filter</button>
                                                 <a href="tournament-application.php" type="reset" class="btn btn-dark">Reset</a>
                                                 <button class="btn btn-dark print-btn" onclick="window.print();">Print</button>
@@ -1097,7 +1097,7 @@ session_start();
                                             </form>
                                         </td>
                                         <!-- Edit and delete buttons -->
-                                        <td class="col-remove"><a href="edit.php?id=<?php echo $row["application_id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
+                                        <td class="col-remove"><a href="edit.php?id=<?php echo $row['tournament_id']?>&ta_id=<?php echo $row['application_id']?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5"></i></a></td>
                                         <td class="col-remove"><a href="delete.php?id=<?php echo $row["application_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a></td>
                                     </tr>
                                 <?php
