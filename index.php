@@ -70,6 +70,8 @@ $version = date('Ymd');
         ?>
         <!-- Navbar end -->
 
+        <script>document.getElementById('loadingOverlay').style.display = 'none';</script>
+
         <!-- carousel start -->
         <div id="carouselExampleSlidesOnly" class="carousel slide section-one" data-bs-ride="carousel">
 

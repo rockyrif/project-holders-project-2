@@ -169,13 +169,13 @@
             visibility: visible;
         }
 
-        .loading-spinner {
+        #loadingOverlay .loading-spinner {
             position: absolute;
             top: 50%;
             /* Position in the vertical center */
-            left: 50%;
+            left: 45%;
             /* Position in the horizontal center */
-            transform: translate(-50%, -50%);
+           
             /* Adjust centering */
             border: 8px solid #f3f3f3;
             border-radius: 50%;
