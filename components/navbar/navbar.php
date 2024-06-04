@@ -569,7 +569,7 @@
                                     FEDERATION
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/founder-messsage/adtc-committee.php">ADTC
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/founder-message/adtc-committee.php">ADTC
                                             Founder</a></li>
                                     <li><a class="dropdown-item" href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC Committee</a></li>
                                     <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews' id="adtcnews-btn">ADTC News</a>

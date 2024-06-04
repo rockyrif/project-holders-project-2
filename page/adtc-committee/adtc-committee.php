@@ -51,7 +51,7 @@ session_start();
             </div>
 
             <div class="gallary-heading">
-                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">President
+                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Presidents
                 </p>
             </div>
 
@@ -78,7 +78,7 @@ session_start();
             <br>
 
             <div class="gallary-heading">
-                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Secretary</p>
+                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Secretaries</p>
             </div>
 
             <div class="gallery1" data-aos="fade-up" data-aos-duration="2000">
