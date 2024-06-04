@@ -175,7 +175,7 @@
             /* Position in the vertical center */
             left: 45%;
             /* Position in the horizontal center */
-           
+
             /* Adjust centering */
             border: 8px solid #f3f3f3;
             border-radius: 50%;
@@ -211,7 +211,7 @@
         // Function to hide loading overlay
         function hideLoadingOverlay() {
             console.log('Hiding loading overlay...'); // Log message
-             // Pause execution here
+            // Pause execution here
             document.getElementById('loadingOverlay').style.display = 'none';
         }
 
@@ -569,8 +569,9 @@
                                     FEDERATION
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/founder-messsage/adtc-committee.php">ADTC
                                             Founder</a></li>
+                                    <li><a class="dropdown-item" href="/project-holders-project-2/page/adtc-committee/adtc-committee.php">ADTC Committee</a></li>
                                     <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews' id="adtcnews-btn">ADTC News</a>
 
                                     </li>
