@@ -11,10 +11,10 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       // Get form data and sanitize it
       $name = mysqli_real_escape_string($conn, $_POST['tournament-name']);
       $type = mysqli_real_escape_string($conn, $_POST['type']);
-     
+
       $start_date = mysqli_real_escape_string($conn, $_POST['start-date']);
       $end_date = mysqli_real_escape_string($conn, $_POST['end-date']);
-      
+
       $description = mysqli_real_escape_string($conn, $_POST['description']);
 
       // Process age-category array
@@ -151,47 +151,53 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                   <div class="d-flex justify-content-between">
                      <div>
                         <fieldset class="form-group">
-                           <label class="form-label" for="age-category[]">Boys:</label>
-                           
+                           <label class="form-label">Boys:</label>
+
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BS-18">
-                              <label class="form-check-label" for="age-under-18">
+                              <input class="form-check-input" type="checkbox" id="select-all-boys">
+                              <label class="form-check-label" for="select-all-boys">
+                                 Select All
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input boys" type="checkbox" name="age-category[]" id="age-under-18-boys" value="BS-18">
+                              <label class="form-check-label" for="age-under-18-boys">
                                  Under 18
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="BS-16">
-                              <label class="form-check-label" for="age-under-16">
+                              <input class="form-check-input boys" type="checkbox" name="age-category[]" id="age-under-16-boys" value="BS-16">
+                              <label class="form-check-label" for="age-under-16-boys">
                                  Under 16
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="BS-14">
-                              <label class="form-check-label" for="age-under-14">
+                              <input class="form-check-input boys" type="checkbox" name="age-category[]" id="age-under-14-boys" value="BS-14">
+                              <label class="form-check-label" for="age-under-14-boys">
                                  Under 14
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="BS-12">
-                              <label class="form-check-label" for="age-under-12">
+                              <input class="form-check-input boys" type="checkbox" name="age-category[]" id="age-under-12-boys" value="BS-12">
+                              <label class="form-check-label" for="age-under-12-boys">
                                  Under 12
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-10" value="BS-10">
-                              <label class="form-check-label" for="age-under-10">
+                              <input class="form-check-input boys" type="checkbox" name="age-category[]" id="age-under-10-boys" value="BS-10">
+                              <label class="form-check-label" for="age-under-10-boys">
                                  Under 10
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-8" value="BS-8">
-                              <label class="form-check-label" for="age-under-8">
+                              <input class="form-check-input boys" type="checkbox" name="age-category[]" id="age-under-8-boys" value="BS-8">
+                              <label class="form-check-label" for="age-under-8-boys">
                                  Under 8
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-6" value="BS-6">
-                              <label class="form-check-label" for="age-under-6">
+                              <input class="form-check-input boys" type="checkbox" name="age-category[]" id="age-under-6-boys" value="BS-6">
+                              <label class="form-check-label" for="age-under-6-boys">
                                  Under 6
                               </label>
                            </div>
@@ -200,47 +206,53 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
                      <div>
                         <fieldset class="form-group">
-                           <label class="form-label" for="age-category[]">Girls:</label>
-                           
+                           <label class="form-label">Girls:</label>
+
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="GS-18">
-                              <label class="form-check-label" for="age-under-18">
+                              <input class="form-check-input" type="checkbox" id="select-all-girls">
+                              <label class="form-check-label" for="select-all-girls">
+                                 Select All
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-18-girls" value="GS-18">
+                              <label class="form-check-label" for="age-under-18-girls">
                                  Under 18
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="GS-16">
-                              <label class="form-check-label" for="age-under-16">
+                              <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-16-girls" value="GS-16">
+                              <label class="form-check-label" for="age-under-16-girls">
                                  Under 16
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="GS-14">
-                              <label class="form-check-label" for="age-under-14">
+                              <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-14-girls" value="GS-14">
+                              <label class="form-check-label" for="age-under-14-girls">
                                  Under 14
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="GS-12">
-                              <label class="form-check-label" for="age-under-12">
+                              <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-12-girls" value="GS-12">
+                              <label class="form-check-label" for="age-under-12-girls">
                                  Under 12
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-10" value="GS-10">
-                              <label class="form-check-label" for="age-under-10">
+                              <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-10-girls" value="GS-10">
+                              <label class="form-check-label" for="age-under-10-girls">
                                  Under 10
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-8" value="GS-8">
-                              <label class="form-check-label" for="age-under-8">
+                              <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-8-girls" value="GS-8">
+                              <label class="form-check-label" for="age-under-8-girls">
                                  Under 8
                               </label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-6" value="GS-6">
-                              <label class="form-check-label" for="age-under-6">
+                              <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-6-girls" value="GS-6">
+                              <label class="form-check-label" for="age-under-6-girls">
                                  Under 6
                               </label>
                            </div>
@@ -249,24 +261,34 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
                      <div>
                         <fieldset class="form-group">
-                           <label class="form-label" for="age-category[]">Women's:</label>
+                           <label class="form-label">Women's:</label>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="WS">
-                              <label class="form-check-label" for="age-open">
+                              <input class="form-check-input" type="checkbox" id="select-all-womens">
+                              <label class="form-check-label" for="select-all-womens">
+                                 Select All
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input womens" type="checkbox" name="age-category[]" id="age-open-womens" value="WS">
+                              <label class="form-check-label" for="age-open-womens">
                                  Open
                               </label>
                            </div>
-
-
                         </fieldset>
                      </div>
 
                      <div>
                         <fieldset class="form-group">
-                           <label class="form-label" for="age-category[]">Men's:</label>
+                           <label class="form-label">Men's:</label>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="MS">
-                              <label class="form-check-label" for="age-open">
+                              <input class="form-check-input" type="checkbox" id="select-all-mens">
+                              <label class="form-check-label" for="select-all-mens">
+                                 Select All
+                              </label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input mens" type="checkbox" name="age-category[]" id="age-open-mens" value="MS">
+                              <label class="form-check-label" for="age-open-mens">
                                  Open
                               </label>
                            </div>
@@ -274,137 +296,177 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      </div>
                   </div>
                </div>
+
+               <script>
+                  document.getElementById('select-all-boys').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.boys');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+
+                  document.getElementById('select-all-girls').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.girls');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+
+                  document.getElementById('select-all-womens').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.womens');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+
+                  document.getElementById('select-all-mens').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.mens');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+               </script>
+
 
                <div id="tournament-format-doubles" class="mb-3">
                   <div class="text-center mb-3">
                      <h3>DOUBLE MATCHES</h3>
                   </div>
                   <div class="d-flex justify-content-between">
+                     <!-- Boys Category -->
                      <div>
                         <fieldset class="form-group">
-                           <label class="form-label" for="age-category[]">Boys:</label>
-                           
+                           <label class="form-label">Boys:</label>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BD-18">
-                              <label class="form-check-label" for="age-under-18">
-                                 Under 18
-                              </label>
+                              <input class="form-check-input" type="checkbox" id="select-all-boys-doubles">
+                              <label class="form-check-label" for="select-all-boys-doubles">Select All</label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="BD-16">
-                              <label class="form-check-label" for="age-under-16">
-                                 Under 16
-                              </label>
+                              <input class="form-check-input boys-doubles" type="checkbox" name="age-category[]" value="BD-18">
+                              <label class="form-check-label">Under 18</label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="BD-14">
-                              <label class="form-check-label" for="age-under-14">
-                                 Under 14
-                              </label>
+                              <input class="form-check-input boys-doubles" type="checkbox" name="age-category[]" value="BD-16">
+                              <label class="form-check-label">Under 16</label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="BD-12">
-                              <label class="form-check-label" for="age-under-12">
-                                 Under 12
-                              </label>
+                              <input class="form-check-input boys-doubles" type="checkbox" name="age-category[]" value="BD-14">
+                              <label class="form-check-label">Under 14</label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input boys-doubles" type="checkbox" name="age-category[]" value="BD-12">
+                              <label class="form-check-label">Under 12</label>
                            </div>
                         </fieldset>
                      </div>
 
+                     <!-- Girls Category -->
                      <div>
                         <fieldset class="form-group">
-                           <label class="form-label" for="age-category[]">Girls:</label>
-                        
+                           <label class="form-label">Girls:</label>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="GD-18">
-                              <label class="form-check-label" for="age-under-18">
-                                 Under 18
-                              </label>
+                              <input class="form-check-input" type="checkbox" id="select-all-girls-doubles">
+                              <label class="form-check-label" for="select-all-girls-doubles">Select All</label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="GD-16">
-                              <label class="form-check-label" for="age-under-16">
-                                 Under 16
-                              </label>
+                              <input class="form-check-input girls-doubles" type="checkbox" name="age-category[]" value="GD-18">
+                              <label class="form-check-label">Under 18</label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="GD-14">
-                              <label class="form-check-label" for="age-under-14">
-                                 Under 14
-                              </label>
+                              <input class="form-check-input girls-doubles" type="checkbox" name="age-category[]" value="GD-16">
+                              <label class="form-check-label">Under 16</label>
                            </div>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="GD-12">
-                              <label class="form-check-label" for="age-under-12">
-                                 Under 12
-                              </label>
+                              <input class="form-check-input girls-doubles" type="checkbox" name="age-category[]" value="GD-14">
+                              <label class="form-check-label">Under 14</label>
                            </div>
-
-                        </fieldset>
-                     </div>
-                     <div>
-                        <fieldset class="form-group">
-                           <label class="form-label" for="age-category[]">Women's:</label>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="WD">
-                              <label class="form-check-label" for="age-open">
-                                 Open
-                              </label>
+                              <input class="form-check-input girls-doubles" type="checkbox" name="age-category[]" value="GD-12">
+                              <label class="form-check-label">Under 12</label>
                            </div>
-
-
                         </fieldset>
                      </div>
 
+                     <!-- Women's Category -->
                      <div>
                         <fieldset class="form-group">
-                           <label class="form-label" for="age-category[]">Men's:</label>
+                           <label class="form-label">Women's:</label>
                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="age-category[]" id="age-open" value="MD">
-                              <label class="form-check-label" for="age-open">
-                                 Open
-                              </label>
+                              <input class="form-check-input" type="checkbox" id="select-all-womens-doubles">
+                              <label class="form-check-label" for="select-all-womens-doubles">Select All</label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input womens-doubles" type="checkbox" name="age-category[]" value="WD">
+                              <label class="form-check-label">Open</label>
+                           </div>
+                        </fieldset>
+                     </div>
+
+                     <!-- Men's Category -->
+                     <div>
+                        <fieldset class="form-group">
+                           <label class="form-label">Men's:</label>
+                           <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="select-all-mens-doubles">
+                              <label class="form-check-label" for="select-all-mens-doubles">Select All</label>
+                           </div>
+                           <div class="form-check">
+                              <input class="form-check-input mens-doubles" type="checkbox" name="age-category[]" value="MD">
+                              <label class="form-check-label">Open</label>
                            </div>
                         </fieldset>
                      </div>
                   </div>
+                  <!-- Mixed Category -->
                   <div>
                      <fieldset class="form-group">
-                        <label class="form-label" for="age-category[]">Mixed:</label>
+                        <label class="form-label">Mixed:</label>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-adult-open" value="X">
-                           <label class="form-check-label" for="age-adult-open">
-                              Open
-                           </label>
+                           <input class="form-check-input" type="checkbox" id="select-all-mixed-doubles">
+                           <label class="form-check-label" for="select-all-mixed-doubles">Select All</label>
                         </div>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="X-18">
-                           <label class="form-check-label" for="age-under-18">
-                              Under 18
-                           </label>
+                           <input class="form-check-input mixed-doubles" type="checkbox" name="age-category[]" value="X">
+                           <label class="form-check-label">Open</label>
                         </div>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-16" value="X-16">
-                           <label class="form-check-label" for="age-under-16">
-                              Under 16
-                           </label>
+                           <input class="form-check-input mixed-doubles" type="checkbox" name="age-category[]" value="X-18">
+                           <label class="form-check-label">Under 18</label>
                         </div>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-14" value="X-14">
-                           <label class="form-check-label" for="age-under-14">
-                              Under 14
-                           </label>
+                           <input class="form-check-input mixed-doubles" type="checkbox" name="age-category[]" value="X-16">
+                           <label class="form-check-label">Under 16</label>
                         </div>
                         <div class="form-check">
-                           <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-12" value="X-12">
-                           <label class="form-check-label" for="age-under-12">
-                              Under 12
-                           </label>
+                           <input class="form-check-input mixed-doubles" type="checkbox" name="age-category[]" value="X-14">
+                           <label class="form-check-label">Under 14</label>
                         </div>
-
+                        <div class="form-check">
+                           <input class="form-check-input mixed-doubles" type="checkbox" name="age-category[]" value="X-12">
+                           <label class="form-check-label">Under 12</label>
+                        </div>
                      </fieldset>
                   </div>
                </div>
+               <script>
+                  document.getElementById('select-all-boys-doubles').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.boys-doubles');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+
+                  document.getElementById('select-all-girls-doubles').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.girls-doubles');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+
+                  document.getElementById('select-all-womens-doubles').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.womens-doubles');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+
+                  document.getElementById('select-all-mens-doubles').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.mens-doubles');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+
+                  document.getElementById('select-all-mixed-doubles').addEventListener('change', function() {
+                     let checkboxes = document.querySelectorAll('.mixed-doubles');
+                     checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+                  });
+               </script>
+
 
 
 
