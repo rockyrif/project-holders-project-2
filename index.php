@@ -260,7 +260,7 @@ $version = date('Ymd');
 
                                 <div class="carousal-para">
                                     <p>ADTC is dedicated to nurturing tennis talent and promoting excellence through its affiliation with
-                                        the Sri Lanka Tennis Association (SLTA)
+                                        the Sri Lanka Tennis Association (SLTA).
                                     </p>
                                 </div>
 
