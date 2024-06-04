@@ -50,10 +50,10 @@ session_start();
                 <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">ADTC Committee</P>
             </div>
 
-            <div class="gallary-heading">
+            <!-- <div class="gallary-heading">
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Presidents
                 </p>
-            </div>
+            </div> -->
 
 
             <div class="gallery1" data-aos="fade-up" data-aos-duration="2000">
@@ -77,9 +77,9 @@ session_start();
 
             <br>
 
-            <div class="gallary-heading">
+            <!-- <div class="gallary-heading">
                 <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Secretaries</p>
-            </div>
+            </div> -->
 
             <div class="gallery1" data-aos="fade-up" data-aos-duration="2000">
                 <div class="committee-container">
