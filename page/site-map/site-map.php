@@ -114,7 +114,7 @@ session_start();
                     <div class="site-map-grid-item">
                         <p><a href="">10. Federation</a></p>
                         <ul>
-                            <li><a href="../adtc-committee/adtc-committee.php">ADTC Founder</a></li>
+                            <li><a href="../adtc-committee/adtc-committee.php">ADTC Committee</a></li>
                             <li><a href="../../index.php#adtcnews">ADTC News</a></li>
                             <li><a href="../../index.php#gallery">Image Gallery</a></li>
                         </ul>
