@@ -101,7 +101,7 @@ session_start();
                 <p>The membership fee is periodically reviewed and set by the committee. Current fees are as follows:</p>
                 <ul>
                     <li>Adult Players: 2500/= per month</li>
-                    <li>Kid Players: 2000/= per month</li>
+                    <li>Kid Players: 500/= per month</li>
                     <li>Under the lights: 1000/= per hour</li>
                     <li>Guest Players: 500/= per hour</li>
                 </ul>

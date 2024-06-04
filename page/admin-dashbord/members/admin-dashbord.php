@@ -117,6 +117,12 @@ session_start();
                                                 ID Prefix
                                             </label>
                                         </div>
+                                        <div class="form-check col-md-4">
+                                            <input class="form-check-input" type="checkbox" value="`slta_member_id`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`slta_member_id`', $_GET['column'])) ? 'checked' : ''; ?>>
+                                            <label class="form-check-label" for="flexCheckIndeterminate">
+                                                SLTA Member ID
+                                            </label>
+                                        </div>
                                         <!-- <div class="form-check col-md-4">
                                             <input class="form-check-input" type="checkbox" value="`member_id`"
                                                 name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`member_id`', $_GET['column'])) ? 'checked' : ''; ?>>
@@ -354,6 +360,14 @@ session_start();
 
                                     <th scope="col">Member ID</th>
 
+                                    <?php
+                                    if (isset($_GET['column']) && in_array('`slta_member_id`', $_GET['column'])) {
+                                    ?>
+                                        <th scope="col">SLTA Member ID</th>
+                                    <?php
+                                    }
+                                    ?>
+
 
                                     <?php
                                     if (isset($_GET['column']) && in_array('`first_name`', $_GET['column'])) {
@@ -556,6 +570,16 @@ session_start();
                                             <td>
                                                 <?php echo $row["member_id"]; ?>
                                             </td>
+
+                                            <?php
+                                            if (isset($_GET['column']) && in_array('`slta_member_id`', $_GET['column'])) {
+                                            ?>
+                                                <td>
+                                                    <?php echo $row["slta_member_id"]; ?>
+                                                </td>
+                                            <?php
+                                            }
+                                            ?>
 
 
 
@@ -788,6 +812,7 @@ session_start();
                                 <tr>
                                     <th scope="col">ID Prefix</th>
                                     <th scope="col">Member ID</th>
+                                    <th scope="col">SLTA Member ID</th>
                                     <th scope="col">First Name</th>
                                     <th scope="col">Last Name</th>
                                     <th scope="col">Email</th>
@@ -801,7 +826,7 @@ session_start();
                                     <th scope="col">Gender</th>
                                     <th scope="col">Profile Pic</th>
                                     <th scope="col">Payment proof</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Status</th> 
                                     <th scope="col">Reg Date</th>
                                     <th scope="col" class="col-remove">Edit</th>
                                     <th scope="col" class="col-remove">Delete</th>
@@ -825,6 +850,9 @@ session_start();
 
                                         <td>
                                             <?php echo $row["member_id"] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row["slta_member_id"] ?>
                                         </td>
                                         <td>
                                             <?php echo $row["first_name"] ?>
@@ -883,6 +911,7 @@ session_start();
                                                 </div>
                                             </form>
                                         </td>
+                                        
                                         <td>
                                             <?php echo $row["registration_date"] ?>
                                         </td>

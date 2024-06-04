@@ -37,6 +37,8 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
       $payment_proof_targetDir = "Images/membership-payment-proof/";
       $payment_proof_targetDir1 = "../../Images/membership-payment-proof/";
 
+      $slta_id = $_POST['slta-id'];
+
       if (isset($_FILES["picture"]) && $_FILES["picture"]["error"] == UPLOAD_ERR_OK) {
          // Increment the last payment_id to get the new payment_id
          $new_member_pic_id = $_SESSION["email"];
@@ -91,25 +93,34 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
                $profile_url = $profile_pic_targetDir . $new_member_pic_id . "." . $profile_imageFileType;
                $payment_proof_url = $payment_proof_targetDir . $new_member_pic_id . "." . $payment_proof_imageFileType;
                // Prepare and execute SQL insert statement
-               $sql = "INSERT INTO `members`(`id_prefix`,`member_id`, `first_name`, `last_name`, `email`, `phone1`,`phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`, `registration_date`) VALUES ('$id_prefix','','$first_name','$last_name','$email','$phone1','$phone2','$dob','$address','$member_type','$occupation','$school','$gender','$profile_url','$payment_proof_url','$reg_date')";
+               // Prepare the SQL statement with placeholders
+               $sql = "INSERT INTO `members`(`id_prefix`, `member_id`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`, `slta_member_id`, `registration_date`) 
+        VALUES (?, '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-               if (mysqli_query($conn, $sql)) {
+               $stmt = $conn->prepare($sql);
 
+               if ($stmt === false) {
+                  die('Prepare failed: ' . htmlspecialchars($conn->error));
+               }
 
+               // Bind the parameters
+               $stmt->bind_param('ssssssssssssssss', $id_prefix, $first_name, $last_name, $email, $phone1, $phone2, $dob, $address, $member_type, $occupation, $school, $gender, $profile_url, $payment_proof_url, $slta_id, $reg_date );
 
+               // Execute the statement
+               if ($stmt->execute()) {
+                  // Include PHPMailer autoload
                   require '../../PHP-mailer/vendor/autoload.php';
-
 
                   $mail = new PHPMailer(true);
 
                   try {
-                     $mail->isSMTP();                                            //Send using SMTP
-                     $mail->Host       = 'mail.adtennis.lk';                     //Set the SMTP server to send through
-                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                     $mail->Username   = 'admin@adtennis.lk';                     //SMTP username
-                     $mail->Password   = '2l01xVKb:EO.9p';                               //SMTP password
-                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable explicit TLS encryption
-                     $mail->Port       = 465;
+                     $mail->isSMTP();
+                     $mail->Host = 'mail.adtennis.lk';
+                     $mail->SMTPAuth = true;
+                     $mail->Username = 'admin@adtennis.lk';
+                     $mail->Password = '2l01xVKb:EO.9p';
+                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                     $mail->Port = 465;
 
                      // Set custom CA certificates to trust the self-signed certificate
                      $mail->SMTPOptions = array(
@@ -124,9 +135,9 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
                      $mail->addAddress('amparatennisclub2@gmail.com', 'AD tennis');
 
                      $mail->isHTML(true);
-                     $mail->Subject = 'new member submission';
-                     $mail->Body    = "new member submission from $email";
-                     $mail->AltBody = "new member submission from $email";
+                     $mail->Subject = 'New member submission';
+                     $mail->Body    = "New member submission from $email";
+                     $mail->AltBody = "New member submission from $email";
 
                      $mail->send();
                      echo 'Message has been sent';
@@ -134,20 +145,19 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
                      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                   }
 
-
-                  $_SESSION['response'] = "Membership application send for review successfully ";
+                  $_SESSION['response'] = "Membership application sent for review successfully";
                   header("Location: ../../index.php");
                   exit;
                } else {
-                  $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
+                  $_SESSION['response'] = "Error: " . htmlspecialchars($stmt->error);
                }
-            } else {
-               $_SESSION['response'] = "Sorry, there was an error uploading your file.";
+
+               $stmt->close();
+               $conn->close();
             }
          }
       }
    }
-   $conn->close();
    ?>
 
 
@@ -280,6 +290,11 @@ if ((!isset($_SESSION["id"]) && isset($_SESSION["username"])) || $_SESSION["priv
                <div class="mb-3">
                   <label for="formFile" class="form-label">Payment Proof:</label>
                   <input class="form-control" type="file" id="formFile" name="picture" required>
+               </div>
+
+               <div id="slta-member-id" class="mb-3">
+                  <label class="form-label" for="slta-id">If you are a slta member input your member id otherwise leave it blank:</label>
+                  <input type="text" class="form-control" name="slta-id" id="slta-id">
                </div>
 
                <div class="mb-3">
