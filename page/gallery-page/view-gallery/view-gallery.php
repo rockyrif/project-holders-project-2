@@ -138,7 +138,39 @@ $version = date('Ymd');
 
                         </form>
                     </div>
-                <?php } ?>
+                <?php } else {
+
+                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+                    $id = $_GET['id'];
+                    if (isset($id) && is_numeric($id)) {
+                        // Prepare the SQL statement
+                        $stmt = $conn->prepare("SELECT * FROM gallery WHERE id = ?");
+                        $stmt->bind_param("i", $id);
+
+                        // Execute the statement
+                        if ($stmt->execute()) {
+                            // Bind the result variables
+                            $stmt->bind_result($id, $column1, $column2, $column3, $column4); // Adjust this based on your table columns
+
+                            // Fetch the result
+                            if ($stmt->fetch()) {
+                                $row = [
+                                    'id' => $id,
+                                    'category' => $column1,
+                                    'tittle' => $column2,
+                                    'description' => $column3,
+                                    'thumbnail' => $column4,
+                                ];
+                                // Process $row here as needed
+                            } else {
+                                // Handle case where no record was found
+                                error_log("No record found with id: " . $id);
+                                // Optionally set an error response or message here
+                            }
+                       
+                        }
+                    }
+                } ?>
             </div>
 
             <!-- Image input form end -->
