@@ -167,6 +167,12 @@ $version = date('Ymd');
                                 error_log("No record found with id: " . $id);
                                 // Optionally set an error response or message here
                             }
+
+                            // Close the statement
+                            $stmt->close();
+
+                            // Close the connection
+                            $conn->close();
                        
                         }
                     }
