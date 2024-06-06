@@ -241,10 +241,15 @@ session_start();
                             <img src="../../Images/logo.png" alt="Logo" class="card-logo">
                             <h2 class="card-title"><?= $row['name'] ?></h2>
                             <div class="d-flex justify-content-center">
-                                <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
-                                <?php if ($row['state'] == 'entry_open') {
+                                <?php
+                                if (!$row['state'] == NULL) {
                                 ?>
-                                    <a href="apply.php?id=<?= $row['tournament_id'] ?>" class="btn btn-primary apply ms-1">Apply</a>
+                                    <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
+                                    <?php if ($row['state'] == 'entry_open') {
+                                    ?>
+                                        <a href="apply.php?id=<?= $row['tournament_id'] ?>" class="btn btn-primary apply ms-1">Apply</a>
+                                    <?php
+                                    } ?>
                                 <?php
                                 } ?>
                             </div>
@@ -264,7 +269,10 @@ session_start();
                                 <div class="crud">
                                     <a href="delete.php?id=<?= $row['tournament_id'] ?>" style="color: black;" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5" style="margin-right: 5px;"></i></a>
                                     <a href="edit.php?id=<?= $row['tournament_id'] ?>" style="color: black;"><i class="fa-solid fa-pen-to-square fs-5 "></i></a>
+                                    <span>ID-<?= $row['tournament_id'] ?></span>
                                 </div>
+
+
                                 <script>
                                     function confirmDelete() {
                                         return confirm("Are you sure you want to delete this record?");

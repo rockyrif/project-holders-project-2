@@ -16,6 +16,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       $end_date = mysqli_real_escape_string($conn, $_POST['end-date']);
 
       $description = mysqli_real_escape_string($conn, $_POST['description']);
+      $state = mysqli_real_escape_string($conn, $_POST['state']);
 
       // Process age-category array
       if (isset($_POST['age-category'])) {
@@ -26,8 +27,8 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
       }
 
       // Construct SQL query
-      $sql = "INSERT INTO tournament_schedule (name, type, start_date, end_date, `age_category[]`, description) 
-            VALUES ('$name', '$type', '$start_date', '$end_date', '$age_category', '$description')";
+      $sql = "INSERT INTO tournament_schedule (name, type, start_date, end_date, `age_category[]`, description, state) 
+            VALUES ('$name', '$type', '$start_date', '$end_date', '$age_category', '$description', '$state')";
 
       // Execute the query
       if ($conn->query($sql) === TRUE) {
@@ -467,12 +468,22 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                   });
                </script>
 
-
-
-
                <div class="mb-3">
                   <label class="form-label">Registration fee amount:</label>
                   <input type="text" class="form-control" name="description" required>
+               </div>
+
+               <div class="mb-3">
+                  <label class="form-label" for="state">Tournament state:</label>
+                  <select class="form-select" name="state" id="state">
+                     <option value="">Not Display</option>
+                     <option value="entry_open">Entry open</option>
+                     <option value="entry_open_soon">Entry open soon</option>
+                     <option value="entry_closed">Entry closed</option>
+                     <option value="cancelled">Cancelled</option>
+                     <option value="matches_on">Matches on</option>
+                     <option value="completed">Complete</option>
+                  </select>
                </div>
 
                <div class="mb-3">

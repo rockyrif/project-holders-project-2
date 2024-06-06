@@ -111,6 +111,16 @@ body {
   align-items: center !important;
 }
 
+.entry_open_soon {
+  background-color: rgb(12, 4, 255);
+  
+}
+
+.entry_closed {
+  background-color: rgb(255, 0, 0);
+  
+}
+
 .cancelled {
   background-color: red;
 }
