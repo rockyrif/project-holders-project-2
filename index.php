@@ -69,8 +69,12 @@ $version = date('Ymd');
         include 'components/navbar/navbar.php';
         ?>
         <!-- Navbar end -->
-
-        <script>document.getElementById('loadingOverlay').style.display = 'none';</script>
+        
+        <!-- skip loading screen in index.php start-->
+        <script>
+            document.getElementById('loadingOverlay').style.display = 'none';
+        </script>
+        <!-- skip loading screen in index.php end-->
 
         <!-- carousel start -->
         <div id="carouselExampleSlidesOnly" class="carousel slide section-one" data-bs-ride="carousel">
