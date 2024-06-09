@@ -642,7 +642,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
         </html>
 <?php
     } else {
-        $_SESSION['response'] = "Please be a approved member";
+        $_SESSION['response'] = "Please be an approved member";
         header("Location: ../../index.php");
         exit;
     }
