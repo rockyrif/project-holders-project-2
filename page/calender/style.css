@@ -116,6 +116,11 @@ body {
   
 }
 
+.postponed {
+  background-color: rgb(238, 4, 255);
+  
+}
+
 .entry_closed {
   background-color: rgb(255, 0, 0);
   

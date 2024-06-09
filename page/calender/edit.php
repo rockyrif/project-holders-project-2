@@ -456,9 +456,10 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                     <div class="mb-3">
                         <label class="form-label" for="state">Tournament state:</label>
                         <select class="form-select" name="state" id="state">
-                            <option value="" <?php echo ($state == '') ? 'selected' : ''; ?>>Not Display</option>
+                            <option value="NULL" <?php echo ($state == 'NULL') ? 'selected' : ''; ?>>Not Display</option>
                             <option value="entry_open" <?php echo ($state == 'entry_open') ? 'selected' : ''; ?>>Entry open</option>
                             <option value="entry_open_soon" <?php echo ($state == 'entry_open_soon') ? 'selected' : ''; ?>>Entry open soon</option>
+                            <option value="postponed" <?php echo ($state == 'postponed') ? 'selected' : ''; ?>>Postponed</option>
                             <option value="entry_closed" <?php echo ($state == 'entry_closed') ? 'selected' : ''; ?>>Entry closed</option>
                             <option value="cancelled" <?php echo ($state == 'cancelled') ? 'selected' : ''; ?>>Cancelled</option>
                             <option value="matches_on" <?php echo ($state == 'matches_on') ? 'selected' : ''; ?>>Matches on</option>

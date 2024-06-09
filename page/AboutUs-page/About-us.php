@@ -75,7 +75,6 @@ session_start();
             <div class="gallary-info">
                 <p data-aos="fade-up" data-aos-duration="2000">
                     The Ampara District Tennis Club (ADTC) was established in 2023 under the guidance of Mr.
-                    2
                     H.A.N.K. Damayantha Wijaya Sri, Deputy Inspector General of Police. ADTC has quickly
                     become one of the fastest-growing sports clubs in the country. Despite limited resources, ADTC
                     has successfully built nine tennis courts across the district.<br><br>

@@ -85,9 +85,9 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      <option value="Fruit Juice & Beach Tennis Tournament">Fruit Juice & Beach Tennis Tournament</option>
                      <option value="Fruit Juice Tournament">Fruit Juice Tournament</option>
                      <option value="Beach Tennis Tournament">Beach Tennis Tournament</option>
-                     <option value="Ranking Tournmaent">Ranking Tournament</option>
-                     <option value="Inter School Tournmaent">Inter School Tournament</option>
-                     <option value="Year End Tournmaent">Year End Tournament</option>
+                     <option value="Ranking Tournament">Ranking Tournament</option>
+                     <option value="Inter School Tournament">Inter School Tournament</option>
+                     <option value="Year End Tournament">Year End Tournament</option>
                      <option value="Other Tournament">Other Tournament</option>
                   </select>
                </div>
@@ -476,9 +476,10 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                <div class="mb-3">
                   <label class="form-label" for="state">Tournament state:</label>
                   <select class="form-select" name="state" id="state">
-                     <option value="">Not Display</option>
+                     <option value="NULL">Not Display</option>
                      <option value="entry_open">Entry open</option>
                      <option value="entry_open_soon">Entry open soon</option>
+                     <option value="postponed">Postponed</option>
                      <option value="entry_closed">Entry closed</option>
                      <option value="cancelled">Cancelled</option>
                      <option value="matches_on">Matches on</option>

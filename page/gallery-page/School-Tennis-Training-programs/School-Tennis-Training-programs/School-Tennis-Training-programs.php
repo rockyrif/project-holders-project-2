@@ -53,7 +53,7 @@ session_start();
         <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="gallary-tittle">
-                    <div class="">About School Tennis Training Program</div>
+                    <div class="">School Tennis Training Program</div>
                 </div>
 
                 <div class="carousel-item active">
@@ -89,6 +89,7 @@ session_start();
                     <li>Karangawa Maha Vidyalaya</li>
                     <li>Kotavehera Vidyalaya</li>
                     <li>Kavanthissa Primary School</li>
+                    <li>Hegoda Sri Indrasara Vidyalaya</li>
                 </ul>
                 <p>
                     Children under 12 are trained on school premises free of charge by professional coaches, while

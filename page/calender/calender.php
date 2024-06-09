@@ -87,11 +87,15 @@ session_start();
                         <div class="col-md-3 filter-input">
                             <label for="stateFilter">State of Tournament:</label>
                             <select name="stateFilter" id="stateFilter" class="form-control">
-                                <option value="" <?php if ($stateFilter == "") echo 'selected="selected"'; ?>>Select State</option>
-                                <option value="entry_open" <?php if ($stateFilter == "entry_open") echo 'selected="selected"'; ?>>Entry Open</option>
+                                <option value="NULL" <?php if ($stateFilter == "") echo 'selected="selected"'; ?>>Not Display</option>
+                                <option value="entry_open" <?php if ($stateFilter == "entry_open") echo 'selected="selected"'; ?>>Entry open</option>
+                                <option value="entry_open_soon" <?php if ($stateFilter == "entry_open_soon") echo 'selected="selected"'; ?>>Entry open soon</option>
+                                <option value="postponed" <?php if ($stateFilter == "postponed") echo 'selected="selected"'; ?>>Postponed</option>
+                                <option value="entry_closed" <?php if ($stateFilter == "entry_closed") echo 'selected="selected"'; ?>>Entry closed</option>
                                 <option value="cancelled" <?php if ($stateFilter == "cancelled") echo 'selected="selected"'; ?>>Cancelled</option>
-                                <option value="matches_on" <?php if ($stateFilter == "matches_on") echo 'selected="selected"'; ?>>Matches On</option>
-                                <option value="completed" <?php if ($stateFilter == "completed") echo 'selected="selected"'; ?>>Completed</option>
+                                <option value="matches_on" <?php if ($stateFilter == "matches_on") echo 'selected="selected"'; ?>>Matches on</option>
+                                <option value="completed" <?php if ($stateFilter == "completed") echo 'selected="selected"'; ?>>Complete</option>
+
                             </select>
                         </div>
                         <div class="col-md-3 filter-input">
@@ -141,6 +145,11 @@ session_start();
                     $params[] = $stateFilter;
                 }
 
+                if (empty($stateFilter)) {
+                    $sql .= " AND state IS ?";
+                    $params[] = $stateFilter;
+                }
+
                 if (!empty($tournamentName)) {
                     $sql .= " AND name LIKE ?";
                     $params[] = "%$tournamentName%";
@@ -169,7 +178,7 @@ session_start();
                 $rows = array();
                 while ($stmt->fetch()) {
                     $row = array(
-                        'id' => $id,
+                        'tournament_id' => $id,
                         'name' => $name,
                         'type' => $type,
                         'start_date' => $start_date,
@@ -242,7 +251,7 @@ session_start();
                             <h2 class="card-title"><?= $row['name'] ?></h2>
                             <div class="d-flex justify-content-center">
                                 <?php
-                                if (!$row['state'] == NULL) {
+                                if (!($row['state'] == "NULL")) {
                                 ?>
                                     <span class="card-status <?= formatString2($row['state']) ?>"><?= formatString($row['state']) ?></span>
                                     <?php if ($row['state'] == 'entry_open') {

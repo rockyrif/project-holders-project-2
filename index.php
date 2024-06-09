@@ -642,7 +642,7 @@ $version = date('Ymd');
                     <div class="line"></div>
                     <a href="/project-holders-project-2/downloads/Terms & Conditions of ADTC Website - 23.05.2024.pdf">Terms And Conditions</a>
                     <div class="line1"></div>
-                    <a href="/project-holders-project-2/downloads/ADTC Members Handbook 24-25 - 23.05.2024.pdf"> Members Handbook </a>
+                    <a href="/project-holders-project-2/downloads/ADTC Members Handbook 24-25 N.pdf"> Members Handbook </a>
                     <div class="line1"></div>
 
                     <a href="#">Membership
