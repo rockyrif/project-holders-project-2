@@ -196,7 +196,15 @@ session_start();
                 $stmt->close();
             } else {
                 // Define the default SQL query
-                $sql = "SELECT * FROM tournament_schedule ORDER BY tournament_id DESC";
+                $sql = "SELECT * 
+                FROM tournament_schedule 
+                ORDER BY 
+                    CASE 
+                        WHEN state = 'entry_open' THEN 0 
+                        ELSE 1 
+                    END, 
+                    tournament_id DESC;
+                ";
 
                 // Execute the query
                 $result = $conn->query($sql);

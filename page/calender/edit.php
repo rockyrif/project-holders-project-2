@@ -463,7 +463,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                             <option value="entry_closed" <?php echo ($state == 'entry_closed') ? 'selected' : ''; ?>>Entry closed</option>
                             <option value="cancelled" <?php echo ($state == 'cancelled') ? 'selected' : ''; ?>>Cancelled</option>
                             <option value="matches_on" <?php echo ($state == 'matches_on') ? 'selected' : ''; ?>>Matches on</option>
-                            <option value="completed" <?php echo ($state == 'completed') ? 'selected' : ''; ?>>Complete</option>
+                            <option value="completed" <?php echo ($state == 'completed') ? 'selected' : ''; ?>>Completed</option>
                         </select>
                     </div>
 

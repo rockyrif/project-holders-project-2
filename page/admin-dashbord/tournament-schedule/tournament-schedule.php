@@ -483,7 +483,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      <option value="entry_closed">Entry closed</option>
                      <option value="cancelled">Cancelled</option>
                      <option value="matches_on">Matches on</option>
-                     <option value="completed">Complete</option>
+                     <option value="completed">Completed</option>
                   </select>
                </div>
 
