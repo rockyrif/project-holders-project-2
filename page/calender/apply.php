@@ -46,8 +46,8 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
             // Check if image file is a valid format and size
             if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
                 $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
-                // header('Location: ' . $_SERVER['HTTP_REFERER']);
-                // exit;
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                exit;
             } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 500kb limit
                 $_SESSION['response'] = "Sorry, your file is too large. limit to 500kb.";
             } else {
