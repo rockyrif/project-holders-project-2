@@ -28,11 +28,12 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
 
                 date_default_timezone_set('Asia/Colombo');
                 $dateTime = date('YmdHis');
+                echo $dateTime;
                 // Increment the last payment_id to get the new payment_id
                 $new_file_name = $_SESSION["email"] . "-" . $dateTime;
                 // Get file extension
                 $imageFileType = strtolower(pathinfo($_FILES["payment-proof"]["name"], PATHINFO_EXTENSION));
-               
+
                 // Process file upload
                 $targetFile = $targetDir . $new_file_name . "." . $imageFileType;
                 // Rest of your code for file upload and processing
@@ -45,8 +46,8 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
             // Check if image file is a valid format and size
             if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
                 $_SESSION['response'] = "Sorry, only JPG, JPEG, PNG files are allowed.";
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
-                exit;
+                // header('Location: ' . $_SERVER['HTTP_REFERER']);
+                // exit;
             } elseif ($_FILES["payment-proof"]["size"] > 500000) { // 500kb limit
                 $_SESSION['response'] = "Sorry, your file is too large. limit to 500kb.";
             } else {
@@ -235,7 +236,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                         </div>
 
                         <div class="container d-flex justify-content-center">
-                            <form action="apply.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+                            <form action="apply.php" id="myForm" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
 
                                 <div class="mb-3">
                                     <label class="form-label">Member ID:</label>
@@ -567,7 +568,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                                 </div>
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Payment proof:</label>
-                                    <input class="form-control" type="file" id="formFile" name="payment-proof">
+                                    <input class="form-control" type="file" id="formFile" name="payment-proof" required>
                                 </div>
                                 <input type="hidden" name="id" value="<?= $id ?>">
                                 <?php
@@ -600,7 +601,7 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
 
 
                 </div>
-                
+
                 <!-- loading screen script start -->
                 <script>
                     // Function to show loading overlay
@@ -614,10 +615,19 @@ if ($_SESSION["loggedin"] = true && isset($_SESSION["username"])) {
                     }
 
                     // Add event listener to form submit button (replace 'submitButton' with your actual button ID)
-                    document.getElementById('submitButton').addEventListener('click', function() {
-                        // Show loading overlay when button is clicked
-                        showLoadingOverlay();
+
+                    document.getElementById('myForm').addEventListener('submit', function(event) {
+                        // Check if the form is valid
+                        if (this.checkValidity()) {
+                            // Show loading overlay if the form is valid
+                            showLoadingOverlay();
+                        } else {
+                            // Prevent form submission if the form is not valid
+                            event.preventDefault();
+                        }
                     });
+
+
 
                     // Listen for window onload event to hide loading overlay
                     window.onload = function() {
