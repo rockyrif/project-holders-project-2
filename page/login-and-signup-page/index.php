@@ -90,7 +90,7 @@ session_start();
             <input type="password" placeholder="Password" name="password" />
           </div>
           <div class="pr-lp-sameline">
-            <p>Don't forget your password other wise create a new account <!--<a href="">Click here</a>--></p>
+            <p>Forgot your password <a href="forgot_password.php">Click here</a></p>
           </div>
         </div>
         <div class="btn-field">
