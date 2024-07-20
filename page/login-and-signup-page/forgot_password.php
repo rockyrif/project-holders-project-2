@@ -107,26 +107,33 @@ use PHPMailer\PHPMailer\Exception;
 
         $_SESSION['email'] = $email;
 
-         // Generate a random password
+        // Generate a random password
         $randomPassword = generateRandomPassword();
-        
-         // Store the random password in a session variable
-         $_SESSION['random_password'] = $randomPassword;
+
+        // Store the random password in a session variable
+        $_SESSION['random_password'] = $randomPassword;
 
         include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-        
+
         // Check if the email exists in the database
-        $stmt = $conn->prepare("SELECT * FROM user_login WHERE email = ?");
+        $stmt = $conn->prepare("SELECT email FROM user_login WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
-        $result = $stmt->get_result();
-        
-        if ($result->num_rows > 0) {
+        // Bind the result to a variable
+        $stmt->bind_result($fetched_email);
+
+        // Fetch the result
+        $email_exists = $stmt->fetch();
+
+        // Close the statement
+        $stmt->close();
+
+        if ($email_exists) {
             // Include PHPMailer autoload
             require '../../PHP-mailer/vendor/autoload.php';
-            
+
             $mail = new PHPMailer(true);
-    
+
             try {
                 $mail->isSMTP();
                 $mail->Host = 'mail.adtennis.lk';
@@ -135,7 +142,7 @@ use PHPMailer\PHPMailer\Exception;
                 $mail->Password = '2l01xVKb:EO.9p';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                 $mail->Port = 465;
-    
+
                 // Set custom CA certificates to trust the self-signed certificate
                 $mail->SMTPOptions = array(
                     'ssl' => array(
@@ -144,17 +151,16 @@ use PHPMailer\PHPMailer\Exception;
                         'allow_self_signed' => true
                     )
                 );
-    
+
                 $mail->setFrom('admin@adtennis.lk', 'Auto mail generator');
-                $mail->addAddress( $email, '');
-    
+                $mail->addAddress($email, '');
+
                 $mail->isHTML(true);
                 $mail->Subject = 'Password Reset Request';
                 $mail->Body    = "A password reset request has been received for the email: $email. Your temporary otp is: $randomPassword";
                 $mail->AltBody = "A password reset request has been received for the email: $email. Your temporary otp is: $randomPassword";
-    
+
                 $mail->send();
-                
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
