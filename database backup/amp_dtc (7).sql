@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2024 at 11:59 AM
+-- Generation Time: Jul 30, 2024 at 09:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -31,7 +31,7 @@ CREATE TABLE `gallery` (
   `id` int(11) NOT NULL,
   `category` enum('Achievement-by-ADTC','School-Tennis-Training-programs','Tournaments','ADTC-Assets','Events') NOT NULL,
   `tittle` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
+  `description` text NOT NULL,
   `thumbnail` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -58,6 +58,7 @@ CREATE TABLE `members` (
   `profile_url` varchar(100) NOT NULL,
   `proof_url` varchar(100) NOT NULL,
   `payment_status` enum('rejected','pending','approved') NOT NULL DEFAULT 'pending',
+  `slta_member_id` varchar(255) NOT NULL DEFAULT 'Not a member',
   `registration_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -65,14 +66,15 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`, `payment_status`, `registration_date`) VALUES
-(42, 'ADTC-FC', 'mohamd', 'Rifky1', 'mnam32@gmail.com', 'sdsd', 'adad', '2024-03-01', '320b sailan road kalmunai kudy 31', 'child', '', 'sdsd', 'female', '', '', 'rejected', '2024-03-24'),
-(46, 'ADTC-MC', 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '', '', 'rejected', '2024-03-30'),
-(51, 'ADTC-FC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-27', 'sdsdsds', 'child', '', 'sdsd', 'female', '', '', 'rejected', '2024-04-05'),
-(79, 'ADTC-2024-MA', 'jone', 'dav', 'jone@gmail.com', '0776040064', '', '2024-04-20', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', '', 'Images/membership-payment-proof/78.jpg', 'rejected', '0000-00-00'),
-(114, 'ADTC-2024-MA', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-05-10', '320b sailan road kalmunai kudy 4', 'adult', 'sddddddddddd', '', 'male', 'Images/profile-pic/nifla@gmail.com.jpg', 'Images/membership-payment-proof/nifla@gmail.com.jpg', 'rejected', '2024-05-13'),
-(115, 'ADTC-2024-MA', 'mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '2024-05-16', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'approved', '2024-05-13'),
-(122, 'ADTC-2024-MA', 'mohamed ', 'test', 'test@gmail.com', '0776040064', '', '2024-05-31', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ ucsc', '', 'male', 'Images/profile-pic/test@gmail.com.jpg', 'Images/membership-payment-proof/test@gmail.com.jpg', 'approved', '2024-05-25');
+INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `email`, `phone1`, `phone2`, `date_of_birth`, `address`, `member_type`, `occupation`, `school`, `gender`, `profile_url`, `proof_url`, `payment_status`, `slta_member_id`, `registration_date`) VALUES
+(42, 'ADTC-FC', 'mohamd', 'Rifky1', 'mnam32@gmail.com', 'sdsd', 'adad', '2024-03-01', '320b sailan road kalmunai kudy 31', 'child', '', 'sdsd', 'female', '', '', 'rejected', 'Not a member', '2024-03-24'),
+(46, 'ADTC-MC', 'thayeel', 'mohamed', 'thayeel@gmail.com', '0776040064', '0784641683', '2024-03-01', '320b sailan road kalminai 4', 'child', '', 'zahira', 'male', '', '', 'rejected', 'Not a member', '2024-03-30'),
+(51, 'ADTC-FC', 'fathima', 'nifla', 'adtc@gmail.com', '0776040064', '', '2024-04-27', 'sdsdsds', 'child', '', 'sdsd', 'female', '', '', 'rejected', 'Not a member', '2024-04-05'),
+(79, 'ADTC-2024-MA', 'jone', 'dav', 'jone@gmail.com', '0776040064', '', '2024-04-20', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', '', 'Images/membership-payment-proof/78.jpg', 'rejected', 'Not a member', '0000-00-00'),
+(114, 'ADTC-2024-MA', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-05-10', '320b sailan road kalmunai kudy 4', 'adult', 'sddddddddddd', '', 'male', 'Images/profile-pic/nifla@gmail.com.jpg', 'Images/membership-payment-proof/nifla@gmail.com.jpg', 'rejected', 'Not a member', '2024-05-13'),
+(115, 'ADTC-2024-MA', 'mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '2024-05-16', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'approved', 'Not a member', '2024-05-13'),
+(122, 'ADTC-2024-MA', 'mohamed ', 'test', 'test@gmail.com', '0776040064', '', '2024-05-31', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ ucsc', '', 'male', 'Images/profile-pic/test@gmail.com.jpg', 'Images/membership-payment-proof/test@gmail.com.jpg', 'approved', 'Not a member', '2024-05-25'),
+(145, 'ADTC-2024-MA', 'fathima', 'nifla', 'mnamrifky@gmail.com', '0776040064', '', '2024-06-06', '320b sailan road kalmunai kudy 6', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'rejected', 'slta/09/08', '2024-06-04');
 
 -- --------------------------------------------------------
 
@@ -96,7 +98,11 @@ CREATE TABLE `member_fees` (
 --
 
 INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`, `paid_date`, `proof_url`, `payment_status`) VALUES
-(115, 115, 2025, 4, 2.00, '2024-05-16', '../../../Images/payment-proof/mnamrifky@gmail.com-2025-4.jpg', 'Paid');
+(115, 115, 2025, 4, 2.00, '2024-05-16', '../../../Images/payment-proof/mnamrifky@gmail.com-2025-4.jpg', 'Paid'),
+(116, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet'),
+(117, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet'),
+(118, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet'),
+(119, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet');
 
 -- --------------------------------------------------------
 
@@ -146,12 +152,14 @@ CREATE TABLE `tournament_application` (
 INSERT INTO `tournament_application` (`application_id`, `tournament_id`, `tournament_name`, `member_id`, `age_category[]`, `fee`, `paid_date`, `proof_url`, `payment_status`) VALUES
 (6, 59, 'Fruit Juice & Beach Tennis Tournament', 122, 'GS-16', '6', '2024-05-16', '../../Images/tournament-payment-proof/test@gmail.com-131729.jpg', 'Pending'),
 (7, 59, 'Fruit Juice & Beach Tennis Tournament', 122, 'BS-18', '1', '2024-05-17', '../../Images/tournament-payment-proof/test@gmail.com-165518.jpg', 'Rejected'),
-(8, 59, 'Fruit Juice & Beach Tennis Tournament', 122, 'GS-18,GS-16', '4', '2024-05-25', '../../Images/tournament-payment-proof/test@gmail.com-20240527165719.jpg', 'Pending'),
+(8, 59, 'Fruit Juice & Beach Tennis Tournament', 122, 'GS-16', '4', '2024-05-25', '../../Images/tournament-payment-proof/test@gmail.com-20240527165719.jpg', 'Pending'),
 (9, 60, 'rocky', 115, 'GS-18,GS-16,GS-14,GS-12', '3', '2024-05-10', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240527170621.jpg', 'Approved'),
 (10, 58, 'test2', 115, 'GS-18,GS-16,GS-14', '900', '2024-05-09', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240527172545.jpg', 'Rejected'),
-(11, 60, 'Beach Tennis Tournament', 115, 'GS-18,GS-16,GD-18,GD-16', '10', '2024-05-10', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240531074929.jpg', 'Pending'),
-(12, 60, 'Beach Tennis Tournament', 115, 'GS-18,GS-16,GD-18,GD-16', '4', '2024-05-04', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240531093448.jpg', 'Approved'),
-(13, 60, 'Beach Tennis Tournament', 115, 'GS-8,GS-6', '2', '2024-05-02', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240531150924.jpg', 'Rejected');
+(11, 60, 'Beach Tennis Tournament', 115, 'GS-18,GS-16,GD-18,GD-16', '10', '2024-05-10', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240531074929.jpg', 'Approved'),
+(14, 59, 'Fruit Juice & Beach Tennis Tournament', 115, 'BS-18,BS-16,GS-18,GS-16', '4', '2024-06-11', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240603132637.jpg', 'Pending'),
+(15, 61, 'test match', 115, 'BS-18,BS-16', '500', '2024-06-03', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240603170718.jpg', 'Approved'),
+(16, 62, 'Fruit Juice Tournament', 115, 'BS-18,BS-16,X-14,X-12', '900', '2024-06-05', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240604102946.jpg', 'Approved'),
+(17, 66, 'Fruit Juice & Beach Tennis Tournament', 115, 'BD-14,X-14', '600', '2024-06-15', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240619133545.jpg', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -168,7 +176,7 @@ CREATE TABLE `tournament_schedule` (
   `tournament_format` enum('singles','doubles') NOT NULL DEFAULT 'singles',
   `age_category[]` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `state` enum('entry_open','cancelled','matches_on','completed') NOT NULL DEFAULT 'entry_open'
+  `state` enum('entry_open','entry_open_soon','postponed','entry_closed','cancelled','matches_on','completed','NULL') DEFAULT 'NULL'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -176,11 +184,17 @@ CREATE TABLE `tournament_schedule` (
 --
 
 INSERT INTO `tournament_schedule` (`tournament_id`, `name`, `type`, `start_date`, `end_date`, `tournament_format`, `age_category[]`, `description`, `state`) VALUES
-(54, 'test4', 'SLTA Tennis', '2024-05-22', '2024-05-04', 'singles', 'GS-18,GS-16,GS-14,GS-12,BD-18,BD-16,BD-14,BD-12,GD-18,GD-16,GD-14,GD-12,X-18,X-16', '900/=', 'entry_open'),
-(55, 'test3', 'SLTA Tennis', '2024-05-04', '2024-05-22', 'singles', 'GS-18,BD-12,X-18,X-16', '700/=', 'entry_open'),
+(54, 'test4', 'SLTA Tennis', '2024-05-22', '2024-05-04', 'singles', 'GS-18,GS-16,GS-14,GS-12,BD-18,BD-16,BD-14,BD-12,GD-18,GD-16,GD-14,GD-12,X-18,X-16', '900/=', 'cancelled'),
+(55, 'test3', 'SLTA Tennis', '2024-05-04', '2024-05-22', 'singles', 'GS-18,BD-12,X-18,X-16', '700/=', 'entry_open_soon'),
 (58, 'test2', 'SLTA Tennis', '2024-05-24', '2024-05-31', 'singles', 'GS-18,GS-16,GS-14', '900/=', 'entry_open'),
-(59, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-01', '2024-06-30', 'singles', 'BS-18,BS-16,GS-18,GS-16', '1000/=', 'entry_open'),
-(60, 'Beach Tennis Tournament', 'ADTC Tennis', '2024-05-11', '2024-05-04', 'singles', 'GS-18,GS-16,GS-14,GS-12,GS-10,GS-8,GS-6,GD-18,GD-16,GD-14,GD-12', '123', 'entry_open');
+(59, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-01', '2024-06-30', 'singles', 'BS-18,BS-16,GS-18,GS-16', '1000/=', 'completed'),
+(60, 'Beach Tennis Tournament', 'ADTC Tennis', '2024-05-11', '2024-05-04', 'singles', 'GS-18,GS-16,GS-14,GS-12,GS-10,GS-8,GS-6,GD-18,GD-16,GD-14,GD-12', '123', 'NULL'),
+(61, 'test match', 'SLTA Tennis', '2024-06-13', '2024-06-06', 'singles', 'BS-18,BS-16,BS-14,BS-12,BS-10,BS-8,BS-6,GS-6', '500/= and free for school students', 'completed'),
+(62, 'Fruit Juice Tournament', 'ADTC Tennis', '2024-06-04', '2024-06-05', 'singles', 'BS-18,BS-16,BS-14,BS-12,BS-10,BS-8,BS-6,GS-18,GS-16,GS-14,GS-12,GS-10,GS-8,GS-6,WS,MS,BD-18,BD-16,BD-14,BD-12,GD-18,GD-16,GD-14,GD-12,WD,MD,X,X-18,X-16,X-14,X-12', '900/=', 'entry_open_soon'),
+(63, 'Ranking Tournament', 'ADTC Tennis', '2024-06-21', '2024-06-29', 'singles', 'BS-18,BS-16,BS-14,BS-12,BS-10,BS-8,BS-6', '900/=', 'postponed'),
+(64, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-09', '2024-06-10', 'singles', 'X,X-18,X-16,X-14,X-12', '900/=', 'postponed'),
+(65, 'Fruit Juice Tournament', 'SLTA Tennis', '2024-06-09', '2024-06-10', 'singles', 'BS-18,BS-16,BS-14,BS-12,BS-10,BS-8,BS-6', '900/=', 'NULL'),
+(66, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-19', '2024-06-20', 'singles', 'BD-14,X-14', '1000/=', 'entry_open');
 
 -- --------------------------------------------------------
 
@@ -201,7 +215,7 @@ CREATE TABLE `user_login` (
 --
 
 INSERT INTO `user_login` (`user_id`, `username`, `password`, `email`, `privilage`) VALUES
-(1, 'admin', '$2y$10$8Py2CQCGSJq1es01wjzGOOawwkQ3bPUhZSQ5YTfaRola9vfQXsIOq', 'mnamrifky@gmail.com', 'admin'),
+(1, 'admin', '$2y$10$1q8eRjhchXviBM7CfFsoLOlGPsPgIYVFu38GhXokfK9Get4r5K3pO', 'mnamrifky@gmail.com', 'admin'),
 (3, 'Dinusha', '$2y$10$nGWMrBmXn09aIl7N/cQ2xejQMG7FhaqdO/krRIRoYQPV/QFyWD9Ym', 'darshani.hewage@gmail.com', 'admin'),
 (13, 'test', '$2y$10$l9k9VVfXYg6FqC.PCmoErusRgR7DskZiit0ZIT8yyM8BxrCaoqd6y', 'test@gmail.com', 'user');
 
@@ -264,19 +278,19 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- AUTO_INCREMENT for table `member_fees`
 --
 ALTER TABLE `member_fees`
-  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -288,13 +302,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `tournament_application`
 --
 ALTER TABLE `tournament_application`
-  MODIFY `application_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `application_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tournament_schedule`
 --
 ALTER TABLE `tournament_schedule`
-  MODIFY `tournament_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `tournament_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `user_login`

@@ -1,64 +1,103 @@
+<?php
+$document_root = $_SERVER['DOCUMENT_ROOT'];
+
+// File paths
+$totalFile = $document_root . '/total_visits.txt';
+$dailyFile = $document_root . '/daily_visits.txt';
+$monthlyFile = $document_root . '/monthly_visits.txt';
+
+// Load or initialize visit counters
+$totalVisits = file_exists($totalFile) ? file_get_contents($totalFile) : 0;
+$dailyVisits = file_exists($dailyFile) ? json_decode(file_get_contents($dailyFile), true) : [];
+$monthlyVisits = file_exists($monthlyFile) ? json_decode(file_get_contents($monthlyFile), true) : [];
+
+// Get current date information
+$currentDay = date('Y-m-d');
+$currentMonth = date('Y-m');
+
+// Increment total visits
+$totalVisits++;
+
+// Check if the visitor has a 'counter' cookie set (to prevent counting multiple visits in a single day)
+if (!isset($_COOKIE['counter'])) {
+  // Increment daily visits
+  if (!isset($dailyVisits[$currentDay])) {
+    $dailyVisits[$currentDay] = 0;
+  }
+  $dailyVisits[$currentDay]++;
+
+  // Increment monthly visits
+  if (!isset($monthlyVisits[$currentMonth])) {
+    $monthlyVisits[$currentMonth] = 0;
+  }
+  $monthlyVisits[$currentMonth]++;
+
+  // Save the updated counters back to their respective files
+  file_put_contents($totalFile, $totalVisits);
+  file_put_contents($dailyFile, json_encode($dailyVisits));
+  file_put_contents($monthlyFile, json_encode($monthlyVisits));
+
+  // Set a cookie to mark this visitor as counted, with a 1-day expiration
+  setcookie('counter', '1', (time() + 86400));
+}
+
+// Output the current counts
+echo "<h2>Total Visits: $totalVisits</h2>";
+echo "<h2>Today's Visits: " . $dailyVisits[$currentDay] . "</h2>";
+echo "<h2>This Month's Visits: " . $monthlyVisits[$currentMonth] . "</h2>";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loading Animation Example</title>
+
   <style>
-    /* Loader styles */
-    .loader {
-      border: 16px solid #f3f3f3; /* Light grey */
-      border-top: 16px solid #3498db; /* Blue */
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      animation: spin 2s linear infinite;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
+    .container-visitor-counter {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 60px;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .counter-box {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      display: inline-block;
+      margin: 10px;
+      display: block;
     }
 
-    body.loaded .loader {
-      display: none;
+    h2 {
+      color: #333;
     }
 
-    /* Optionally, add a background overlay */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.8);
-      z-index: 9998;
+    .count {
+      font-size: 30px;
+      color: #007BFF;
     }
   </style>
+
 </head>
-<body>
-  <div id="loader" class="loader"></div>
-  <div class="overlay"></div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.body.classList.remove('loaded');
-    });
+<div class="container-visitor-counter">
+  <h1>Visitor Counter</h1>
+  <div class="counter-box">
+    <h2>Total Visits</h2>
+    <div class="count"><?php echo $totalVisits; ?></div>
+  </div>
+  <div class="counter-box">
+    <h2>Today's Visits</h2>
+    <div class="count"><?php echo $dailyVisits[$currentDay]; ?></div>
+  </div>
+  <div class="counter-box">
+    <h2>This Month's Visits</h2>
+    <div class="count"><?php echo $monthlyVisits[$currentMonth]; ?></div>
+  </div>
+</div>
 
-    window.addEventListener("load", function() {
-      setTimeout(function() {
-        document.body.classList.add('loaded');
-      }, 2000); // Simulate a 2-second loading delay
-    });
-  </script>
-
-  <!-- Your website content here -->
-  <h1>Welcome to My Website</h1>
-  <p>This is an example of a loading animation.</p>
-</body>
 </html>
