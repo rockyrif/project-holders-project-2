@@ -250,7 +250,7 @@ if (!isset($_COOKIE['counter'])) {
         .container-visitor-counter {
         font-family: 'Arial', sans-serif;
         text-align: center;
-        padding: 60px;
+        padding: 20px;
         /* background-color: #f8f9fa; */
         display: flex;
         justify-content: center;
