@@ -248,28 +248,50 @@ if (!isset($_COOKIE['counter'])) {
         }
 
         .container-visitor-counter {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 60px;
-        }
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        padding: 60px;
+        /* background-color: #f8f9fa; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
-        .counter-box {
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            display: inline-block;
-            margin: 10px;
-            display: block;
-        }
+    .counter-box {
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        transition: transform 0.3s ease;
+    }
 
-        /* h2 {
-            color: #333;
-        } */
+    .counter-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
 
-        .count {
-            font-size: 30px;
-            color: #007BFF;
-        }
+    .counter-box h2 {
+        color: #343a40;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+    .count {
+        font-size: 40px;
+        color: #17a2b8;
+        font-weight: bold;
+    }
+
+    h1 {
+        width: 100%;
+        color: #495057;
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
     </style>
 
 
@@ -673,10 +695,10 @@ if (!isset($_COOKIE['counter'])) {
 
                             <!-- visitor counter html start -->
                             <div class="container-visitor-counter">
-                                <h1>Visitor Counter</h1>
+                                
                                 <div class="counter-box">
                                     <h2>Total Visits</h2>
-                                    <div class="count"><?php echo $totalVisits; ?></div>
+                                    <div class="count"><?php echo $totalVisits-1; ?></div>
                                 </div>
                                 <div class="counter-box">
                                     <h2>Today's Visits</h2>
