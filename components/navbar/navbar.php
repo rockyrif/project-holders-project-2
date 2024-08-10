@@ -40,8 +40,17 @@ if (!isset($_COOKIE['counter'])) {
 
 
 
-    // Set the cookie
-    setcookie('counter', '1', (time() + 86400));
+    // Get the current time
+    $current_time = time();
+
+    // Calculate the time until midnight (12 AM)
+    $midnight_time = strtotime('tomorrow midnight', $current_time);
+
+    // Calculate the number of seconds until midnight
+    $seconds_until_midnight = $midnight_time - $current_time;
+
+    // Set the cookie with an expiry time of 12 AM daily
+    setcookie('counter', '1', $current_time + $seconds_until_midnight);
 }
 
 // Output the current counts
@@ -50,6 +59,8 @@ if (!isset($_COOKIE['counter'])) {
 // echo "<h2>This Month's Visits: " . $monthlyVisits[$currentMonth] . "</h2>";
 ?>
 <!-- visitor counter php logic end -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -248,50 +259,50 @@ if (!isset($_COOKIE['counter'])) {
         }
 
         .container-visitor-counter {
-        font-family: 'Arial', sans-serif;
-        text-align: center;
-        padding: 20px;
-        /* background-color: #f8f9fa; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            /* background-color: #f8f9fa; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-    .counter-box {
-        padding: 20px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        transition: transform 0.3s ease;
-    }
+        .counter-box {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
 
-    .counter-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    }
+        .counter-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
 
-    .counter-box h2 {
-        color: #343a40;
-        margin-bottom: 15px;
-        font-size: 24px;
-    }
+        .counter-box h2 {
+            color: #343a40;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
 
-    .count {
-        font-size: 40px;
-        color: #17a2b8;
-        font-weight: bold;
-    }
+        .count {
+            font-size: 40px;
+            color: #17a2b8;
+            font-weight: bold;
+        }
 
-    h1 {
-        width: 100%;
-        color: #495057;
-        font-size: 36px;
-        margin-bottom: 40px;
-    }
+        h1 {
+            width: 100%;
+            color: #495057;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
     </style>
 
 
@@ -673,8 +684,6 @@ if (!isset($_COOKIE['counter'])) {
                                     <li><a class="dropdown-item" href='/project-holders-project-2/index.php#adtcnews' id="adtcnews-btn">ADTC News</a>
 
                                     </li>
-
-
                                     <li><a class="dropdown-item dropdown" href="/project-holders-project-2/index.php#gallery" id="gallery-btn">Image
                                             Gallery</a>
 
@@ -695,10 +704,10 @@ if (!isset($_COOKIE['counter'])) {
 
                             <!-- visitor counter html start -->
                             <div class="container-visitor-counter">
-                                
+
                                 <div class="counter-box">
                                     <h2>Total Visits</h2>
-                                    <div class="count"><?php echo $totalVisits-1; ?></div>
+                                    <div class="count"><?php echo $totalVisits; ?></div>
                                 </div>
                                 <div class="counter-box">
                                     <h2>Today's Visits</h2>
@@ -711,11 +720,7 @@ if (!isset($_COOKIE['counter'])) {
                             </div>
                             <!-- visitor counter html end -->
 
-
                         </ul>
-
-
-
                     </div>
                 </div>
             </div>

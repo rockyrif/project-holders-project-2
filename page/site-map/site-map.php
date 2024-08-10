@@ -8,20 +8,19 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
-    
-    
+
+
 
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
-    
+
     <link rel="stylesheet" href="style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -35,11 +34,10 @@ session_start();
     <!-- AOS  end-->
 
     <style>
-    /* Custom styles */
- 
-  </style>
+        /* Custom styles */
+    </style>
 
-   
+
 
 </head>
 
@@ -49,7 +47,7 @@ session_start();
 
         <!-- Navbar start -->
         <?php
-            include '../../components/navbar/navbar.php'; 
+        include '../../components/navbar/navbar.php';
         ?>
         <!-- Navbar end -->
 
@@ -82,7 +80,7 @@ session_start();
                             <li><a href="../gallery-page/courts/courts.php">Image Gallery</a></li>
                         </ul>
                     </div>
-                  
+
                     <div class="site-map-grid-item">
                         <p><a href="">6. Coaching</a></p>
                         <ul>
@@ -97,22 +95,22 @@ session_start();
                             <li><a href="../gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">Image Gallery</a></li>
                         </ul>
                     </div>
-                    <div class="site-map-grid-item">
+                    <!-- <div class="site-map-grid-item">
                         <p><a href="">8. Beach Tennis</a></p>
                         <ul>
                             <li><a href="../gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">About Beach Tennis</a></li>
                             <li><a href="../gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Image Gallery</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                     <div class="site-map-grid-item">
-                        <p><a href="">9. Achievements</a></p>
+                        <p><a href="">8. Achievements</a></p>
                         <ul>
                             <li><a href="../gallery-page/Achievement-by-ADTC/Achievement-by-ADTC.php">ADTC Achievements</a></li>
                             <li><a href="../gallery-page/Achievement-by-ADTC/Achievement-by-ADTC.php">Image Gallery</a></li>
                         </ul>
                     </div>
                     <div class="site-map-grid-item">
-                        <p><a href="">10. Federation</a></p>
+                        <p><a href="">9. Federation</a></p>
                         <ul>
                             <li><a href="../adtc-committee/adtc-committee.php">ADTC Committee</a></li>
                             <li><a href="../../index.php#adtcnews">ADTC News</a></li>
@@ -120,7 +118,7 @@ session_start();
                         </ul>
                     </div>
                     <div class="site-map-grid-item">
-                        <p><a href="">11. Tournaments</a></p>
+                        <p><a href="">10. Tournaments</a></p>
                         <ul>
                             <li><a href="../calender/calender.php">Tournament Calendar</a></li>
                             <li><a href="#">Jus De Fruit Tournaments</a>
@@ -141,6 +139,12 @@ session_start();
                                 <ul>
                                     <li><a href="../gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">About Inter School Tournaments</a></li>
                                     <li><a href="../gallery-page/School-Tennis-Training-programs/School-Tennis-Training-programs/School-Tennis-Training-programs.php">Image Gallery</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Beach Tennis</a>
+                                <ul>
+                                    <li><a href="../gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">About Beach Tennis</a></li>
+                                    <li><a href="../gallery-page/Tournaments/Beach-tennis/Beach-tennis.php">Image Gallery</a></li>
                                 </ul>
                             </li>
 
