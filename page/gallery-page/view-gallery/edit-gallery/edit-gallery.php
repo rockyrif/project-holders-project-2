@@ -4,6 +4,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
     $id = $_GET['id'];
 
+
     include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
     // Prepare the SQL statement
@@ -16,24 +17,21 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
     // Execute the query
     $stmt->execute();
 
-    // Get the result
-    $result = $stmt->get_result();
+    // Bind the result variables
+    $stmt->bind_result($id, $category1, $tittle1, $description1, $thumbnail1);
 
     // Fetch the data
-    if ($row = $result->fetch_assoc()) {
-        // Assign the fetched data to variables
-        $category1 = $row['category'];
-        $tittle1 = $row['tittle'];
-        $description1 = $row['description'];
-        $thumbnail1 = $row['thumbnail'];
+    if ($stmt->fetch()) {
+        // The variables $category1, $tittle1, $description1, and $thumbnail1 now hold the fetched data
+   
     }
-
 
     // Close the statement
     $stmt->close();
 
     // Optional: Close the connection if you're done
     $conn->close();
+
 
 
     if (isset($_POST["submit"])) {
@@ -49,7 +47,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
         // Combine the path with the folder name to get the full path
         $oldFolderPath = $path . strtolower(preg_replace('/\s+/', '-', $tittle1));
         $newFolderPath = $path . $tittle_path;
-        
+
         // Check if the folder exists
         if (is_dir($oldFolderPath)) {
             // Rename the folder
@@ -59,7 +57,7 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
         $picture_upload_path = "../../../../Images/gallary/" . $category . "/" .  $tittle . "/1.jpg";
 
-        
+
 
 
         $directory = "../../../../Images/gallary/" . $category . "/" . $tittle_path;
@@ -70,9 +68,9 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
         include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
         // Initialize the SQL query and parameters array
-        $sql = "UPDATE gallery SET tittle = ?, description = ?";
-        $params = [$tittle, $description];
-        $types = 'ss';
+        $sql = "UPDATE gallery SET tittle = ?, description = ?, thumbnail = ?";
+        $params = [$tittle, $description,$databse_thumbnail_path];
+        $types = 'sss';
 
 
         // Append the WHERE clause
