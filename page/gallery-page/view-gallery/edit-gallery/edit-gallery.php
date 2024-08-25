@@ -2,6 +2,40 @@
 session_start();
 if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
+    $id = $_GET['id'];
+
+    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+    // Prepare the SQL statement
+    $sql = "SELECT * FROM gallery WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+
+    // Bind the parameter
+    $stmt->bind_param('i', $id);
+
+    // Execute the query
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
+
+    // Fetch the data
+    if ($row = $result->fetch_assoc()) {
+        // Assign the fetched data to variables
+        $category1 = $row['category'];
+        $tittle1 = $row['tittle'];
+        $description1 = $row['description'];
+        $thumbnail1 = $row['thumbnail'];
+    }
+
+
+    // Close the statement
+    $stmt->close();
+
+    // Optional: Close the connection if you're done
+    $conn->close();
+
+
     if (isset($_POST["submit"])) {
 
         $category = (isset($_POST['category'])) ? $_POST['category'] : '';
@@ -9,46 +43,57 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
         $tittle_path = strtolower(preg_replace('/\s+/', '-', $tittle));
         $description = $_POST['description'];
 
-        if (isset($_FILES['thumbnail'])) {
-            $picture_upload_path = "../../../Images/gallary/" . $category . "/" . $tittle_path . "/1.jpg";
+        // rename folder name to new tittle name start
+        $path = "../../../../Images/gallary/" . $category1 . "/";
 
-            $allowed_extensions = array('jpg', 'jpeg', 'png');
-            $file_extension = strtolower(pathinfo($_FILES['thumbnail']['name'], PATHINFO_EXTENSION));
-
-            if (in_array($file_extension, $allowed_extensions)) {
-                // Check if directory exists, if not, create it
-                $directory = "../../../Images/gallary/" . $category . "/" . $tittle_path;
-                $databse_thumbnail_path = "Images/gallary/" . $category . "/" . $tittle_path . "/1.jpg";
-                if (!is_dir($directory)) {
-                    mkdir($directory, 0777, true);
-
-                    // Save file with name 1.jpg
-                    move_uploaded_file($_FILES['thumbnail']['tmp_name'], $picture_upload_path);
-
-                    // Save category and title to SQL database
-
-                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
-
-                    $sql = "UPDATE gallery SET category = ?, tittle = ?, description = ?, thumbnail = ? WHERE id = ?";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param('ssssi', $category, $tittle, $description, $databse_thumbnail_path, $id);
-                    $stmt->execute();
-
-                    $stmt->close();
-                    $conn->close();
-
-                    $_SESSION['response'] = "File uploaded successfully. view here";
-                    header('Location: ../../../index.php#section-two');
-                    exit;
-                } else {
-                    $_SESSION['response'] = "Directory Already available ";
-                }
-            } else {
-                $_SESSION['response'] = "Only JPG, JPEG, and PNG files are allowed.";
-            }
-        } else {
-            $_SESSION['response'] = "No file uploaded.";
+        // Combine the path with the folder name to get the full path
+        $oldFolderPath = $path . strtolower(preg_replace('/\s+/', '-', $tittle1));
+        $newFolderPath = $path . $tittle_path;
+        
+        // Check if the folder exists
+        if (is_dir($oldFolderPath)) {
+            // Rename the folder
+            rename($oldFolderPath, $newFolderPath);
         }
+        // rename folder name to new tittle name end
+
+        $picture_upload_path = "../../../../Images/gallary/" . $category . "/" .  $tittle . "/1.jpg";
+
+        
+
+
+        $directory = "../../../../Images/gallary/" . $category . "/" . $tittle_path;
+        $databse_thumbnail_path = "Images/gallary/" . $category1 . "/" . $tittle_path . "/1.jpg";
+
+
+
+        include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+        // Initialize the SQL query and parameters array
+        $sql = "UPDATE gallery SET tittle = ?, description = ?";
+        $params = [$tittle, $description];
+        $types = 'ss';
+
+
+        // Append the WHERE clause
+        $sql .= " WHERE id = ?";
+        $params[] = $id;
+        $types .= 'i';
+
+        // echo $sql;
+
+        // Prepare and execute the statement
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param($types, ...$params);
+        $stmt->execute();
+
+
+        $stmt->close();
+        $conn->close();
+
+        $_SESSION['response'] = "Gallery updated successfully. view here";
+        header('Location: ../../../../index.php#section-two');
+        exit;
     }
 
 ?>
@@ -105,32 +150,20 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
 
                 <div class="container d-flex justify-content-center">
 
-                    <form action="add-gallery.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
-                        <div class="mb-3">
-                            <select class="form-select" name="category" aria-label="Default select example" required>
-                                <option selected>Category</option>
-                                <option value="Achievement-by-ADTC">Achievement by ADTC</option>
-                                <option value="School-Tennis-Training-programs">School Tennis Training programs</option>
-                                <option value="Tournaments">Tournaments</option>
-                                <option value="ADTC-Assets">ADTC Assets</option>
-                                <option value="Events">Events</option>
-                            </select>
-                        </div>
+                    <form action="edit-gallery.php?id=<?= $id ?>" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+
                         <div class="mb-3">
                             <label class="form-label">Tittle:</label>
-                            <input type="text" class="form-control" name="tittle" placeholder="Tittle of your event" required>
+                            <input type="text" value="<?= $tittle1 ?>" class="form-control" name="tittle" placeholder="Tittle of your event" required>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description:</label><br>
-                            <textarea id="description" class="form-control" name="description" rows="4" cols="50"></textarea>
+                            <textarea id="description" class="form-control" name="description" rows="4" cols="50"><?= htmlspecialchars($description1); ?></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Thumbnail:</label>
-                            <input class="form-control" type="file" id="thumbnail" name="thumbnail" required>
-                        </div>
+
                         <div class="mb-3">
                             <button type="submit" class="btn btn-success" name="submit">Add</button>
-                            <a href="../../../index.php" class="btn btn-danger ">Cancel</a>
+                            <a href="../../../../index.php" class="btn btn-danger ">Cancel</a>
                         </div>
                     </form>
 
