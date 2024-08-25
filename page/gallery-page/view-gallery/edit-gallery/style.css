@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+    background-color: #ffffff;
+
+
+}
+
+/* home start */
+.home {
+    position: relative;
+    top: 0%;
+    height: fit-content;
+}
+
+.add-gallery{
+    margin-top: 100px;
+}
+
+.form-container {
+    
+    display: flex;
+    justify-content: center;
+   
+}
+
+
+.form {
+    width: 50vw;
+}
+/* home end */
+
+
+
+
+/* home page section two */

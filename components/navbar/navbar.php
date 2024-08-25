@@ -7,8 +7,8 @@ $totalFile = $document_root . '/project-holders-project-2/visitor-counters/total
 $dailyFile = $document_root . '/project-holders-project-2/visitor-counters/daily_visits.txt';
 $monthlyFile = $document_root . '/project-holders-project-2/visitor-counters/monthly_visits.txt';
 
-// Load or initialize visit counters
-$totalVisits = file_exists($totalFile) ? file_get_contents($totalFile) : 0;
+// Load or initialize visit counters with better type handling
+$totalVisits = file_exists($totalFile) ? (int)file_get_contents($totalFile) : 0;
 $dailyVisits = file_exists($dailyFile) ? json_decode(file_get_contents($dailyFile), true) : [];
 $monthlyVisits = file_exists($monthlyFile) ? json_decode(file_get_contents($monthlyFile), true) : [];
 
@@ -16,44 +16,69 @@ $monthlyVisits = file_exists($monthlyFile) ? json_decode(file_get_contents($mont
 $currentDay = date('Y-m-d');
 $currentMonth = date('Y-m');
 
-// Increment total visits
-$totalVisits++;
+// Initialize today's and this month's visit counters if they don't exist
+if (!isset($dailyVisits[$currentDay])) {
+    $dailyVisits[$currentDay] = 0;
+}
+
+if (!isset($monthlyVisits[$currentMonth])) {
+    $monthlyVisits[$currentMonth] = 0;
+}
 
 // Check if the visitor has a 'counter' cookie set (to prevent counting multiple visits in a single day)
 if (!isset($_COOKIE['counter'])) {
-    // Increment daily visits
-    if (!isset($dailyVisits[$currentDay])) {
-        $dailyVisits[$currentDay] = 0;
-    }
+    // Increment visit counts
+    $totalVisits++;
     $dailyVisits[$currentDay]++;
-
-    // Increment monthly visits
-    if (!isset($monthlyVisits[$currentMonth])) {
-        $monthlyVisits[$currentMonth] = 0;
-    }
     $monthlyVisits[$currentMonth]++;
 
-    // Save the updated counters back to their respective files
-    file_put_contents($totalFile, $totalVisits);
-    file_put_contents($dailyFile, json_encode($dailyVisits));
-    file_put_contents($monthlyFile, json_encode($monthlyVisits));
+    // Save the updated total visits count with file locking
+    $fp = fopen($totalFile, 'c+');
+    if (flock($fp, LOCK_EX)) {
+        ftruncate($fp, 0); // Clear the file before writing
+        rewind($fp);
+        fwrite($fp, $totalVisits);
+        fflush($fp); // Flush output before releasing the lock
+        flock($fp, LOCK_UN); // Release the lock
+    }
+    fclose($fp);
 
+    // Save the updated daily visits count with file locking
+    $fpDaily = fopen($dailyFile, 'c+');
+    if (flock($fpDaily, LOCK_EX)) {
+        ftruncate($fpDaily, 0); // Clear the file before writing
+        rewind($fpDaily);
+        fwrite($fpDaily, json_encode($dailyVisits, JSON_PRETTY_PRINT));
+        fflush($fpDaily); // Flush output before releasing the lock
+        flock($fpDaily, LOCK_UN); // Release the lock
+    }
+    fclose($fpDaily);
 
+    // Save the updated monthly visits count with file locking
+    $fpMonthly = fopen($monthlyFile, 'c+');
+    if (flock($fpMonthly, LOCK_EX)) {
+        ftruncate($fpMonthly, 0); // Clear the file before writing
+        rewind($fpMonthly);
+        fwrite($fpMonthly, json_encode($monthlyVisits, JSON_PRETTY_PRINT));
+        fflush($fpMonthly); // Flush output before releasing the lock
+        flock($fpMonthly, LOCK_UN); // Release the lock
+    }
+    fclose($fpMonthly);
 
-    // Get the current time
-    $current_time = time();
+      // Get the current time
+      $current_time = time();
 
-    // Calculate the time until midnight (12 AM)
-    $midnight_time = strtotime('tomorrow midnight', $current_time);
-
-    // Calculate the number of seconds until midnight
-    $seconds_until_midnight = $midnight_time - $current_time;
-
-    // Set the cookie with an expiry time of 12 AM daily
-    setcookie('counter', '1', $current_time + $seconds_until_midnight);
+      // Calculate the time until midnight (12 AM)
+      $midnight_time = strtotime('tomorrow midnight', $current_time);
+  
+      // Calculate the number of seconds until midnight
+      $seconds_until_midnight = $midnight_time - $current_time;
+  
+      // Set the cookie with an expiry time of 12 AM daily
+      setcookie('counter', '1', $current_time + $seconds_until_midnight);
 }
 
-// Output the current counts
+// Output the current counts (for debugging)
 // echo "<h2>Total Visits: $totalVisits</h2>";
 // echo "<h2>Today's Visits: " . $dailyVisits[$currentDay] . "</h2>";
 // echo "<h2>This Month's Visits: " . $monthlyVisits[$currentMonth] . "</h2>";

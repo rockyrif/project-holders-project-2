@@ -77,6 +77,9 @@ $version = date('Ymd');
                                     <button type="submit" class="btn btn-success w-100" name="submit">Add</button>
                                 </div>
                                 <div class="mb-3 me-2 ">
+                                    <button onclick="window.location.href='edit-gallery/edit-gallery.php?id=<?=$id?>'; return false;" type="submit" class="btn btn-success w-100" name="submit">Edit</button>
+                                </div>
+                                <div class="mb-3 me-2 ">
                                     <a href="../../../index.php" class="btn btn-danger w-100">Cancel</a>
                                 </div>
                                 <div class="mb-3 me-2">
