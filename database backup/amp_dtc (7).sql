@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2024 at 09:01 AM
+-- Generation Time: Aug 27, 2024 at 06:38 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -74,7 +74,8 @@ INSERT INTO `members` (`member_id`, `id_prefix`, `first_name`, `last_name`, `ema
 (114, 'ADTC-2024-MA', 'fathima', 'nifla', 'nifla@gmail.com', '0776040064', '', '2024-05-10', '320b sailan road kalmunai kudy 4', 'adult', 'sddddddddddd', '', 'male', 'Images/profile-pic/nifla@gmail.com.jpg', 'Images/membership-payment-proof/nifla@gmail.com.jpg', 'rejected', 'Not a member', '2024-05-13'),
 (115, 'ADTC-2024-MA', 'mohamed', 'Rifky', 'mnamrifky@gmail.com', '0776040064', '', '2024-05-16', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'approved', 'Not a member', '2024-05-13'),
 (122, 'ADTC-2024-MA', 'mohamed ', 'test', 'test@gmail.com', '0776040064', '', '2024-05-31', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ ucsc', '', 'male', 'Images/profile-pic/test@gmail.com.jpg', 'Images/membership-payment-proof/test@gmail.com.jpg', 'approved', 'Not a member', '2024-05-25'),
-(145, 'ADTC-2024-MA', 'fathima', 'nifla', 'mnamrifky@gmail.com', '0776040064', '', '2024-06-06', '320b sailan road kalmunai kudy 6', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'rejected', 'slta/09/08', '2024-06-04');
+(145, 'ADTC-2024-MA', 'fathima', 'nifla', 'mnamrifky@gmail.com', '0776040064', '', '2024-06-06', '320b sailan road kalmunai kudy 6', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/mnamrifky@gmail.com.jpg', 'Images/membership-payment-proof/mnamrifky@gmail.com.jpg', 'rejected', 'slta/09/08', '2024-06-04'),
+(146, 'ADTC-2024-MA', 'firstname', 'test10', 'test10@gmail.com', '0776040064', '', '2007-07-26', '320b sailan road kalmunai kudy 4', 'adult', 'Student @ sliate', '', 'male', 'Images/profile-pic/test10@gmail.com.jpg', 'Images/membership-payment-proof/test10@gmail.com.jpg', 'approved', '', '2024-07-31');
 
 -- --------------------------------------------------------
 
@@ -102,7 +103,8 @@ INSERT INTO `member_fees` (`fee_id`, `member_id`, `year`, `month`, `fee_amount`,
 (116, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet'),
 (117, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet'),
 (118, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet'),
-(119, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet');
+(119, 115, 2026, 3, 6.00, '2024-06-12', '../../../Images/payment-proof/mnamrifky@gmail.com-2026-3.jpg', 'Not yet'),
+(120, 146, 2024, 7, 498.00, '2024-07-31', '../../../Images/payment-proof/test10@gmail.com-2024-7.jpg', 'Paid');
 
 -- --------------------------------------------------------
 
@@ -125,7 +127,8 @@ CREATE TABLE `news` (
 INSERT INTO `news` (`news_id`, `pic_path`, `description`, `publisher`, `date`) VALUES
 (4, 'Images/news/1.jpg', 'AMPARA RANKING TENNIS TOURNAMENT\r\n\r\nPrepare yourselves for the upcoming Ampara Ranking Tennis Tournament! Proudly organized by the Ampara District Tennis Club, this event promises an exhilarating showcase of talent and sportsmanship.', '', '2024-04-21'),
 (5, 'Images/news/2.jpg', 'TENNIS TOURNAMENT\r\n\r\nPrepare yourselves for the upcoming Tennis Tournament! Proudly organized by the Ampara District Tennis Club, this event promises an exhilarating showcase of talent and sportsmanship.', '', '2024-04-21'),
-(18, 'Images/news/6.jpg', '🎾 INTER-SCHOOL TENNIS TOURNAMENT<br><br>Get ready for an exciting showdown at the Inter-School Tennis Tournament, organized by the Ampara District Tennis Club (ADTC)! This prestigious event is set to bring together budding tennis talents from various schools for a thrilling display of skill and sportsmanship.', 'admin', '2024-04-21');
+(18, 'Images/news/6.jpg', '🎾 INTER-SCHOOL TENNIS TOURNAMENT<br><br>Get ready for an exciting showdown at the Inter-School Tennis Tournament, organized by the Ampara District Tennis Club (ADTC)! This prestigious event is set to bring together budding tennis talents from various schools for a thrilling display of skill and sportsmanship.', 'admin', '2024-04-21'),
+(26, 'Images/news/19.jpg', 'test', 'admin', '2024-07-31');
 
 -- --------------------------------------------------------
 
@@ -159,7 +162,7 @@ INSERT INTO `tournament_application` (`application_id`, `tournament_id`, `tourna
 (14, 59, 'Fruit Juice & Beach Tennis Tournament', 115, 'BS-18,BS-16,GS-18,GS-16', '4', '2024-06-11', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240603132637.jpg', 'Pending'),
 (15, 61, 'test match', 115, 'BS-18,BS-16', '500', '2024-06-03', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240603170718.jpg', 'Approved'),
 (16, 62, 'Fruit Juice Tournament', 115, 'BS-18,BS-16,X-14,X-12', '900', '2024-06-05', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240604102946.jpg', 'Approved'),
-(17, 66, 'Fruit Juice & Beach Tennis Tournament', 115, 'BD-14,X-14', '600', '2024-06-15', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240619133545.jpg', 'Pending');
+(17, 66, 'Fruit Juice & Beach Tennis Tournament', 115, 'BD-14,X-14', '600', '2024-06-15', '../../Images/tournament-payment-proof/mnamrifky@gmail.com-20240619133545.jpg', 'Rejected');
 
 -- --------------------------------------------------------
 
@@ -194,7 +197,8 @@ INSERT INTO `tournament_schedule` (`tournament_id`, `name`, `type`, `start_date`
 (63, 'Ranking Tournament', 'ADTC Tennis', '2024-06-21', '2024-06-29', 'singles', 'BS-18,BS-16,BS-14,BS-12,BS-10,BS-8,BS-6', '900/=', 'postponed'),
 (64, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-09', '2024-06-10', 'singles', 'X,X-18,X-16,X-14,X-12', '900/=', 'postponed'),
 (65, 'Fruit Juice Tournament', 'SLTA Tennis', '2024-06-09', '2024-06-10', 'singles', 'BS-18,BS-16,BS-14,BS-12,BS-10,BS-8,BS-6', '900/=', 'NULL'),
-(66, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-19', '2024-06-20', 'singles', 'BD-14,X-14', '1000/=', 'entry_open');
+(66, 'Fruit Juice & Beach Tennis Tournament', 'SLTA Tennis', '2024-06-19', '2024-06-20', 'singles', 'BD-14,X-14', '1000/=', 'entry_open'),
+(67, 'Fruit Juice Tournament', 'ADTC Tennis', '2024-07-31', '2024-08-01', 'singles', 'BS-18,BS-16,BS-14', '500', 'entry_open');
 
 -- --------------------------------------------------------
 
@@ -215,9 +219,10 @@ CREATE TABLE `user_login` (
 --
 
 INSERT INTO `user_login` (`user_id`, `username`, `password`, `email`, `privilage`) VALUES
-(1, 'admin', '$2y$10$1q8eRjhchXviBM7CfFsoLOlGPsPgIYVFu38GhXokfK9Get4r5K3pO', 'mnamrifky@gmail.com', 'admin'),
+(1, 'admin', '$2y$10$Zsfv7j5wLWTGjTLZRhEcjepnWb6uI/3ngW0eTp6smr5/AdONyi4hK', 'mnamrifky@gmail.com', 'admin'),
 (3, 'Dinusha', '$2y$10$nGWMrBmXn09aIl7N/cQ2xejQMG7FhaqdO/krRIRoYQPV/QFyWD9Ym', 'darshani.hewage@gmail.com', 'admin'),
-(13, 'test', '$2y$10$l9k9VVfXYg6FqC.PCmoErusRgR7DskZiit0ZIT8yyM8BxrCaoqd6y', 'test@gmail.com', 'user');
+(13, 'test', '$2y$10$l9k9VVfXYg6FqC.PCmoErusRgR7DskZiit0ZIT8yyM8BxrCaoqd6y', 'test@gmail.com', 'user'),
+(15, 'test10', '$2y$10$YCsYBAxJ3sRNtEuVFyy8Ne20el93LuskvOVnwTC2Vk7Ohal1rjGki', 'test10@gmail.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -278,25 +283,25 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `member_fees`
 --
 ALTER TABLE `member_fees`
-  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+  MODIFY `fee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `news_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tournament_application`
@@ -308,13 +313,13 @@ ALTER TABLE `tournament_application`
 -- AUTO_INCREMENT for table `tournament_schedule`
 --
 ALTER TABLE `tournament_schedule`
-  MODIFY `tournament_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `tournament_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
