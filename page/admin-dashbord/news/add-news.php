@@ -56,11 +56,18 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                     $proof_url = $targetDir . $new_news_pic_id . "." . $imageFileType;;
 
                     // Prepare and execute SQL insert statement
-                    $sql = "INSERT INTO news (pic_path, description, publisher, date)
-                        VALUES ('$proof_url', '$description', '$publisher', '$publish_date')";
+                    // Prepare the SQL statement
+                    $sql = "INSERT INTO news (pic_path, description, publisher, date) VALUES (?, ?, ?, ?)";
 
-                    if (mysqli_query($conn, $sql)) {
-                        $_SESSION['response'] = "News publised successfully.";
+                    // Initialize the prepared statement
+                    $stmt = $conn->prepare($sql);
+
+                    // Bind the parameters to the statement
+                    $stmt->bind_param('ssss', $proof_url, $description, $publisher, $publish_date);
+
+                    // Execute the statement
+                    if ($stmt->execute()) {
+                        $_SESSION['response'] = "News published successfully.";
                     } else {
                         $_SESSION['response'] = "Error: " . $sql . "<br>" . mysqli_error($conn);
                     }
