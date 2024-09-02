@@ -8,7 +8,7 @@ $version = date('Ymd');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
+    <title>Latest News</title>
 
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -78,15 +78,15 @@ $version = date('Ymd');
 
                 <div style="display: flex; justify-content: space-between;">
                     <div>
-                    <p >By: <?= $row['publisher']; ?></p>
+                        <p>By: <?= $row['publisher']; ?></p>
                     </div>
                     <div>
-                    <p ><?= $row['date']; ?></p>
+                        <p><?= $row['date']; ?></p>
                     </div>
                 </div>
 
                 <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") { ?>
-                    <div style="display:flex; justify-content:center; " >
+                    <div style="display:flex; justify-content:center; ">
                         <div style="margin-bottom: 20px;">
                             <button type="button" class="btn btn-danger" onclick="confirmDelete(<?php echo $row['news_id']; ?>)">Delete</button>
 
