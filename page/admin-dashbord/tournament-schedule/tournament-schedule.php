@@ -320,7 +320,10 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                   });
                </script>
 
-
+               <div class="d-flex justify-content-center">
+                  <button onclick="window.location='add-single-match-types.php'" class="btn btn-dark btn-center" name="submit">Add match types</button>
+               </div>
+               <br>
                <div id="tournament-format-doubles" class="mb-3">
                   <div class="text-center mb-3">
                      <h3>DOUBLE MATCHES</h3>
@@ -467,6 +470,10 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                      checkboxes.forEach(checkbox => checkbox.checked = this.checked);
                   });
                </script>
+
+               <div class="d-flex justify-content-center">
+                  <button onclick="window.location='add-double-match-types.php'" class="btn btn-dark btn-center" name="submit">Add match types</button>
+               </div>
 
                <div class="mb-3">
                   <label class="form-label">Registration fee amount:</label>
