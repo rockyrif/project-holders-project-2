@@ -181,8 +181,6 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                                  </div>
                            <?php
                               }
-                           } else {
-                              echo "0 results";
                            }
 
                            // Close connection
@@ -246,6 +244,33 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                                  Select All
                               </label>
                            </div>
+                           <!-- SQL Start -->
+                           <?php
+                           include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                           // SQL query
+                           $sql = "SELECT girls, `girls-id` FROM single_matches WHERE girls IS NOT NULL AND girls != '' AND `girls-id` IS NOT NULL AND `girls-id` != ''";
+                           $result = $conn->query($sql);
+
+                           // Check if rows are returned
+                           if ($result->num_rows > 0) {
+                              // Output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <div class="form-check">
+                                    <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-18-boys" value="<?= htmlspecialchars($row['girls-id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <label class="form-check-label" for="age-under-18-boys">
+                                       <?= htmlspecialchars($row['girls'], ENT_QUOTES, 'UTF-8'); ?>
+                                    </label>
+                                 </div>
+                           <?php
+                              }
+                           }
+
+                           // Close connection
+                           $conn->close();
+                           ?>
+                           <!-- SQL end -->
                            <div class="form-check">
                               <input class="form-check-input girls" type="checkbox" name="age-category[]" id="age-under-18-girls" value="GS-18">
                               <label class="form-check-label" for="age-under-18-girls">
@@ -300,12 +325,40 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                                  Select All
                               </label>
                            </div>
+
                            <div class="form-check">
                               <input class="form-check-input womens" type="checkbox" name="age-category[]" id="age-open-womens" value="WS">
                               <label class="form-check-label" for="age-open-womens">
                                  Open
                               </label>
                            </div>
+                           <!-- SQL Start -->
+                           <?php
+                           include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                           // SQL query
+                           $sql = "SELECT womens, `womens-id` FROM single_matches WHERE womens IS NOT NULL AND womens != '' AND `womens-id` IS NOT NULL AND `womens-id` != ''";
+                           $result = $conn->query($sql);
+
+                           // Check if rows are returned
+                           if ($result->num_rows > 0) {
+                              // Output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <div class="form-check">
+                                    <input class="form-check-input womens" type="checkbox" name="age-category[]" id="age-under-18-boys" value="<?= htmlspecialchars($row['womens-id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <label class="form-check-label" for="age-under-18-boys">
+                                       <?= htmlspecialchars($row['womens'], ENT_QUOTES, 'UTF-8'); ?>
+                                    </label>
+                                 </div>
+                           <?php
+                              }
+                           }
+
+                           // Close connection
+                           $conn->close();
+                           ?>
+                           <!-- SQL end -->
                         </fieldset>
                      </div>
 
@@ -324,6 +377,33 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                                  Open
                               </label>
                            </div>
+                           <!-- SQL Start -->
+                           <?php
+                           include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                           // SQL query
+                           $sql = "SELECT mens, `mens-id` FROM single_matches WHERE mens IS NOT NULL AND mens != '' AND `mens-id` IS NOT NULL AND `mens-id` != ''";
+                           $result = $conn->query($sql);
+
+                           // Check if rows are returned
+                           if ($result->num_rows > 0) {
+                              // Output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <div class="form-check">
+                                    <input class="form-check-input mens" type="checkbox" name="age-category[]" id="age-under-18-boys" value="<?= htmlspecialchars($row['mens-id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <label class="form-check-label" for="age-under-18-boys">
+                                       <?= htmlspecialchars($row['mens'], ENT_QUOTES, 'UTF-8'); ?>
+                                    </label>
+                                 </div>
+                           <?php
+                              }
+                           }
+
+                           // Close connection
+                           $conn->close();
+                           ?>
+                           <!-- SQL end -->
                         </fieldset>
                      </div>
                   </div>
@@ -368,6 +448,33 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                               <input class="form-check-input" type="checkbox" id="select-all-boys-doubles">
                               <label class="form-check-label" for="select-all-boys-doubles">Select All</label>
                            </div>
+                           <!-- SQL Start -->
+                           <?php
+                           include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                           // SQL query
+                           $sql = "SELECT boys, `boys-id` FROM double_matches WHERE boys IS NOT NULL AND boys != '' AND `boys-id` IS NOT NULL AND `boys-id` != ''";
+                           $result = $conn->query($sql);
+
+                           // Check if rows are returned
+                           if ($result->num_rows > 0) {
+                              // Output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <div class="form-check">
+                                    <input class="form-check-input boys-doubles" type="checkbox" name="age-category[]" id="age-under-18-boys" value="<?= htmlspecialchars($row['boys-id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <label class="form-check-label" for="age-under-18-boys">
+                                       <?= htmlspecialchars($row['boys'], ENT_QUOTES, 'UTF-8'); ?>
+                                    </label>
+                                 </div>
+                           <?php
+                              }
+                           }
+
+                           // Close connection
+                           $conn->close();
+                           ?>
+                           <!-- SQL end -->
                            <div class="form-check">
                               <input class="form-check-input boys-doubles" type="checkbox" name="age-category[]" value="BD-18">
                               <label class="form-check-label">Under 18</label>
@@ -395,6 +502,33 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                               <input class="form-check-input" type="checkbox" id="select-all-girls-doubles">
                               <label class="form-check-label" for="select-all-girls-doubles">Select All</label>
                            </div>
+                           <!-- SQL Start -->
+                           <?php
+                           include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                           // SQL query
+                           $sql = "SELECT girls, `girls-id` FROM double_matches WHERE girls IS NOT NULL AND girls != '' AND `girls-id` IS NOT NULL AND `girls-id` != ''";
+                           $result = $conn->query($sql);
+
+                           // Check if rows are returned
+                           if ($result->num_rows > 0) {
+                              // Output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <div class="form-check">
+                                    <input class="form-check-input girls-doubles" type="checkbox" name="age-category[]" id="age-under-18-boys" value="<?= htmlspecialchars($row['girls-id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <label class="form-check-label" for="age-under-18-boys">
+                                       <?= htmlspecialchars($row['girls'], ENT_QUOTES, 'UTF-8'); ?>
+                                    </label>
+                                 </div>
+                           <?php
+                              }
+                           } 
+
+                           // Close connection
+                           $conn->close();
+                           ?>
+                           <!-- SQL end -->
                            <div class="form-check">
                               <input class="form-check-input girls-doubles" type="checkbox" name="age-category[]" value="GD-18">
                               <label class="form-check-label">Under 18</label>
@@ -426,6 +560,33 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                               <input class="form-check-input womens-doubles" type="checkbox" name="age-category[]" value="WD">
                               <label class="form-check-label">Open</label>
                            </div>
+                            <!-- SQL Start -->
+                            <?php
+                           include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                           // SQL query
+                           $sql = "SELECT womens, `womens-id` FROM double_matches WHERE womens IS NOT NULL AND womens != '' AND `womens-id` IS NOT NULL AND `womens-id` != ''";
+                           $result = $conn->query($sql);
+
+                           // Check if rows are returned
+                           if ($result->num_rows > 0) {
+                              // Output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <div class="form-check">
+                                    <input class="form-check-input womens-doubles" type="checkbox" name="age-category[]" id="age-under-18-boys" value="<?= htmlspecialchars($row['womens-id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <label class="form-check-label" for="age-under-18-boys">
+                                       <?= htmlspecialchars($row['womens'], ENT_QUOTES, 'UTF-8'); ?>
+                                    </label>
+                                 </div>
+                           <?php
+                              }
+                           } 
+
+                           // Close connection
+                           $conn->close();
+                           ?>
+                           <!-- SQL end -->
                         </fieldset>
                      </div>
 
@@ -441,6 +602,33 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                               <input class="form-check-input mens-doubles" type="checkbox" name="age-category[]" value="MD">
                               <label class="form-check-label">Open</label>
                            </div>
+                            <!-- SQL Start -->
+                            <?php
+                           include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                           // SQL query
+                           $sql = "SELECT mens, `mens-id` FROM double_matches WHERE mens IS NOT NULL AND mens != '' AND `mens-id` IS NOT NULL AND `mens-id` != ''";
+                           $result = $conn->query($sql);
+
+                           // Check if rows are returned
+                           if ($result->num_rows > 0) {
+                              // Output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <div class="form-check">
+                                    <input class="form-check-input mens-doubles" type="checkbox" name="age-category[]" id="age-under-18-boys" value="<?= htmlspecialchars($row['mens-id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <label class="form-check-label" for="age-under-18-boys">
+                                       <?= htmlspecialchars($row['mens'], ENT_QUOTES, 'UTF-8'); ?>
+                                    </label>
+                                 </div>
+                           <?php
+                              }
+                           } 
+
+                           // Close connection
+                           $conn->close();
+                           ?>
+                           <!-- SQL end -->
                         </fieldset>
                      </div>
                   </div>
@@ -456,6 +644,33 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                            <input class="form-check-input mixed-doubles" type="checkbox" name="age-category[]" value="X">
                            <label class="form-check-label">Open</label>
                         </div>
+                         <!-- SQL Start -->
+                         <?php
+                           include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+
+                           // SQL query
+                           $sql = "SELECT mixed, `mixed-id` FROM double_matches WHERE mixed IS NOT NULL AND mixed != '' AND `mixed-id` IS NOT NULL AND `mixed-id` != ''";
+                           $result = $conn->query($sql);
+
+                           // Check if rows are returned
+                           if ($result->num_rows > 0) {
+                              // Output data of each row
+                              while ($row = $result->fetch_assoc()) {
+                           ?>
+                                 <div class="form-check">
+                                    <input class="form-check-input mixed-doubles" type="checkbox" name="age-category[]" id="age-under-18-boys" value="<?= htmlspecialchars($row['mixed-id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                    <label class="form-check-label" for="age-under-18-boys">
+                                       <?= htmlspecialchars($row['mixed'], ENT_QUOTES, 'UTF-8'); ?>
+                                    </label>
+                                 </div>
+                           <?php
+                              }
+                           } 
+
+                           // Close connection
+                           $conn->close();
+                           ?>
+                           <!-- SQL end -->
                         <div class="form-check">
                            <input class="form-check-input mixed-doubles" type="checkbox" name="age-category[]" value="X-18">
                            <label class="form-check-label">Under 18</label>
