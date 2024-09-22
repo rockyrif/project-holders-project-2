@@ -193,7 +193,35 @@ if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") {
                             <div>
                                 <fieldset class="form-group">
                                     <label class="form-label" for="age-category[]">Boys:</label>
+                                    <!-- SQL Start -->
+                                    <?php
+                                    include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
 
+                                    // SQL query
+                                    $sql = "SELECT boys, `boys-id` FROM single_matches WHERE boys IS NOT NULL AND boys != '' AND `boys-id` IS NOT NULL AND `boys-id` != ''";
+                                    $result = $conn->query($sql);
+
+                                    // Check if rows are returned
+                                    if ($result->num_rows > 0) {
+                                        // Output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="<?= htmlspecialchars($row['boys-id'], ENT_QUOTES, 'UTF-8'); ?>" <?php echo (in_array(htmlspecialchars($row['boys-id'], ENT_QUOTES, 'UTF-8'), $age_category)) ? 'checked' : ''; ?>>
+                                                <label class="form-check-label" for="age-under-18">
+                                                    <?= htmlspecialchars($row['boys'], ENT_QUOTES, 'UTF-8'); ?>
+                                                </label>
+                                            </div>
+                                    <?php
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+
+                                    // Close connection
+                                    $conn->close();
+                                    ?>
+                                    <!-- SQL end -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="age-category[]" id="age-under-18" value="BS-18" <?php echo (in_array('BS-18', $age_category)) ? 'checked' : ''; ?>>
                                         <label class="form-check-label" for="age-under-18">
