@@ -31,7 +31,7 @@ try {
         )
     );
 
-    include "/home2/adtennis/public_html/project-holders-project-2/db_conn.php";
+    include "/project-holders-project-2/db_conn.php";
 
     // Get current month and year
     $current_month = date('m');
