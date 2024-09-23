@@ -18,8 +18,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -51,45 +50,54 @@ session_start();
                 <P class="fs-4 " data-aos="fade-up" data-aos-duration="2000">ADTC Committee</P>
             </div>
 
-            <div class="gallary-heading">
-                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Founder</p>
-            </div>
-
-            
-            <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
-                
-                    <div class="image-container">
-
-                        <img alt="Achievement-by-ADTC" src="../../Images/adtc-committee/1.jpg"
-                            class="image-button-container">
-
-                        <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri<br>
-                        <button type="button" class="btn btn-success gallery-button mt-1"
-                        onclick="window.location.href='../founder-msg/founder-msg.php'">Founder's Message</button>
-                        </p>
-                    </div>
-                
-            </div>
-            
-            <br>
-
             <!-- <div class="gallary-heading">
-                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Events</p>
+                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Presidents
+                </p>
             </div> -->
+
 
             <div class="gallery1" data-aos="fade-up" data-aos-duration="2000">
                 <div class="committee-container">
                     <p class="committee-tittle">President</p>
                     <div class="image-container">
-                        <img alt="Sachith-Jayarathna" src="../../Images/adtc-committee/3.jpg">
-                        <p class="gallery-info">Sachith Jayarathna</p>
+                        <img alt="Sachith-Jayarathna" src="../../Images/adtc-committee/1.jpg">
+                        <p class="gallery-info">Mr. H.A.N.K. Damayantha Wijaya Sri</p>
                     </div>
                 </div>
                 <div class="committee-container">
-                    <p class="committee-tittle">Secretary</p>
+                    <p class="committee-tittle">Vice President
+                    </p>
                     <div class="image-container">
                         <img alt="Daminda-Ubayarathna" src="../../Images/adtc-committee/2.jpg">
-                        <p class="gallery-info">Daminda Ubayarathna</p>
+                        <p class="gallery-info">Mr. J.A. Thilakasiri</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <!-- <div class="gallary-heading">
+                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Secretaries</p>
+            </div> -->
+
+            <div class="gallery1" data-aos="fade-up" data-aos-duration="2000">
+                <div class="committee-container">
+                    <p class="committee-tittle">Secretary
+                    </p>
+                    <div class="image-container">
+                        <img alt="Sachith-Jayarathna" src="../../Images/adtc-committee/3.jpg">
+                        <p class="gallery-info">Mr. D.S. Sooriarachchi
+                        </p>
+                    </div>
+                </div>
+                <div class="committee-container">
+                    <p class="committee-tittle">Asst. Secretary
+                    </p>
+                    <div class="image-container">
+                        <img alt="Daminda-Ubayarathna" src="../../Images/adtc-committee/4.jpg">
+                        <p class="gallery-info">Miss. T.H. Dinusha Darshani
+                        </p>
                     </div>
                 </div>
 
@@ -103,9 +111,9 @@ session_start();
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
-                    <img alt="Pulasthi Dammika" src="../../Images/adtc-committee/4.jpg">
+                    <img alt="Pulasthi Dammika" src="../../Images/adtc-committee/5.jpg">
 
-                    <p class="gallery-info">Pulasthi Dammika</p>
+                    <p class="gallery-info">Mr. G.B. Pulasthi Dhammika</p>
                 </div>
 
             </div>
@@ -113,49 +121,54 @@ session_start();
             <br>
 
             <div class="gallary-heading">
-                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Executive Members</p>
+                <p style="text-align: center;" data-aos="fade-up" data-aos-duration="2000">Executive Members</p>
             </div>
 
             <div class="gallery" data-aos="fade-up" data-aos-duration="2000">
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/6.jpg">
+                    <p class="gallery-info">Mr. M.S. Theja Perera</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/7.jpg">
+                    <p class="gallery-info">Mr. U.J.R.D. Saman Kumara
+                    </p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/8.jpg">
+                    <p class="gallery-info">DR. S.T.S. Jayarathne</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/9.jpg">
+                    <p class="gallery-info">Mr. A.S. Anil Manawadu</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/10.jpg">
+                    <p class="gallery-info">Mr. W. K. G. Prabhath Kavinda</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/11.jpg">
+                    <p class="gallery-info">Mr. E.R. Suraweera</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/12.jpg">
+                    <p class="gallery-info"> Mr. G.H.I.S. Wijerathna</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/13.jpg">
+                    <p class="gallery-info">Mr. A.P. Belan Daminda</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/14.jpg">
+                    <p class="gallery-info">Mr. S.M.R.P. Dhananjaya</p>
                 </div>
                 <div class="image-container">
-                    <img alt="Beach-tennis" src="../../Images/adtc-committee/5.jpg">
-                    <p class="gallery-info">name here</p>
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/15.jpg">
+                    <p class="gallery-info">Mr. U.H. Chandima</p>
+                </div>
+                <div class="image-container">
+                    <img alt="Beach-tennis" src="../../Images/adtc-committee/16.jpg">
+                    <p class="gallery-info">Mr. D.R.W. Sujeewa</p>
                 </div>
 
             </div>

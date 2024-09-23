@@ -10,6 +10,12 @@ session_start();
     
     <link rel="stylesheet" href="../../common-css-and-js/style.css">
 
+    <!-- bootstarp start -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- bootstrap end -->
+
     <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
         rel="stylesheet">
 
@@ -38,7 +44,7 @@ session_start();
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
+            <div class="gallary-tittle1">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Opening ceremony of Senerath Somarathna  court</P>
             </div>
 
@@ -55,7 +61,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/3.jpg">
                 </div>
@@ -63,11 +69,11 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/5.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/6.jpg">
                 </div>
@@ -79,7 +85,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/8.jpg">
                 </div>
-                <div class="image-container">
+                 <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/9.jpg">
                 </div>
@@ -87,7 +93,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/10.jpg">
                 </div>
-                <div class="image-container tall">
+                <!--<div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/11.jpg">
                 </div>
@@ -110,7 +116,7 @@ session_start();
                 </div>
                 <div class="grid-item">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Events/Opening-ceremony-of-Senerath-Somarathna-court/17.jpg">
-                </div>
+                </div> -->
                  <!--<div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/18.jpg">
                 </div>

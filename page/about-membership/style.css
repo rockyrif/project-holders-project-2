@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: fit-content;
+    overflow-x: hidden;
+    background-color: #ddd;
+
+
+}
+
+/* home start */
+.home {
+    position: relative;
+    top: 0%;
+    height: fit-content;
+}
+
+/* home end */
+
+
+
+
+/* home page section two */
+
+.about-membership {
+    height:fit-content;
+    width: 100vw;
+    padding: 0px 50px 50px 50px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.gallary-tittle {
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000066;
+    font-family: "PF Din Stencil W01 Bold";
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    background-color: #91CC00;
+
+}
+
+.gallary-tittle div{
+    font-size: 25px;
+}
+
+.gallary .image-container img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.gallery {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+}
+
+.gallery>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery>div>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.gallery .tall {
+    grid-row: span 2;
+}
+
+.gallary-info {
+    text-align: justify;
+    padding: 10px;
+}
+
+.aspect-ratio-256-81 {
+    margin-top: 93px;
+    position: relative;
+    width: 100%;
+    padding-top: calc(81 / 290 * 100%); /* Aspect ratio calculation */
+    border-radius: 0px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensure content stays within rounded borders */
+  }
+  
+  .aspect-ratio-256-81 .carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+  
+  .aspect-ratio-256-81 .carousel-item {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+  
+  .aspect-ratio-256-81 .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+
+  @media only screen and (max-width: 500px) {
+
+    .aspect-ratio-256-81 {
+        
+        padding-top: calc(81 / 140 * 100%); /* Aspect ratio calculation */
+       
+      }
+
+ }

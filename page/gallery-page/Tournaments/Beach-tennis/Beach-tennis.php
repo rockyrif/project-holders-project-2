@@ -8,18 +8,17 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
-    
+
     <link rel="stylesheet" href="../../common-css-and-js/style.css">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -44,63 +43,76 @@ session_start();
 
         <!-- Navbar start -->
         <?php
-        include '../../../../components/navbar/navbar.php'; 
+        include '../../../../components/navbar/navbar.php';
         ?>
         <!-- Navbar end -->
+
+        <!-- moving images start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide aspect-ratio-256-81" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="gallary-tittle">
+                    <div class="">Beach Tennis</div>
+                </div>
+                <div class="carousel-item active">
+                    <img src="../../../../Images/moving-img/about-beach-tennis/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../../../Images/moving-img/about-beach-tennis/2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../../../Images/moving-img/about-beach-tennis/3.jpg" class="d-block w-100" alt="...">
+                </div>
+
+            </div>
+        </div>
+        <!-- moving images end -->
 
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
-                <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Promoting Beach Tennis</P>
-            </div>
+
 
             <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The purpose of Beach Tennis event organized by the Ampara District Tennis Club is twofold: to foster a love for the sport, promote physical activity, and build a sense of community, while also leveraging the event to boost tourism in the region. By the scenic beauty of our beaches. and providing an engaging sporting experience, we aim attract visitors, thereby contributing to the growth of the local tourism industry.</p>
+                <p data-aos="fade-up" data-aos-duration="2000">
+                    Two beach tennis courts have been established at Arugambay Beach and Ampara Senarath
+                    Somarathna Ground. The primary aim of promoting beach tennis is to boost the tourism industry
+                    while providing fun and enjoyment for the local community<br><br>Beach tennis tournaments are regularly organized for both foreign and local participants, fostering
+                    community engagement and enhancing the appeal of our region as a vibrant tourist destination
+                </p>
             </div>
 
             <div class="gallery">
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/1.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/1.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/2.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/3.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/2.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/4.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/5.jpg">
-                </div>
-                <div class="image-container tall">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/6.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/3.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/7.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/4.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/8.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/5.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/9.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/6.jpg">
                 </div>
                 <div class="image-container">
-                    <img data-aos="fade-up" data-aos-duration="2000"
-                        src="../../../../Images/gallary/Tournaments/Beach-tennis/10.jpg">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/7.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/8.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/9.jpg">
+                </div>
+                <div class="image-container">
+                    <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/10.jpg">
+                </div>
+                <!--<div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Tournaments/Beach-tennis/11.jpg">
                 </div>
@@ -120,8 +132,8 @@ session_start();
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../../Images/gallary/Tournaments/Beach-tennis/16.jpg">
-                </div>
-                  <!--<div class="grid-item">
+                </div> -->
+                <!--<div class="grid-item">
                     <img data-aos="fade-up" data-aos-duration="2000" src="../../../Images/gallary/Achievement by ADTC/17.jpg">
                 </div>
                 <div class="image-container tall">

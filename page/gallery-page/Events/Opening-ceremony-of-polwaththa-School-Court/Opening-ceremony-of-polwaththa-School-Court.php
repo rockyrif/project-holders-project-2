@@ -50,7 +50,7 @@ session_start();
         <!-- Achievement-by-ADTC-gallery-start -->
         <div class="section-two">
 
-            <div class="gallary-tittle">
+            <div class="gallary-tittle1">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Opening ceremony of polwaththa School Court</P>
             </div>
 
@@ -67,7 +67,7 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/2.jpg">
                 </div>
-                <div class="image-container tall">
+                <div class="image-container ">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/3.jpg">
                 </div>
@@ -75,14 +75,14 @@ session_start();
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/4.jpg">
                 </div>
-                <div class="image-container tall">
+                <!-- <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/5.jpg">
                 </div>
                 <div class="image-container tall">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/6.jpg">
-                </div>
+                </div> -->
                 <!-- <div class="image-container">
                     <img data-aos="fade-up" data-aos-duration="2000"
                         src="../../../../Images/gallary/Events/Opening-ceremony-of-polwaththa-School-Court/7.jpg">

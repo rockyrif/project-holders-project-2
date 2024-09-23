@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set "folder=C:\xampp\htdocs\php\project-holders-project-2\Images\gallary\Tournaments\Jus De Fruit Tournaments"
+set "folder=C:\xampp\htdocs\project-holders-project-2\Images\gallary\Tournaments\Jus-De-Fruit-Tournaments"
 set "ext=.jpg"
 set "count=1"
 

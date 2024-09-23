@@ -6,6 +6,7 @@ body {
     width: 100vw;
     height: fit-content;
     overflow-x: hidden;
+    background-color: #ddd;
 
 
 
@@ -24,17 +25,30 @@ body {
 /* home page section two */
 
 .section-two {
-    height: fit-content;
+    height:fit-content;
     width: 100vw;
-    background-color: #ddd;
-    padding: 20px;
-    padding-top: 93px;
+    padding: 0px 50px 50px 50px;
+    margin-top: 25px;
+    margin-bottom: 10px;
     position: relative;
 
 
 }
 
-.gallary-tittle {
+.section-two {
+    height: fit-content;
+    width: 100vw;
+    
+    padding: 20px;
+   
+    position: relative;
+
+
+}
+
+.gallary-tittle1{
+    padding-top: 93px;
+    margin-bottom: 20px;
     text-align: center;
     width: 100%;
     height: 45px;
@@ -43,7 +57,25 @@ body {
     justify-content: center;
     color: #000066;
     font-family: "PF Din Stencil W01 Bold";
+}
 
+.gallary-tittle {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000066;
+    font-family: "PF Din Stencil W01 Bold";
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    background-color: #91CC00;
+
+}
+
+.gallary-tittle div{
+    font-size: 25px;
 }
 
 .gallary .image-container img {
@@ -81,3 +113,44 @@ body {
 .gallary-info{
     text-align: justify;
 }
+
+.aspect-ratio-256-81 {
+    margin-top: 93px;
+    position: relative;
+    width: 100%;
+    padding-top: calc(81 / 290 * 100%); /* Aspect ratio calculation */
+    border-radius: 0px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensure content stays within rounded borders */
+  }
+  
+  .aspect-ratio-256-81 .carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+  
+  .aspect-ratio-256-81 .carousel-item {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+  
+  .aspect-ratio-256-81 .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+
+  @media only screen and (max-width: 500px) {
+
+    .aspect-ratio-256-81 {
+        
+        padding-top: calc(81 / 140 * 100%); /* Aspect ratio calculation */
+       
+      }
+
+ }

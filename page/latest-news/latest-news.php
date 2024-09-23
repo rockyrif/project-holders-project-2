@@ -1,5 +1,6 @@
 <?php
 session_start();
+$version = date('Ymd');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,9 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
-
-
+    <title>Latest News</title>
 
     <!-- bootstarp start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,11 +16,10 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- bootstrap end -->
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?= $version; ?>">
 
     <!-- online fonts start -->
-    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold"
-        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
     <!-- online fonts end -->
 
     <!-- Goolge fonts start -->
@@ -33,6 +31,10 @@ session_start();
     <!-- AOS  start-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS  end-->
+
+    <!-- Font Awesome start-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome end-->
 
 
 
@@ -49,36 +51,55 @@ session_start();
         <!-- Navbar end -->
 
         <!-- latest-news-page-start -->
-        <div class="latest-news">
+        <div class="latest-news" data-aos="fade-up" data-aos-duration="2000">
 
             <div class="gallary-tittle">
                 <P class="fs-4" data-aos="fade-up" data-aos-duration="2000">Latest News</P>
             </div>
 
+            <?php
+            $id = $_GET['id'];
+            include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-2/db_conn.php";
+            $sql = "SELECT * FROM news WHERE news_id = '$id';";
+            $result = mysqli_query($conn, $sql);
+            mysqli_close($conn);
+            $row = mysqli_fetch_assoc($result);
+            ?>
+
             <div class="image">
                 <div class="image-container mb-4" data-aos="fade-up" data-aos-duration="2000">
-                    <img src="../../Images/latest-news/2.jpg" alt="latest-news" width="300">
+                    <img src="../../<?= $row['pic_path']; ?>" alt="latest-news" width="300">
                 </div>
             </div>
+            <div class="container">
+                <div class="gallary-info">
+                    <p data-aos="fade-up" data-aos-duration="2000"><?= $row['description']; ?></p>
+                </div>
 
-            <div class="gallary-info">
-                <p data-aos="fade-up" data-aos-duration="2000">The Ampara District Tennis Club (ADTC) emerged on the
-                    sporting landscape in 2023 under the visionary leadership of Deputy Inspector General of Police, Mr.
-                    H.A.N.K. Damayantha Wijaya Sri. Founded with the purpose of promoting tennis within the community,
-                    the club quickly evolved into a dynamic hub for tennis enthusiasts in the region. The ADTC is
-                    committed to preventing drug addiction among young individuals by redirecting their focus and energy
-                    towards playing tennis. The Ampara District Tennis Club endeavors to promote harmony within society
-                    by organizing inclusive tennis events that unite diverse community members. By emphasizing values
-                    such as teamwork, respect, and fair play, the club aims to create a positive environment where
-                    individuals from varied backgrounds come together through their mutual passion for tennis.
-                    Implementing outreach programs, tennis clinics, and community events will additionally strengthen
-                    social bonds, fostering understanding and cooperation among residents of the Ampara
-                    district.<br><br>
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <p>By: <?= $row['publisher']; ?></p>
+                    </div>
+                    <div>
+                        <p><?= $row['date']; ?></p>
+                    </div>
+                </div>
 
-                    Despite initial resource limitations, the ADTC demonstrated resilience and commitment, achieving
-                    remarkable strides in a short period. With a focus on inclusivity, skill development, and community
-                    engagement, the Ampara District Tennis Club has become a pivotal force, uniting individuals
-                    passionate about tennis and contributing to the overall sporting vibrancy of the community.. </p>
+                <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") { ?>
+                    <div style="display:flex; justify-content:center; ">
+                        <div style="margin-bottom: 20px;">
+                            <button type="button" class="btn btn-danger" onclick="confirmDelete(<?php echo $row['news_id']; ?>)">Delete</button>
+
+                            <script>
+                                function confirmDelete(newsId) {
+                                    if (confirm("Are you sure you want to delete this item?")) {
+                                        window.location.href = "delete.php?id=" + newsId;
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
 
 

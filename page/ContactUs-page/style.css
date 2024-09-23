@@ -26,14 +26,12 @@ body {
 /* home page section two */
 
 .contact-us {
-    height:100vh;
+    height:fit-content;
     width: 100vw;
-    
-    padding: 20px;
-    padding-top: 93px;
+    padding: 0px 50px 50px 50px;
+    margin-top: 25px;
+    margin-bottom: 10px;
     position: relative;
-  
-
 
 }
 .gallary-tittle {
@@ -45,23 +43,113 @@ body {
     justify-content: center;
     color: #000066;
     font-family: "PF Din Stencil W01 Bold";
-
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    background-color: #91CC00;
 }
+
+.gallary-tittle div{
+    font-size: 25px;
+}
+
 .submit-request{
-    width: 500px;
-    height: 500px;
-	position: absolute;
-	top:30%;
-	left:35%;
+    width: 40% !important;
+    height: 400px;
+	padding: 20px;
+    padding-top: 10px;
+	
 	
 }
 .submit-request h5 {
     color: #000066;
     font-family: "PF Din Stencil W01 Bold";
 }
-.submit-request.line{
-    width: 500px;
-    height: 500px;
+
+.line {
+    width: 100px;
+    height: 5px;
     background-color: #91CC00;
     border-radius: 10px;
 }
+
+@media only screen and (max-width: 767px) {
+
+    .submit-request {
+        width: 100% !important;
+    }
+
+}
+
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  .map-container{
+    display: flex;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px; 
+  }
+
+  @media only screen and (max-width: 526px) {
+
+    .map-container{
+       flex-direction: column;    
+    }
+
+    .width{
+        width: 100% !important;
+    }
+
+    .width2{
+        padding: 20px;
+    }
+
+}
+
+ .aspect-ratio-256-81 {
+    margin-top: 93px;
+    position: relative;
+    width: 100%;
+    padding-top: calc(81 / 290 * 100%); /* Aspect ratio calculation */
+    border-radius: 0px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensure content stays within rounded borders */
+  }
+  
+  .aspect-ratio-256-81 .carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+  
+  .aspect-ratio-256-81 .carousel-item {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+  
+  .aspect-ratio-256-81 .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from the container */
+  }
+
+  @media only screen and (max-width: 500px) {
+
+    .aspect-ratio-256-81 {
+        
+        padding-top: calc(81 / 140 * 100%); /* Aspect ratio calculation */
+       
+      }
+
+ }
+  
+  
