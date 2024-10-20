@@ -89,6 +89,7 @@ $version = date('Ymd');
                     <div style="display:flex; justify-content:center; ">
                         <div style="margin-bottom: 20px;">
                             <button type="button" class="btn btn-danger" onclick="confirmDelete(<?php echo $row['news_id']; ?>)">Delete</button>
+                            <button type="button" class="btn btn-success" onclick="window.location.href = 'edit.php?id=' + <?php echo $row['news_id']; ?>;">Edit</button>
 
                             <script>
                                 function confirmDelete(newsId) {
