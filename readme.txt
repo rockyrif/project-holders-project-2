@@ -5,7 +5,7 @@ db_conn.php username and password for hosting
 *********************************************************
 $servername = "localhost";
 $username = "adtennis";
-$password = "**********";
+$password = "2l01xVKb:EO.9p";
 $dbname = "adtennis_amp_dtc";
 
 important files to handle when editing files on adtennis.lk (Different configurations in hosting and local)
