@@ -34,6 +34,8 @@ deployment:
     - export DEPLOYPATH=/home2/adtennis/public_html/project-holders-project-2
     - /bin/cp -r * $DEPLOYPATH
 
+gfgfgfg
+
 
 
 
